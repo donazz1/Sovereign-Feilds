@@ -128,6 +128,7 @@
     top: 57px;
     z-index: 90;
     overflow-x: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   }
   .tab-btn {
     background: none;
@@ -773,8 +774,8 @@
     <div class="room-card">
       <div class="wing-label">Living Wing · South-Facing</div>
       <h3>Glass-Walled Great Room Pavilion</h3>
-      <p>The heart of the home — floor-to-ceiling black steel grid windows on three sides, with a direct view south onto the open farmland expanse. A soaring single-story cathedral volume with exposed timber beams. Opens fully onto the covered veranda and fire-pit terrace via large pivot doors.</p>
-      <div class="highlight-note">✦ On a clear evening, the sun sets directly into this room across the fields — the entire south-facing glass wall turns amber.</div>
+      <p>The heart of the home — floor-to-ceiling black steel grid windows on three sides, with a direct view south onto the open farmland expanse. A soaring single-story cathedral volume with white-painted shiplap ceiling and white-painted timber beams, bathed in natural light. Statement pendants and recessed lighting illuminate the space at night. Opens fully onto the covered veranda and fire-pit terrace via large pivot doors.</p>
+      <div class="highlight-note">✦ On a clear evening, the sun sets directly into this room across the fields — the entire south-facing glass wall turns amber, and the white cathedral ceiling glows gold from within.</div>
     </div>
     <div class="room-card">
       <div class="wing-label">Living Wing · Connected to Great Room</div>
@@ -832,6 +833,7 @@
     <button class="room-select-btn active" data-room="0">Great Room</button>
     <button class="room-select-btn" data-room="1">Kitchen &amp; Dining</button>
     <button class="room-select-btn" data-room="2">Primary Suite</button>
+    <button class="room-select-btn" data-room="9">Primary En Suite</button>
     <button class="room-select-btn" data-room="3">Bedrooms 2–5</button>
     <button class="room-select-btn" data-room="4">Entry Hall</button>
     <button class="room-select-btn" data-room="5">Garage &amp; Mud Room</button>
@@ -850,8 +852,8 @@
       <div class="room-detail-text">
         <div class="room-wing">Living Wing · South-Facing</div>
         <h2>Glass-Walled Great Room Pavilion</h2>
-        <p>The heart of the home — floor-to-ceiling black steel grid windows on three sides, with a direct view south onto the open farmland expanse. A soaring single-story cathedral volume with exposed timber beams. Opens fully onto the covered veranda and fire-pit terrace via large pivot doors.</p>
-        <div class="room-note">✦ On a clear evening, the sun sets directly into this room across the fields — the entire south-facing glass wall turns amber.</div>
+        <p>The heart of the home — floor-to-ceiling black steel grid windows on three sides, with a direct view south onto the open farmland expanse. A soaring single-story cathedral volume with white-painted shiplap ceiling and white-painted timber beams, bathed in natural light. Statement pendants and recessed lighting illuminate the space at night. Opens fully onto the covered veranda and fire-pit terrace via large pivot doors.</p>
+        <div class="room-note">✦ On a clear evening, the sun sets directly into this room across the fields — the entire south-facing glass wall turns amber, and the white cathedral ceiling glows gold from within.</div>
         <div class="room-nav">
           <button class="room-nav-btn" disabled>← Previous</button>
           <button class="room-nav-btn" onclick="selectRoom(1)">Kitchen &amp; Dining →</button>
@@ -1055,8 +1057,9 @@
     document.querySelector('.room-selector').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
+  const roomMap = [0,1,2,3,4,5,6,7,9];
   document.querySelectorAll('.room-select-btn').forEach((btn, i) => {
-    btn.addEventListener('click', () => selectRoom(i));
+    btn.addEventListener('click', () => selectRoom(roomMap[i]));
   });
 
   // ── CINEMATIC WALKTHROUGH ──
