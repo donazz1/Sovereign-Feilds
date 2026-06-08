@@ -39,14 +39,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
+    z-index: 201;
     border-bottom: 1px solid #333;
   }
-  body { padding-top: 110px; }
   .site-header h1 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.5rem;
@@ -127,11 +125,10 @@
     background: #fff;
     border-bottom: 2px solid var(--border);
     padding: 0 16px;
-    position: fixed;
-    top: 57px;
-    left: 0;
-    right: 0;
-    z-index: 89;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 200;
     overflow-x: auto;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     scrollbar-width: none;
@@ -142,8 +139,8 @@
     border-bottom: 2px solid transparent;
     margin-bottom: -2px;
     padding: 12px 10px;
-    font-size: 0.68rem;
-    letter-spacing: 0.06em;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--light);
     cursor: pointer;
@@ -612,6 +609,7 @@
   <button class="tab-btn" data-tab="cinema">Cinematic Walkthrough</button>
   <button class="tab-btn" data-tab="layout">Interior Layout</button>
   <button class="tab-btn" data-tab="interior">Interior Rooms</button>
+  <button class="tab-btn" data-tab="wellness">Barn &amp; Wellness</button>
   <button class="tab-btn" data-tab="about">About</button>
 </nav>
 
@@ -655,7 +653,7 @@
   </div>
   <div class="elev-panel active" id="elev-front">
     <div class="image-block">
-      <img src="https://imagine-public.x.ai/imagine-public/images/7205a27d-7049-460b-be17-86cebaca5dfd.jpg" alt="Front elevation of Sovereign Fields farmhouse">
+      <img src="elevation_front.jpg" alt="Front elevation of Sovereign Fields farmhouse">
       <h3>Front Elevation — Entry Façade</h3>
       <p>The full entry facade at dusk — the Z-compound massing stretches wide and low, anchored by a covered timber-post entry porch with stone foundation accents. The three-car garage wing angles to the left toward the driveway approach. To the right, the great room glass pavilion glows through the trees. Perennial beds and lavender flank the forecourt; low fieldstone walls define the edges. Mature maples frame the composition on both sides.</p>
     </div>
@@ -837,6 +835,7 @@
 
   <div class="room-selector">
     <button class="room-select-btn active" data-room="0">Great Room</button>
+    <button class="room-select-btn" data-room="10">Kitchen</button>
     <button class="room-select-btn" data-room="1">Kitchen &amp; Dining</button>
     <button class="room-select-btn" data-room="2">Primary Bedroom</button>
     <button class="room-select-btn" data-room="9">Primary En Suite</button>
@@ -862,6 +861,26 @@
         <div class="room-note">✦ On a clear evening, the sun sets directly into this room across the fields — the entire south-facing glass wall turns amber, and the white cathedral ceiling glows gold from within.</div>
         <div class="room-nav">
           <button class="room-nav-btn" disabled>← Previous</button>
+          <button class="room-nav-btn" onclick="selectRoom(1)">Kitchen &amp; Dining →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Room 10: Kitchen -->
+  <div class="room-detail" id="room-10">
+    <div class="room-detail-inner">
+      <div class="room-detail-img">
+        <img src="interior_kitchen.png" alt="Kitchen interior">
+      </div>
+      <div class="room-detail-text">
+        <div class="room-wing">Living Wing · Connected to Great Room</div>
+        <h2>Kitchen &amp; Dining</h2>
+        <p>Soft sage green shaker cabinets with a reeded island, dramatic Calacatta marble counters and full-height backsplash, Wolf 60" gas range with brass pot filler, solid brass hardware throughout. The kitchen window frames the maple driveway in full autumn colour. A scullery and walk-in pantry tuck discreetly behind.</p>
+        <div class="room-note">✦ The kitchen window frames the exact view of the maple trees in full autumn colour — every October morning is a painting.</div>
+        <div class="room-nav">
+          <button class="room-nav-btn" onclick="selectRoom(0)">← Great Room</button>
           <button class="room-nav-btn" onclick="selectRoom(1)">Kitchen &amp; Dining →</button>
         </div>
       </div>
@@ -1035,6 +1054,121 @@
   </div>
 </div>
 
+
+<!-- BARN & WELLNESS -->
+<div class="panel" id="tab-wellness">
+  <div class="interior-intro">
+    <h2>Barn &amp; Wellness</h2>
+    <p>The original weathered timber barn — preserved outside, transformed within. Five distinct zones housed under one cathedral roof, from serious fitness to spa recovery to creative work and property operations.</p>
+  </div>
+
+  <div class="room-selector">
+    <button class="room-select-btn active" data-barn="0">Gym floor</button>
+    <button class="room-select-btn" data-barn="1">Sauna &amp; cold plunge</button>
+    <button class="room-select-btn" data-barn="2">Zen terrace</button>
+    <button class="room-select-btn" data-barn="3">Change room</button>
+    <button class="room-select-btn" data-barn="4">Workshop</button>
+    <button class="room-select-btn" data-barn="5">Equipment storage</button>
+  </div>
+
+  <div class="room-detail active" id="barn-0">
+    <div class="room-detail-inner">
+      <div class="room-detail-img"><img src="barn_gym.png" alt="Barn gym floor"></div>
+      <div class="room-detail-text">
+        <div class="room-wing">South end · Wellness wing</div>
+        <h2>Gym Floor</h2>
+        <p>The full south wall opens via a wide bifold door onto the farmland expanse — rower, bike, cable machine, and free weights arranged so every workout faces the fields. Cathedral timber ceiling soars above. Rubber flooring, warm barn timber walls, morning light flooding in from the horizon.</p>
+        <div class="room-note">✦ You row facing open fields at sunrise — no wall, no window, just land and sky.</div>
+        <div class="room-nav">
+          <button class="room-nav-btn" disabled>← Previous</button>
+          <button class="room-nav-btn" onclick="selectBarn(1)">Sauna &amp; cold plunge →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="room-detail" id="barn-1">
+    <div class="room-detail-inner">
+      <div class="room-detail-img"><img src="barn_sauna_coldplunge.png" alt="Sauna and cold plunge"></div>
+      <div class="room-detail-text">
+        <div class="room-wing">South end · Wellness wing</div>
+        <h2>Sauna &amp; Cold Plunge</h2>
+        <p>Cedar dry sauna for four sits beside a natural stone cold plunge tub for two. Teak slatted floors with floor drains throughout. The entire south wall is floor-to-ceiling sliding glass — open it and you're looking straight over the farmland while you recover. The contrast therapy circuit — sauna, plunge, zen terrace — flows in one seamless sequence.</p>
+        <div class="room-note">✦ From the cold plunge, looking south through open glass, you see only fields and sky.</div>
+        <div class="room-nav">
+          <button class="room-nav-btn" onclick="selectBarn(0)">← Gym floor</button>
+          <button class="room-nav-btn" onclick="selectBarn(2)">Zen terrace →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="room-detail" id="barn-2">
+    <div class="room-detail-inner">
+      <div class="room-detail-img"><img src="barn_zen_terrace.png" alt="Zen meditation terrace"></div>
+      <div class="room-detail-text">
+        <div class="room-wing">South · Outdoor oasis</div>
+        <h2>Zen Meditation Terrace</h2>
+        <p>Directly off the sauna and cold plunge sliding glass doors, a teak boardwalk leads to a private elevated deck framed by low fieldstone walls on two sides. A flat stone meditation daybed with linen cushion, a shallow still-water basin, lavender beds, ornamental grasses, and a single Japanese maple for dappled shade. Completely open to the sky. Farmland stretches to the horizon beyond the walls.</p>
+        <div class="room-note">✦ The sequence: sauna heat, cold plunge, step outside to this. Sky above, fields beyond, silence all around.</div>
+        <div class="room-nav">
+          <button class="room-nav-btn" onclick="selectBarn(1)">← Sauna &amp; cold plunge</button>
+          <button class="room-nav-btn" onclick="selectBarn(3)">Change room →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="room-detail" id="barn-3">
+    <div class="room-detail-inner">
+      <div class="room-detail-img"><img src="barn_changeroom.png" alt="Change room and shower"></div>
+      <div class="room-detail-text">
+        <div class="room-wing">Wellness wing · Adjacent to spa</div>
+        <h2>Change Room &amp; Shower</h2>
+        <p>Warm cedar lockers with brass hardware, a built-in bench, and a rainfall shower with natural stone tile surround and glass enclosure. Heated stone floors, brass fixtures, soft warm lighting. Small and refined — not a locker room but a spa changing suite. Opens directly into the sauna and cold plunge zone.</p>
+        <div class="room-note">✦ Every detail — cedar, stone, brass — is the same language as the house. The barn and the home feel like one.</div>
+        <div class="room-nav">
+          <button class="room-nav-btn" onclick="selectBarn(2)">← Zen terrace</button>
+          <button class="room-nav-btn" onclick="selectBarn(4)">Workshop →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="room-detail" id="barn-4">
+    <div class="room-detail-inner">
+      <div class="room-detail-img"><img src="barn_workshop.png" alt="Workshop"></div>
+      <div class="room-detail-text">
+        <div class="room-wing">North end · Utility wing</div>
+        <h2>Workshop</h2>
+        <p>Heavy duty workbenches along both walls with pegboard tool storage above. 220V outlets for power tools, utility sink, epoxy sealed concrete floor. Good overhead LED task lighting and separate exterior door on the north wall. Fully separated from the wellness wing by an insulated wall — no sound, no smell crosses over.</p>
+        <div class="room-note">✦ A proper workshop that works — organized, functional, completely self-contained.</div>
+        <div class="room-nav">
+          <button class="room-nav-btn" onclick="selectBarn(3)">← Change room</button>
+          <button class="room-nav-btn" onclick="selectBarn(5)">Equipment storage →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="room-detail" id="barn-5">
+    <div class="room-detail-inner">
+      <div class="room-detail-img"><img src="barn_equipment.png" alt="Equipment and tractor storage"></div>
+      <div class="room-detail-text">
+        <div class="room-wing">North end · Utility wing</div>
+        <h2>Equipment &amp; Tractor Storage</h2>
+        <p>Large powered garage door on the north wall. Tractor, ride-on mower, snow plow attachment, and all property maintenance equipment housed here. Wall-mounted racks for garden tools, shelving for fertilizers, seeds, greenhouse supplies, and planting materials. Concrete floor with drainage channel. Completely separate from the wellness wing.</p>
+        <div class="room-note">✦ Everything you need to run 50 acres — organized, accessible, and invisible from the house and gardens.</div>
+        <div class="room-nav">
+          <button class="room-nav-btn" onclick="selectBarn(4)">← Workshop</button>
+          <button class="room-nav-btn" disabled>End of tour</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 <!-- ═══════════════════ ABOUT ═══════════════════ -->
 <div class="panel" id="tab-about">
   <div class="about-wrap">
@@ -1051,6 +1185,27 @@
 </footer>
 
 <script>
+  // ── STICKY TABS VIA JS ──
+  const tabsBar = document.querySelector('.tabs-bar');
+  const tabsOffset = tabsBar.offsetTop;
+  window.addEventListener('scroll', function() {
+    if (window.scrollY >= tabsOffset) {
+      tabsBar.style.position = 'fixed';
+      tabsBar.style.top = '0';
+      tabsBar.style.left = '0';
+      tabsBar.style.right = '0';
+      tabsBar.style.zIndex = '99';
+      document.body.style.paddingTop = tabsBar.offsetHeight + 'px';
+    } else {
+      tabsBar.style.position = '';
+      tabsBar.style.top = '';
+      tabsBar.style.left = '';
+      tabsBar.style.right = '';
+      tabsBar.style.zIndex = '';
+      document.body.style.paddingTop = '';
+    }
+  });
+
   // ── TAB SWITCHING ──
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1073,7 +1228,7 @@
 
   // ── INTERIOR ROOMS ──
   function selectRoom(roomId) {
-    const roomIds = [0,1,2,9,3,4,5,6,7];
+    const roomIds = [0,10,1,2,9,3,4,5,6,7];
     document.querySelectorAll('.room-select-btn').forEach((b, i) => {
       b.classList.toggle('active', roomIds[i] === roomId);
     });
@@ -1083,7 +1238,7 @@
     document.querySelector('.room-selector').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
-  const roomIds = [0,1,2,9,3,4,5,6,7];
+  const roomIds = [0,10,1,2,9,3,4,5,6,7];
   document.querySelectorAll('.room-select-btn').forEach((btn, i) => {
     btn.addEventListener('click', () => selectRoom(roomIds[i]));
   });
@@ -1136,6 +1291,20 @@
     } else {
       clearInterval(cinemaTimer);
     }
+  });
+
+
+  // ── BARN ZONE SELECTOR ──
+  function selectBarn(index) {
+    document.querySelectorAll('[data-barn]').forEach((b) => {
+      b.classList.toggle('active', parseInt(b.dataset.barn) === index);
+    });
+    document.querySelectorAll('[id^="barn-"]').forEach((d) => {
+      d.classList.toggle('active', d.id === 'barn-' + index);
+    });
+  }
+  document.querySelectorAll('[data-barn]').forEach((btn) => {
+    btn.addEventListener('click', () => selectBarn(parseInt(btn.dataset.barn)));
   });
 
   // ── BUILD SWITCHER CLOSE ON OUTSIDE CLICK ──
