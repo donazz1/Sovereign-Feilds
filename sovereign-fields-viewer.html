@@ -39,14 +39,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
+    z-index: 201;
     border-bottom: 1px solid #333;
   }
-  body { padding-top: 110px; }
   .site-header h1 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.5rem;
@@ -127,11 +125,10 @@
     background: #fff;
     border-bottom: 2px solid var(--border);
     padding: 0 16px;
-    position: fixed;
-    top: 57px;
-    left: 0;
-    right: 0;
-    z-index: 89;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 200;
     overflow-x: auto;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     scrollbar-width: none;
@@ -142,8 +139,8 @@
     border-bottom: 2px solid transparent;
     margin-bottom: -2px;
     padding: 12px 10px;
-    font-size: 0.68rem;
-    letter-spacing: 0.06em;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--light);
     cursor: pointer;
@@ -655,7 +652,7 @@
   </div>
   <div class="elev-panel active" id="elev-front">
     <div class="image-block">
-      <img src="https://imagine-public.x.ai/imagine-public/images/7205a27d-7049-460b-be17-86cebaca5dfd.jpg" alt="Front elevation of Sovereign Fields farmhouse">
+      <img src="elevation_front.jpg" alt="Front elevation of Sovereign Fields farmhouse">
       <h3>Front Elevation — Entry Façade</h3>
       <p>The full entry facade at dusk — the Z-compound massing stretches wide and low, anchored by a covered timber-post entry porch with stone foundation accents. The three-car garage wing angles to the left toward the driveway approach. To the right, the great room glass pavilion glows through the trees. Perennial beds and lavender flank the forecourt; low fieldstone walls define the edges. Mature maples frame the composition on both sides.</p>
     </div>
@@ -1051,6 +1048,27 @@
 </footer>
 
 <script>
+  // ── STICKY TABS VIA JS ──
+  const tabsBar = document.querySelector('.tabs-bar');
+  const tabsOffset = tabsBar.offsetTop;
+  window.addEventListener('scroll', function() {
+    if (window.scrollY >= tabsOffset) {
+      tabsBar.style.position = 'fixed';
+      tabsBar.style.top = '0';
+      tabsBar.style.left = '0';
+      tabsBar.style.right = '0';
+      tabsBar.style.zIndex = '99';
+      document.body.style.paddingTop = tabsBar.offsetHeight + 'px';
+    } else {
+      tabsBar.style.position = '';
+      tabsBar.style.top = '';
+      tabsBar.style.left = '';
+      tabsBar.style.right = '';
+      tabsBar.style.zIndex = '';
+      document.body.style.paddingTop = '';
+    }
+  });
+
   // ── TAB SWITCHING ──
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
