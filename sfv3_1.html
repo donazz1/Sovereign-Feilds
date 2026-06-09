@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sovereign Fields — King Township, Ontario</title>
+<style>
+:root{--cream:#F5F2EC;--charcoal:#1C1C1A;--charcoal-light:#6B6A64;--gold:#B8963E;--gold-light:#D4AF6A;--border:rgba(245,242,236,0.1);--font-serif:Georgia,'Times New Roman',serif;--font-sans:-apple-system,'Helvetica Neue',Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--charcoal);color:var(--cream);font-family:var(--font-sans);min-height:100vh;overflow-x:hidden}
+header{background:var(--charcoal);border-bottom:1px solid rgba(184,150,62,0.3);padding:18px 32px;display:flex;align-items:flex-end;justify-content:space-between}
+.brand-name{font-family:var(--font-serif);font-size:24px;font-weight:normal;letter-spacing:0.12em;text-transform:uppercase}
+.brand-sub{font-size:10px;letter-spacing:0.22em;color:var(--gold-light);text-transform:uppercase;margin-top:4px}
+.header-right{font-size:11px;color:var(--charcoal-light);text-align:right;line-height:1.6}
+nav.primary{background:var(--charcoal);border-bottom:1px solid rgba(245,242,236,0.15);display:flex;overflow-x:auto;scrollbar-width:none}
+nav.primary::-webkit-scrollbar{display:none}
+.tab-btn{flex:0 0 auto;height:50px;padding:0 16px;background:none;border:none;border-bottom:2px solid transparent;color:var(--charcoal-light);font-family:var(--font-sans);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:color .2s,border-color .2s;white-space:nowrap}
+.tab-btn:hover{color:var(--cream)}
+.tab-btn.active{color:var(--gold-light);border-bottom-color:var(--gold)}
+nav.sub{background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none}
+nav.sub::-webkit-scrollbar{display:none}
+nav.sub.hidden{display:none}
+.sub-btn{flex:0 0 auto;height:38px;padding:0 18px;background:none;border:none;border-bottom:2px solid transparent;color:var(--charcoal-light);font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:color .2s,border-color .2s;white-space:nowrap}
+.sub-btn:hover{color:var(--cream)}
+.sub-btn.active{color:var(--gold-light);border-bottom-color:var(--gold)}
+.panel{display:none}.panel.active{display:block}
+.sub-panel{display:none}.sub-panel.active{display:block}
+.hero{position:relative;width:100%;background:#111;overflow:hidden}
+.hero img{width:100%;height:70vh;min-height:400px;max-height:780px;object-fit:cover;display:block;transition:opacity .6s;opacity:0}
+.hero img.loaded{opacity:1}
+.hero.tall img{height:82vh;max-height:860px}
+.hero-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(18,16,12,0.88));padding:48px 36px 28px}
+.hero-caption .rule{width:36px;height:1px;background:var(--gold);margin-bottom:12px}
+.hero-caption h2{font-family:var(--font-serif);font-size:28px;font-weight:normal;color:#FAF8F4;margin-bottom:6px}
+.hero-caption p{font-size:13px;color:rgba(245,242,236,0.7);letter-spacing:0.04em}
+.spec-strip{display:flex;flex-wrap:wrap;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.spec-item{flex:1 1 150px;padding:16px 22px;border-right:1px solid var(--border)}
+.spec-item:last-child{border-right:none}
+.spec-label{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:4px}
+.spec-value{font-size:13px;color:var(--cream)}
+.spec-value.gold{color:var(--gold-light)}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:3px;background:#0a0a08}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:3px;background:#0a0a08}
+.grid-card{position:relative;overflow:hidden;background:#1a1a16;cursor:pointer}
+.grid-card img{width:100%;height:280px;object-fit:cover;display:block;transition:transform .5s,opacity .5s;opacity:0}
+.grid-card img.loaded{opacity:1}
+.grid-card:hover img{transform:scale(1.03)}
+.card-label{position:absolute;bottom:0;left:0;right:0;padding:28px 16px 14px;background:linear-gradient(transparent,rgba(18,16,12,0.85))}
+.card-label h3{font-family:var(--font-serif);font-size:15px;font-weight:normal;color:#FAF8F4;margin-bottom:2px}
+.card-label p{font-size:10px;color:var(--gold-light);letter-spacing:0.1em;text-transform:uppercase}
+.content-block{max-width:760px;margin:0 auto;padding:44px 32px}
+.content-block h2{font-family:var(--font-serif);font-size:22px;font-weight:normal;margin-bottom:12px}
+.content-block p{font-size:14px;color:rgba(245,242,236,0.6);line-height:1.8}
+.gold-rule{width:40px;height:1px;background:var(--gold);margin:14px 0}
+.rule-list{list-style:none;margin-top:16px}
+.rule-list li{font-size:13px;color:rgba(245,242,236,0.55);padding:7px 0 7px 16px;border-bottom:1px solid var(--border);position:relative;line-height:1.5}
+.rule-list li::before{content:'—';position:absolute;left:0;color:var(--gold);font-size:11px}
+.wt-wrap{background:#000;min-height:55vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:48px 24px}
+.wt-eyebrow{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--charcoal-light)}
+.wt-title{font-family:var(--font-serif);font-size:22px;font-weight:normal;color:var(--cream);text-align:center}
+.audio-box{background:rgba(255,255,255,0.04);border:1px solid rgba(245,242,236,0.15);border-radius:4px;padding:20px 28px;max-width:500px;width:100%}
+.audio-box p{font-size:11px;color:var(--charcoal-light);letter-spacing:0.08em;margin-bottom:12px;text-align:center}
+audio{width:100%}
+.cinema-btn{margin-top:14px;width:100%;padding:10px;background:var(--gold);border:none;color:#1C1C1A;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;font-weight:500;font-family:var(--font-sans)}
+.cinema-btn:hover{background:var(--gold-light)}
+.scene-row{display:flex;gap:3px;max-width:860px;width:100%;overflow-x:auto}
+.scene{flex:0 0 150px;position:relative;cursor:pointer}
+.scene img{width:150px;height:95px;object-fit:cover;display:block;filter:brightness(0.55);transition:filter .25s,opacity .4s;opacity:0}
+.scene img.loaded{opacity:1}
+.scene:hover img,.scene.on img{filter:brightness(1)}
+.scene-lbl{position:absolute;bottom:5px;left:0;right:0;text-align:center;font-size:8.5px;color:var(--cream);letter-spacing:0.1em;text-transform:uppercase;text-shadow:0 1px 4px rgba(0,0,0,0.9)}
+.plan-wrap{padding:36px 28px}
+.plan-title{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-light);margin-bottom:18px}
+.plan-box{background:#FAF8F2;border-radius:2px;padding:20px;margin-bottom:44px;overflow-x:auto}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--border);margin-top:1px}
+.about-cell{background:var(--charcoal);padding:28px 24px}
+.about-cell h3{font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px}
+.about-cell p{font-size:12.5px;color:rgba(245,242,236,0.5);line-height:1.7}
+#lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:9999;align-items:center;justify-content:center;flex-direction:column}
+#lb.open{display:flex}
+#lb img{max-width:90vw;max-height:85vh;object-fit:contain}
+#lb-close{position:absolute;top:18px;right:22px;background:none;border:none;color:var(--cream);font-size:30px;cursor:pointer;opacity:.7;line-height:1}
+#lb-close:hover{opacity:1}
+#lb-cap{margin-top:12px;font-size:11px;color:var(--charcoal-light);letter-spacing:0.1em;text-transform:uppercase}
+@media(max-width:600px){header{padding:14px 16px}.content-block{padding:28px 16px}.plan-wrap{padding:24px 12px}.hero-caption h2{font-size:22px}}
+</style>
+</head>
+<body>
+<header>
+  <div><div class="brand-name">Sovereign Fields</div><div class="brand-sub">King Township · Ontario · Est. 2026</div></div>
+  <div class="header-right">13825 8th Concession Road<br>~50 Acres · Oak Ridges Moraine</div>
+</header>
+<nav class="primary" id="pnav">
+  <button class="tab-btn active" data-tab="site">Site &amp; Aerial</button>
+  <button class="tab-btn" data-tab="approach">Street Approach</button>
+  <button class="tab-btn" data-tab="elevations">Elevations</button>
+  <button class="tab-btn" data-tab="courtyard">Garden Courtyard</button>
+  <button class="tab-btn" data-tab="barnland">Barn &amp; Landscape</button>
+  <button class="tab-btn" data-tab="walkthrough">Cinematic Walkthrough</button>
+  <button class="tab-btn" data-tab="layout">Layout</button>
+  <button class="tab-btn" data-tab="interiors">Interior Rooms</button>
+  <button class="tab-btn" data-tab="wellness">Barn &amp; Wellness</button>
+  <button class="tab-btn" data-tab="about">About</button>
+</nav>
+<nav class="sub hidden" id="snav"></nav>
+<main>
+
+<!-- 1. SITE & AERIAL -->
+<div class="panel active" id="panel-site">
+  <div class="hero tall"><img src="https://donazz1.github.io/Sovereign-Feilds/34c730d1-88ff-4987-810c-b55fa85c30fa.jpg" alt="Aerial" onload="this.classList.add('loaded')">
+    <div class="hero-caption"><div class="rule"></div><h2>The Property</h2><p>~50 acres on the highest ridge crest · South-facing onto open farmland · Oak Ridges Moraine</p></div></div>
+  <div class="spec-strip">
+    <div class="spec-item"><div class="spec-label">Location</div><div class="spec-value">King Township, Ontario</div></div>
+    <div class="spec-item"><div class="spec-label">Site Area</div><div class="spec-value gold">~50 Acres</div></div>
+    <div class="spec-item"><div class="spec-label">Aspect</div><div class="spec-value">South-Facing · Farmland</div></div>
+    <div class="spec-item"><div class="spec-label">Zoning</div><div class="spec-value">Oak Ridges Moraine</div></div>
+    <div class="spec-item"><div class="spec-label">Access</div><div class="spec-value">Maple-Lined Drive</div></div>
+  </div>
+  <div class="content-block"><h2>Sited on the Ridge</h2><div class="gold-rule"></div><p>The property sits on the highest ridge crest, commanding uninterrupted views south onto open farmland. A weathered timber barn anchors the landscape. A maple-lined paved driveway with low fieldstone walls leads from the road to a generous entry forecourt.</p></div>
+</div>
+
+<!-- 2. STREET APPROACH -->
+<div class="panel" id="panel-approach">
+  <div class="hero tall"><img src="https://donazz1.github.io/Sovereign-Feilds/4551cad4-4f2e-4dc3-9089-695d5cc84f6e.jpg" alt="Street approach" onload="this.classList.add('loaded')">
+    <div class="hero-caption"><div class="rule"></div><h2>The Arrival</h2><p>Maple-lined approach · Low fieldstone walls · Lighted stone entry pillars</p></div></div>
+  <div class="content-block"><h2>The Driveway Sequence</h2><div class="gold-rule"></div><p>Mature maples line both sides of the paved approach, releasing gradually from structured landscape into the natural farmland beyond. Low fieldstone walls and lighted stone pillars mark the entry gate.</p></div>
+</div>
+
+<!-- 3. ELEVATIONS -->
+<div class="panel" id="panel-elevations">
+  <div class="sub-panel active" id="sub-front">
+    <div class="hero"><img src="https://donazz1.github.io/Sovereign-Feilds/elevation_front.jpg" alt="Front elevation" onload="this.classList.add('loaded')">
+      <div class="hero-caption"><div class="rule"></div><h2>Front Elevation — North · Entry Façade</h2><p>Single-story bungalow · White board-and-batten · Timber-post entry porch · Three-car garage wing to east</p></div></div>
+    <div class="spec-strip">
+      <div class="spec-item"><div class="spec-label">Form</div><div class="spec-value">Single-Story Bungalow</div></div>
+      <div class="spec-item"><div class="spec-label">Cladding</div><div class="spec-value">White Board &amp; Batten</div></div>
+      <div class="spec-item"><div class="spec-label">Roof</div><div class="spec-value">Matte Black Metal</div></div>
+      <div class="spec-item"><div class="spec-label">Windows</div><div class="spec-value">Black Steel Grid</div></div>
+      <div class="spec-item"><div class="spec-label">Size</div><div class="spec-value gold">~3,800–4,000 sq ft</div></div>
+    </div>
+  </div>
+  <div class="sub-panel" id="sub-rear">
+    <div class="hero"><img src="https://donazz1.github.io/Sovereign-Feilds/34c730d1-88ff-4987-810c-b55fa85c30fa.jpg" alt="Aerial south view" onload="this.classList.add('loaded')">
+      <div class="hero-caption"><div class="rule"></div><h2>Rear — South-Facing onto Farmland</h2><p>Z-compound aerial · Glass great room pavilion faces south · Open farmland expanse · Red barn in background</p></div></div>
+  </div>
+  <div class="sub-panel" id="sub-left">
+    <div class="hero"><img src="https://donazz1.github.io/Sovereign-Feilds/4551cad4-4f2e-4dc3-9089-695d5cc84f6e.jpg" alt="Driveway approach" onload="this.classList.add('loaded')">
+      <div class="hero-caption"><div class="rule"></div><h2>Driveway Approach</h2><p>Maple-lined entry · Fieldstone walls · House framed at golden hour through autumn maples</p></div></div>
+  </div>
+  <div class="sub-panel" id="sub-right">
+    <div class="hero" style="overflow:hidden">
+      <img src="https://donazz1.github.io/Sovereign-Feilds/elevation_front.jpg" alt="Garage wing" onload="this.classList.add('loaded')" style="object-position:left center;transform:scale(1.4);transform-origin:left center;">
+      <div class="hero-caption"><div class="rule"></div><h2>Garage Wing — East Side</h2><p>Three-car garage · Angled toward driveway · Black garage doors · Z-compound arrangement</p></div></div>
+  </div>
+</div>
+
+<!-- 4. GARDEN COURTYARD -->
+<div class="panel" id="panel-courtyard">
+  <div class="hero tall"><img src="https://imagine-public.x.ai/imagine-public/images/4d543bba-88ef-4d83-98ed-f6c080023bf3.jpg" alt="Garden courtyard" onload="this.classList.add('loaded')">
+    <div class="hero-caption"><div class="rule"></div><h2>Private Garden Courtyards</h2><p>Each bedroom has its own enclosed garden sanctuary · Black-framed French doors · Lavender, stone and light</p></div></div>
+  <div class="grid-2" style="margin-top:3px">
+    <div class="grid-card" onclick="openLb(this)"><img src="https://imagine-public.x.ai/imagine-public/images/4d543bba-88ef-4d83-98ed-f6c080023bf3.jpg" alt="Courtyard French doors" onload="this.classList.add('loaded')"><div class="card-label"><h3>A Private Micro-Garden Sanctuary</h3><p>Black-framed French doors · Lavender · Flowering perennials</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://imagine-public.x.ai/imagine-public/images/6a754f9f-0744-4d49-84e5-49f6ad27f106.jpg" alt="Inside the courtyard" onload="this.classList.add('loaded')"><div class="card-label"><h3>Standing Inside the Courtyard</h3><p>Flagstone paving · Timber bench · Lavender rows</p></div></div>
+  </div>
+  <div class="content-block"><h2>Five Private Gardens</h2><div class="gold-rule"></div><p>Each bedroom opens exclusively onto its own private garden courtyard through black-framed French doors. Lavender and white for the primary suite, herbs and sage green for bedroom three, meadow grass and stone for bedroom four, and a maple-view terrace for the study guest suite.</p></div>
+</div>
+
+<!-- 5. BARN & LANDSCAPE -->
+<div class="panel" id="panel-barnland">
+  <div class="hero tall"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg" alt="Barn" onload="this.classList.add('loaded')">
+    <div class="hero-caption"><div class="rule"></div><h2>The Barn &amp; Landscape</h2><p>Weathered timber barn preserved · Completely transformed interior · South-facing farmland views</p></div></div>
+  <div class="spec-strip">
+    <div class="spec-item"><div class="spec-label">Footprint</div><div class="spec-value gold">50 × 72 ft</div></div>
+    <div class="spec-item"><div class="spec-label">Orientation</div><div class="spec-value">Long Axis East–West</div></div>
+    <div class="spec-item"><div class="spec-label">Solar</div><div class="spec-value">30 kW · South Roof</div></div>
+    <div class="spec-item"><div class="spec-label">Wellness</div><div class="spec-value">South Wing</div></div>
+    <div class="spec-item"><div class="spec-label">Utility</div><div class="spec-value">North Wing</div></div>
+  </div>
+  <div class="grid-3" style="margin-top:3px">
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg" alt="Gym" onload="this.classList.add('loaded')"><div class="card-label"><h3>Gym Floor</h3><p>South Wing · Open to Farmland</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_sauna_coldplunge.jpg" alt="Sauna" onload="this.classList.add('loaded')"><div class="card-label"><h3>Sauna + Cold Plunge</h3><p>Cedar · Harvia · Glass to Farmland</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_zen_terrace.jpg" alt="Zen Terrace" onload="this.classList.add('loaded')"><div class="card-label"><h3>Zen Terrace</h3><p>Outdoor · Open Sky</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_changeroom.jpg" alt="Change Room" onload="this.classList.add('loaded')"><div class="card-label"><h3>Change Room</h3><p>Cedar Lockers · Rainfall Shower</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_workshop.jpg" alt="Workshop" onload="this.classList.add('loaded')"><div class="card-label"><h3>Workshop</h3><p>220V · North Entry</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_equipment.jpg" alt="Equipment" onload="this.classList.add('loaded')"><div class="card-label"><h3>Equipment Storage</h3><p>Powered Garage Door · North Wall</p></div></div>
+  </div>
+</div>
+
+<!-- 6. CINEMATIC WALKTHROUGH -->
+<div class="panel" id="panel-walkthrough">
+  <div class="sub-panel active" id="sub-wt-house">
+    <div class="wt-wrap">
+      <p class="wt-eyebrow">Cinematic Walkthrough</p>
+      <h2 class="wt-title">Property &amp; House</h2>
+      <div class="audio-box">
+        <p>Narrated walkthrough — property approach through interior</p>
+        <audio id="audio-house" controls><source src="https://donazz1.github.io/Sovereign-Feilds/13825-8th-concession-road-vimeo-audio-clean.mp3" type="audio/mpeg"></audio>
+        <button class="cinema-btn" onclick="launchCinema('audio-house','scenes-house')">▶ Launch Cinematic Mode</button>
+      </div>
+      <div class="scene-row" id="scenes-house">
+        <div class="scene on" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/4551cad4-4f2e-4dc3-9089-695d5cc84f6e.jpg" alt="Approach" onload="this.classList.add('loaded')"><div class="scene-lbl">Approach</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/34c730d1-88ff-4987-810c-b55fa85c30fa.jpg" alt="Aerial" onload="this.classList.add('loaded')"><div class="scene-lbl">Aerial</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/elevation_front.jpg" alt="Front" onload="this.classList.add('loaded')"><div class="scene-lbl">Front</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/34c730d1-88ff-4987-810c-b55fa85c30fa.jpg" alt="Rear South" onload="this.classList.add('loaded')"><div class="scene-lbl">Rear South</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/4551cad4-4f2e-4dc3-9089-695d5cc84f6e.jpg" alt="Approach" onload="this.classList.add('loaded')"><div class="scene-lbl">Bedroom Wing</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://imagine-public.x.ai/imagine-public/images/4d543bba-88ef-4d83-98ed-f6c080023bf3.jpg" alt="Courtyard" onload="this.classList.add('loaded')"><div class="scene-lbl">Courtyard</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_entry_hall.jpg" alt="Entry Hall" onload="this.classList.add('loaded')"><div class="scene-lbl">Entry Hall</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_great_room.jpg" alt="Great Room" onload="this.classList.add('loaded')"><div class="scene-lbl">Great Room</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_kitchen.jpg" alt="Kitchen" onload="this.classList.add('loaded')"><div class="scene-lbl">Kitchen</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_bedroom.jpg" alt="Primary" onload="this.classList.add('loaded')"><div class="scene-lbl">Primary</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="sub-panel" id="sub-wt-barn">
+    <div class="wt-wrap">
+      <p class="wt-eyebrow">Cinematic Walkthrough</p>
+      <h2 class="wt-title">Barn &amp; Wellness</h2>
+      <div class="audio-box">
+        <p>Narrated walkthrough — barn compound &amp; wellness circuit</p>
+        <audio id="audio-barn" controls><source src="https://donazz1.github.io/Sovereign-Feilds/13825-8th-concession-road-vimeo-audio-clean.mp3" type="audio/mpeg"></audio>
+        <button class="cinema-btn" onclick="launchCinema('audio-barn','scenes-barn')">▶ Launch Cinematic Mode</button>
+      </div>
+      <div class="scene-row" id="scenes-barn">
+        <div class="scene on" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg" alt="Gym" onload="this.classList.add('loaded')"><div class="scene-lbl">Gym</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_sauna_coldplunge.jpg" alt="Sauna" onload="this.classList.add('loaded')"><div class="scene-lbl">Sauna</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_zen_terrace.jpg" alt="Zen" onload="this.classList.add('loaded')"><div class="scene-lbl">Zen Terrace</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_changeroom.jpg" alt="Change" onload="this.classList.add('loaded')"><div class="scene-lbl">Change Room</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_workshop.jpg" alt="Workshop" onload="this.classList.add('loaded')"><div class="scene-lbl">Workshop</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. LAYOUT -->
+<div class="panel" id="panel-layout">
+  <div class="plan-wrap">
+    <div class="plan-title">House Floor Plan — Z-Compound · ~3,800–4,000 sq ft</div>
+    <div class="plan-box">
+      <svg width="100%" viewBox="0 0 820 480" xmlns="http://www.w3.org/2000/svg">
+        <defs><style>.pl{font-family:-apple-system,Arial,sans-serif;font-size:11px;fill:#2C2B28;font-weight:600}.ps{font-family:-apple-system,Arial,sans-serif;font-size:9px;fill:#6B6A64}.pd{font-family:-apple-system,Arial,sans-serif;font-size:8px;fill:#B8963E}</style></defs>
+        <g transform="translate(780,40)"><circle cx="0" cy="0" r="18" fill="none" stroke="#2C2B28" stroke-width="1"/><polygon points="0,-14 -5,8 0,4 5,8" fill="#2C2B28"/><polygon points="0,14 -5,-8 0,-4 5,-8" fill="#C8C5BC"/><text x="0" y="-19" text-anchor="middle" class="ps">N</text></g>
+        <rect x="20" y="200" width="460" height="240" fill="#F0EDE5" stroke="#2C2B28" stroke-width="1.5"/>
+        <rect x="30" y="210" width="220" height="170" fill="#E8F0EC" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="140" y="293" text-anchor="middle" class="pl">Great Room</text>
+        <text x="140" y="308" text-anchor="middle" class="ps">Glass pavilion · south view</text>
+        <rect x="30" y="372" width="220" height="5" fill="#C8E0E8" stroke="#5A9FB8" stroke-width="0.8"/>
+        <rect x="260" y="210" width="160" height="100" fill="#F0EDE5" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="340" y="256" text-anchor="middle" class="pl">Kitchen</text>
+        <text x="340" y="271" text-anchor="middle" class="ps">Wolf 60" · Calacatta marble</text>
+        <rect x="260" y="318" width="160" height="112" fill="#EDE9E0" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="340" y="378" text-anchor="middle" class="pl">Dining</text>
+        <rect x="430" y="210" width="40" height="80" fill="#E0DDD4" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="450" y="253" text-anchor="middle" class="ps" transform="rotate(-90,450,253)">Pantry</text>
+        <text x="240" y="194" text-anchor="middle" class="pd" letter-spacing="2">LIVING WING</text>
+        <rect x="480" y="40" width="300" height="400" fill="#F0EDE5" stroke="#2C2B28" stroke-width="1.5"/>
+        <rect x="480" y="200" width="300" height="28" fill="#D6D3C8" stroke="#2C2B28" stroke-width="0.6"/>
+        <text x="630" y="218" text-anchor="middle" class="ps">Corridor</text>
+        <rect x="490" y="50" width="140" height="140" fill="#EDE5DC" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="560" y="118" text-anchor="middle" class="pl">Primary Suite</text>
+        <rect x="640" y="50" width="130" height="140" fill="#E8E0EC" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="705" y="118" text-anchor="middle" class="pl">Bedroom 2</text>
+        <text x="705" y="133" text-anchor="middle" class="ps">Lavender Room</text>
+        <rect x="490" y="236" width="130" height="110" fill="#E0EAE0" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="555" y="294" text-anchor="middle" class="pl">Bedroom 3</text>
+        <text x="555" y="308" text-anchor="middle" class="ps">Sage Room</text>
+        <rect x="630" y="236" width="140" height="110" fill="#E8E4DC" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="700" y="294" text-anchor="middle" class="pl">Bedroom 4</text>
+        <text x="700" y="308" text-anchor="middle" class="ps">Stone Room</text>
+        <rect x="490" y="354" width="280" height="76" fill="#EDE8E0" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="630" y="396" text-anchor="middle" class="pl">Bedroom 5 — Study / Guest</text>
+        <text x="630" y="34" text-anchor="middle" class="pd" letter-spacing="2">BEDROOM CORRIDOR</text>
+        <rect x="20" y="20" width="200" height="162" fill="#F0EDE5" stroke="#2C2B28" stroke-width="1.5"/>
+        <rect x="30" y="30" width="56" height="142" fill="#E0DDD4" stroke="#2C2B28" stroke-width="0.6"/>
+        <text x="58" y="103" text-anchor="middle" class="ps">Bay 1</text>
+        <rect x="96" y="30" width="56" height="142" fill="#E0DDD4" stroke="#2C2B28" stroke-width="0.6"/>
+        <text x="124" y="103" text-anchor="middle" class="ps">Bay 2</text>
+        <rect x="162" y="30" width="48" height="142" fill="#DDD9CF" stroke="#2C2B28" stroke-width="0.6"/>
+        <text x="186" y="103" text-anchor="middle" class="ps">Bay 3</text>
+        <rect x="230" y="20" width="80" height="100" fill="#E8E4DC" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="270" y="73" text-anchor="middle" class="pl">Mudroom</text>
+        <text x="110" y="14" text-anchor="middle" class="pd" letter-spacing="2">GARAGE WING</text>
+        <line x1="20" y1="468" x2="120" y2="468" stroke="#B8963E" stroke-width="1"/><line x1="20" y1="464" x2="20" y2="472" stroke="#B8963E" stroke-width="1"/><line x1="120" y1="464" x2="120" y2="472" stroke="#B8963E" stroke-width="1"/>
+        <text x="70" y="478" text-anchor="middle" class="pd">~40 ft</text>
+      </svg>
+    </div>
+    <div class="plan-title">Barn Floor Plan — 50 × 72 ft · Long Axis East–West</div>
+    <div class="plan-box">
+      <svg width="100%" viewBox="0 0 820 390" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="hatch" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#B8B5AC" stroke-width="1.2"/></pattern><style>.pl{font-family:-apple-system,Arial,sans-serif;font-size:11px;fill:#2C2B28;font-weight:600}.ps{font-family:-apple-system,Arial,sans-serif;font-size:9px;fill:#6B6A64}.pd{font-family:-apple-system,Arial,sans-serif;font-size:8px;fill:#B8963E}</style></defs>
+        <rect x="40" y="40" width="720" height="280" fill="none" stroke="#2C2B28" stroke-width="2.5" rx="4"/>
+        <rect x="40" y="172" width="720" height="8" fill="url(#hatch)" stroke="#2C2B28" stroke-width="1"/>
+        <text x="410" y="167" text-anchor="middle" class="ps">insulated separation wall — independent ventilation</text>
+        <rect x="50" y="50" width="330" height="112" fill="#E8E4DC" stroke="#2C2B28" stroke-width="1"/>
+        <text x="215" y="101" text-anchor="middle" class="pl">Workshop</text>
+        <text x="215" y="116" text-anchor="middle" class="ps">~700 sq ft · 220V · epoxy floor</text>
+        <rect x="140" y="47" width="60" height="5" fill="#C8E0E8" stroke="#5A9FB8" stroke-width="0.8"/>
+        <rect x="390" y="50" width="360" height="112" fill="#E0DDD4" stroke="#2C2B28" stroke-width="1"/>
+        <text x="570" y="101" text-anchor="middle" class="pl">Equipment Storage</text>
+        <text x="570" y="116" text-anchor="middle" class="ps">Tractor · mower · plow · maintenance</text>
+        <rect x="480" y="47" width="140" height="5" fill="#C8E0E8" stroke="#5A9FB8" stroke-width="1"/>
+        <text x="550" y="42" text-anchor="middle" class="ps" fill="#3A6E8A">powered garage door</text>
+        <text x="410" y="36" text-anchor="middle" class="pd" letter-spacing="1.5">UTILITY WING — NORTH</text>
+        <rect x="50" y="190" width="340" height="112" fill="#EAF0E8" stroke="#2C2B28" stroke-width="1"/>
+        <text x="220" y="241" text-anchor="middle" class="pl">Gym Floor</text>
+        <text x="220" y="256" text-anchor="middle" class="ps">~1,200 sq ft · rubber flooring · exposed timber</text>
+        <rect x="80" y="298" width="200" height="5" fill="#C8E0E8" stroke="#5A9FB8" stroke-width="1"/>
+        <text x="180" y="314" text-anchor="middle" class="ps" fill="#3A6E8A">wide bifold → farmland</text>
+        <rect x="400" y="190" width="200" height="78" fill="#E4EDE8" stroke="#2C2B28" stroke-width="1"/>
+        <text x="500" y="225" text-anchor="middle" class="pl">Sauna + Cold Plunge</text>
+        <text x="500" y="240" text-anchor="middle" class="ps">~500 sq ft · cedar · Harvia</text>
+        <rect x="410" y="264" width="120" height="5" fill="#C8E0E8" stroke="#5A9FB8" stroke-width="1"/>
+        <text x="470" y="278" text-anchor="middle" class="ps" fill="#3A6E8A">glass slider → zen terrace</text>
+        <rect x="610" y="190" width="140" height="78" fill="#EDE8E0" stroke="#2C2B28" stroke-width="1"/>
+        <text x="680" y="225" text-anchor="middle" class="pl">Change Room</text>
+        <text x="680" y="240" text-anchor="middle" class="ps">~300 sq ft</text>
+        <rect x="400" y="275" width="350" height="27" fill="none" stroke="#C8C5BC" stroke-width="0.5" stroke-dasharray="4 3" rx="2"/>
+        <text x="575" y="293" text-anchor="middle" class="ps">circulation ~200 sq ft</text>
+        <rect x="400" y="310" width="180" height="54" fill="none" stroke="#7A9478" stroke-width="1.2" stroke-dasharray="5 4" rx="3"/>
+        <text x="490" y="337" text-anchor="middle" class="ps" fill="#7A9478">zen terrace (outdoor · open sky)</text>
+        <text x="410" y="376" text-anchor="middle" class="pd" letter-spacing="1.5">WELLNESS WING — SOUTH</text>
+        <line x1="40" y1="382" x2="760" y2="382" stroke="#B8963E" stroke-width="0.8"/>
+        <line x1="40" y1="378" x2="40" y2="386" stroke="#B8963E" stroke-width="0.8"/>
+        <line x1="760" y1="378" x2="760" y2="386" stroke="#B8963E" stroke-width="0.8"/>
+        <text x="400" y="390" text-anchor="middle" class="pd">72 ft east–west</text>
+        <line x1="786" y1="40" x2="786" y2="320" stroke="#B8963E" stroke-width="0.8"/>
+        <line x1="782" y1="40" x2="790" y2="40" stroke="#B8963E" stroke-width="0.8"/>
+        <line x1="782" y1="320" x2="790" y2="320" stroke="#B8963E" stroke-width="0.8"/>
+        <text x="808" y="183" text-anchor="middle" class="pd" transform="rotate(90,808,183)">50 ft</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- 8. INTERIOR ROOMS -->
+<div class="panel" id="panel-interiors">
+  <div class="hero"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_great_room.jpg" alt="Great Room" onload="this.classList.add('loaded')">
+    <div class="hero-caption"><div class="rule"></div><h2>Interior Rooms</h2><p>White shiplap vaulted ceilings · Wide plank white oak floors · Brass hardware throughout</p></div></div>
+  <div class="grid-3" style="margin-top:3px">
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_great_room.jpg" alt="Great Room" onload="this.classList.add('loaded')"><div class="card-label"><h3>Great Room</h3><p>Glass Pavilion · South Farmland View</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_kitchen.jpg" alt="Kitchen" onload="this.classList.add('loaded')"><div class="card-label"><h3>Kitchen</h3><p>Sage Green Island · Wolf 60" · Calacatta Marble</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_kitchen_dining.jpg" alt="Kitchen Dining" onload="this.classList.add('loaded')"><div class="card-label"><h3>Kitchen &amp; Dining</h3><p>Open Plan · Brass Pendants</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_bedroom.jpg" alt="Primary Suite" onload="this.classList.add('loaded')"><div class="card-label"><h3>Primary Suite</h3><p>Putty Plaster · Capiz Chandelier · Gas Fireplace</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_ensuite.jpg" alt="Primary En Suite" onload="this.classList.add('loaded')"><div class="card-label"><h3>Primary En Suite</h3><p>Bleached Oak Vanity · Soaking Tub · Brass</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_suite.jpg" alt="Primary Suite View" onload="this.classList.add('loaded')"><div class="card-label"><h3>Primary Suite — View</h3><p>French Doors · Lavender Courtyard</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_bedrooms_2_5.jpg" alt="Guest Bedrooms" onload="this.classList.add('loaded')"><div class="card-label"><h3>Guest Bedrooms 2–5</h3><p>Each Bespoke · Own Colour &amp; Courtyard</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_entry_hall.jpg" alt="Entry Hall" onload="this.classList.add('loaded')"><div class="card-label"><h3>Entry Hall</h3><p>Arrival Sequence · White Shiplap · Brass</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_garage_mudroom.jpg" alt="Mudroom" onload="this.classList.add('loaded')"><div class="card-label"><h3>Garage Mudroom</h3><p>Heated Slate · Full-Height Lockers · Dog Wash</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_veranda_firepit.jpg" alt="Veranda" onload="this.classList.add('loaded')"><div class="card-label"><h3>Veranda &amp; Fire Pit</h3><p>Covered Veranda · Gas Fire · Pool Outlook</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_study_guest.jpg" alt="Study" onload="this.classList.add('loaded')"><div class="card-label"><h3>Study / Guest Suite</h3><p>Built-in Oak Desk · Brass · Maple View</p></div></div>
+  </div>
+  <div class="content-block"><h2>Design Language</h2><div class="gold-rule"></div>
+    <ul class="rule-list">
+      <li>White shiplap vaulted ceilings with white painted timber beams throughout</li>
+      <li>Wide plank white oak floors throughout — no exceptions</li>
+      <li>Black-framed steel grid windows and French doors throughout</li>
+      <li>Brass hardware throughout — fixtures, knobs, pulls, pot fillers</li>
+      <li>Warm putty/greige plaster walls in living and bedroom areas</li>
+      <li>No arches anywhere — clean rectangular openings throughout</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 9. BARN & WELLNESS -->
+<div class="panel" id="panel-wellness">
+  <div class="hero"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg" alt="Barn Wellness" onload="this.classList.add('loaded')">
+    <div class="hero-caption"><div class="rule"></div><h2>Barn &amp; Wellness</h2><p>50 × 72 ft · Long axis east–west · South wall faces open farmland</p></div></div>
+  <div class="spec-strip">
+    <div class="spec-item"><div class="spec-label">Gym</div><div class="spec-value gold">~1,200 sq ft</div></div>
+    <div class="spec-item"><div class="spec-label">Sauna + Plunge</div><div class="spec-value">~500 sq ft</div></div>
+    <div class="spec-item"><div class="spec-label">Change Room</div><div class="spec-value">~300 sq ft</div></div>
+    <div class="spec-item"><div class="spec-label">Workshop + Equipment</div><div class="spec-value">~1,400 sq ft</div></div>
+    <div class="spec-item"><div class="spec-label">Solar Array</div><div class="spec-value">30 kW · South Roof</div></div>
+  </div>
+  <div class="grid-3" style="margin-top:3px">
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg" alt="Gym" onload="this.classList.add('loaded')"><div class="card-label"><h3>Gym Floor</h3><p>~1,200 sq ft · Bifold to Farmland</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_sauna_coldplunge.jpg" alt="Sauna" onload="this.classList.add('loaded')"><div class="card-label"><h3>Sauna + Cold Plunge</h3><p>Cedar · Harvia · Glass to Farmland</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_zen_terrace.jpg" alt="Zen Terrace" onload="this.classList.add('loaded')"><div class="card-label"><h3>Zen Meditation Terrace</h3><p>Outdoor · Open Sky · Stone Daybed</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_changeroom.jpg" alt="Change Room" onload="this.classList.add('loaded')"><div class="card-label"><h3>Change Room + Shower</h3><p>Cedar Lockers · Rainfall Shower · Brass</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_workshop.jpg" alt="Workshop" onload="this.classList.add('loaded')"><div class="card-label"><h3>Workshop</h3><p>220V · Heavy Workbenches · North Entry</p></div></div>
+    <div class="grid-card" onclick="openLb(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_equipment.jpg" alt="Equipment Storage" onload="this.classList.add('loaded')"><div class="card-label"><h3>Equipment Storage</h3><p>Powered Garage Door · Tractor · Mower</p></div></div>
+  </div>
+  <div class="content-block"><h2>The Wellness Circuit</h2><div class="gold-rule"></div><p>Sauna → cold plunge → zen terrace → open farmland. Cedar dry sauna seats four with Harvia heater. Cold plunge chills to 10–15°C. Sliding glass on the full south wall opens onto the farmland. The outdoor zen terrace is completely open to sky with a fieldstone meditation daybed and shallow water basin.</p>
+    <ul class="rule-list" style="margin-top:18px">
+      <li>Full insulated wall separates wellness from utility — no sound, no smell crossover</li>
+      <li>Independent ventilation — negative pressure on utility side</li>
+      <li>30 kW solar array on south-facing barn roof — ~75 panels</li>
+      <li>Starlink on barn roof — automatic failover if fiber down</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 10. ABOUT -->
+<div class="panel" id="panel-about">
+  <div class="content-block"><h2>Sovereign Fields</h2><div class="gold-rule"></div><p>A modern farmhouse bungalow compound on ~50 acres in King Township, Ontario. Single-story Z-compound facing due south onto open farmland on the Oak Ridges Moraine. Developed as a long-term family retreat for the Azzopardi family.</p></div>
+  <div class="about-grid">
+    <div class="about-cell"><h3>The House</h3><p>Single-story bungalow · 3,800–4,000 sq ft · 5 bedrooms with private garden courtyards · Z-compound wing arrangement · Glass-walled great room pavilion</p></div>
+    <div class="about-cell"><h3>Design Language</h3><p>White shiplap vaulted ceilings · Wide plank white oak · Black steel grid windows · Brass hardware · No arches — rectangular openings throughout</p></div>
+    <div class="about-cell"><h3>The Barn</h3><p>50 × 72 ft · Wellness wing south · Utility wing north · Gym, sauna, cold plunge, zen terrace, workshop, equipment storage · 30 kW solar</p></div>
+    <div class="about-cell"><h3>Energy</h3><p>30 kW solar · 3× Tesla Powerwall 3 · Ontario net metering · 400 amp service · 3× EV chargers · Hydronic heated entry court</p></div>
+    <div class="about-cell"><h3>Property</h3><p>13825 8th Concession Road · King Township, Ontario · Oak Ridges Moraine · Maple-lined driveway · Fieldstone walls · Ridge crest site</p></div>
+    <div class="about-cell"><h3>Family</h3><p>Don &amp; Kathy Azzopardi with Lily, William, Jessi, and Clinton · King Township · June 2026</p></div>
+  </div>
+  <div class="content-block"><p style="font-size:11px;color:rgba(245,242,236,0.2);letter-spacing:0.06em">Sovereign Fields · Master Planning Document · June 2026 · Confidential</p></div>
+</div>
+</main>
+
+<div id="lb" onclick="closeLb(event)">
+  <button id="lb-close" onclick="closeLb()">×</button>
+  <img id="lb-img" src="" alt="">
+  <div id="lb-cap"></div>
+</div>
+
+<script>
+const subCfg={
+  site:[],approach:[],courtyard:[],barnland:[],layout:[],interiors:[],wellness:[],about:[],
+  elevations:[{id:'front',label:'Front (North)'},{id:'rear',label:'Rear (South · Farmland)'},{id:'left',label:'Driveway Approach'},{id:'right',label:'Garage Wing (East)'}],
+  walkthrough:[{id:'wt-house',label:'Property & House'},{id:'wt-barn',label:'Barn & Wellness'}]
+};
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const t=btn.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+    document.getElementById('panel-'+t).classList.add('active');
+    buildSub(t);
+  });
+});
+function buildSub(t){
+  const snav=document.getElementById('snav');
+  const cfg=subCfg[t]||[];
+  snav.innerHTML='';
+  if(!cfg.length){snav.classList.add('hidden');return;}
+  snav.classList.remove('hidden');
+  cfg.forEach((s,i)=>{
+    const b=document.createElement('button');
+    b.className='sub-btn'+(i===0?' active':'');
+    b.textContent=s.label;
+    b.addEventListener('click',()=>{
+      snav.querySelectorAll('.sub-btn').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      document.querySelectorAll('#panel-'+t+' .sub-panel').forEach(p=>p.classList.remove('active'));
+      document.getElementById('sub-'+s.id).classList.add('active');
+    });
+    snav.appendChild(b);
+  });
+}
+buildSub('site');
+function setScene(el){
+  el.closest('.scene-row').querySelectorAll('.scene').forEach(s=>s.classList.remove('on'));
+  el.classList.add('on');
+}
+function launchCinema(audioId,sceneRowId){
+  const audioEl=document.getElementById(audioId);
+  const sceneRow=document.getElementById(sceneRowId);
+  const scenes=Array.from(sceneRow.querySelectorAll('.scene img')).map(i=>i.src);
+  let idx=0,timer=null;
+  const overlay=document.createElement('div');
+  overlay.style.cssText='position:fixed;inset:0;background:#000;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;';
+  const img=document.createElement('img');
+  img.style.cssText='max-width:100vw;max-height:88vh;object-fit:contain;transition:opacity 0.8s;';
+  img.src=scenes[0];
+  const counter=document.createElement('div');
+  counter.style.cssText='position:absolute;bottom:60px;left:0;right:0;text-align:center;color:rgba(255,255,255,0.4);font-size:11px;letter-spacing:0.15em;font-family:-apple-system,sans-serif;text-transform:uppercase;';
+  counter.textContent='1 / '+scenes.length;
+  const closeBtn=document.createElement('button');
+  closeBtn.textContent='✕  Exit Cinematic';
+  closeBtn.style.cssText='position:absolute;top:20px;right:24px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:8px 18px;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:-apple-system,sans-serif;';
+  function showFrame(i){
+    idx=(i+scenes.length)%scenes.length;
+    img.style.opacity='0';
+    setTimeout(()=>{img.src=scenes[idx];img.style.opacity='1';},500);
+    counter.textContent=(idx+1)+' / '+scenes.length;
+  }
+  function cleanup(){
+    clearInterval(timer);
+    audioEl.pause();
+    audioEl.currentTime=0;
+    document.body.removeChild(overlay);
+  }
+  closeBtn.onclick=cleanup;
+  overlay.appendChild(img);
+  overlay.appendChild(counter);
+  overlay.appendChild(closeBtn);
+  document.body.appendChild(overlay);
+  audioEl.currentTime=0;
+  audioEl.play().catch(()=>{});
+  timer=setInterval(()=>showFrame(idx+1),4000);
+  document.addEventListener('keydown',function esc(e){if(e.key==='Escape'){cleanup();document.removeEventListener('keydown',esc);}});
+}
+function openLb(card){
+  const img=card.querySelector('img');
+  const h3=card.querySelector('h3');
+  if(!img||!img.src)return;
+  document.getElementById('lb-img').src=img.src;
+  document.getElementById('lb-cap').textContent=h3?h3.textContent:'';
+  document.getElementById('lb').classList.add('open');
+}
+function closeLb(e){
+  if(!e||e.target===document.getElementById('lb')||e.target.id==='lb-close'){
+    document.getElementById('lb').classList.remove('open');
+  }
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('lb').classList.remove('open');});
+</script>
+</body>
+</html>
