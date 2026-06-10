@@ -134,6 +134,8 @@ audio{width:100%}
   <button class="tab-btn" data-tab="interiors">Interior Rooms</button>
   <button class="tab-btn" data-tab="wellness">Barn &amp; Wellness</button>
   <button class="tab-btn" data-tab="pool">Pool &amp; Outdoor</button>
+  <button class="tab-btn" data-tab="pergola">Al Fresco Pergola</button>
+  <button class="tab-btn" data-tab="garden">Kitchen Garden</button>
   <button class="tab-btn" data-tab="robotaxi">Robotaxi Depot</button>
   <button class="tab-btn" data-tab="budget">Budget &amp; Materials</button>
   <button class="tab-btn" data-tab="about">About</button>
@@ -467,6 +469,14 @@ audio{width:100%}
         <rect x="180" y="462" width="108" height="44" rx="3" fill="#D4B896" fill-opacity="0.3" stroke="#B8963E" stroke-width="0.5" stroke-dasharray="3 2"/>
         <text x="234" y="480" text-anchor="middle" class="ss" fill="#B8963E">fire pit terrace</text>
         <text x="234" y="492" text-anchor="middle" class="ss" fill="#B8963E">+ hot tub</text>
+        <!-- Al Fresco Pergola — east of mudroom off kitchen garden -->
+        <rect x="618" y="340" width="100" height="80" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1" stroke-dasharray="5 3"/>
+        <text x="668" y="372" text-anchor="middle" class="sl" fill="#27500A">Pergola</text>
+        <text x="668" y="384" text-anchor="middle" class="ss" fill="#3B6D11">al fresco dining</text>
+        <text x="668" y="395" text-anchor="middle" class="ss" fill="#3B6D11">vine canopy · fans</text>
+        <!-- Path from mudroom to pergola -->
+        <path d="M613 370 Q600 365 580 362" fill="none" stroke="#3B6D11" stroke-width="1.5" stroke-dasharray="4 3" stroke-linecap="round"/>
+        <text x="594" y="357" text-anchor="middle" class="ss" fill="#3B6D11">kitchen path</text>
 
         <!-- Pool south of living wing east side -->
         <rect x="296" y="462" width="118" height="68" rx="4" fill="#B5D4F4" stroke="#185FA5" stroke-width="0.8"/>
@@ -609,6 +619,16 @@ audio{width:100%}
       <li>Starlink on barn roof — automatic failover if fiber down</li>
     </ul>
   </div>
+
+<div style="margin:0 0 0;padding:16px 32px 0">
+  <div style="border:0.5px solid rgba(184,150,62,0.25);border-radius:8px;overflow:hidden;max-width:600px">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(184,150,62,0.08);border-bottom:0.5px solid rgba(184,150,62,0.2)">
+      <span style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light)">Barn &amp; Wellness — Est. Cost</span>
+      <span style="font-size:14px;font-weight:500;color:var(--gold-light)">~$610,000</span>
+    </div>
+    <table style="width:100%;border-collapse:collapse"><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Structure &amp; shell renovation</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$320,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Gym · sauna · cold plunge · zen terrace</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$193,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Change room + shower</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$55,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Workshop &amp; equipment storage</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$42,000</td></tr></table>
+  </div>
+</div>
 </div>
 
 <!-- 10. POOL & OUTDOOR -->
@@ -644,6 +664,150 @@ audio{width:100%}
       <li><strong style="color:var(--gold-light)">Wildflower Meadow</strong> — beyond pool zone, native Ontario wildflowers, stone walls, hedgerows, open farmland</li>
     </ul>
   </div>
+</div>
+
+<!-- AL FRESCO PERGOLA -->
+<div class="panel" id="panel-pergola">
+<div class="carousel" id="carousel-pergola">
+<div class="car-stage">
+  <img src="https://donazz1.github.io/Sovereign-Feilds/pergola_exterior.png" alt="Al Fresco Pergola" onload="this.classList.add('loaded')">
+  <button class="car-arrow car-arrow-left" onclick="carMove('pergola',-1)">&#8249;</button>
+  <button class="car-arrow car-arrow-right" onclick="carMove('pergola',1)">&#8250;</button>
+  <div class="car-stage-caption"><h3>Al Fresco Dining Pergola</h3><p>Rustic harvest table · Bistro seating · Living vine canopy · Farmland views · Golden hour</p></div>
+</div>
+<div style="display:none">
+  <div class="car-slide active" data-title="Al Fresco Dining Pergola" data-sub="Rustic harvest table · Bistro seating · Living vine canopy · Farmland views"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_exterior.png"></div>
+  <div class="car-slide" data-title="Inside the Pergola" data-sub="Douglas fir and black steel · Infrared heaters · Ceiling fans · Pendant lighting · Open farmland horizon"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_interior.png"></div>
+</div>
+<div class="car-thumbs">
+  <div class="car-thumb active-thumb" onclick="carGo('pergola',0)"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_exterior.png" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Pergola · Bistro View</div></div>
+  <div class="car-thumb" onclick="carGo('pergola',1)"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_interior.png" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Interior · Long View</div></div>
+</div>
+</div>
+  <div class="spec-strip">
+    <div class="spec-item"><div class="spec-label">Structure</div><div class="spec-value gold">Douglas Fir + Black Steel</div></div>
+    <div class="spec-item"><div class="spec-label">Canopy</div><div class="spec-value">Living Vine Trellis</div></div>
+    <div class="spec-item"><div class="spec-label">Floor</div><div class="spec-value">Flagstone</div></div>
+    <div class="spec-item"><div class="spec-label">Heating</div><div class="spec-value">Infrared Ceiling Mount</div></div>
+    <div class="spec-item"><div class="spec-label">Location</div><div class="spec-value">Kitchen Garden · East of Mudroom</div></div>
+  </div>
+  <div class="content-block">
+    <h2>The Pergola</h2><div class="gold-rule"></div>
+    <p>A Douglas fir and black steel pergola with an open lattice trellis roof positioned just off the kitchen garden, east of the mudroom. Completely open on all four sides — the farmland view is visible from every seat. A short flagstone path through the herb garden connects it directly to the kitchen. In early spring the open trellis lets full sun through. By June the vines have filled in creating a dense natural living canopy. By October the leaves drop, opening it back up to sky.</p>
+    <ul class="rule-list" style="margin-top:20px">
+      <li><strong style="color:var(--gold-light)">Structure</strong> — Douglas fir timber posts and beams · black steel lattice trellis roof · no walls, completely open on all four sides · farmland view from every seat</li>
+      <li><strong style="color:var(--gold-light)">Living Canopy</strong> — hops or Virginia creeper trained through trellis · bare in spring (open sky dining) · full canopy June–September · brilliant red fall colour · dormant and open through winter</li>
+      <li><strong style="color:var(--gold-light)">Lighting</strong> — Lutron-controlled outdoor zone · warm pendant lights hanging from trellis beams · string lights woven through vines · dimmable scenes via Control4 (dinner mode, ambient mode)</li>
+      <li><strong style="color:var(--gold-light)">Ceiling Fans</strong> — 4× large black ceiling-mount fans on trellis beams · dual purpose: summer air circulation and evening insect deterrent · Control4 "insect mode" runs all fans at medium speed from app</li>
+      <li><strong style="color:var(--gold-light)">Infrared Heaters</strong> — 4–6× ceiling-mount infrared units bolted to trellis beams · heat occupants directly not the air, so wind doesn't steal warmth · extends season into October and from April · Control4 zone on/off from app</li>
+      <li><strong style="color:var(--gold-light)">Seating</strong> — one or two long harvest tables · estate dining format · not café-style small tables · seats 10–16 comfortably</li>
+      <li><strong style="color:var(--gold-light)">Floor</strong> — flagstone matching house and veranda · low fieldstone border walls optional on north and east sides for wind break without enclosing the space</li>
+      <li><strong style="color:var(--gold-light)">Kitchen Connection</strong> — flagstone path through herb garden to mudroom · 20–30 steps from kitchen to table · outdoor kitchen nearby</li>
+    </ul>
+  </div>
+  <div class="content-block" style="padding-top:0">
+    <h2>Smart Home Integration</h2><div class="gold-rule"></div>
+    <ul class="rule-list">
+      <li>Lutron outdoor lighting zone — pergola pendant and string lights · dimmable · scene-programmable</li>
+      <li>Control4 pergola zone — fans, infrared heaters, and lighting all on single zone · app controllable</li>
+      <li>"Dinner scene" — lights at 60%, heaters on, fans low · one tap from phone</li>
+      <li>"Insect mode" — all fans at medium speed · triggered from Control4 app or voice</li>
+      <li>"Evening wind-down" — lights at 20%, heaters on full, fans off</li>
+      <li>Irrigation drip lines extended from kitchen garden to vine planters at each pergola post</li>
+    </ul>
+  </div>
+
+<div style="margin:0 0 0;padding:16px 32px 32px">
+  <div style="border:0.5px solid rgba(184,150,62,0.25);border-radius:8px;overflow:hidden;max-width:600px">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(184,150,62,0.08);border-bottom:0.5px solid rgba(184,150,62,0.2)">
+      <span style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light)">Al Fresco Pergola — Est. Cost</span>
+      <span style="font-size:14px;font-weight:500;color:var(--gold-light)">~$81,500</span>
+    </div>
+    <table style="width:100%;border-collapse:collapse"><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Structure · Douglas fir timber · black steel lattice trellis</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$28,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Flagstone floor · low fieldstone border walls</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$18,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">4× infrared ceiling heaters · Control4 zone</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$10,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">4× black ceiling fans · Control4 controlled</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$6,500</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Lighting · Lutron pendants · string lights · dimmable</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$8,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Vines · rustic harvest table · bistro tables · bench seating</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$11,000</td></tr></table>
+  </div>
+</div>
+</div>
+
+<!-- KITCHEN GARDEN & GREENHOUSE -->
+<div class="panel" id="panel-garden">
+  <div class="hero tall">
+    <img src="https://donazz1.github.io/Sovereign-Feilds/kitchen_garden.png" alt="Kitchen garden and greenhouse" onload="this.classList.add('loaded')">
+    <div class="hero-caption"><div class="rule"></div><h2>Kitchen Garden &amp; Greenhouse</h2><p>Heated greenhouse · Waist-height raised beds · Small orchard · Stone path from house · Render coming</p></div>
+  </div>
+  <div class="spec-strip">
+    <div class="spec-item"><div class="spec-label">Greenhouse</div><div class="spec-value gold">16 × 24 ft · Heated</div></div>
+    <div class="spec-item"><div class="spec-label">Raised Beds</div><div class="spec-value">4–6 · Waist Height · Cedar</div></div>
+    <div class="spec-item"><div class="spec-label">Orchard</div><div class="spec-value">6–8 Fruit Trees</div></div>
+    <div class="spec-item"><div class="spec-label">Irrigation</div><div class="spec-value">Drip Lines · Smart Controller</div></div>
+    <div class="spec-item"><div class="spec-label">Location</div><div class="spec-value">East Side · ~150m from House</div></div>
+  </div>
+  <div class="content-block">
+    <h2>The Greenhouse</h2><div class="gold-rule"></div>
+    <p>A clean black aluminum frame greenhouse — 16×24 ft — anchoring the north end of the kitchen garden zone so it doesn't shade the growing beds. Double-glazed polycarbonate panels for better insulation than glass in Ontario winters. Heated with a small electric unit, plumbed with water, integrated with the property smart system. Big enough to grow seedlings in early spring, overwinter tender plants, and serve as a warm green sanctuary on a February day.</p>
+    <ul class="rule-list" style="margin-top:20px">
+      <li>16×24 ft · black aluminum frame · double-glazed polycarbonate panels · gable roof</li>
+      <li>Heated — electric unit with thermostat · integrated with Control4 for remote temperature monitoring</li>
+      <li>Plumbed — cold water line · drip irrigation inside · floor drain</li>
+      <li>Potting bench along one wall · cedar shelving for seedling trays · hanging baskets</li>
+      <li>Automatic roof vents for summer ventilation · screened door entry</li>
+      <li>Positioned at north end of garden zone so it never shades the raised beds</li>
+      <li>Simple and functional — not ornate. Clean lines matching property aesthetic</li>
+    </ul>
+  </div>
+  <div class="content-block" style="padding-top:0">
+    <h2>Kitchen Garden Zone</h2><div class="gold-rule"></div>
+    <p>A dedicated growing zone on the east side of the property, ~150 metres from the house — close enough to walk to with a basket, far enough to feel like its own destination. Stone path leads from the house through the landscape directly to the zone. A small cedar tool shed sits at the entry.</p>
+    <ul class="rule-list" style="margin-top:20px">
+      <li><strong style="color:var(--gold-light)">Raised Beds</strong> — 4–6 cedar raised beds at waist height (~900mm) · no bending · tomatoes, herbs, greens, root vegetables, squash · drip irrigation to each bed</li>
+      <li><strong style="color:var(--gold-light)">Orchard</strong> — 6–8 established fruit trees in loose grid · apple, pear, plum, sour cherry · all well-suited to King Township climate · mown grass paths between trees · pollinates naturally</li>
+      <li><strong style="color:var(--gold-light)">Tool Shed</strong> — 8×10 ft · cedar board and batten matching property · stores tools, soil, seeds, fertilizers · potting area outside under small overhang</li>
+      <li><strong style="color:var(--gold-light)">Beehives</strong> — 2–3 hives at the orchard edge · pollinates all beds and orchard · produces property honey · screened from main paths</li>
+      <li><strong style="color:var(--gold-light)">Irrigation</strong> — drip lines to all raised beds · connected to Hunter Pro-HC smart controller · watering schedules set via Control4 app · rain sensor override</li>
+      <li><strong style="color:var(--gold-light)">Stone Path</strong> — flagstone path from house east wing through landscape to garden zone · lined with lavender and ornamental grasses · intentional destination walk</li>
+      <li><strong style="color:var(--gold-light)">Herb Garden</strong> — dedicated herb bed near tool shed · rosemary, thyme, sage, basil, mint, chives · close to greenhouse for easy access year-round</li>
+    </ul>
+  </div>
+  <div class="content-block" style="padding-top:0">
+    <h2>Seasonal Calendar</h2><div class="gold-rule"></div>
+    <ul class="rule-list">
+      <li><strong style="color:var(--gold-light)">February–March</strong> — greenhouse starts seedlings under grow lights · warm sanctuary to visit on cold days</li>
+      <li><strong style="color:var(--gold-light)">April–May</strong> — harden off seedlings · plant raised beds · fruit trees blossom · bees active</li>
+      <li><strong style="color:var(--gold-light)">June–August</strong> — full production · daily harvest · herbs at peak · orchard developing fruit</li>
+      <li><strong style="color:var(--gold-light)">September–October</strong> — apple and pear harvest · preserve and store · greenhouse extends season 4–6 weeks</li>
+      <li><strong style="color:var(--gold-light)">November–January</strong> — greenhouse overwinters tender herbs · planning and ordering seeds · beds mulched and resting</li>
+    </ul>
+    
+  </div>
+
+<div style="margin:0 0 0;padding:16px 32px 0">
+  <div style="border:0.5px solid rgba(184,150,62,0.25);border-radius:8px;overflow:hidden;max-width:600px">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(184,150,62,0.08);border-bottom:0.5px solid rgba(184,150,62,0.2)">
+      <span style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light)">Pool &amp; Outdoor — Est. Cost</span>
+      <span style="font-size:14px;font-weight:500;color:var(--gold-light)">~$483,000</span>
+    </div>
+    <table style="width:100%;border-collapse:collapse"><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Inground pool ~20×30 ft · saltwater · auto cover · LED</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$185,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Hot tub · 6-person · near fire pit</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$22,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Pool deck · flagstone throughout</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$48,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Pool house · change room · Murphy bed · bathroom</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$110,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Covered veranda · cedar ceiling · Douglas fir posts</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$55,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Fire pit terrace · gas fire · flagstone · hot tub</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$28,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Outdoor kitchen · built-in grill · granite counter</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$35,000</td></tr></table>
+  </div>
+</div>
+
+<div style="margin:0 0 0;padding:16px 32px 0">
+  <div style="border:0.5px solid rgba(184,150,62,0.25);border-radius:8px;overflow:hidden;max-width:600px">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(184,150,62,0.08);border-bottom:0.5px solid rgba(184,150,62,0.2)">
+      <span style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light)">Al Fresco Pergola — Est. Cost</span>
+      <span style="font-size:14px;font-weight:500;color:var(--gold-light)">~$81,500</span>
+    </div>
+    <table style="width:100%;border-collapse:collapse"><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Structure · Douglas fir timber · black steel lattice</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$28,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Flagstone floor · fieldstone border walls</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$18,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">4× infrared ceiling heaters · Control4 zone</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$10,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">4× black ceiling fans · Control4 controlled</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$6,500</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Lighting · Lutron pendants · string lights · dimmable</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$8,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Vines · harvest table · bistro tables · bench seating</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$11,000</td></tr></table>
+  </div>
+</div>
+
+<div style="margin:0 0 0;padding:16px 32px 0">
+  <div style="border:0.5px solid rgba(184,150,62,0.25);border-radius:8px;overflow:hidden;max-width:600px">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(184,150,62,0.08);border-bottom:0.5px solid rgba(184,150,62,0.2)">
+      <span style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light)">Kitchen Garden &amp; Greenhouse — Est. Cost</span>
+      <span style="font-size:14px;font-weight:500;color:var(--gold-light)">~$86,000</span>
+    </div>
+    <table style="width:100%;border-collapse:collapse"><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Greenhouse · 16×24 ft · black aluminum · polycarbonate · heated</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$38,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">4–6 cedar raised beds · waist height · drip irrigation</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$18,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Orchard · 6–8 fruit trees · established</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$14,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Cedar tool shed · 8×10 ft · board &amp; batten</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$8,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Beehives · 2–3 hives · installation</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$4,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Stone path · herb garden · lavender borders</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$4,000</td></tr></table>
+  </div>
+</div>
 </div>
 
 <!-- 11. ROBOTAXI DEPOT -->
@@ -682,6 +846,16 @@ audio{width:100%}
     </ul>
     <p style="margin-top:16px;font-size:12px;color:rgba(245,242,236,0.3)">Render: Quicksilver Model Y Performance approaching · Pearl White Model 3 pulling in · Cybertruck parked and charging · Golden hour · King Township Ontario</p>
   </div>
+
+<div style="margin:0 0 0;padding:16px 32px 0">
+  <div style="border:0.5px solid rgba(184,150,62,0.25);border-radius:8px;overflow:hidden;max-width:600px">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(184,150,62,0.08);border-bottom:0.5px solid rgba(184,150,62,0.2)">
+      <span style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light)">Robotaxi Depot — Est. Cost</span>
+      <span style="font-size:14px;font-weight:500;color:var(--gold-light)">~$48,000</span>
+    </div>
+    <table style="width:100%;border-collapse:collapse"><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Carport structure · matte black roof · cedar ceiling · posts</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$22,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">2× Tesla Universal Wall Connector · Level 2</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$6,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">DC fast charger conduit pre-run</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$2,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Automated gate · intercom · keypad</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$8,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Asphalt access lane · fieldstone wall · cedar screening</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$10,000</td></tr></table>
+  </div>
+</div>
 </div>
 
 <!-- 12. BUDGET & MATERIALS -->
@@ -693,12 +867,12 @@ audio{width:100%}
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;padding:16px 32px">
   <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border);border-radius:8px;padding:12px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:4px">House Build</div><div style="font-size:17px;font-weight:500;color:var(--gold-light)">~$3.35M</div></div>
-  <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border);border-radius:8px;padding:12px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:4px">Smart Home</div><div style="font-size:17px;font-weight:500;color:var(--gold-light)">~$205K</div></div>
+  <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border);border-radius:8px;padding:12px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:4px">Smart Home</div><div style="font-size:17px;font-weight:500;color:var(--gold-light)">~$226K</div></div>
   <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border);border-radius:8px;padding:12px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:4px">Energy</div><div style="font-size:17px;font-weight:500;color:var(--gold-light)">~$475K</div></div>
   <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border);border-radius:8px;padding:12px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:4px">Pool &amp; Outdoor</div><div style="font-size:17px;font-weight:500;color:var(--gold-light)">~$493K</div></div>
   <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border);border-radius:8px;padding:12px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:4px">Barn</div><div style="font-size:17px;font-weight:500;color:var(--gold-light)">~$610K</div></div>
-  <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border);border-radius:8px;padding:12px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:4px">Landscaping</div><div style="font-size:17px;font-weight:500;color:var(--gold-light)">~$366K</div></div>
-  <div style="background:rgba(184,150,62,0.12);border:0.5px solid rgba(184,150,62,0.35);border-radius:8px;padding:12px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px">Est. Total</div><div style="font-size:17px;font-weight:500;color:var(--gold-light)">~$5.5M</div></div>
+  <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border);border-radius:8px;padding:12px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:4px">Landscaping</div><div style="font-size:17px;font-weight:500;color:var(--gold-light)">~$506K</div></div>
+  <div style="background:rgba(184,150,62,0.12);border:0.5px solid rgba(184,150,62,0.35);border-radius:8px;padding:12px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px">Est. Total</div><div style="font-size:17px;font-weight:500;color:var(--gold-light)">~$5.64M</div></div>
 </div>
 
 <!-- HOUSE CONSTRUCTION -->
@@ -741,7 +915,7 @@ audio{width:100%}
 
 <!-- SMART HOME -->
 <div class="bms">
-  <div class="bmh" onclick="bmToggle('smart')"><span class="bmt">Smart Home &amp; Automation</span><div style="display:flex;align-items:center;gap:14px"><span class="bmc">~$204,500</span><span id="bmchev-smart" style="color:var(--charcoal-light);font-size:18px">▾</span></div></div>
+  <div class="bmh" onclick="bmToggle('smart')"><span class="bmt">Smart Home &amp; Automation</span><div style="display:flex;align-items:center;gap:14px"><span class="bmc">~$225,500</span><span id="bmchev-smart" style="color:var(--charcoal-light);font-size:18px">▾</span></div></div>
   <div class="bmb" id="bmbody-smart">
     <table class="bmtb"><thead><tr><th>Item</th><th>Specification &amp; Materials</th><th>Est. Cost</th></tr></thead><tbody>
       <tr><td>Central Platform</td><td>Control4 or Savant · 4× touchpads · programming &amp; commissioning · year 1 support<br><span class="bmtag">Control4</span><span class="bmtag">Savant</span></td><td>$35,000</td></tr>
@@ -753,7 +927,7 @@ audio{width:100%}
       <tr><td>Pool &amp; Irrigation</td><td>Pool automation controller · saltwater system · auto cover motor · 8-zone irrigation<br><span class="bmtag">Pentair IntelliCenter</span><span class="bmtag">Hunter Pro-HC</span></td><td>$16,000</td></tr>
       <tr><td>Networking</td><td>Fiber primary · Starlink auto-failover · Ubiquiti UniFi full property mesh<br><span class="bmtag">Ubiquiti UniFi</span><span class="bmtag">Starlink</span></td><td>$12,000</td></tr>
       <tr><td>Leak Detection</td><td>Moen Flo whole-property · sensors at all supply points<br><span class="bmtag">Moen Flo Smart</span></td><td>$4,500</td></tr>
-      <tr class="bmtot"><td colspan="2">System Category Total</td><td>~$177,500</td></tr>
+      <tr class="bmtot"><td colspan="2">System Category Total</td><td>~$198,000</td></tr>
     </tbody></table>
     <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-light);margin:24px 14px 12px">Room-by-Room Breakdown</div>
     <table class="bmtb" style="min-width:600px"><thead><tr><th>Room / Area</th><th>Components</th><th>Est. Cost</th></tr></thead><tbody>
@@ -773,7 +947,9 @@ audio{width:100%}
       <tr><td>Barn — Wellness</td><td>Lutron lighting · 4× in-ceiling speakers · sauna temp control · cold plunge chiller · security camera · motion sensors</td><td style="text-align:right;color:var(--gold-light)">$12,000</td></tr>
       <tr><td>Barn — Utility</td><td>Smart powered garage door · security camera · motion sensor · Lutron lighting</td><td style="text-align:right;color:var(--gold-light)">$4,500</td></tr>
       <tr><td>Driveway &amp; Property</td><td>Electronic entry gate · video intercom · secondary road gate · 4× property cameras · landscape lighting zones · irrigation controller · invisible fence</td><td style="text-align:right;color:var(--gold-light)">$28,000</td></tr>
-      <tr class="bmtot"><td colspan="2">Room-by-Room Total</td><td>~$204,500</td></tr>
+      <tr><td>Al Fresco Pergola</td><td>4× ceiling-mount infrared heaters on trellis beams · 4× large black ceiling fans · Control4 pergola zone (dinner scene, insect mode, wind-down) · Lutron pendant and string light zone</td><td style="text-align:right;color:var(--gold-light)">$16,500</td></tr>
+      <tr><td>Kitchen Garden &amp; Greenhouse</td><td>Greenhouse electric heat thermostat · Control4 temperature monitoring · drip irrigation smart controller extension · automated vent openers</td><td style="text-align:right;color:var(--gold-light)">$4,500</td></tr>
+      <tr class="bmtot"><td colspan="2">Room-by-Room Total</td><td>~$225,500</td></tr>
     </tbody></table>
   </div>
 </div>
@@ -833,25 +1009,27 @@ audio{width:100%}
 
 <!-- LANDSCAPING -->
 <div class="bms" style="margin-bottom:0">
-  <div class="bmh" onclick="bmToggle('landscape')"><span class="bmt">Landscaping &amp; Hardscaping</span><div style="display:flex;align-items:center;gap:14px"><span class="bmc">~$366,000</span><span id="bmchev-landscape" style="color:var(--charcoal-light);font-size:18px">▾</span></div></div>
+  <div class="bmh" onclick="bmToggle('landscape')"><span class="bmt">Landscaping &amp; Hardscaping</span><div style="display:flex;align-items:center;gap:14px"><span class="bmc">~$505,500</span><span id="bmchev-landscape" style="color:var(--charcoal-light);font-size:18px">▾</span></div></div>
   <div class="bmb" id="bmbody-landscape">
     <table class="bmtb"><thead><tr><th>Item</th><th>Specification &amp; Materials</th><th>Est. Cost</th></tr></thead><tbody>
       <tr><td>Driveway</td><td>Full paved driveway · mature maple trees both sides · lighted natural fieldstone entry pillars · low fieldstone walls full length<br><span class="bmtag">Asphalt paving</span><span class="bmtag">Natural fieldstone</span><span class="bmtag">Mature sugar maples</span></td><td>$125,000</td></tr>
       <tr><td>Entry Court</td><td>Granite fountain · perennial garden beds · limestone flagstone paving · hydronic heated · lighted stone pillars<br><span class="bmtag">Granite fountain</span><span class="bmtag">Limestone flagstone</span><span class="bmtag">Uponor hydronic</span></td><td>$45,000</td></tr>
       <tr><td>Bedroom Courtyards</td><td>5 private garden courtyards · each uniquely planted (lavender, herbs, meadow grass, stone) · limestone paving · timber benches<br><span class="bmtag">Lavender · ornamental grasses</span><span class="bmtag">Limestone paving</span><span class="bmtag">Cedar timber benches</span></td><td>$65,000</td></tr>
-      <tr><td>Orchard &amp; Food Garden</td><td>Apple, pear, cherry trees · raised cedar vegetable beds · kitchen herb garden near mudroom · stone pathways<br><span class="bmtag">Fruit trees (established)</span><span class="bmtag">Cedar raised beds</span></td><td>$28,000</td></tr>
+      <tr><td>Orchard &amp; Kitchen Garden Zone</td><td>6–8 established fruit trees (apple, pear, plum, sour cherry) · 4–6 waist-height cedar raised beds · herb garden · 2–3 beehives at orchard edge · cedar tool shed 8×10 ft · stone path from house · drip irrigation to all beds<br><span class="bmtag">Established fruit trees</span><span class="bmtag">Cedar raised beds</span><span class="bmtag">Beehives</span><span class="bmtag">Cedar tool shed</span></td><td>$48,000</td></tr>
+      <tr><td>Greenhouse</td><td>16×24 ft · black aluminum frame · double-glazed polycarbonate panels · electric heat with thermostat · plumbed cold water · drip irrigation inside · potting bench · automatic roof vents · Control4 temperature monitoring<br><span class="bmtag">Black aluminum frame</span><span class="bmtag">Polycarbonate panels</span><span class="bmtag">Electric heat</span><span class="bmtag">Control4 integration</span></td><td>$38,000</td></tr>
       <tr><td>Wildflower Meadow</td><td>Open field beyond pool · native Ontario wildflower seed mix · stone walls · hedgerows along property edges<br><span class="bmtag">Native wildflower mix</span><span class="bmtag">Fieldstone walls</span><span class="bmtag">Mixed hedgerow species</span></td><td>$18,000</td></tr>
       <tr><td>Irrigation System</td><td>Full property · 10+ zones · smart controller integrated with Control4 · drip irrigation at gardens<br><span class="bmtag">Hunter Pro-HC controller</span><span class="bmtag">Rainbird drip system</span></td><td>$35,000</td></tr>
       <tr><td>Landscape Lighting</td><td>Full property zone control via Control4 · path lights, uplights, driveway lights, pool perimeter · LED throughout<br><span class="bmtag">Kichler LED landscape</span><span class="bmtag">FX Luminaire</span><span class="bmtag">WAC Lighting</span></td><td>$42,000</td></tr>
       <tr><td>Invisible Fence</td><td>Full property perimeter · professional installation · 2 dog collars<br><span class="bmtag">Invisible Fence Brand</span></td><td>$8,000</td></tr>
-      <tr class="bmtot"><td colspan="2">Landscaping Total</td><td>~$366,000</td></tr>
+      <tr><td>Al Fresco Pergola</td><td>Douglas fir timber posts and beams · black steel lattice trellis roof · flagstone floor · 4× ceiling-mount infrared heaters · 4× black ceiling fans (Control4 controlled — see Smart Home) · Lutron pendant and string lights · hops vines at each post · low fieldstone border walls · rustic harvest table · bistro tables · bench seating<br><span class="bmtag">Douglas fir timber</span><span class="bmtag">Black steel lattice</span><span class="bmtag">Infrared heaters</span><span class="bmtag">Ceiling fans</span><span class="bmtag">Flagstone</span></td><td>$81,500</td></tr>
+      <tr class="bmtot"><td colspan="2">Landscaping Total</td><td>~$505,500</td></tr>
     </tbody></table>
   </div>
 </div>
 
 <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:rgba(184,150,62,0.08);border:0.5px solid rgba(184,150,62,0.3);border-radius:8px;margin:16px 32px 8px">
   <span style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--charcoal-light)">Project Total — Features &amp; Systems (3,200 sq ft house)</span>
-  <span style="font-size:20px;font-weight:500;color:var(--gold-light)">~$5,493,500 CAD</span>
+  <span style="font-size:20px;font-weight:500;color:var(--gold-light)">~$5,627,000 CAD</span>
 </div>
 <p style="font-size:11px;color:rgba(245,242,236,0.2);letter-spacing:0.06em;padding:0 32px 32px">All figures preliminary CAD estimates · House based on ~$1,045/sq ft for 3,200 sq ft · 30 kW solar with Ontario net metering substantially offsets winter electricity including heated driveway · Powerwall system scalable to 10 units plug-and-play · Updated June 2026</p>
 </div>
@@ -880,7 +1058,7 @@ audio{width:100%}
 
 <script>
 const subCfg={
-  site:[],approach:[],courtyard:[],barnland:[],interiors:[],wellness:[],pool:[],robotaxi:[],budget:[],about:[],
+  site:[],approach:[],courtyard:[],barnland:[],interiors:[],wellness:[],pool:[],pergola:[],garden:[],robotaxi:[],budget:[],about:[],
   layout:[{id:'house-plan',label:'House Floor Plan'},{id:'barn-plan',label:'Barn Floor Plan'},{id:'site-plan',label:'Site Plan'}],
   elevations:[{id:'front',label:'Front (North)'},{id:'rear',label:'Rear (South · Farmland)'},{id:'left',label:'Driveway Approach'},{id:'right',label:'Garage Wing (East)'}],
   walkthrough:[{id:'wt-house',label:'Property & House'},{id:'wt-barn',label:'Barn & Wellness'}]
