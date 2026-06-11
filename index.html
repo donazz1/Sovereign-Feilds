@@ -26,7 +26,7 @@ nav.sub.hidden{display:none}
 .panel{display:none}.panel.active{display:block}
 .sub-panel{display:none}.sub-panel.active{display:block}
 .hero{position:relative;width:100%;background:#111;overflow:hidden}
-.hero img{width:100%;height:70vh;min-height:400px;max-height:780px;object-fit:cover;display:block;transition:opacity .6s;opacity:0}
+.hero img{width:100%;height:70vh;min-height:400px;max-height:780px;object-fit:cover;display:block}
 .hero img.loaded{opacity:1}
 .hero.tall img{height:82vh;max-height:860px}
 .hero-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(18,16,12,0.88));padding:48px 36px 28px}
@@ -41,7 +41,7 @@ nav.sub.hidden{display:none}
 .spec-value.gold{color:var(--gold-light)}
 .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:3px;background:#0a0a08}
 .grid-card{position:relative;overflow:hidden;background:#1a1a16;cursor:pointer}
-.grid-card img{width:100%;height:280px;object-fit:cover;display:block;transition:transform .5s,opacity .5s;opacity:0}
+.grid-card img{width:100%;height:280px;object-fit:cover;display:block}
 .grid-card img.loaded{opacity:1}
 .grid-card:hover img{transform:scale(1.03)}
 .card-label{position:absolute;bottom:0;left:0;right:0;padding:28px 16px 14px;background:linear-gradient(transparent,rgba(18,16,12,0.85))}
@@ -64,7 +64,7 @@ audio{width:100%}
 .cinema-btn:hover{background:var(--gold-light)}
 .scene-row{display:flex;gap:3px;max-width:860px;width:100%;overflow-x:auto}
 .scene{flex:0 0 150px;position:relative;cursor:pointer}
-.scene img{width:150px;height:95px;object-fit:cover;display:block;filter:brightness(0.55);transition:filter .25s,opacity .4s;opacity:0}
+.scene img{width:150px;height:95px;object-fit:cover;display:block;filter:brightness(0.55)}
 .scene img.loaded{opacity:1}
 .scene:hover img,.scene.on img{filter:brightness(1)}
 .scene-lbl{position:absolute;bottom:5px;left:0;right:0;text-align:center;font-size:8.5px;color:var(--cream);letter-spacing:0.1em;text-transform:uppercase;text-shadow:0 1px 4px rgba(0,0,0,0.9)}
@@ -84,7 +84,7 @@ audio{width:100%}
 @media(max-width:600px){header{padding:14px 16px}.content-block{padding:28px 16px}.plan-wrap{padding:24px 12px}.hero-caption h2{font-size:22px}}
 .carousel{width:100%;margin-top:3px}
 .car-stage{position:relative;width:100%;background:#111;overflow:hidden}
-.car-stage img{width:100%;height:calc(100vh - 115px);object-fit:contain;object-position:center;display:block;opacity:0;transition:opacity 0.5s;background:#111}
+.car-stage img{width:100%;height:calc(100vh - 115px);object-fit:contain;object-position:center;display:block;background:#111}
 #carousel-wellness .car-stage img{height:calc(100vh - 190px)}
 .car-stage img.loaded{opacity:1}
 .car-stage-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(18,16,12,0.88));padding:36px 36px 20px}
@@ -96,7 +96,7 @@ audio{width:100%}
 .car-slide{display:none}.car-slide.active{display:block}
 .car-thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:3px;background:#0a0a08;margin-top:3px}
 .car-thumb{position:relative;overflow:hidden;cursor:pointer;background:#1a1a16}
-.car-thumb img{width:100%;height:86px;object-fit:cover;display:block;transition:transform 0.3s,opacity 0.4s,filter 0.3s;opacity:0;filter:brightness(0.55)}
+.car-thumb img{width:100%;height:86px;object-fit:cover;display:block;filter:brightness(0.55)}
 .car-thumb img.loaded{opacity:1}
 .car-thumb:hover img,.car-thumb.active-thumb img{filter:brightness(1)}
 .car-thumb.active-thumb img{outline:2px solid var(--gold);outline-offset:-2px}
@@ -147,7 +147,7 @@ audio{width:100%}
 
 <!-- 1. SITE & AERIAL -->
 <div class="panel active" id="panel-site">
-  <div class="hero tall"><img src="https://donazz1.github.io/Sovereign-Feilds/34c730d1-88ff-4987-810c-b55fa85c30fa.jpg" alt="Aerial" onload="this.classList.add('loaded')">
+  <div class="hero tall"><img src="https://donazz1.github.io/Sovereign-Feilds/34c730d1-88ff-4987-810c-b55fa85c30fa.jpg" alt="Aerial">
     <div class="hero-caption"><div class="rule"></div><h2>The Property</h2><p>~50 acres on the highest ridge crest · South-facing onto open farmland · Oak Ridges Moraine</p></div></div>
   <div class="spec-strip">
     <div class="spec-item"><div class="spec-label">Location</div><div class="spec-value">King Township, Ontario</div></div>
@@ -161,7 +161,7 @@ audio{width:100%}
 
 <!-- 2. STREET APPROACH -->
 <div class="panel" id="panel-approach">
-  <div class="hero tall"><img src="https://donazz1.github.io/Sovereign-Feilds/4551cad4-4f2e-4dc3-9089-695d5cc84f6e.jpg" alt="Street approach" onload="this.classList.add('loaded')">
+  <div class="hero tall"><img src="https://donazz1.github.io/Sovereign-Feilds/4551cad4-4f2e-4dc3-9089-695d5cc84f6e.jpg" alt="Street approach">
     <div class="hero-caption"><div class="rule"></div><h2>The Arrival</h2><p>Maple-lined approach · Low fieldstone walls · Lighted stone entry pillars</p></div></div>
   <div class="content-block"><h2>The Driveway Sequence</h2><div class="gold-rule"></div><p>Mature maples line both sides of the paved approach. Low fieldstone walls and lighted stone pillars mark the entry gate. The house reveals itself gradually as you crest the ridge.</p></div>
 </div>
@@ -169,7 +169,7 @@ audio{width:100%}
 <!-- 3. ELEVATIONS -->
 <div class="panel" id="panel-elevations">
   <div class="sub-panel active" id="sub-front">
-    <div class="hero"><img src="https://donazz1.github.io/Sovereign-Feilds/elevation_front.jpg" alt="Front elevation" onload="this.classList.add('loaded')">
+    <div class="hero"><img src="https://donazz1.github.io/Sovereign-Feilds/elevation_front.jpg" alt="Front elevation">
       <div class="hero-caption"><div class="rule"></div><h2>Front Elevation — North · Entry Façade</h2><p>Single-story bungalow · White board-and-batten · Timber-post entry porch · Three-car garage wing to east</p></div></div>
     <div class="spec-strip">
       <div class="spec-item"><div class="spec-label">Form</div><div class="spec-value">Single-Story Bungalow</div></div>
@@ -180,16 +180,16 @@ audio{width:100%}
     </div>
   </div>
   <div class="sub-panel" id="sub-rear">
-    <div class="hero"><img src="https://donazz1.github.io/Sovereign-Feilds/34c730d1-88ff-4987-810c-b55fa85c30fa.jpg" alt="Aerial south view" onload="this.classList.add('loaded')">
+    <div class="hero"><img src="https://donazz1.github.io/Sovereign-Feilds/34c730d1-88ff-4987-810c-b55fa85c30fa.jpg" alt="Aerial south view">
       <div class="hero-caption"><div class="rule"></div><h2>Rear — South-Facing onto Farmland</h2><p>Z-compound aerial · Glass great room pavilion faces south · Open farmland expanse · Red barn in background</p></div></div>
   </div>
   <div class="sub-panel" id="sub-left">
-    <div class="hero"><img src="https://donazz1.github.io/Sovereign-Feilds/4551cad4-4f2e-4dc3-9089-695d5cc84f6e.jpg" alt="Driveway approach" onload="this.classList.add('loaded')">
+    <div class="hero"><img src="https://donazz1.github.io/Sovereign-Feilds/4551cad4-4f2e-4dc3-9089-695d5cc84f6e.jpg" alt="Driveway approach">
       <div class="hero-caption"><div class="rule"></div><h2>Driveway Approach</h2><p>Maple-lined entry · Fieldstone walls · House framed at golden hour through autumn maples</p></div></div>
   </div>
   <div class="sub-panel" id="sub-right">
     <div class="hero" style="overflow:hidden">
-      <img src="https://donazz1.github.io/Sovereign-Feilds/elevation_front.jpg" alt="Garage wing" onload="this.classList.add('loaded')" style="object-position:left center;transform:scale(1.4);transform-origin:left center;">
+      <img src="https://donazz1.github.io/Sovereign-Feilds/elevation_front.jpg" alt="Garage wing" style="object-position:left center;transform:scale(1.4);transform-origin:left center;">
       <div class="hero-caption"><div class="rule"></div><h2>Garage Wing — East Side</h2><p>Three-car garage · Angled toward driveway · Black garage doors · Z-compound arrangement</p></div></div>
   </div>
 </div>
@@ -198,7 +198,7 @@ audio{width:100%}
 <div class="panel" id="panel-courtyard">
 <div class="carousel" id="carousel-courtyard">
 <div class="car-stage">
-  <img src="https://imagine-public.x.ai/imagine-public/images/4d543bba-88ef-4d83-98ed-f6c080023bf3.jpg" alt="Garden Courtyard" onload="this.classList.add('loaded')">
+  <img src="https://imagine-public.x.ai/imagine-public/images/4d543bba-88ef-4d83-98ed-f6c080023bf3.jpg" alt="Garden Courtyard">
   <button class="car-arrow car-arrow-left" onclick="carMove('courtyard',-1)">&#8249;</button>
   <button class="car-arrow car-arrow-right" onclick="carMove('courtyard',1)">&#8250;</button>
   <div class="car-stage-caption"><h3>A Private Micro-Garden Sanctuary</h3><p>Black-framed French doors · Lavender · Stone paving · Timber bench</p></div>
@@ -208,8 +208,8 @@ audio{width:100%}
   <div class="car-slide" data-title="Standing Inside the Courtyard" data-sub="Flagstone paving · Timber bench · Lavender rows · Warm interior glow"><img src="https://imagine-public.x.ai/imagine-public/images/6a754f9f-0744-4d49-84e5-49f6ad27f106.jpg"></div>
 </div>
 <div class="car-thumbs">
-  <div class="car-thumb active-thumb" onclick="carGo('courtyard',0)"><img src="https://imagine-public.x.ai/imagine-public/images/4d543bba-88ef-4d83-98ed-f6c080023bf3.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Micro-Garden Sanctuary</div></div>
-  <div class="car-thumb" onclick="carGo('courtyard',1)"><img src="https://imagine-public.x.ai/imagine-public/images/6a754f9f-0744-4d49-84e5-49f6ad27f106.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Inside the Courtyard</div></div>
+  <div class="car-thumb active-thumb" onclick="carGo('courtyard',0)"><img src="https://imagine-public.x.ai/imagine-public/images/4d543bba-88ef-4d83-98ed-f6c080023bf3.jpg"><div class="car-thumb-lbl">Micro-Garden Sanctuary</div></div>
+  <div class="car-thumb" onclick="carGo('courtyard',1)"><img src="https://imagine-public.x.ai/imagine-public/images/6a754f9f-0744-4d49-84e5-49f6ad27f106.jpg"><div class="car-thumb-lbl">Inside the Courtyard</div></div>
 </div>
 </div>
   <div class="content-block"><h2>Five Private Gardens</h2><div class="gold-rule"></div><p>Each bedroom opens exclusively onto its own private garden courtyard through black-framed French doors. Lavender and white for the primary suite, herbs and sage green for bedroom three, meadow grass and stone for bedroom four, and a maple-view terrace for the study guest suite.</p></div>
@@ -219,7 +219,7 @@ audio{width:100%}
 <div class="panel" id="panel-barnland">
 <div class="carousel" id="carousel-barnland">
 <div class="car-stage">
-  <img src="https://donazz1.github.io/Sovereign-Feilds/barn_exterior.png" alt="The Barn" onload="this.classList.add('loaded')">
+  <img src="https://donazz1.github.io/Sovereign-Feilds/barn_exterior.png" alt="The Barn">
   <button class="car-arrow car-arrow-left" onclick="carMove('barnland',-1)">&#8249;</button>
   <button class="car-arrow car-arrow-right" onclick="carMove('barnland',1)">&#8250;</button>
   <div class="car-stage-caption"><h3>The Barn</h3><p>Weathered timber barn preserved · Rustic exterior · Transformed interior · South-facing farmland views</p></div>
@@ -234,13 +234,13 @@ audio{width:100%}
   <div class="car-slide" data-title="Equipment Storage" data-sub="~700 sq ft · Powered garage door · Tractor · Ride-on mower · Snow plow"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_equipment.jpg"></div>
 </div>
 <div class="car-thumbs">
-  <div class="car-thumb active-thumb" onclick="carGo('barnland',0)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_exterior.png" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">The Barn</div></div>
-  <div class="car-thumb" onclick="carGo('barnland',1)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Gym Floor</div></div>
-  <div class="car-thumb" onclick="carGo('barnland',2)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_sauna_coldplunge.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Sauna + Plunge</div></div>
-  <div class="car-thumb" onclick="carGo('barnland',3)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_zen_terrace.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Zen Terrace</div></div>
-  <div class="car-thumb" onclick="carGo('barnland',4)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_changeroom.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Change Room</div></div>
-  <div class="car-thumb" onclick="carGo('barnland',5)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_workshop.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Workshop</div></div>
-  <div class="car-thumb" onclick="carGo('barnland',6)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_equipment.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Equipment Storage</div></div>
+  <div class="car-thumb active-thumb" onclick="carGo('barnland',0)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_exterior.png"><div class="car-thumb-lbl">The Barn</div></div>
+  <div class="car-thumb" onclick="carGo('barnland',1)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg"><div class="car-thumb-lbl">Gym Floor</div></div>
+  <div class="car-thumb" onclick="carGo('barnland',2)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_sauna_coldplunge.jpg"><div class="car-thumb-lbl">Sauna + Plunge</div></div>
+  <div class="car-thumb" onclick="carGo('barnland',3)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_zen_terrace.jpg"><div class="car-thumb-lbl">Zen Terrace</div></div>
+  <div class="car-thumb" onclick="carGo('barnland',4)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_changeroom.jpg"><div class="car-thumb-lbl">Change Room</div></div>
+  <div class="car-thumb" onclick="carGo('barnland',5)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_workshop.jpg"><div class="car-thumb-lbl">Workshop</div></div>
+  <div class="car-thumb" onclick="carGo('barnland',6)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_equipment.jpg"><div class="car-thumb-lbl">Equipment Storage</div></div>
 </div>
 </div>
   <div class="spec-strip">
@@ -265,14 +265,14 @@ audio{width:100%}
         <button class="cinema-btn" onclick="launchCinema('audio-house','scenes-house')">▶ Launch Cinematic Mode</button>
       </div>
       <div class="scene-row" id="scenes-house">
-        <div class="scene on" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/4551cad4-4f2e-4dc3-9089-695d5cc84f6e.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Approach</div></div>
-        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/34c730d1-88ff-4987-810c-b55fa85c30fa.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Aerial</div></div>
-        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/elevation_front.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Front</div></div>
-        <div class="scene" onclick="setScene(this)"><img src="https://imagine-public.x.ai/imagine-public/images/4d543bba-88ef-4d83-98ed-f6c080023bf3.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Courtyard</div></div>
-        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_entry_hall.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Entry Hall</div></div>
-        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_great_room.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Great Room</div></div>
-        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_kitchen.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Kitchen</div></div>
-        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_bedroom.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Primary</div></div>
+        <div class="scene on" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/4551cad4-4f2e-4dc3-9089-695d5cc84f6e.jpg"><div class="scene-lbl">Approach</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/34c730d1-88ff-4987-810c-b55fa85c30fa.jpg"><div class="scene-lbl">Aerial</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/elevation_front.jpg"><div class="scene-lbl">Front</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://imagine-public.x.ai/imagine-public/images/4d543bba-88ef-4d83-98ed-f6c080023bf3.jpg"><div class="scene-lbl">Courtyard</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_entry_hall.jpg"><div class="scene-lbl">Entry Hall</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_great_room.jpg"><div class="scene-lbl">Great Room</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_kitchen.jpg"><div class="scene-lbl">Kitchen</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_bedroom.jpg"><div class="scene-lbl">Primary</div></div>
       </div>
     </div>
   </div>
@@ -286,11 +286,11 @@ audio{width:100%}
         <button class="cinema-btn" onclick="launchCinema('audio-barn','scenes-barn')">▶ Launch Cinematic Mode</button>
       </div>
       <div class="scene-row" id="scenes-barn">
-        <div class="scene on" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Gym</div></div>
-        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_sauna_coldplunge.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Sauna</div></div>
-        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_zen_terrace.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Zen Terrace</div></div>
-        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_changeroom.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Change Room</div></div>
-        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_workshop.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Workshop</div></div>
+        <div class="scene on" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg"><div class="scene-lbl">Gym</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_sauna_coldplunge.jpg"><div class="scene-lbl">Sauna</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_zen_terrace.jpg"><div class="scene-lbl">Zen Terrace</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_changeroom.jpg"><div class="scene-lbl">Change Room</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_workshop.jpg"><div class="scene-lbl">Workshop</div></div>
       </div>
     </div>
   </div>
@@ -304,13 +304,13 @@ audio{width:100%}
         <button class="cinema-btn" onclick="launchCinema('audio-grounds','scenes-grounds')">▶ Launch Cinematic Mode</button>
       </div>
       <div class="scene-row" id="scenes-grounds">
-        <div class="scene on" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/34c730d1-88ff-4987-810c-b55fa85c30fa.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Aerial</div></div>
-        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/4551cad4-4f2e-4dc3-9089-695d5cc84f6e.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Main Gate</div></div>
-        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_exterior.png" onload="this.classList.add('loaded')"><div class="scene-lbl">The Barn</div></div>
-        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_exterior.png" onload="this.classList.add('loaded')"><div class="scene-lbl">Pergola</div></div>
-        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_interior.png" onload="this.classList.add('loaded')"><div class="scene-lbl">Under the Vines</div></div>
-        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/kitchen_garden.png" onload="this.classList.add('loaded')"><div class="scene-lbl">Kitchen Garden</div></div>
-        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/robotaxi_depot.png" onload="this.classList.add('loaded')"><div class="scene-lbl">Robotaxi Depot</div></div>
+        <div class="scene on" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/34c730d1-88ff-4987-810c-b55fa85c30fa.jpg"><div class="scene-lbl">Aerial</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/4551cad4-4f2e-4dc3-9089-695d5cc84f6e.jpg"><div class="scene-lbl">Main Gate</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_exterior.png"><div class="scene-lbl">The Barn</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_exterior.png"><div class="scene-lbl">Pergola</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_interior.png"><div class="scene-lbl">Under the Vines</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/kitchen_garden.png"><div class="scene-lbl">Kitchen Garden</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/robotaxi_depot.png"><div class="scene-lbl">Robotaxi Depot</div></div>
       </div>
     </div>
   </div>
@@ -570,7 +570,7 @@ audio{width:100%}
 <div class="panel" id="panel-interiors">
 <div class="carousel" id="carousel-interiors">
 <div class="car-stage">
-  <img src="https://donazz1.github.io/Sovereign-Feilds/interior_great_room.jpg" alt="Great Room" onload="this.classList.add('loaded')">
+  <img src="https://donazz1.github.io/Sovereign-Feilds/interior_great_room.jpg" alt="Great Room">
   <button class="car-arrow car-arrow-left" onclick="carMove('interiors',-1)">&#8249;</button>
   <button class="car-arrow car-arrow-right" onclick="carMove('interiors',1)">&#8250;</button>
   <div class="car-stage-caption"><h3>Great Room</h3><p>Glass Pavilion · South Farmland View · White shiplap vaulted ceiling</p></div>
@@ -589,17 +589,17 @@ audio{width:100%}
   <div class="car-slide" data-title="Study / Guest Suite" data-sub="Built-in Oak Desk · Brass Fixtures · Maple Driveway View · Window Seat"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_study_guest.jpg"></div>
 </div>
 <div class="car-thumbs">
-  <div class="car-thumb active-thumb" onclick="carGo('interiors',0)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_great_room.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Great Room</div></div>
-  <div class="car-thumb" onclick="carGo('interiors',1)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_kitchen.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Kitchen</div></div>
-  <div class="car-thumb" onclick="carGo('interiors',2)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_kitchen_dining.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Kitchen &amp; Dining</div></div>
-  <div class="car-thumb" onclick="carGo('interiors',3)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_bedroom.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Primary Suite</div></div>
-  <div class="car-thumb" onclick="carGo('interiors',4)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_ensuite.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Primary En Suite</div></div>
-  <div class="car-thumb" onclick="carGo('interiors',5)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_suite.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Primary View</div></div>
-  <div class="car-thumb" onclick="carGo('interiors',6)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_bedrooms_2_5.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Bedrooms 2–5</div></div>
-  <div class="car-thumb" onclick="carGo('interiors',7)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_entry_hall.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Entry Hall</div></div>
-  <div class="car-thumb" onclick="carGo('interiors',8)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_garage_mudroom.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Mudroom</div></div>
-  <div class="car-thumb" onclick="carGo('interiors',9)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_veranda_firepit.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Veranda</div></div>
-  <div class="car-thumb" onclick="carGo('interiors',10)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_study_guest.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Study / Guest</div></div>
+  <div class="car-thumb active-thumb" onclick="carGo('interiors',0)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_great_room.jpg"><div class="car-thumb-lbl">Great Room</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',1)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_kitchen.jpg"><div class="car-thumb-lbl">Kitchen</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',2)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_kitchen_dining.jpg"><div class="car-thumb-lbl">Kitchen &amp; Dining</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',3)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_bedroom.jpg"><div class="car-thumb-lbl">Primary Suite</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',4)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_ensuite.jpg"><div class="car-thumb-lbl">Primary En Suite</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',5)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_suite.jpg"><div class="car-thumb-lbl">Primary View</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',6)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_bedrooms_2_5.jpg"><div class="car-thumb-lbl">Bedrooms 2–5</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',7)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_entry_hall.jpg"><div class="car-thumb-lbl">Entry Hall</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',8)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_garage_mudroom.jpg"><div class="car-thumb-lbl">Mudroom</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',9)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_veranda_firepit.jpg"><div class="car-thumb-lbl">Veranda</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',10)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_study_guest.jpg"><div class="car-thumb-lbl">Study / Guest</div></div>
 </div>
 </div>
   <div class="content-block"><h2>Design Language</h2><div class="gold-rule"></div>
@@ -625,7 +625,7 @@ audio{width:100%}
   </div>
 <div class="carousel" id="carousel-wellness">
 <div class="car-stage">
-  <img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg" alt="Gym Floor" onload="this.classList.add('loaded')">
+  <img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg" alt="Gym Floor">
   <button class="car-arrow car-arrow-left" onclick="carMove('wellness',-1)">&#8249;</button>
   <button class="car-arrow car-arrow-right" onclick="carMove('wellness',1)">&#8250;</button>
   <div class="car-stage-caption"><h3>Gym Floor</h3><p>~1,200 sq ft · Wide bifold doors open fully onto farmland · Exposed timber cathedral ceiling</p></div>
@@ -639,12 +639,12 @@ audio{width:100%}
   <div class="car-slide" data-title="Equipment Storage" data-sub="~700 sq ft · Powered garage door · Tractor · Ride-on mower · Snow plow · Wall-mounted racks"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_equipment.jpg"></div>
 </div>
 <div class="car-thumbs">
-  <div class="car-thumb active-thumb" onclick="carGo('wellness',0)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Gym Floor</div></div>
-  <div class="car-thumb" onclick="carGo('wellness',1)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_sauna_coldplunge.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Sauna + Plunge</div></div>
-  <div class="car-thumb" onclick="carGo('wellness',2)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_zen_terrace.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Zen Terrace</div></div>
-  <div class="car-thumb" onclick="carGo('wellness',3)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_changeroom.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Change Room</div></div>
-  <div class="car-thumb" onclick="carGo('wellness',4)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_workshop.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Workshop</div></div>
-  <div class="car-thumb" onclick="carGo('wellness',5)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_equipment.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Equipment Storage</div></div>
+  <div class="car-thumb active-thumb" onclick="carGo('wellness',0)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg"><div class="car-thumb-lbl">Gym Floor</div></div>
+  <div class="car-thumb" onclick="carGo('wellness',1)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_sauna_coldplunge.jpg"><div class="car-thumb-lbl">Sauna + Plunge</div></div>
+  <div class="car-thumb" onclick="carGo('wellness',2)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_zen_terrace.jpg"><div class="car-thumb-lbl">Zen Terrace</div></div>
+  <div class="car-thumb" onclick="carGo('wellness',3)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_changeroom.jpg"><div class="car-thumb-lbl">Change Room</div></div>
+  <div class="car-thumb" onclick="carGo('wellness',4)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_workshop.jpg"><div class="car-thumb-lbl">Workshop</div></div>
+  <div class="car-thumb" onclick="carGo('wellness',5)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_equipment.jpg"><div class="car-thumb-lbl">Equipment Storage</div></div>
 </div>
 </div>
   <div class="content-block"><h2>The Wellness Circuit</h2><div class="gold-rule"></div><p>Sauna → cold plunge → zen terrace → open farmland. Cedar dry sauna seats four with Harvia heater. Cold plunge chills to 10–15°C. Sliding glass on the full south wall opens onto the farmland. The outdoor zen terrace is completely open to sky with a fieldstone meditation daybed and shallow water basin.</p>
@@ -669,7 +669,7 @@ audio{width:100%}
 
 <!-- 10. POOL & OUTDOOR -->
 <div class="panel" id="panel-pool">
-  <div class="hero tall"><img src="https://donazz1.github.io/Sovereign-Feilds/pool_aerial.png" alt="Pool and outdoor living" onload="this.classList.add('loaded')">
+  <div class="hero tall"><img src="https://donazz1.github.io/Sovereign-Feilds/pool_aerial.png" alt="Pool and outdoor living">
     <div class="hero-caption"><div class="rule"></div><h2>Pool &amp; Outdoor Living</h2><p>Geometric saltwater pool · South veranda · Fire pit terrace · Hot tub · Pool house · Concept render</p></div></div>
   <div class="spec-strip">
     <div class="spec-item"><div class="spec-label">Pool Size</div><div class="spec-value gold">~20 × 30 ft</div></div>
@@ -706,7 +706,7 @@ audio{width:100%}
 <div class="panel" id="panel-pergola">
 <div class="carousel" id="carousel-pergola">
 <div class="car-stage">
-  <img src="https://donazz1.github.io/Sovereign-Feilds/pergola_exterior.png" alt="Al Fresco Pergola" onload="this.classList.add('loaded')">
+  <img src="https://donazz1.github.io/Sovereign-Feilds/pergola_exterior.png" alt="Al Fresco Pergola">
   <button class="car-arrow car-arrow-left" onclick="carMove('pergola',-1)">&#8249;</button>
   <button class="car-arrow car-arrow-right" onclick="carMove('pergola',1)">&#8250;</button>
   <div class="car-stage-caption"><h3>Al Fresco Dining Pergola</h3><p>Rustic harvest table · Bistro seating · Living vine canopy · Farmland views · Golden hour</p></div>
@@ -716,8 +716,8 @@ audio{width:100%}
   <div class="car-slide" data-title="Inside the Pergola" data-sub="Douglas fir and black steel · Infrared heaters · Ceiling fans · Pendant lighting · Open farmland horizon"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_interior.png"></div>
 </div>
 <div class="car-thumbs">
-  <div class="car-thumb active-thumb" onclick="carGo('pergola',0)"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_exterior.png" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Pergola · Bistro View</div></div>
-  <div class="car-thumb" onclick="carGo('pergola',1)"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_interior.png" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Interior · Long View</div></div>
+  <div class="car-thumb active-thumb" onclick="carGo('pergola',0)"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_exterior.png"><div class="car-thumb-lbl">Pergola · Bistro View</div></div>
+  <div class="car-thumb" onclick="carGo('pergola',1)"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_interior.png"><div class="car-thumb-lbl">Interior · Long View</div></div>
 </div>
 </div>
   <div class="spec-strip">
@@ -767,7 +767,7 @@ audio{width:100%}
 <!-- KITCHEN GARDEN & GREENHOUSE -->
 <div class="panel" id="panel-garden">
   <div class="hero tall">
-    <img src="https://donazz1.github.io/Sovereign-Feilds/kitchen_garden.png" alt="Kitchen garden and greenhouse" onload="this.classList.add('loaded')">
+    <img src="https://donazz1.github.io/Sovereign-Feilds/kitchen_garden.png" alt="Kitchen garden and greenhouse">
     <div class="hero-caption"><div class="rule"></div><h2>Kitchen Garden &amp; Greenhouse</h2><p>Heated greenhouse · Waist-height raised beds · Small orchard · Stone path from house · Render coming</p></div>
   </div>
   <div class="spec-strip">
@@ -849,7 +849,7 @@ audio{width:100%}
 <!-- 11. ROBOTAXI DEPOT -->
 <div class="panel" id="panel-robotaxi">
   <div class="hero tall">
-    <img src="https://donazz1.github.io/Sovereign-Feilds/robotaxi_depot.png" alt="Robotaxi depot" onload="this.classList.add('loaded')">
+    <img src="https://donazz1.github.io/Sovereign-Feilds/robotaxi_depot.png" alt="Robotaxi depot">
     <div class="hero-caption"><div class="rule"></div><h2>Robotaxi Depot</h2><p>Drive-through covered carport · Cedar ceiling · Warm LED lighting · Tesla Wall Connectors at each stall · Screened by cedar trees · Near road</p></div>
   </div>
   <div class="spec-strip">
@@ -1325,7 +1325,7 @@ function carUpdate(car,idx){
   thumbs.forEach(t=>t.classList.remove('active-thumb'));
   slides[idx].classList.add('active');
   if(thumbs[idx])thumbs[idx].classList.add('active-thumb');
-  if(stageImg){stageImg.classList.remove('loaded');stageImg.src=imgSrc;stageImg.onload=()=>stageImg.classList.add('loaded');}
+  if(stageImg){stageImg.src=imgSrc;}
   if(cap){cap.querySelector('h3').textContent=title||'';cap.querySelector('p').textContent=sub||'';}
 }
 function carMove(id,dir){const car=document.getElementById('carousel-'+id);const slides=car.querySelectorAll('.car-slide');let cur=0;slides.forEach((s,i)=>{if(s.classList.contains('active'))cur=i;});carUpdate(car,(cur+dir+slides.length)%slides.length);}
