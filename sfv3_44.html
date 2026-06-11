@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sovereign Fields — King Township, Ontario</title>
+<style>
+:root{--cream:#F5F2EC;--charcoal:#1C1C1A;--charcoal-light:#6B6A64;--gold:#B8963E;--gold-light:#D4AF6A;--border:rgba(245,242,236,0.1);--font-serif:Georgia,'Times New Roman',serif;--font-sans:-apple-system,'Helvetica Neue',Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--charcoal);color:var(--cream);font-family:var(--font-sans);min-height:100vh;overflow-x:hidden}
+header{background:var(--charcoal);border-bottom:1px solid rgba(184,150,62,0.3);padding:18px 32px;display:flex;align-items:flex-end;justify-content:space-between}
+.brand-name{font-family:var(--font-serif);font-size:24px;font-weight:normal;letter-spacing:0.12em;text-transform:uppercase}
+.brand-sub{font-size:10px;letter-spacing:0.22em;color:var(--gold-light);text-transform:uppercase;margin-top:4px}
+.header-right{font-size:11px;color:var(--charcoal-light);text-align:right;line-height:1.6}
+nav.primary{background:var(--charcoal);border-bottom:1px solid rgba(245,242,236,0.15);display:flex;overflow-x:auto;scrollbar-width:none}
+nav.primary::-webkit-scrollbar{display:none}
+.tab-btn{flex:0 0 auto;height:50px;padding:0 16px;background:none;border:none;border-bottom:2px solid transparent;color:var(--charcoal-light);font-family:var(--font-sans);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:color .2s,border-color .2s;white-space:nowrap}
+.tab-btn:hover{color:var(--cream)}
+.tab-btn.active{color:var(--gold-light);border-bottom-color:var(--gold)}
+nav.sub{background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);display:flex;overflow-x:auto;scrollbar-width:none}
+nav.sub::-webkit-scrollbar{display:none}
+nav.sub.hidden{display:none}
+.sub-btn{flex:0 0 auto;height:38px;padding:0 18px;background:none;border:none;border-bottom:2px solid transparent;color:var(--charcoal-light);font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:color .2s,border-color .2s;white-space:nowrap}
+.sub-btn:hover{color:var(--cream)}
+.sub-btn.active{color:var(--gold-light);border-bottom-color:var(--gold)}
+.panel{display:none}.panel.active{display:block}
+.sub-panel{display:none}.sub-panel.active{display:block}
+.hero{position:relative;width:100%;background:#111;overflow:hidden}
+.hero img{width:100%;height:70vh;min-height:400px;max-height:780px;object-fit:cover;display:block;transition:opacity .6s;opacity:0}
+.hero img.loaded{opacity:1}
+.hero.tall img{height:82vh;max-height:860px}
+.hero-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(18,16,12,0.88));padding:48px 36px 28px}
+.hero-caption .rule{width:36px;height:1px;background:var(--gold);margin-bottom:12px}
+.hero-caption h2{font-family:var(--font-serif);font-size:28px;font-weight:normal;color:#FAF8F4;margin-bottom:6px}
+.hero-caption p{font-size:13px;color:rgba(245,242,236,0.7);letter-spacing:0.04em}
+.spec-strip{display:flex;flex-wrap:wrap;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.spec-item{flex:1 1 150px;padding:16px 22px;border-right:1px solid var(--border)}
+.spec-item:last-child{border-right:none}
+.spec-label{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:4px}
+.spec-value{font-size:13px;color:var(--cream)}
+.spec-value.gold{color:var(--gold-light)}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:3px;background:#0a0a08}
+.grid-card{position:relative;overflow:hidden;background:#1a1a16;cursor:pointer}
+.grid-card img{width:100%;height:280px;object-fit:cover;display:block;transition:transform .5s,opacity .5s;opacity:0}
+.grid-card img.loaded{opacity:1}
+.grid-card:hover img{transform:scale(1.03)}
+.card-label{position:absolute;bottom:0;left:0;right:0;padding:28px 16px 14px;background:linear-gradient(transparent,rgba(18,16,12,0.85))}
+.card-label h3{font-family:var(--font-serif);font-size:15px;font-weight:normal;color:#FAF8F4;margin-bottom:2px}
+.card-label p{font-size:10px;color:var(--gold-light);letter-spacing:0.1em;text-transform:uppercase}
+.content-block{max-width:760px;margin:0 auto;padding:44px 32px}
+.content-block h2{font-family:var(--font-serif);font-size:22px;font-weight:normal;margin-bottom:12px}
+.content-block p{font-size:14px;color:rgba(245,242,236,0.6);line-height:1.8}
+.gold-rule{width:40px;height:1px;background:var(--gold);margin:14px 0}
+.rule-list{list-style:none;margin-top:16px}
+.rule-list li{font-size:13px;color:rgba(245,242,236,0.55);padding:7px 0 7px 16px;border-bottom:1px solid var(--border);position:relative;line-height:1.5}
+.rule-list li::before{content:'—';position:absolute;left:0;color:var(--gold);font-size:11px}
+.wt-wrap{background:#000;min-height:55vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:48px 24px}
+.wt-eyebrow{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--charcoal-light)}
+.wt-title{font-family:var(--font-serif);font-size:22px;font-weight:normal;color:var(--cream);text-align:center}
+.audio-box{background:rgba(255,255,255,0.04);border:1px solid rgba(245,242,236,0.15);border-radius:4px;padding:20px 28px;max-width:500px;width:100%}
+.audio-box p{font-size:11px;color:var(--charcoal-light);letter-spacing:0.08em;margin-bottom:12px;text-align:center}
+audio{width:100%}
+.cinema-btn{margin-top:14px;width:100%;padding:10px;background:var(--gold);border:none;color:#1C1C1A;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;font-weight:500;font-family:var(--font-sans)}
+.cinema-btn:hover{background:var(--gold-light)}
+.scene-row{display:flex;gap:3px;max-width:860px;width:100%;overflow-x:auto}
+.scene{flex:0 0 150px;position:relative;cursor:pointer}
+.scene img{width:150px;height:95px;object-fit:cover;display:block;filter:brightness(0.55);transition:filter .25s,opacity .4s;opacity:0}
+.scene img.loaded{opacity:1}
+.scene:hover img,.scene.on img{filter:brightness(1)}
+.scene-lbl{position:absolute;bottom:5px;left:0;right:0;text-align:center;font-size:8.5px;color:var(--cream);letter-spacing:0.1em;text-transform:uppercase;text-shadow:0 1px 4px rgba(0,0,0,0.9)}
+.plan-wrap{padding:12px 16px}
+.plan-title{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px}
+.plan-box{background:#FAF8F2;border-radius:2px;padding:8px;margin-bottom:16px;overflow:hidden}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--border);margin-top:1px}
+.about-cell{background:var(--charcoal);padding:28px 24px}
+.about-cell h3{font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px}
+.about-cell p{font-size:12.5px;color:rgba(245,242,236,0.5);line-height:1.7}
+#lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:9999;align-items:center;justify-content:center;flex-direction:column}
+#lb.open{display:flex}
+#lb img{max-width:90vw;max-height:85vh;object-fit:contain}
+#lb-close{position:absolute;top:18px;right:22px;background:none;border:none;color:var(--cream);font-size:30px;cursor:pointer;opacity:.7;line-height:1}
+#lb-close:hover{opacity:1}
+#lb-cap{margin-top:12px;font-size:11px;color:var(--charcoal-light);letter-spacing:0.1em;text-transform:uppercase}
+@media(max-width:600px){header{padding:14px 16px}.content-block{padding:28px 16px}.plan-wrap{padding:24px 12px}.hero-caption h2{font-size:22px}}
+.carousel{width:100%;margin-top:3px}
+.car-stage{position:relative;width:100%;background:#111;overflow:hidden}
+.car-stage img{width:100%;height:calc(100vh - 115px);object-fit:contain;object-position:center;display:block;opacity:0;transition:opacity 0.5s;background:#111}
+#carousel-wellness .car-stage img{height:calc(100vh - 190px)}
+.car-stage img.loaded{opacity:1}
+.car-stage-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(18,16,12,0.88));padding:36px 36px 20px}
+.car-stage-caption h3{font-family:var(--font-serif);font-size:22px;font-weight:normal;color:#FAF8F4;margin-bottom:4px}
+.car-stage-caption p{font-size:12px;color:rgba(245,242,236,0.65);letter-spacing:0.04em}
+.car-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(18,16,12,0.5);border:none;color:rgba(245,242,236,0.7);font-size:36px;width:48px;height:72px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s,color 0.2s;z-index:10;line-height:1}
+.car-arrow:hover{background:rgba(18,16,12,0.8);color:#D4AF6A}
+.car-arrow-left{left:0}.car-arrow-right{right:0}
+.car-slide{display:none}.car-slide.active{display:block}
+.car-thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:3px;background:#0a0a08;margin-top:3px}
+.car-thumb{position:relative;overflow:hidden;cursor:pointer;background:#1a1a16}
+.car-thumb img{width:100%;height:86px;object-fit:cover;display:block;transition:transform 0.3s,opacity 0.4s,filter 0.3s;opacity:0;filter:brightness(0.55)}
+.car-thumb img.loaded{opacity:1}
+.car-thumb:hover img,.car-thumb.active-thumb img{filter:brightness(1)}
+.car-thumb.active-thumb img{outline:2px solid var(--gold);outline-offset:-2px}
+.car-thumb-lbl{position:absolute;bottom:0;left:0;right:0;padding:10px 5px 4px;background:linear-gradient(transparent,rgba(18,16,12,0.85));font-size:8.5px;color:var(--gold-light);letter-spacing:0.08em;text-transform:uppercase;text-align:center}
+.bms{border:0.5px solid var(--border);border-radius:8px;margin:0 32px 10px;overflow:hidden}
+.bmh{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;cursor:pointer;background:rgba(255,255,255,0.03)}
+.bmh:hover{background:rgba(255,255,255,0.06)}
+.bmt{font-size:13px;font-weight:500;color:var(--cream)}
+.bmc{font-size:13px;color:var(--gold-light)}
+.bmb{display:none;border-top:0.5px solid var(--border)}
+.bmb.open{display:block}
+.bmtb{width:100%;border-collapse:collapse;font-size:11.5px}
+.bmtb th{text-align:left;padding:8px 14px;font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--charcoal-light);font-weight:500;border-bottom:0.5px solid var(--border);background:rgba(255,255,255,0.02)}
+.bmtb td{padding:8px 14px;color:rgba(245,242,236,0.6);border-bottom:0.5px solid var(--border);vertical-align:top;line-height:1.5}
+.bmtb tr:last-child td{border-bottom:none}
+.bmtb td:first-child{color:var(--cream);font-weight:500;width:22%}
+.bmtb td:last-child{text-align:right;color:var(--gold-light);white-space:nowrap;width:13%}
+.bmtag{display:inline-block;background:rgba(184,150,62,0.12);color:var(--gold-light);font-size:9px;padding:1px 6px;border-radius:3px;margin:2px 2px 0 0;letter-spacing:0.04em}
+.bmtot td{background:rgba(184,150,62,0.08)!important;color:var(--gold-light)!important;font-weight:500!important;border-top:0.5px solid rgba(184,150,62,0.3)!important}
+</style>
+</head>
+<body>
+<header>
+  <div><div class="brand-name">Sovereign Fields</div><div class="brand-sub">King Township · Ontario · Est. 2026</div></div>
+  <div class="header-right">13825 8th Concession Road<br>~50 Acres · Oak Ridges Moraine</div>
+</header>
+<nav class="primary" id="pnav">
+  <button class="tab-btn active" data-tab="site">Site &amp; Aerial</button>
+  <button class="tab-btn" data-tab="approach">Street Approach</button>
+  <button class="tab-btn" data-tab="elevations">Elevations</button>
+  <button class="tab-btn" data-tab="courtyard">Garden Courtyard</button>
+  <button class="tab-btn" data-tab="barnland">Barn &amp; Landscape</button>
+  <button class="tab-btn" data-tab="walkthrough">Cinematic Walkthrough</button>
+  <button class="tab-btn" data-tab="layout">Layout</button>
+  <button class="tab-btn" data-tab="interiors">Interior Rooms</button>
+  <button class="tab-btn" data-tab="wellness">Barn &amp; Wellness</button>
+  <button class="tab-btn" data-tab="pool">Pool &amp; Outdoor</button>
+  <button class="tab-btn" data-tab="pergola">Al Fresco Pergola</button>
+  <button class="tab-btn" data-tab="garden">Kitchen Garden</button>
+  <button class="tab-btn" data-tab="robotaxi">Robotaxi Depot</button>
+  <button class="tab-btn" data-tab="budget">Budget &amp; Materials</button>
+  <button class="tab-btn" data-tab="about">About</button>
+</nav>
+<nav class="sub hidden" id="snav"></nav>
+<main>
+
+<!-- 1. SITE & AERIAL -->
+<div class="panel active" id="panel-site">
+  <div class="hero tall"><img src="https://donazz1.github.io/Sovereign-Feilds/34c730d1-88ff-4987-810c-b55fa85c30fa.jpg" alt="Aerial" onload="this.classList.add('loaded')">
+    <div class="hero-caption"><div class="rule"></div><h2>The Property</h2><p>~50 acres on the highest ridge crest · South-facing onto open farmland · Oak Ridges Moraine</p></div></div>
+  <div class="spec-strip">
+    <div class="spec-item"><div class="spec-label">Location</div><div class="spec-value">King Township, Ontario</div></div>
+    <div class="spec-item"><div class="spec-label">Site Area</div><div class="spec-value gold">~50 Acres</div></div>
+    <div class="spec-item"><div class="spec-label">Aspect</div><div class="spec-value">South-Facing · Farmland</div></div>
+    <div class="spec-item"><div class="spec-label">Zoning</div><div class="spec-value">Oak Ridges Moraine</div></div>
+    <div class="spec-item"><div class="spec-label">Access</div><div class="spec-value">Maple-Lined Drive</div></div>
+  </div>
+  <div class="content-block"><h2>Sited on the Ridge</h2><div class="gold-rule"></div><p>The property sits on the highest ridge crest, commanding uninterrupted views south onto open farmland. A weathered timber barn anchors the landscape. A maple-lined paved driveway with low fieldstone walls leads from the road to a generous entry forecourt.</p></div>
+</div>
+
+<!-- 2. STREET APPROACH -->
+<div class="panel" id="panel-approach">
+  <div class="hero tall"><img src="https://donazz1.github.io/Sovereign-Feilds/4551cad4-4f2e-4dc3-9089-695d5cc84f6e.jpg" alt="Street approach" onload="this.classList.add('loaded')">
+    <div class="hero-caption"><div class="rule"></div><h2>The Arrival</h2><p>Maple-lined approach · Low fieldstone walls · Lighted stone entry pillars</p></div></div>
+  <div class="content-block"><h2>The Driveway Sequence</h2><div class="gold-rule"></div><p>Mature maples line both sides of the paved approach. Low fieldstone walls and lighted stone pillars mark the entry gate. The house reveals itself gradually as you crest the ridge.</p></div>
+</div>
+
+<!-- 3. ELEVATIONS -->
+<div class="panel" id="panel-elevations">
+  <div class="sub-panel active" id="sub-front">
+    <div class="hero"><img src="https://donazz1.github.io/Sovereign-Feilds/elevation_front.jpg" alt="Front elevation" onload="this.classList.add('loaded')">
+      <div class="hero-caption"><div class="rule"></div><h2>Front Elevation — North · Entry Façade</h2><p>Single-story bungalow · White board-and-batten · Timber-post entry porch · Three-car garage wing to east</p></div></div>
+    <div class="spec-strip">
+      <div class="spec-item"><div class="spec-label">Form</div><div class="spec-value">Single-Story Bungalow</div></div>
+      <div class="spec-item"><div class="spec-label">Cladding</div><div class="spec-value">White Board &amp; Batten</div></div>
+      <div class="spec-item"><div class="spec-label">Roof</div><div class="spec-value">Matte Black Metal</div></div>
+      <div class="spec-item"><div class="spec-label">Windows</div><div class="spec-value">Black Steel Grid</div></div>
+      <div class="spec-item"><div class="spec-label">Size</div><div class="spec-value gold">~3,200 sq ft</div></div>
+    </div>
+  </div>
+  <div class="sub-panel" id="sub-rear">
+    <div class="hero"><img src="https://donazz1.github.io/Sovereign-Feilds/34c730d1-88ff-4987-810c-b55fa85c30fa.jpg" alt="Aerial south view" onload="this.classList.add('loaded')">
+      <div class="hero-caption"><div class="rule"></div><h2>Rear — South-Facing onto Farmland</h2><p>Z-compound aerial · Glass great room pavilion faces south · Open farmland expanse · Red barn in background</p></div></div>
+  </div>
+  <div class="sub-panel" id="sub-left">
+    <div class="hero"><img src="https://donazz1.github.io/Sovereign-Feilds/4551cad4-4f2e-4dc3-9089-695d5cc84f6e.jpg" alt="Driveway approach" onload="this.classList.add('loaded')">
+      <div class="hero-caption"><div class="rule"></div><h2>Driveway Approach</h2><p>Maple-lined entry · Fieldstone walls · House framed at golden hour through autumn maples</p></div></div>
+  </div>
+  <div class="sub-panel" id="sub-right">
+    <div class="hero" style="overflow:hidden">
+      <img src="https://donazz1.github.io/Sovereign-Feilds/elevation_front.jpg" alt="Garage wing" onload="this.classList.add('loaded')" style="object-position:left center;transform:scale(1.4);transform-origin:left center;">
+      <div class="hero-caption"><div class="rule"></div><h2>Garage Wing — East Side</h2><p>Three-car garage · Angled toward driveway · Black garage doors · Z-compound arrangement</p></div></div>
+  </div>
+</div>
+
+<!-- 4. GARDEN COURTYARD -->
+<div class="panel" id="panel-courtyard">
+<div class="carousel" id="carousel-courtyard">
+<div class="car-stage">
+  <img src="https://imagine-public.x.ai/imagine-public/images/4d543bba-88ef-4d83-98ed-f6c080023bf3.jpg" alt="Garden Courtyard" onload="this.classList.add('loaded')">
+  <button class="car-arrow car-arrow-left" onclick="carMove('courtyard',-1)">&#8249;</button>
+  <button class="car-arrow car-arrow-right" onclick="carMove('courtyard',1)">&#8250;</button>
+  <div class="car-stage-caption"><h3>A Private Micro-Garden Sanctuary</h3><p>Black-framed French doors · Lavender · Stone paving · Timber bench</p></div>
+</div>
+<div style="display:none">
+  <div class="car-slide active" data-title="A Private Micro-Garden Sanctuary" data-sub="Black-framed French doors · Lavender · Stone paving"><img src="https://imagine-public.x.ai/imagine-public/images/4d543bba-88ef-4d83-98ed-f6c080023bf3.jpg"></div>
+  <div class="car-slide" data-title="Standing Inside the Courtyard" data-sub="Flagstone paving · Timber bench · Lavender rows · Warm interior glow"><img src="https://imagine-public.x.ai/imagine-public/images/6a754f9f-0744-4d49-84e5-49f6ad27f106.jpg"></div>
+</div>
+<div class="car-thumbs">
+  <div class="car-thumb active-thumb" onclick="carGo('courtyard',0)"><img src="https://imagine-public.x.ai/imagine-public/images/4d543bba-88ef-4d83-98ed-f6c080023bf3.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Micro-Garden Sanctuary</div></div>
+  <div class="car-thumb" onclick="carGo('courtyard',1)"><img src="https://imagine-public.x.ai/imagine-public/images/6a754f9f-0744-4d49-84e5-49f6ad27f106.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Inside the Courtyard</div></div>
+</div>
+</div>
+  <div class="content-block"><h2>Five Private Gardens</h2><div class="gold-rule"></div><p>Each bedroom opens exclusively onto its own private garden courtyard through black-framed French doors. Lavender and white for the primary suite, herbs and sage green for bedroom three, meadow grass and stone for bedroom four, and a maple-view terrace for the study guest suite.</p></div>
+</div>
+
+<!-- 5. BARN & LANDSCAPE -->
+<div class="panel" id="panel-barnland">
+<div class="carousel" id="carousel-barnland">
+<div class="car-stage">
+  <img src="https://donazz1.github.io/Sovereign-Feilds/barn_exterior.png" alt="The Barn" onload="this.classList.add('loaded')">
+  <button class="car-arrow car-arrow-left" onclick="carMove('barnland',-1)">&#8249;</button>
+  <button class="car-arrow car-arrow-right" onclick="carMove('barnland',1)">&#8250;</button>
+  <div class="car-stage-caption"><h3>The Barn</h3><p>Weathered timber barn preserved · Rustic exterior · Transformed interior · South-facing farmland views</p></div>
+</div>
+<div style="display:none">
+  <div class="car-slide active" data-title="The Barn" data-sub="Weathered timber barn preserved · Rustic exterior · Transformed interior"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_exterior.png"></div>
+  <div class="car-slide" data-title="Gym Floor" data-sub="~1,200 sq ft · Wide bifold doors open onto farmland · Cathedral timber ceiling"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg"></div>
+  <div class="car-slide" data-title="Sauna + Cold Plunge" data-sub="Cedar dry sauna · 2-person cold plunge · Full south glass wall facing farmland"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_sauna_coldplunge.jpg"></div>
+  <div class="car-slide" data-title="Zen Meditation Terrace" data-sub="Outdoor · Open sky · Stone daybed · Japanese maple · Shallow water basin"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_zen_terrace.jpg"></div>
+  <div class="car-slide" data-title="Change Room + Shower" data-sub="Cedar lockers · Rainfall shower · Brass fixtures · Heated stone floor"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_changeroom.jpg"></div>
+  <div class="car-slide" data-title="Workshop" data-sub="~700 sq ft · 220V outlets · Heavy workbenches · Epoxy floor · North door"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_workshop.jpg"></div>
+  <div class="car-slide" data-title="Equipment Storage" data-sub="~700 sq ft · Powered garage door · Tractor · Ride-on mower · Snow plow"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_equipment.jpg"></div>
+</div>
+<div class="car-thumbs">
+  <div class="car-thumb active-thumb" onclick="carGo('barnland',0)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_exterior.png" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">The Barn</div></div>
+  <div class="car-thumb" onclick="carGo('barnland',1)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Gym Floor</div></div>
+  <div class="car-thumb" onclick="carGo('barnland',2)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_sauna_coldplunge.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Sauna + Plunge</div></div>
+  <div class="car-thumb" onclick="carGo('barnland',3)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_zen_terrace.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Zen Terrace</div></div>
+  <div class="car-thumb" onclick="carGo('barnland',4)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_changeroom.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Change Room</div></div>
+  <div class="car-thumb" onclick="carGo('barnland',5)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_workshop.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Workshop</div></div>
+  <div class="car-thumb" onclick="carGo('barnland',6)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_equipment.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Equipment Storage</div></div>
+</div>
+</div>
+  <div class="spec-strip">
+    <div class="spec-item"><div class="spec-label">Footprint</div><div class="spec-value gold">50 × 72 ft</div></div>
+    <div class="spec-item"><div class="spec-label">Orientation</div><div class="spec-value">Long Axis East–West</div></div>
+    <div class="spec-item"><div class="spec-label">Solar</div><div class="spec-value">30 kW · South Roof</div></div>
+    <div class="spec-item"><div class="spec-label">Wellness</div><div class="spec-value">South Wing</div></div>
+    <div class="spec-item"><div class="spec-label">Utility</div><div class="spec-value">North Wing</div></div>
+  </div>
+</div>
+
+
+<!-- 6. CINEMATIC WALKTHROUGH -->
+<div class="panel" id="panel-walkthrough">
+  <div class="sub-panel active" id="sub-wt-house">
+    <div class="wt-wrap">
+      <p class="wt-eyebrow">Cinematic Walkthrough</p>
+      <h2 class="wt-title">Property &amp; House</h2>
+      <div class="audio-box">
+        <p>Narrated walkthrough — property approach through interior</p>
+        <audio id="audio-house" controls><source src="https://donazz1.github.io/Sovereign-Feilds/13825-8th-concession-road-vimeo-audio-clean.mp3" type="audio/mpeg"></audio>
+        <button class="cinema-btn" onclick="launchCinema('audio-house','scenes-house')">▶ Launch Cinematic Mode</button>
+      </div>
+      <div class="scene-row" id="scenes-house">
+        <div class="scene on" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/4551cad4-4f2e-4dc3-9089-695d5cc84f6e.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Approach</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/34c730d1-88ff-4987-810c-b55fa85c30fa.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Aerial</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/elevation_front.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Front</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://imagine-public.x.ai/imagine-public/images/4d543bba-88ef-4d83-98ed-f6c080023bf3.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Courtyard</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_entry_hall.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Entry Hall</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_great_room.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Great Room</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_kitchen.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Kitchen</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_bedroom.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Primary</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="sub-panel" id="sub-wt-barn">
+    <div class="wt-wrap">
+      <p class="wt-eyebrow">Cinematic Walkthrough</p>
+      <h2 class="wt-title">Barn &amp; Wellness</h2>
+      <div class="audio-box">
+        <p>Narrated walkthrough — barn compound &amp; wellness circuit</p>
+        <audio id="audio-barn" controls><source src="https://donazz1.github.io/Sovereign-Feilds/13825-8th-concession-road-vimeo-audio-clean.mp3" type="audio/mpeg"></audio>
+        <button class="cinema-btn" onclick="launchCinema('audio-barn','scenes-barn')">▶ Launch Cinematic Mode</button>
+      </div>
+      <div class="scene-row" id="scenes-barn">
+        <div class="scene on" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Gym</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_sauna_coldplunge.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Sauna</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_zen_terrace.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Zen Terrace</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_changeroom.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Change Room</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_workshop.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Workshop</div></div>
+      </div>
+    </div>
+  <div class="sub-panel" id="sub-wt-grounds">
+    <div class="wt-wrap">
+      <p class="wt-eyebrow">Cinematic Walkthrough</p>
+      <h2 class="wt-title">Estate Grounds</h2>
+      <div class="audio-box">
+        <p>Narrated tour — gardens, pergola, kitchen garden &amp; robotaxi depot</p>
+        <audio id="audio-grounds" controls><source src="https://donazz1.github.io/Sovereign-Feilds/13825-8th-concession-road-vimeo-audio-clean.mp3" type="audio/mpeg"></audio>
+        <button class="cinema-btn" onclick="launchCinema('audio-grounds','scenes-grounds')">▶ Launch Cinematic Mode</button>
+      </div>
+      <div class="scene-row" id="scenes-grounds">
+        <div class="scene on" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/34c730d1-88ff-4987-810c-b55fa85c30fa.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Aerial</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/4551cad4-4f2e-4dc3-9089-695d5cc84f6e.jpg" onload="this.classList.add('loaded')"><div class="scene-lbl">Main Gate</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_exterior.png" onload="this.classList.add('loaded')"><div class="scene-lbl">The Barn</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_exterior.png" onload="this.classList.add('loaded')"><div class="scene-lbl">Pergola</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_interior.png" onload="this.classList.add('loaded')"><div class="scene-lbl">Under the Vines</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/kitchen_garden.png" onload="this.classList.add('loaded')"><div class="scene-lbl">Kitchen Garden</div></div>
+        <div class="scene" onclick="setScene(this)"><img src="https://donazz1.github.io/Sovereign-Feilds/robotaxi_depot.png" onload="this.classList.add('loaded')"><div class="scene-lbl">Robotaxi Depot</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. LAYOUT -->
+<div class="panel" id="panel-layout">
+  <div class="sub-panel active" id="sub-house-plan">
+  <div class="plan-wrap">
+    <div class="plan-title">House Floor Plan — Z-Compound · ~3,200 sq ft</div>
+    <div class="plan-box">
+      <svg width="100%" viewBox="0 0 820 480" xmlns="http://www.w3.org/2000/svg" style="max-height:calc(100vh - 220px);width:100%">
+        <defs><style>.pl{font-family:-apple-system,Arial,sans-serif;font-size:11px;fill:#2C2B28;font-weight:600}.ps{font-family:-apple-system,Arial,sans-serif;font-size:9px;fill:#6B6A64}.pd{font-family:-apple-system,Arial,sans-serif;font-size:8px;fill:#B8963E}</style></defs>
+        <g transform="translate(780,40)"><circle cx="0" cy="0" r="18" fill="none" stroke="#2C2B28" stroke-width="1"/><polygon points="0,-14 -5,8 0,4 5,8" fill="#2C2B28"/><polygon points="0,14 -5,-8 0,-4 5,-8" fill="#C8C5BC"/><text x="0" y="-19" text-anchor="middle" class="ps">N</text></g>
+        <rect x="20" y="200" width="460" height="240" fill="#F0EDE5" stroke="#2C2B28" stroke-width="1.5"/>
+        <rect x="30" y="210" width="220" height="170" fill="#E8F0EC" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="140" y="293" text-anchor="middle" class="pl">Great Room</text>
+        <text x="140" y="308" text-anchor="middle" class="ps">Glass pavilion · south view</text>
+        <rect x="260" y="210" width="160" height="100" fill="#F0EDE5" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="340" y="256" text-anchor="middle" class="pl">Kitchen</text>
+        <text x="340" y="271" text-anchor="middle" class="ps">Wolf 60" · Calacatta marble</text>
+        <rect x="260" y="318" width="160" height="112" fill="#EDE9E0" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="340" y="378" text-anchor="middle" class="pl">Dining</text>
+        <rect x="430" y="210" width="40" height="80" fill="#E0DDD4" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="450" y="253" text-anchor="middle" class="ps" transform="rotate(-90,450,253)">Pantry</text>
+        <text x="240" y="194" text-anchor="middle" class="pd" letter-spacing="2">LIVING WING</text>
+        <rect x="480" y="40" width="300" height="400" fill="#F0EDE5" stroke="#2C2B28" stroke-width="1.5"/>
+        <rect x="480" y="200" width="300" height="28" fill="#D6D3C8" stroke="#2C2B28" stroke-width="0.6"/>
+        <text x="630" y="218" text-anchor="middle" class="ps">Corridor</text>
+        <rect x="490" y="50" width="140" height="140" fill="#EDE5DC" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="560" y="118" text-anchor="middle" class="pl">Primary Suite</text>
+        <rect x="640" y="50" width="130" height="140" fill="#E8E0EC" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="705" y="118" text-anchor="middle" class="pl">Bedroom 2</text>
+        <text x="705" y="133" text-anchor="middle" class="ps">Lavender Room</text>
+        <rect x="490" y="236" width="130" height="110" fill="#E0EAE0" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="555" y="294" text-anchor="middle" class="pl">Bedroom 3</text>
+        <text x="555" y="308" text-anchor="middle" class="ps">Sage Room</text>
+        <rect x="630" y="236" width="140" height="110" fill="#E8E4DC" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="700" y="294" text-anchor="middle" class="pl">Bedroom 4</text>
+        <text x="700" y="308" text-anchor="middle" class="ps">Stone Room</text>
+        <rect x="490" y="354" width="280" height="76" fill="#EDE8E0" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="630" y="396" text-anchor="middle" class="pl">Bedroom 5 — Study / Guest</text>
+        <text x="630" y="34" text-anchor="middle" class="pd" letter-spacing="2">BEDROOM CORRIDOR</text>
+        <rect x="20" y="20" width="200" height="162" fill="#F0EDE5" stroke="#2C2B28" stroke-width="1.5"/>
+        <rect x="30" y="30" width="56" height="142" fill="#E0DDD4" stroke="#2C2B28" stroke-width="0.6"/>
+        <text x="58" y="103" text-anchor="middle" class="ps">Bay 1</text>
+        <rect x="96" y="30" width="56" height="142" fill="#E0DDD4" stroke="#2C2B28" stroke-width="0.6"/>
+        <text x="124" y="103" text-anchor="middle" class="ps">Bay 2</text>
+        <rect x="162" y="30" width="48" height="142" fill="#DDD9CF" stroke="#2C2B28" stroke-width="0.6"/>
+        <text x="186" y="103" text-anchor="middle" class="ps">Bay 3</text>
+        <rect x="230" y="20" width="80" height="100" fill="#E8E4DC" stroke="#2C2B28" stroke-width="0.8"/>
+        <text x="270" y="73" text-anchor="middle" class="pl">Mudroom</text>
+        <text x="110" y="14" text-anchor="middle" class="pd" letter-spacing="2">GARAGE WING</text>
+      </svg>
+    </div>
+  </div>
+  </div>
+  <div class="sub-panel" id="sub-barn-plan">
+  <div class="plan-wrap">
+    <div class="plan-title">Barn Floor Plan — 50 × 72 ft · Long Axis East–West</div>
+    <div class="plan-box">
+      <svg width="100%" viewBox="0 0 820 390" xmlns="http://www.w3.org/2000/svg" style="max-height:calc(100vh - 220px);width:100%">
+        <defs><pattern id="hatch" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#B8B5AC" stroke-width="1.2"/></pattern><style>.pl{font-family:-apple-system,Arial,sans-serif;font-size:11px;fill:#2C2B28;font-weight:600}.ps{font-family:-apple-system,Arial,sans-serif;font-size:9px;fill:#6B6A64}.pd{font-family:-apple-system,Arial,sans-serif;font-size:8px;fill:#B8963E}</style></defs>
+        <rect x="40" y="40" width="720" height="280" fill="none" stroke="#2C2B28" stroke-width="2.5" rx="4"/>
+        <rect x="40" y="172" width="720" height="8" fill="url(#hatch)" stroke="#2C2B28" stroke-width="1"/>
+        <text x="410" y="167" text-anchor="middle" class="ps">insulated separation wall — independent ventilation</text>
+        <rect x="50" y="50" width="330" height="112" fill="#E8E4DC" stroke="#2C2B28" stroke-width="1"/>
+        <text x="215" y="101" text-anchor="middle" class="pl">Workshop + Equipment Storage</text>
+        <text x="215" y="116" text-anchor="middle" class="ps">~1,400 sq ft combined · 220V · powered garage door north</text>
+        <rect x="390" y="50" width="360" height="112" fill="#E0DDD4" stroke="#2C2B28" stroke-width="1"/>
+        <text x="570" y="95" text-anchor="middle" class="pl">Equipment Storage</text>
+        <text x="570" y="110" text-anchor="middle" class="ps">Tractor · mower · plow · maintenance</text>
+        <rect x="480" y="47" width="140" height="5" fill="#C8E0E8" stroke="#5A9FB8" stroke-width="1"/>
+        <text x="550" y="42" text-anchor="middle" class="ps" fill="#3A6E8A">powered garage door</text>
+        <text x="410" y="36" text-anchor="middle" class="pd" letter-spacing="1.5">UTILITY WING — NORTH</text>
+        <rect x="50" y="190" width="340" height="112" fill="#EAF0E8" stroke="#2C2B28" stroke-width="1"/>
+        <text x="220" y="241" text-anchor="middle" class="pl">Gym Floor</text>
+        <text x="220" y="256" text-anchor="middle" class="ps">~1,200 sq ft · rubber flooring · exposed timber</text>
+        <rect x="80" y="298" width="200" height="5" fill="#C8E0E8" stroke="#5A9FB8" stroke-width="1"/>
+        <text x="180" y="314" text-anchor="middle" class="ps" fill="#3A6E8A">wide bifold → farmland</text>
+        <rect x="400" y="190" width="200" height="78" fill="#E4EDE8" stroke="#2C2B28" stroke-width="1"/>
+        <text x="500" y="225" text-anchor="middle" class="pl">Sauna + Cold Plunge</text>
+        <text x="500" y="240" text-anchor="middle" class="ps">~500 sq ft · cedar · Harvia</text>
+        <rect x="610" y="190" width="140" height="78" fill="#EDE8E0" stroke="#2C2B28" stroke-width="1"/>
+        <text x="680" y="225" text-anchor="middle" class="pl">Change Room</text>
+        <text x="680" y="240" text-anchor="middle" class="ps">~300 sq ft · cedar · brass</text>
+        <rect x="400" y="310" width="180" height="54" fill="none" stroke="#7A9478" stroke-width="1.2" stroke-dasharray="5 4" rx="3"/>
+        <text x="490" y="337" text-anchor="middle" class="ps" fill="#7A9478">zen terrace (outdoor · open sky)</text>
+        <text x="410" y="376" text-anchor="middle" class="pd" letter-spacing="1.5">WELLNESS WING — SOUTH</text>
+        <line x1="40" y1="382" x2="760" y2="382" stroke="#B8963E" stroke-width="0.8"/><line x1="40" y1="378" x2="40" y2="386" stroke="#B8963E" stroke-width="0.8"/><line x1="760" y1="378" x2="760" y2="386" stroke="#B8963E" stroke-width="0.8"/>
+        <text x="400" y="390" text-anchor="middle" class="pd">72 ft east–west</text>
+        <line x1="786" y1="40" x2="786" y2="320" stroke="#B8963E" stroke-width="0.8"/><line x1="782" y1="40" x2="790" y2="40" stroke="#B8963E" stroke-width="0.8"/><line x1="782" y1="320" x2="790" y2="320" stroke="#B8963E" stroke-width="0.8"/>
+        <text x="808" y="183" text-anchor="middle" class="pd" transform="rotate(90,808,183)">50 ft</text>
+      </svg>
+    </div>
+  </div>
+  </div>
+  <div class="sub-panel" id="sub-site-plan">
+  <div class="plan-wrap">
+    <div class="plan-title">Site Plan — 13825 8th Concession Road · ~50 Acres · Road at North · Farmland at South</div>
+    <div class="plan-box">
+      <svg width="100%" viewBox="0 0 820 720" xmlns="http://www.w3.org/2000/svg" style="max-height:calc(100vh - 220px);width:100%">
+        <defs><style>.sl{font-family:-apple-system,Arial,sans-serif;font-size:10px;fill:#2C2B28;font-weight:600}.ss{font-family:-apple-system,Arial,sans-serif;font-size:8px;fill:#6B6A64}.sd{font-family:-apple-system,Arial,sans-serif;font-size:8px;fill:#B8963E}</style></defs>
+
+        <!-- Road at top (north) -->
+        <rect x="0" y="0" width="820" height="44" fill="#888780" fill-opacity="0.2"/>
+        <line x1="0" y1="44" x2="820" y2="44" stroke="#888780" stroke-width="1"/>
+        <text x="410" y="26" text-anchor="middle" class="ss">8th Concession Road — North</text>
+
+        <!-- Property boundary -->
+        <rect x="30" y="44" width="760" height="656" rx="4" fill="#3A4A28" fill-opacity="0.05" stroke="#888780" stroke-width="0.8" stroke-dasharray="8 4"/>
+
+        <!-- Tree line north -->
+        <rect x="30" y="44" width="760" height="26" fill="#27500A" fill-opacity="0.15" rx="2"/>
+        <text x="410" y="60" text-anchor="middle" class="ss" fill="#27500A">tree line · maple-lined driveway</text>
+
+        <!-- Robotaxi depot — top left near road -->
+        <rect x="44" y="52" width="128" height="60" rx="4" fill="#B5D4F4" stroke="#185FA5" stroke-width="1"/>
+        <text x="108" y="74" text-anchor="middle" class="sl" fill="#0C447C">Robotaxi depot</text>
+        <text x="108" y="86" text-anchor="middle" class="ss" fill="#185FA5">2–4 stalls · EV charging</text>
+        <text x="108" y="97" text-anchor="middle" class="ss" fill="#185FA5">own gate · screened</text>
+        <rect x="88" y="44" width="40" height="8" rx="2" fill="#378ADD" fill-opacity="0.6"/>
+        <text x="108" y="41" text-anchor="middle" class="ss" fill="#185FA5">depot gate</text>
+        <!-- Screen hedge east of depot -->
+        <rect x="173" y="50" width="6" height="62" rx="3" fill="#27500A" fill-opacity="0.5"/>
+        <!-- Spur road depot to driveway -->
+        <rect x="179" y="88" width="191" height="10" rx="3" fill="#888780" fill-opacity="0.25"/>
+        <text x="274" y="85" text-anchor="middle" class="ss" fill="#6B6A64">spur road</text>
+
+        <!-- Main gate on road -->
+        <rect x="358" y="44" width="52" height="8" rx="2" fill="#B8963E" fill-opacity="0.7"/>
+        <text x="384" y="41" text-anchor="middle" class="sd">main gate</text>
+
+        <!-- Main driveway runs south from gate -->
+        <rect x="368" y="44" width="32" height="220" fill="#888780" fill-opacity="0.2"/>
+        <text x="384" y="162" text-anchor="middle" class="ss" fill="#6B6A64" transform="rotate(-90,384,162)">main driveway</text>
+
+        <!-- Entry forecourt -->
+        <rect x="268" y="264" width="232" height="40" rx="4" fill="#C8B88A" fill-opacity="0.2" stroke="#B8963E" stroke-width="0.5" stroke-dasharray="4 2"/>
+        <text x="384" y="287" text-anchor="middle" class="ss" fill="#B8963E">entry forecourt · granite fountain</text>
+
+        <!-- ══ Z-COMPOUND HOUSE ══ -->
+        <!-- Living wing centre — entry faces north, veranda south -->
+        <rect x="268" y="304" width="200" height="135" rx="5" fill="#EAF0E8" stroke="#2C2B28" stroke-width="1.5"/>
+        <text x="368" y="363" text-anchor="middle" class="sl">Living wing</text>
+        <text x="368" y="377" text-anchor="middle" class="ss">Great room · kitchen · dining</text>
+
+        <!-- Garage wing EAST end of house — not west -->
+        <rect x="468" y="304" width="145" height="95" rx="5" fill="#E8E4DC" stroke="#2C2B28" stroke-width="1"/>
+        <text x="540" y="344" text-anchor="middle" class="sl">Garage wing</text>
+        <text x="540" y="357" text-anchor="middle" class="ss">3-car · mudroom</text>
+
+        <!-- Bedroom corridor wing — east, offset south -->
+        <rect x="468" y="399" width="205" height="155" rx="5" fill="#EDE8F0" stroke="#2C2B28" stroke-width="1"/>
+        <text x="570" y="463" text-anchor="middle" class="sl">Bedroom corridor</text>
+        <text x="570" y="476" text-anchor="middle" class="ss">Primary · BR2 · BR3</text>
+        <text x="570" y="488" text-anchor="middle" class="ss">BR4 · Study/guest</text>
+
+        <!-- Courtyards north face of bedroom wing -->
+        <rect x="468" y="360" width="44" height="39" rx="3" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.8" stroke-dasharray="3 2"/>
+        <text x="490" y="382" text-anchor="middle" class="ss" fill="#3B6D11">cyd</text>
+        <rect x="520" y="360" width="44" height="39" rx="3" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.8" stroke-dasharray="3 2"/>
+        <text x="542" y="382" text-anchor="middle" class="ss" fill="#3B6D11">cyd</text>
+        <rect x="572" y="360" width="44" height="39" rx="3" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.8" stroke-dasharray="3 2"/>
+        <text x="594" y="382" text-anchor="middle" class="ss" fill="#3B6D11">cyd</text>
+        <rect x="624" y="360" width="44" height="39" rx="3" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.8" stroke-dasharray="3 2"/>
+        <text x="646" y="382" text-anchor="middle" class="ss" fill="#3B6D11">cyd</text>
+        <!-- Primary courtyard west of living wing -->
+        <rect x="210" y="304" width="58" height="60" rx="3" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.8" stroke-dasharray="3 2"/>
+        <text x="239" y="337" text-anchor="middle" class="ss" fill="#3B6D11">primary</text>
+        <text x="239" y="347" text-anchor="middle" class="ss" fill="#3B6D11">courtyard</text>
+
+        <!-- Covered veranda south face of living wing -->
+        <rect x="268" y="439" width="200" height="16" rx="2" fill="#C8B88A" fill-opacity="0.4" stroke="#B8963E" stroke-width="0.5" stroke-dasharray="4 2"/>
+        <text x="368" y="451" text-anchor="middle" class="ss" fill="#B8963E">covered veranda · south facing</text>
+
+        <!-- Fire pit + hot tub south-west of veranda -->
+        <rect x="180" y="462" width="108" height="44" rx="3" fill="#D4B896" fill-opacity="0.3" stroke="#B8963E" stroke-width="0.5" stroke-dasharray="3 2"/>
+        <text x="234" y="480" text-anchor="middle" class="ss" fill="#B8963E">fire pit terrace</text>
+        <text x="234" y="492" text-anchor="middle" class="ss" fill="#B8963E">+ hot tub</text>
+
+
+        <!-- Pool south of living wing east side -->
+        <rect x="296" y="462" width="118" height="68" rx="4" fill="#B5D4F4" stroke="#185FA5" stroke-width="0.8"/>
+        <text x="355" y="492" text-anchor="middle" class="ss" fill="#185FA5">Pool ~20×30 ft</text>
+        <text x="355" y="504" text-anchor="middle" class="ss" fill="#185FA5">saltwater · tanning ledge</text>
+
+        <!-- Pool house east of pool -->
+        <rect x="424" y="468" width="78" height="44" rx="3" fill="#E8E4DC" stroke="#5F5E5A" stroke-width="0.8"/>
+        <text x="463" y="487" text-anchor="middle" class="ss">Pool house</text>
+        <text x="463" y="499" text-anchor="middle" class="ss">+ Murphy bed</text>
+
+        <!-- ══ BARN — SOUTHWEST, well clear of house ══ -->
+        <rect x="38" y="520" width="175" height="105" rx="5" fill="#D4B896" stroke="#7A5530" stroke-width="1.5"/>
+        <text x="125" y="562" text-anchor="middle" class="sl">Barn · 72×50 ft</text>
+        <text x="125" y="575" text-anchor="middle" class="ss">wellness south · utility north</text>
+        <text x="125" y="587" text-anchor="middle" class="ss">30 kW solar · south roof</text>
+        <text x="125" y="599" text-anchor="middle" class="ss" fill="#7A5530">gym · sauna · zen terrace</text>
+
+        <!-- Stone path from house west face curving SW to barn -->
+        <path d="M210 370 Q190 400 175 430 Q160 470 155 520" fill="none" stroke="#B8963E" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="round"/>
+        <!-- Path label -->
+        <text x="168" y="460" text-anchor="middle" class="sd" transform="rotate(-70,168,460)">stone path</text>
+
+        <!-- Path description box -->
+        <rect x="38" y="455" width="130" height="48" rx="3" fill="rgba(184,150,62,0.08)" stroke="rgba(184,150,62,0.2)" stroke-width="0.5"/>
+        <text x="103" y="472" text-anchor="middle" class="ss" fill="#B8963E">The Sanctuary Walk</text>
+        <text x="103" y="484" text-anchor="middle" class="ss" fill="#6B6A64">fieldstone path · lavender</text>
+        <text x="103" y="495" text-anchor="middle" class="ss" fill="#6B6A64">borders · farmland views</text>
+
+        <!-- Open farmland south label -->
+        <rect x="30" y="644" width="760" height="22" rx="2" fill="#3B6D11" fill-opacity="0.1"/>
+        <text x="410" y="658" text-anchor="middle" class="ss" fill="#3B6D11">open farmland · south — unobstructed views from veranda, great room, barn wellness wing and sanctuary walk</text>
+
+        <!-- Courtyard legend -->
+        <rect x="510" y="250" width="8" height="8" rx="1" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.8" stroke-dasharray="2 1"/>
+        <text x="522" y="258" text-anchor="start" class="ss" fill="#3B6D11">private courtyard (5 total · one per bedroom)</text>
+
+        <!-- Kitchen Garden Zone — east side of property -->
+        <rect x="620" y="430" width="138" height="110" rx="5" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1" stroke-dasharray="5 3"/>
+        <text x="689" y="500" text-anchor="middle" class="sl" fill="#27500A">Kitchen Garden</text>
+        <text x="689" y="512" text-anchor="middle" class="ss" fill="#3B6D11">raised beds · orchard</text>
+        <text x="689" y="523" text-anchor="middle" class="ss" fill="#3B6D11">tool shed · beehives</text>
+        <!-- Greenhouse north end of kitchen garden -->
+        <rect x="632" y="436" width="114" height="50" rx="3" fill="#B5D4F4" fill-opacity="0.35" stroke="#185FA5" stroke-width="0.8"/>
+        <text x="689" y="453" text-anchor="middle" class="sl" fill="#0C447C">Greenhouse</text>
+        <text x="689" y="464" text-anchor="middle" class="ss" fill="#185FA5">16×24 ft · heated</text>
+        <!-- Stone path from house east wing to kitchen garden -->
+        <path d="M673 440 Q680 420 690 410 Q698 402 700 399" fill="none" stroke="#3B6D11" stroke-width="1.5" stroke-dasharray="4 3" stroke-linecap="round"/>
+        <text x="700" y="395" text-anchor="end" class="ss" fill="#3B6D11">garden path</text>
+
+        <!-- Al Fresco Pergola — east of mudroom, just off kitchen -->
+        <rect x="510" y="295" width="95" height="65" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="1" stroke-dasharray="4 3"/>
+        <text x="557" y="320" text-anchor="middle" class="sl" fill="#27500A">Pergola</text>
+        <text x="557" y="332" text-anchor="middle" class="ss" fill="#3B6D11">al fresco dining</text>
+        <text x="557" y="344" text-anchor="middle" class="ss" fill="#3B6D11">vine canopy · fans</text>
+        <!-- Short path from mudroom to pergola -->
+        <path d="M510 330 Q495 325 468 322" fill="none" stroke="#3B6D11" stroke-width="1.2" stroke-dasharray="3 3" stroke-linecap="round"/>
+
+        <!-- Compass -->
+        <g transform="translate(776,72)">
+          <circle cx="0" cy="0" r="15" fill="none" stroke="#888780" stroke-width="0.8" opacity="0.5"/>
+          <polygon points="0,-11 -3,7 0,4 3,7" fill="#3d3d3a" fill-opacity="0.7"/>
+          <polygon points="0,11 -3,-7 0,-4 3,-7" fill="#B4B2A9"/>
+          <text x="0" y="-14" text-anchor="middle" class="ss">N</text>
+          <text x="0" y="24" text-anchor="middle" class="ss">S</text>
+        </g>
+
+        <text x="410" y="714" text-anchor="middle" class="sd">concept site plan — not to scale · Z-compound · road north · barn southwest · farmland south</text>
+      </svg>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- 8. INTERIOR ROOMS -->
+<div class="panel" id="panel-interiors">
+<div class="carousel" id="carousel-interiors">
+<div class="car-stage">
+  <img src="https://donazz1.github.io/Sovereign-Feilds/interior_great_room.jpg" alt="Great Room" onload="this.classList.add('loaded')">
+  <button class="car-arrow car-arrow-left" onclick="carMove('interiors',-1)">&#8249;</button>
+  <button class="car-arrow car-arrow-right" onclick="carMove('interiors',1)">&#8250;</button>
+  <div class="car-stage-caption"><h3>Great Room</h3><p>Glass Pavilion · South Farmland View · White shiplap vaulted ceiling</p></div>
+</div>
+<div style="display:none">
+  <div class="car-slide active" data-title="Great Room" data-sub="Glass Pavilion · South Farmland View · White shiplap vaulted ceiling"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_great_room.jpg"></div>
+  <div class="car-slide" data-title="Kitchen" data-sub="Sage Green Island · Wolf 60&quot; · Calacatta Marble · Brass Hardware"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_kitchen.jpg"></div>
+  <div class="car-slide" data-title="Kitchen &amp; Dining" data-sub="Open Plan · Brass Pendants · Harvest Table · Scullery Behind"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_kitchen_dining.jpg"></div>
+  <div class="car-slide" data-title="Primary Suite" data-sub="Putty Plaster Walls · Capiz Chandelier · Gas Fireplace · French Doors to Courtyard"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_bedroom.jpg"></div>
+  <div class="car-slide" data-title="Primary En Suite" data-sub="Bleached Oak Vanity · Soaking Tub · Rainfall Shower · Brass Fixtures"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_ensuite.jpg"></div>
+  <div class="car-slide" data-title="Primary Suite — View" data-sub="French Doors Open to Lavender Courtyard · Morning Light"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_suite.jpg"></div>
+  <div class="car-slide" data-title="Guest Bedrooms 2–5" data-sub="Each Bespoke · Own Colour · Own Private Courtyard"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_bedrooms_2_5.jpg"></div>
+  <div class="car-slide" data-title="Entry Hall" data-sub="Arrival Sequence · White Shiplap · Brass Hardware · Stone Floor"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_entry_hall.jpg"></div>
+  <div class="car-slide" data-title="Garage Mudroom" data-sub="Heated Slate · Full-Height Lockers · Dog Wash · 3× Tesla Wall Connectors"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_garage_mudroom.jpg"></div>
+  <div class="car-slide" data-title="Veranda &amp; Fire Pit" data-sub="Covered Veranda · Gas Fire Pit · Farmland Views · Hot Tub Nearby"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_veranda_firepit.jpg"></div>
+  <div class="car-slide" data-title="Study / Guest Suite" data-sub="Built-in Oak Desk · Brass Fixtures · Maple Driveway View · Window Seat"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_study_guest.jpg"></div>
+</div>
+<div class="car-thumbs">
+  <div class="car-thumb active-thumb" onclick="carGo('interiors',0)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_great_room.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Great Room</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',1)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_kitchen.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Kitchen</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',2)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_kitchen_dining.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Kitchen &amp; Dining</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',3)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_bedroom.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Primary Suite</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',4)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_ensuite.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Primary En Suite</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',5)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_primary_suite.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Primary View</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',6)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_bedrooms_2_5.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Bedrooms 2–5</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',7)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_entry_hall.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Entry Hall</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',8)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_garage_mudroom.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Mudroom</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',9)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_veranda_firepit.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Veranda</div></div>
+  <div class="car-thumb" onclick="carGo('interiors',10)"><img src="https://donazz1.github.io/Sovereign-Feilds/interior_study_guest.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Study / Guest</div></div>
+</div>
+</div>
+  <div class="content-block"><h2>Design Language</h2><div class="gold-rule"></div>
+    <ul class="rule-list">
+      <li>White shiplap vaulted ceilings with white painted timber beams throughout</li>
+      <li>Wide plank white oak floors throughout — no exceptions</li>
+      <li>Black-framed steel grid windows and French doors throughout</li>
+      <li>Brass hardware throughout — fixtures, knobs, pulls, pot fillers</li>
+      <li>Warm putty/greige plaster walls in living and bedroom areas</li>
+      <li>No arches anywhere — clean rectangular openings throughout</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 9. BARN & WELLNESS -->
+<div class="panel" id="panel-wellness">
+  <div class="spec-strip">
+    <div class="spec-item"><div class="spec-label">Gym</div><div class="spec-value gold">~1,200 sq ft</div></div>
+    <div class="spec-item"><div class="spec-label">Sauna + Plunge</div><div class="spec-value">~500 sq ft</div></div>
+    <div class="spec-item"><div class="spec-label">Change Room</div><div class="spec-value">~300 sq ft</div></div>
+    <div class="spec-item"><div class="spec-label">Workshop + Equipment</div><div class="spec-value">~1,400 sq ft</div></div>
+    <div class="spec-item"><div class="spec-label">Solar Array</div><div class="spec-value">30 kW · South Roof</div></div>
+  </div>
+<div class="carousel" id="carousel-wellness">
+<div class="car-stage">
+  <img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg" alt="Gym Floor" onload="this.classList.add('loaded')">
+  <button class="car-arrow car-arrow-left" onclick="carMove('wellness',-1)">&#8249;</button>
+  <button class="car-arrow car-arrow-right" onclick="carMove('wellness',1)">&#8250;</button>
+  <div class="car-stage-caption"><h3>Gym Floor</h3><p>~1,200 sq ft · Wide bifold doors open fully onto farmland · Exposed timber cathedral ceiling</p></div>
+</div>
+<div style="display:none">
+  <div class="car-slide active" data-title="Gym Floor" data-sub="~1,200 sq ft · Wide bifold doors open fully onto farmland · Exposed timber cathedral ceiling"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg"></div>
+  <div class="car-slide" data-title="Sauna + Cold Plunge" data-sub="Cedar 4-person sauna · Harvia heater · 2-person cold plunge 10–15°C · Full south glass wall"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_sauna_coldplunge.jpg"></div>
+  <div class="car-slide" data-title="Zen Meditation Terrace" data-sub="Outdoor · Open sky · Stone daybed · Japanese maple · Still water basin · Teak boardwalk"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_zen_terrace.jpg"></div>
+  <div class="car-slide" data-title="Change Room + Shower" data-sub="Cedar lockers · Brass hardware · Rainfall shower · Heated stone floor · Spa-grade aesthetic"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_changeroom.jpg"></div>
+  <div class="car-slide" data-title="Workshop" data-sub="~700 sq ft · 220V outlets · Heavy workbenches · Pegboard storage · Epoxy floor · North door"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_workshop.jpg"></div>
+  <div class="car-slide" data-title="Equipment Storage" data-sub="~700 sq ft · Powered garage door · Tractor · Ride-on mower · Snow plow · Wall-mounted racks"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_equipment.jpg"></div>
+</div>
+<div class="car-thumbs">
+  <div class="car-thumb active-thumb" onclick="carGo('wellness',0)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_gym.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Gym Floor</div></div>
+  <div class="car-thumb" onclick="carGo('wellness',1)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_sauna_coldplunge.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Sauna + Plunge</div></div>
+  <div class="car-thumb" onclick="carGo('wellness',2)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_zen_terrace.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Zen Terrace</div></div>
+  <div class="car-thumb" onclick="carGo('wellness',3)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_changeroom.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Change Room</div></div>
+  <div class="car-thumb" onclick="carGo('wellness',4)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_workshop.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Workshop</div></div>
+  <div class="car-thumb" onclick="carGo('wellness',5)"><img src="https://donazz1.github.io/Sovereign-Feilds/barn_equipment.jpg" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Equipment Storage</div></div>
+</div>
+</div>
+  <div class="content-block"><h2>The Wellness Circuit</h2><div class="gold-rule"></div><p>Sauna → cold plunge → zen terrace → open farmland. Cedar dry sauna seats four with Harvia heater. Cold plunge chills to 10–15°C. Sliding glass on the full south wall opens onto the farmland. The outdoor zen terrace is completely open to sky with a fieldstone meditation daybed and shallow water basin.</p>
+    <ul class="rule-list" style="margin-top:18px">
+      <li>Full insulated wall separates wellness from utility — no sound, no smell crossover</li>
+      <li>Independent ventilation — negative pressure on utility side</li>
+      <li>30 kW solar array on south-facing barn roof — ~75 panels · see Energy section</li>
+      <li>Starlink on barn roof — automatic failover if fiber down</li>
+    </ul>
+  </div>
+
+<div style="margin:0 0 0;padding:16px 32px 0">
+  <div style="border:0.5px solid rgba(184,150,62,0.25);border-radius:8px;overflow:hidden;max-width:600px">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(184,150,62,0.08);border-bottom:0.5px solid rgba(184,150,62,0.2)">
+      <span style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light)">Barn &amp; Wellness — Est. Cost</span>
+      <span style="font-size:14px;font-weight:500;color:var(--gold-light)">~$610,000</span>
+    </div>
+    <table style="width:100%;border-collapse:collapse"><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Structure &amp; shell renovation</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$320,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Gym · sauna · cold plunge · zen terrace</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$193,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Change room + shower</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$55,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Workshop &amp; equipment storage</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$42,000</td></tr></table>
+  </div>
+</div>
+</div>
+
+<!-- 10. POOL & OUTDOOR -->
+<div class="panel" id="panel-pool">
+  <div class="hero tall"><img src="https://donazz1.github.io/Sovereign-Feilds/pool_aerial.png" alt="Pool and outdoor living" onload="this.classList.add('loaded')">
+    <div class="hero-caption"><div class="rule"></div><h2>Pool &amp; Outdoor Living</h2><p>Geometric saltwater pool · South veranda · Fire pit terrace · Hot tub · Pool house · Concept render</p></div></div>
+  <div class="spec-strip">
+    <div class="spec-item"><div class="spec-label">Pool Size</div><div class="spec-value gold">~20 × 30 ft</div></div>
+    <div class="spec-item"><div class="spec-label">Position</div><div class="spec-value">East Side · Off South Veranda</div></div>
+    <div class="spec-item"><div class="spec-label">System</div><div class="spec-value">Saltwater · Auto Cover</div></div>
+    <div class="spec-item"><div class="spec-label">Hot Tub</div><div class="spec-value">Near Fire Pit · Separate</div></div>
+    <div class="spec-item"><div class="spec-label">Deck</div><div class="spec-value">Flagstone Throughout</div></div>
+  </div>
+  <div class="content-block">
+    <h2>The Pool &amp; Outdoor Circuit</h2><div class="gold-rule"></div>
+    <p>A geometric saltwater pool positioned on the east side of the house off the south veranda so the farmland view straight south remains completely unobstructed. Tanning ledge, in-pool LED lighting, automatic cover, and outdoor shower. The hot tub sits separately near the veranda fire pit. Pool house just east of pool — full change room, bathroom, equipment storage, and a hidden Murphy bed behind a flush panel wall.</p>
+    <ul class="rule-list" style="margin-top:20px">
+      <li>Geometric pool ~20×30 ft · tanning ledge · saltwater · automatic cover · in-pool LED lighting</li>
+      <li>Pool positioned east side — south farmland view fully preserved</li>
+      <li>Hot tub separate — near veranda fire pit, not attached to pool</li>
+      <li>Pool house east of pool — changing room, bathroom, equipment, outdoor shower, Murphy bed (flush panel)</li>
+      <li>Flagstone pool deck throughout · perennial planting beds at edges</li>
+      <li>Full pool automation via Control4/Savant — lighting, temperature, cover, saltwater system</li>
+    </ul>
+  </div>
+  <div class="content-block" style="padding-top:0">
+    <h2>Outdoor Living Zones</h2><div class="gold-rule"></div>
+    <ul class="rule-list">
+      <li><strong style="color:var(--gold-light)">Covered Veranda</strong> — full width of great room south face, tongue-and-groove cedar ceiling, Douglas fir timber posts, integrated Lutron lighting</li>
+      <li><strong style="color:var(--gold-light)">Fire Pit Terrace</strong> — rectangular gas fire pit, limestone stone surround, flagstone deck, hot tub nearby, open farmland views</li>
+      <li><strong style="color:var(--gold-light)">Pool Zone</strong> — east side, geometric saltwater pool, tanning ledge, flagstone deck, pool house with Murphy bed</li>
+      <li><strong style="color:var(--gold-light)">Kitchen Garden Patio</strong> — granite fountain, raised beds, herb garden, casual seating near mudroom entry</li>
+      <li><strong style="color:var(--gold-light)">Wildflower Meadow</strong> — beyond pool zone, native Ontario wildflowers, stone walls, hedgerows, open farmland</li>
+    </ul>
+  </div>
+</div>
+
+<!-- AL FRESCO PERGOLA -->
+<div class="panel" id="panel-pergola">
+<div class="carousel" id="carousel-pergola">
+<div class="car-stage">
+  <img src="https://donazz1.github.io/Sovereign-Feilds/pergola_exterior.png" alt="Al Fresco Pergola" onload="this.classList.add('loaded')">
+  <button class="car-arrow car-arrow-left" onclick="carMove('pergola',-1)">&#8249;</button>
+  <button class="car-arrow car-arrow-right" onclick="carMove('pergola',1)">&#8250;</button>
+  <div class="car-stage-caption"><h3>Al Fresco Dining Pergola</h3><p>Rustic harvest table · Bistro seating · Living vine canopy · Farmland views · Golden hour</p></div>
+</div>
+<div style="display:none">
+  <div class="car-slide active" data-title="Al Fresco Dining Pergola" data-sub="Rustic harvest table · Bistro seating · Living vine canopy · Farmland views"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_exterior.png"></div>
+  <div class="car-slide" data-title="Inside the Pergola" data-sub="Douglas fir and black steel · Infrared heaters · Ceiling fans · Pendant lighting · Open farmland horizon"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_interior.png"></div>
+</div>
+<div class="car-thumbs">
+  <div class="car-thumb active-thumb" onclick="carGo('pergola',0)"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_exterior.png" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Pergola · Bistro View</div></div>
+  <div class="car-thumb" onclick="carGo('pergola',1)"><img src="https://donazz1.github.io/Sovereign-Feilds/pergola_interior.png" onload="this.classList.add('loaded')"><div class="car-thumb-lbl">Interior · Long View</div></div>
+</div>
+</div>
+  <div class="spec-strip">
+    <div class="spec-item"><div class="spec-label">Structure</div><div class="spec-value gold">Douglas Fir + Black Steel</div></div>
+    <div class="spec-item"><div class="spec-label">Canopy</div><div class="spec-value">Living Vine Trellis</div></div>
+    <div class="spec-item"><div class="spec-label">Floor</div><div class="spec-value">Flagstone</div></div>
+    <div class="spec-item"><div class="spec-label">Heating</div><div class="spec-value">Infrared Ceiling Mount</div></div>
+    <div class="spec-item"><div class="spec-label">Location</div><div class="spec-value">Kitchen Garden · East of Mudroom</div></div>
+  </div>
+  <div class="content-block">
+    <h2>The Pergola</h2><div class="gold-rule"></div>
+    <p>A Douglas fir and black steel pergola with an open lattice trellis roof positioned just off the kitchen garden, east of the mudroom. Completely open on all four sides — the farmland view is visible from every seat. A short flagstone path through the herb garden connects it directly to the kitchen. In early spring the open trellis lets full sun through. By June the vines have filled in creating a dense natural living canopy. By October the leaves drop, opening it back up to sky.</p>
+    <ul class="rule-list" style="margin-top:20px">
+      <li><strong style="color:var(--gold-light)">Structure</strong> — Douglas fir timber posts and beams · black steel lattice trellis roof · no walls, completely open on all four sides · farmland view from every seat</li>
+      <li><strong style="color:var(--gold-light)">Living Canopy</strong> — hops or Virginia creeper trained through trellis · bare in spring (open sky dining) · full canopy June–September · brilliant red fall colour · dormant and open through winter</li>
+      <li><strong style="color:var(--gold-light)">Lighting</strong> — Lutron-controlled outdoor zone · warm pendant lights hanging from trellis beams · string lights woven through vines · dimmable scenes via Control4 (dinner mode, ambient mode)</li>
+      <li><strong style="color:var(--gold-light)">Ceiling Fans</strong> — 4× large black ceiling-mount fans on trellis beams · dual purpose: summer air circulation and evening insect deterrent · Control4 "insect mode" runs all fans at medium speed from app</li>
+      <li><strong style="color:var(--gold-light)">Infrared Heaters</strong> — 4–6× ceiling-mount infrared units bolted to trellis beams · heat occupants directly not the air, so wind doesn't steal warmth · extends season into October and from April · Control4 zone on/off from app</li>
+      <li><strong style="color:var(--gold-light)">Seating</strong> — one or two long harvest tables · estate dining format · not café-style small tables · seats 10–16 comfortably</li>
+      <li><strong style="color:var(--gold-light)">Floor</strong> — flagstone matching house and veranda · low fieldstone border walls optional on north and east sides for wind break without enclosing the space</li>
+      <li><strong style="color:var(--gold-light)">Kitchen Connection</strong> — flagstone path through herb garden to mudroom · 20–30 steps from kitchen to table · outdoor kitchen nearby</li>
+    </ul>
+  </div>
+  <div class="content-block" style="padding-top:0">
+    <h2>Smart Home Integration</h2><div class="gold-rule"></div>
+    <ul class="rule-list">
+      <li>Lutron outdoor lighting zone — pergola pendant and string lights · dimmable · scene-programmable</li>
+      <li>Control4 pergola zone — fans, infrared heaters, and lighting all on single zone · app controllable</li>
+      <li>"Dinner scene" — lights at 60%, heaters on, fans low · one tap from phone</li>
+      <li>"Insect mode" — all fans at medium speed · triggered from Control4 app or voice</li>
+      <li>"Evening wind-down" — lights at 20%, heaters on full, fans off</li>
+      <li>Irrigation drip lines extended from kitchen garden to vine planters at each pergola post</li>
+    </ul>
+  </div>
+
+<div style="margin:0 0 0;padding:16px 32px 32px">
+  <div style="border:0.5px solid rgba(184,150,62,0.25);border-radius:8px;overflow:hidden;max-width:600px">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(184,150,62,0.08);border-bottom:0.5px solid rgba(184,150,62,0.2)">
+      <span style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light)">Al Fresco Pergola — Est. Cost</span>
+      <span style="font-size:14px;font-weight:500;color:var(--gold-light)">~$81,500</span>
+    </div>
+    <table style="width:100%;border-collapse:collapse"><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Structure · Douglas fir timber · black steel lattice trellis</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$28,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Flagstone floor · low fieldstone border walls</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$18,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">4× infrared ceiling heaters · Control4 zone</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$10,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">4× black ceiling fans · Control4 controlled</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$6,500</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Lighting · Lutron pendants · string lights · dimmable</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$8,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Vines · rustic harvest table · bistro tables · bench seating</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$11,000</td></tr></table>
+  </div>
+</div>
+</div>
+
+<!-- KITCHEN GARDEN & GREENHOUSE -->
+<div class="panel" id="panel-garden">
+  <div class="hero tall">
+    <img src="https://donazz1.github.io/Sovereign-Feilds/kitchen_garden.png" alt="Kitchen garden and greenhouse" onload="this.classList.add('loaded')">
+    <div class="hero-caption"><div class="rule"></div><h2>Kitchen Garden &amp; Greenhouse</h2><p>Heated greenhouse · Waist-height raised beds · Small orchard · Stone path from house · Render coming</p></div>
+  </div>
+  <div class="spec-strip">
+    <div class="spec-item"><div class="spec-label">Greenhouse</div><div class="spec-value gold">16 × 24 ft · Heated</div></div>
+    <div class="spec-item"><div class="spec-label">Raised Beds</div><div class="spec-value">4–6 · Waist Height · Cedar</div></div>
+    <div class="spec-item"><div class="spec-label">Orchard</div><div class="spec-value">6–8 Fruit Trees</div></div>
+    <div class="spec-item"><div class="spec-label">Irrigation</div><div class="spec-value">Drip Lines · Smart Controller</div></div>
+    <div class="spec-item"><div class="spec-label">Location</div><div class="spec-value">East Side · ~150m from House</div></div>
+  </div>
+  <div class="content-block">
+    <h2>The Greenhouse</h2><div class="gold-rule"></div>
+    <p>A clean black aluminum frame greenhouse — 16×24 ft — anchoring the north end of the kitchen garden zone so it doesn't shade the growing beds. Double-glazed polycarbonate panels for better insulation than glass in Ontario winters. Heated with a small electric unit, plumbed with water, integrated with the property smart system. Big enough to grow seedlings in early spring, overwinter tender plants, and serve as a warm green sanctuary on a February day.</p>
+    <ul class="rule-list" style="margin-top:20px">
+      <li>16×24 ft · black aluminum frame · double-glazed polycarbonate panels · gable roof</li>
+      <li>Heated — electric unit with thermostat · integrated with Control4 for remote temperature monitoring</li>
+      <li>Plumbed — cold water line · drip irrigation inside · floor drain</li>
+      <li>Potting bench along one wall · cedar shelving for seedling trays · hanging baskets</li>
+      <li>Automatic roof vents for summer ventilation · screened door entry</li>
+      <li>Positioned at north end of garden zone so it never shades the raised beds</li>
+      <li>Simple and functional — not ornate. Clean lines matching property aesthetic</li>
+    </ul>
+  </div>
+  <div class="content-block" style="padding-top:0">
+    <h2>Kitchen Garden Zone</h2><div class="gold-rule"></div>
+    <p>A dedicated growing zone on the east side of the property, ~150 metres from the house — close enough to walk to with a basket, far enough to feel like its own destination. Stone path leads from the house through the landscape directly to the zone. A small cedar tool shed sits at the entry.</p>
+    <ul class="rule-list" style="margin-top:20px">
+      <li><strong style="color:var(--gold-light)">Raised Beds</strong> — 4–6 cedar raised beds at waist height (~900mm) · no bending · tomatoes, herbs, greens, root vegetables, squash · drip irrigation to each bed</li>
+      <li><strong style="color:var(--gold-light)">Orchard</strong> — 6–8 established fruit trees in loose grid · apple, pear, plum, sour cherry · all well-suited to King Township climate · mown grass paths between trees · pollinates naturally</li>
+      <li><strong style="color:var(--gold-light)">Tool Shed</strong> — 8×10 ft · cedar board and batten matching property · stores tools, soil, seeds, fertilizers · potting area outside under small overhang</li>
+      <li><strong style="color:var(--gold-light)">Beehives</strong> — 2–3 hives at the orchard edge · pollinates all beds and orchard · produces property honey · screened from main paths</li>
+      <li><strong style="color:var(--gold-light)">Irrigation</strong> — drip lines to all raised beds · connected to Hunter Pro-HC smart controller · watering schedules set via Control4 app · rain sensor override</li>
+      <li><strong style="color:var(--gold-light)">Stone Path</strong> — flagstone path from house east wing through landscape to garden zone · lined with lavender and ornamental grasses · intentional destination walk</li>
+      <li><strong style="color:var(--gold-light)">Herb Garden</strong> — dedicated herb bed near tool shed · rosemary, thyme, sage, basil, mint, chives · close to greenhouse for easy access year-round</li>
+    </ul>
+  </div>
+  <div class="content-block" style="padding-top:0">
+    <h2>Seasonal Calendar</h2><div class="gold-rule"></div>
+    <ul class="rule-list">
+      <li><strong style="color:var(--gold-light)">February–March</strong> — greenhouse starts seedlings under grow lights · warm sanctuary to visit on cold days</li>
+      <li><strong style="color:var(--gold-light)">April–May</strong> — harden off seedlings · plant raised beds · fruit trees blossom · bees active</li>
+      <li><strong style="color:var(--gold-light)">June–August</strong> — full production · daily harvest · herbs at peak · orchard developing fruit</li>
+      <li><strong style="color:var(--gold-light)">September–October</strong> — apple and pear harvest · preserve and store · greenhouse extends season 4–6 weeks</li>
+      <li><strong style="color:var(--gold-light)">November–January</strong> — greenhouse overwinters tender herbs · planning and ordering seeds · beds mulched and resting</li>
+    </ul>
+    
+  </div>
+
+<div style="margin:0 0 0;padding:16px 32px 0">
+  <div style="border:0.5px solid rgba(184,150,62,0.25);border-radius:8px;overflow:hidden;max-width:600px">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(184,150,62,0.08);border-bottom:0.5px solid rgba(184,150,62,0.2)">
+      <span style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light)">Kitchen Garden &amp; Greenhouse — Est. Cost</span>
+      <span style="font-size:14px;font-weight:500;color:var(--gold-light)">~$86,000</span>
+    </div>
+    <table style="width:100%;border-collapse:collapse"><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Greenhouse · 16×24 ft · black aluminum · polycarbonate · heated</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$38,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">4–6 cedar raised beds · waist height · drip irrigation</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$18,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Orchard · 6–8 established fruit trees</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$14,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Cedar tool shed · 8×10 ft · board &amp; batten</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$8,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Beehives · 2–3 hives · professional installation</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$4,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Stone path · herb garden · lavender borders</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$4,000</td></tr></table>
+  </div>
+</div>
+
+<div style="margin:0 0 0;padding:16px 32px 0">
+  <div style="border:0.5px solid rgba(184,150,62,0.25);border-radius:8px;overflow:hidden;max-width:600px">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(184,150,62,0.08);border-bottom:0.5px solid rgba(184,150,62,0.2)">
+      <span style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light)">Al Fresco Pergola — Est. Cost</span>
+      <span style="font-size:14px;font-weight:500;color:var(--gold-light)">~$81,500</span>
+    </div>
+    <table style="width:100%;border-collapse:collapse"><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Structure · Douglas fir timber · black steel lattice</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$28,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Flagstone floor · fieldstone border walls</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$18,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">4× infrared ceiling heaters · Control4 zone</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$10,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">4× black ceiling fans · Control4 controlled</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$6,500</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Lighting · Lutron pendants · string lights · dimmable</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$8,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Vines · harvest table · bistro tables · bench seating</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$11,000</td></tr></table>
+  </div>
+</div>
+
+<div style="margin:0 0 0;padding:16px 32px 0">
+  <div style="border:0.5px solid rgba(184,150,62,0.25);border-radius:8px;overflow:hidden;max-width:600px">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(184,150,62,0.08);border-bottom:0.5px solid rgba(184,150,62,0.2)">
+      <span style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light)">Kitchen Garden &amp; Greenhouse — Est. Cost</span>
+      <span style="font-size:14px;font-weight:500;color:var(--gold-light)">~$86,000</span>
+    </div>
+    <table style="width:100%;border-collapse:collapse"><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Greenhouse · 16×24 ft · black aluminum · polycarbonate · heated</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$38,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">4–6 cedar raised beds · waist height · drip irrigation</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$18,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Orchard · 6–8 fruit trees · established</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$14,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Cedar tool shed · 8×10 ft · board &amp; batten</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$8,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Beehives · 2–3 hives · installation</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$4,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Stone path · herb garden · lavender borders</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$4,000</td></tr></table>
+  </div>
+</div>
+</div>
+
+<!-- 11. ROBOTAXI DEPOT -->
+<div class="panel" id="panel-robotaxi">
+  <div class="hero tall">
+    <img src="https://donazz1.github.io/Sovereign-Feilds/robotaxi_depot.png" alt="Robotaxi depot" onload="this.classList.add('loaded')">
+    <div class="hero-caption"><div class="rule"></div><h2>Robotaxi Depot</h2><p>Drive-through covered carport · Cedar ceiling · Warm LED lighting · Tesla Wall Connectors at each stall · Screened by cedar trees · Near road</p></div>
+  </div>
+  <div class="spec-strip">
+    <div class="spec-item"><div class="spec-label">Stalls</div><div class="spec-value gold">2–4 · Expandable</div></div>
+    <div class="spec-item"><div class="spec-label">Charging</div><div class="spec-value">Level 2 · DC Fast Conduit Ready</div></div>
+    <div class="spec-item"><div class="spec-label">Entry</div><div class="spec-value">Dedicated Gate · Road Level</div></div>
+    <div class="spec-item"><div class="spec-label">Vehicles</div><div class="spec-value">Tesla Model Y · Model 3 · Cybertruck</div></div>
+    <div class="spec-item"><div class="spec-label">Status</div><div class="spec-value gold">Subject to Township Approval</div></div>
+  </div>
+  <div class="content-block">
+    <h2>Depot Design</h2><div class="gold-rule"></div>
+    <p>A compact autonomous vehicle staging depot positioned near the road, completely screened from the house and main driveway. Robotaxis enter and exit via a dedicated gate off the main driveway curb cut — no separate road cut required. Simple covered carport structure with fieldstone and board-and-batten screen wall matching the property aesthetic.</p>
+    <ul class="rule-list" style="margin-top:20px">
+      <li>2–4 covered stalls · roof-only carport structure · low profile · screened by dense hedge and fieldstone wall</li>
+      <li>2× Tesla Universal Wall Connector Level 2 chargers · overnight off-peak charging offset by net metering credits</li>
+      <li>Conduit pre-run for DC fast charger Phase 2 upgrade</li>
+      <li>Dedicated automated gate with keypad and remote access · shares main driveway curb cut</li>
+      <li>Simple rinse station · Tesla Energy smart management shifts charging to off-peak automatically</li>
+      <li>Spur road branches off main driveway just inside main gate — no separate road access permit needed</li>
+      <li>Conduit pre-run during construction regardless of approval status</li>
+    </ul>
+  </div>
+  <div class="content-block" style="padding-top:0">
+    <h2>Vehicle Fleet</h2><div class="gold-rule"></div>
+    <ul class="rule-list">
+      <li><strong style="color:var(--gold-light)">Tesla Model Y Performance</strong> — primary family vehicle · all-wheel drive · dual motor · 514 km range</li>
+      <li><strong style="color:var(--gold-light)">Tesla Model 3</strong> — secondary vehicle · long range · efficient daily driver</li>
+      <li><strong style="color:var(--gold-light)">Tesla Cybertruck</strong> — property utility · towing · farm use · all-terrain</li>
+      <li><strong style="color:var(--gold-light)">Robotaxi fleet</strong> — autonomous staging when not in service · overnight charging · managed via Tesla Fleet API</li>
+    </ul>
+    <p style="margin-top:16px;font-size:12px;color:rgba(245,242,236,0.3)">Render: Quicksilver Model Y Performance approaching · Pearl White Model 3 pulling in · Cybertruck parked and charging · Golden hour · King Township Ontario</p>
+  </div>
+
+<div style="margin:0 0 0;padding:16px 32px 0">
+  <div style="border:0.5px solid rgba(184,150,62,0.25);border-radius:8px;overflow:hidden;max-width:600px">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(184,150,62,0.08);border-bottom:0.5px solid rgba(184,150,62,0.2)">
+      <span style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light)">Robotaxi Depot — Est. Cost</span>
+      <span style="font-size:14px;font-weight:500;color:var(--gold-light)">~$48,000</span>
+    </div>
+    <table style="width:100%;border-collapse:collapse"><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Carport structure · matte black roof · cedar ceiling · posts</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$22,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">2× Tesla Universal Wall Connector · Level 2</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$6,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">DC fast charger conduit pre-run</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$2,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Automated gate · intercom · keypad</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$8,000</td></tr><tr><td style="padding:5px 10px;font-size:11px;color:rgba(245,242,236,0.55);border-bottom:0.5px solid var(--border)">Asphalt access lane · fieldstone wall · cedar screening</td><td style="padding:5px 10px;font-size:11px;color:var(--gold-light);text-align:right;border-bottom:0.5px solid var(--border);white-space:nowrap">$10,000</td></tr></table>
+  </div>
+</div>
+</div>
+
+<!-- 12. BUDGET & MATERIALS -->
+<div class="panel" id="panel-budget">
+<div style="padding:24px 32px 8px">
+  <div style="font-family:Georgia,serif;font-size:22px;font-weight:normal;color:var(--cream);margin-bottom:8px">Budget &amp; Materials</div>
+  <div style="width:40px;height:1px;background:var(--gold);margin-bottom:12px"></div>
+  <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.7">Running cost summary and materials specification. All figures are preliminary CAD estimates. House based on ~$1,045/sq ft for 3,200 sq ft. 30 kW solar with Ontario net metering substantially offsets winter electricity including heated driveway. Powerwall system scalable to 10 units plug-and-play.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;padding:16px 32px">
+  <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border);border-radius:8px;padding:12px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:4px">House Build</div><div style="font-size:17px;font-weight:500;color:var(--gold-light)">~$3.35M</div></div>
+  <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border);border-radius:8px;padding:12px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:4px">Smart Home</div><div style="font-size:17px;font-weight:500;color:var(--gold-light)">~$226K</div></div>
+  <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border);border-radius:8px;padding:12px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:4px">Energy</div><div style="font-size:17px;font-weight:500;color:var(--gold-light)">~$475K</div></div>
+  <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border);border-radius:8px;padding:12px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:4px">Pool &amp; Outdoor</div><div style="font-size:17px;font-weight:500;color:var(--gold-light)">~$493K</div></div>
+  <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border);border-radius:8px;padding:12px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:4px">Barn</div><div style="font-size:17px;font-weight:500;color:var(--gold-light)">~$610K</div></div>
+  <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border);border-radius:8px;padding:12px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:4px">Landscaping</div><div style="font-size:17px;font-weight:500;color:var(--gold-light)">~$506K</div></div>
+  <div style="background:rgba(184,150,62,0.12);border:0.5px solid rgba(184,150,62,0.35);border-radius:8px;padding:12px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px">Est. Total</div><div style="font-size:17px;font-weight:500;color:var(--gold-light)">~$5.64M</div></div>
+</div>
+
+<!-- HOUSE CONSTRUCTION -->
+<div class="bms">
+  <div class="bmh" onclick="bmToggle('house')"><span class="bmt">House Construction &amp; Finishes — 3,200 sq ft</span><div style="display:flex;align-items:center;gap:14px"><span class="bmc">~$3,345,000</span><span id="bmchev-house" style="color:var(--charcoal-light);font-size:18px">▾</span></div></div>
+  <div class="bmb" id="bmbody-house">
+    <table class="bmtb"><thead><tr><th>Item</th><th>Specification &amp; Materials</th><th>Est. Cost</th></tr></thead><tbody>
+      <tr><td>Foundation &amp; Structure</td><td>Engineered concrete foundation · slab-on-grade · perimeter drainage · spray foam insulation · engineered lumber · 3,200 sq ft<br><span class="bmtag">Engineered concrete</span><span class="bmtag">Spray foam insulation</span></td><td>$315,000</td></tr>
+      <tr><td>Exterior Cladding &amp; Roofing</td><td>White board-and-batten LP SmartSide · matte black standing-seam metal roof · soffits, fascia, eavestroughs · fieldstone foundation wrap<br><span class="bmtag">LP SmartSide board &amp; batten</span><span class="bmtag">Pac-Clad standing-seam</span><span class="bmtag">Natural fieldstone</span></td><td>$285,000</td></tr>
+      <tr><td>Windows &amp; Exterior Doors</td><td>Black-framed aluminum-clad grid windows throughout · identical look to steel at 40% less cost · French doors to all 5 courtyards · great room glazing · triple-pane<br><span class="bmtag">Aluminum clad black frames</span><span class="bmtag">Pella Reserve</span><span class="bmtag">Marvin Elevate</span></td><td>$240,000</td></tr>
+      <tr><td>Interior Finishes — Whole House</td><td>White shiplap vaulted ceilings throughout · white painted timber beams · wide plank white oak floors · warm putty/greige plaster walls · 3,200 sq ft<br><span class="bmtag">Shiplap millwork</span><span class="bmtag">White oak wide plank</span><span class="bmtag">Venetian plaster</span></td><td>$360,000</td></tr>
+      <tr><td>Great Room</td><td>Glass pavilion south wall · floor-to-ceiling black steel grid · gas fireplace white marble rectangular surround · organic capiz chandelier · built-in millwork<br><span class="bmtag">Valor gas fireplace</span><span class="bmtag">Calacatta marble surround</span><span class="bmtag">Custom capiz chandelier</span></td><td>$185,000</td></tr>
+      <tr><td>Kitchen &amp; Scullery</td><td>Sage green shaker cabinetry · Wolf 60" dual-fuel range · Calacatta marble full-height backsplash and counters · bleached oak reeded island · brass pot filler · Miele dishwashers · integrated fridge · walk-in pantry · full scullery<br><span class="bmtag">Wolf 60" range</span><span class="bmtag">Sub-Zero fridge</span><span class="bmtag">Miele dishwashers</span><span class="bmtag">Calacatta marble</span><span class="bmtag">Brass hardware</span></td><td>$320,000</td></tr>
+      <tr><td>Primary Suite</td><td>Putty plaster walls · wide plank oak · automated blackout blinds · gas fireplace · his &amp; hers separate dressing rooms with LED hanging rods<br><span class="bmtag">Custom dressing room millwork</span><span class="bmtag">Valor gas fireplace</span></td><td>$185,000</td></tr>
+      <tr><td>Primary En Suite</td><td>Freestanding soaking tub · glass walk-in shower with rainfall head and steam · bleached oak reeded vanity · dramatic veined marble · heated limestone floor · brass fixtures · oval mirrors · separate water closet<br><span class="bmtag">Waterworks brass fixtures</span><span class="bmtag">Bleached oak vanity</span><span class="bmtag">Calacatta marble</span><span class="bmtag">Heated limestone floor</span></td><td>$165,000</td></tr>
+      <tr><td>Bedroom 2 — Lavender Room</td><td>Soft lavender-grey plaster · white oak floors · white oak vanity en suite · French doors to lavender courtyard<br><span class="bmtag">Lavender plaster</span><span class="bmtag">White oak vanity</span><span class="bmtag">Brass fixtures</span></td><td>$110,000</td></tr>
+      <tr><td>Bedroom 3 — Sage Room</td><td>Warm sage green plaster · white oak floors · white oak vanity en suite · French doors to herb garden courtyard<br><span class="bmtag">Sage plaster</span><span class="bmtag">White oak vanity</span><span class="bmtag">Brass fixtures</span></td><td>$110,000</td></tr>
+      <tr><td>Bedroom 4 — Stone Room</td><td>Deep warm stone greige plaster · white oak floors · white oak vanity en suite · French doors to meadow courtyard<br><span class="bmtag">Stone greige plaster</span><span class="bmtag">White oak vanity</span><span class="bmtag">Brass fixtures</span></td><td>$110,000</td></tr>
+      <tr><td>Bedroom 5 — Study/Guest</td><td>Warm off-white walls · built-in oak desk and shelving · window seat framing maple driveway view · en suite · French doors · compact but complete<br><span class="bmtag">Built-in oak millwork</span><span class="bmtag">Window seat</span><span class="bmtag">White oak vanity</span></td><td>$110,000</td></tr>
+      <tr><td>Entry Hall &amp; Circulation</td><td>Arrival sequence millwork · heated stone floor · brass fixtures throughout · built-in storage · coat closet<br><span class="bmtag">Heated stone floor</span><span class="bmtag">Custom millwork</span><span class="bmtag">Brass hardware</span></td><td>$70,000</td></tr>
+      <tr><td>Garage &amp; Mudroom</td><td>3-car garage · heated slate mudroom floors · full-height cedar lockers · dog wash station · laundry · covered car wash bay · 3× Tesla Wall Connector rough-in<br><span class="bmtag">Cedar lockers</span><span class="bmtag">Heated slate floor</span><span class="bmtag">Brass fixtures</span></td><td>$145,000</td></tr>
+      <tr><td>All Bathrooms (shared)</td><td>Guest bathrooms · white oak vanities · stone tile · brass fixtures · heated floors · glass shower enclosures<br><span class="bmtag">White oak vanities</span><span class="bmtag">Stone tile</span><span class="bmtag">Brass fixtures</span></td><td>$75,000</td></tr>
+      <tr><td>Mechanical Rough-In</td><td>All plumbing · electrical rough-in · HVAC ductwork · radiant floor tubing · gas lines · ventilation · 3,200 sq ft<br><span class="bmtag">Copper plumbing</span><span class="bmtag">Electrical rough-in</span></td><td>$210,000</td></tr>
+      <tr><td>Architect, Engineering &amp; Permits</td><td>
+        <div style="margin-bottom:6px;color:rgba(245,242,236,0.6)">Professional and approval fees breakdown:</div>
+        <table style="width:100%;font-size:11px;border-collapse:collapse">
+          <tr><td style="padding:3px 0;color:rgba(245,242,236,0.5);width:70%">Architect fees (~7% of construction)</td><td style="text-align:right;color:var(--gold-light)">$235,000</td></tr>
+          <tr><td style="padding:3px 0;color:rgba(245,242,236,0.5)">Structural + mechanical engineering</td><td style="text-align:right;color:var(--gold-light)">$50,000</td></tr>
+          <tr><td style="padding:3px 0;color:rgba(245,242,236,0.5)">King Township building permit</td><td style="text-align:right;color:var(--gold-light)">$20,000</td></tr>
+          <tr><td style="padding:3px 0;color:rgba(245,242,236,0.5)">Oak Ridges Moraine approvals + environmental</td><td style="text-align:right;color:var(--gold-light)">$30,000</td></tr>
+          <tr><td style="padding:3px 0;color:rgba(245,242,236,0.5)">Survey, geotechnical, site plan</td><td style="text-align:right;color:var(--gold-light)">$15,000</td></tr>
+          <tr style="border-top:0.5px solid rgba(184,150,62,0.2)"><td style="padding:4px 0;color:var(--gold-light);font-weight:500">Subtotal</td><td style="text-align:right;color:var(--gold-light);font-weight:500">$350,000</td></tr>
+        </table>
+        <br><span class="bmtag">Architectural fees</span><span class="bmtag">Structural engineering</span><span class="bmtag">ORM approvals</span>
+      </td><td style="vertical-align:top">$350,000</td></tr>
+      <tr class="bmtot"><td colspan="2">House Construction Total — 3,200 sq ft</td><td>~$3,345,000</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<!-- SMART HOME -->
+<div class="bms">
+  <div class="bmh" onclick="bmToggle('smart')"><span class="bmt">Smart Home &amp; Automation</span><div style="display:flex;align-items:center;gap:14px"><span class="bmc">~$225,500</span><span id="bmchev-smart" style="color:var(--charcoal-light);font-size:18px">▾</span></div></div>
+  <div class="bmb" id="bmbody-smart">
+    <table class="bmtb"><thead><tr><th>Item</th><th>Specification &amp; Materials</th><th>Est. Cost</th></tr></thead><tbody>
+      <tr><td>Central Platform</td><td>Control4 or Savant · 4× touchpads · programming &amp; commissioning · year 1 support<br><span class="bmtag">Control4</span><span class="bmtag">Savant</span></td><td>$35,000</td></tr>
+      <tr><td>Lutron Lighting</td><td>Whole-house dimmers, keypads, occupancy sensors · all rooms and zones<br><span class="bmtag">Lutron RadioRA3</span><span class="bmtag">Lutron Caseta</span></td><td>$28,000</td></tr>
+      <tr><td>Whole-House Audio</td><td>In-ceiling speakers all rooms + veranda + barn wellness · amplification · subwoofers<br><span class="bmtag">Sonance</span><span class="bmtag">Sonos Amp</span><span class="bmtag">Episode</span></td><td>$22,000</td></tr>
+      <tr><td>Automated Blinds</td><td>Blackout in all 5 bedrooms · sheer/solar in living areas · motorized<br><span class="bmtag">Lutron Sivoia QS</span><span class="bmtag">Hunter Douglas</span></td><td>$18,000</td></tr>
+      <tr><td>Security System</td><td>12–16 cameras · monitored alarm · smart locks throughout · motion sensors<br><span class="bmtag">Hikvision</span><span class="bmtag">Yale</span><span class="bmtag">DSC PowerSeries</span></td><td>$24,000</td></tr>
+      <tr><td>Gates &amp; Access</td><td>Electronic driveway entry gate · secondary road gate · video intercom · keypads<br><span class="bmtag">LiftMaster</span><span class="bmtag">DoorBird</span><span class="bmtag">BFT</span></td><td>$18,000</td></tr>
+      <tr><td>Pool &amp; Irrigation</td><td>Pool automation controller · saltwater system · auto cover motor · 8-zone irrigation<br><span class="bmtag">Pentair IntelliCenter</span><span class="bmtag">Hunter Pro-HC</span></td><td>$16,000</td></tr>
+      <tr><td>Networking</td><td>Fiber primary · Starlink auto-failover · Ubiquiti UniFi full property mesh<br><span class="bmtag">Ubiquiti UniFi</span><span class="bmtag">Starlink</span></td><td>$12,000</td></tr>
+      <tr><td>Leak Detection</td><td>Moen Flo whole-property · sensors at all supply points<br><span class="bmtag">Moen Flo Smart</span></td><td>$4,500</td></tr>
+      <tr class="bmtot"><td colspan="2">System Category Total</td><td>~$198,000</td></tr>
+    </tbody></table>
+    <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-light);margin:24px 14px 12px">Room-by-Room Breakdown</div>
+    <table class="bmtb" style="min-width:600px"><thead><tr><th>Room / Area</th><th>Components</th><th>Est. Cost</th></tr></thead><tbody>
+      <tr><td style="background:rgba(184,150,62,0.06);font-weight:500">Central Platform</td><td style="background:rgba(184,150,62,0.06)">Control4 or Savant controller · 4× touchpads · programming &amp; commissioning · year 1 support</td><td style="background:rgba(184,150,62,0.06);text-align:right;color:var(--gold-light)">$35,000</td></tr>
+      <tr><td>Entry Hall</td><td>Smart lock · video doorbell · motion sensor · Lutron keypads · 2× in-ceiling speakers · security camera</td><td style="text-align:right;color:var(--gold-light)">$8,500</td></tr>
+      <tr><td>Great Room</td><td>Control4 touchpad · automated blackout blinds · Lutron dimming · 4× in-ceiling speakers · subwoofer · fireplace automation · security camera</td><td style="text-align:right;color:var(--gold-light)">$22,000</td></tr>
+      <tr><td>Kitchen &amp; Dining</td><td>Lutron under-cabinet lighting · 2× in-ceiling speakers · automated window shades · Moen Flo at main supply</td><td style="text-align:right;color:var(--gold-light)">$12,000</td></tr>
+      <tr><td>Primary Suite</td><td>Automated blackout blinds · Lutron bedside keypads · 2× in-ceiling speakers · gas fireplace automation · smart lock on French doors</td><td style="text-align:right;color:var(--gold-light)">$14,000</td></tr>
+      <tr><td>Primary En Suite</td><td>Lutron lighting · heated floor thermostat · 2× in-ceiling speakers · automated privacy blinds · Moen Flo</td><td style="text-align:right;color:var(--gold-light)">$8,000</td></tr>
+      <tr><td>Bedroom 2 — Lavender</td><td>Automated blackout blinds · Lutron keypad · 2× in-ceiling speakers · smart lock on French doors</td><td style="text-align:right;color:var(--gold-light)">$6,500</td></tr>
+      <tr><td>Bedroom 3 — Sage</td><td>Automated blackout blinds · Lutron keypad · 2× in-ceiling speakers · smart lock on French doors</td><td style="text-align:right;color:var(--gold-light)">$6,500</td></tr>
+      <tr><td>Bedroom 4 — Stone</td><td>Automated blackout blinds · Lutron keypad · 2× in-ceiling speakers · smart lock on French doors</td><td style="text-align:right;color:var(--gold-light)">$6,500</td></tr>
+      <tr><td>Bedroom 5 — Study/Guest</td><td>Automated blackout blinds · Lutron keypad · 2× in-ceiling speakers · smart lock · desk task lighting</td><td style="text-align:right;color:var(--gold-light)">$7,000</td></tr>
+      <tr><td>Garage &amp; Mudroom</td><td>3× smart garage door openers · heated floor thermostat · 3× security cameras · Lutron lighting · smart lock</td><td style="text-align:right;color:var(--gold-light)">$11,000</td></tr>
+      <tr><td>Covered Veranda</td><td>2× outdoor speakers · Lutron outdoor lighting zones · gas fire pit automation · security camera · weather sensor</td><td style="text-align:right;color:var(--gold-light)">$9,000</td></tr>
+      <tr><td>Pool Zone</td><td>Pentair IntelliCenter pool automation · LED lighting · saltwater system · auto cover · 2× outdoor speakers · camera</td><td style="text-align:right;color:var(--gold-light)">$14,000</td></tr>
+      <tr><td>Barn — Wellness</td><td>Lutron lighting · 4× in-ceiling speakers · sauna temp control · cold plunge chiller · security camera · motion sensors</td><td style="text-align:right;color:var(--gold-light)">$12,000</td></tr>
+      <tr><td>Barn — Utility</td><td>Smart powered garage door · security camera · motion sensor · Lutron lighting</td><td style="text-align:right;color:var(--gold-light)">$4,500</td></tr>
+      <tr><td>Driveway &amp; Property</td><td>Electronic entry gate · video intercom · secondary road gate · 4× property cameras · landscape lighting zones · irrigation controller · invisible fence</td><td style="text-align:right;color:var(--gold-light)">$28,000</td></tr>
+      <tr><td>Al Fresco Pergola</td><td>4× ceiling-mount infrared heaters on trellis beams · 4× large black ceiling fans · Control4 pergola zone (dinner scene, insect mode, wind-down) · Lutron pendant and string light zone</td><td style="text-align:right;color:var(--gold-light)">$16,500</td></tr>
+      <tr><td>Kitchen Garden &amp; Greenhouse</td><td>Greenhouse electric heat thermostat · Control4 temperature monitoring · drip irrigation smart controller extension · automated vent openers</td><td style="text-align:right;color:var(--gold-light)">$4,500</td></tr>
+      <tr class="bmtot"><td colspan="2">Room-by-Room Total</td><td>~$225,500</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<!-- ENERGY -->
+<div class="bms">
+  <div class="bmh" onclick="bmToggle('energy')"><span class="bmt">Energy &amp; Infrastructure</span><div style="display:flex;align-items:center;gap:14px"><span class="bmc">~$475,000</span><span id="bmchev-energy" style="color:var(--charcoal-light);font-size:18px">▾</span></div></div>
+  <div class="bmb" id="bmbody-energy">
+    <table class="bmtb"><thead><tr><th>Item</th><th>Specification &amp; Materials</th><th>Est. Cost</th></tr></thead><tbody>
+      <tr><td>Solar Array</td><td>30 kW · ~75 × 400W panels · south-facing barn roof · SolarEdge HD-Wave inverter · Ontario net metering · monitoring system<br><span class="bmtag">REC Alpha 400W panels</span><span class="bmtag">SolarEdge HD-Wave inverter</span></td><td>$145,000</td></tr>
+      <tr><td>Battery Storage — Phase 1</td><td>3× Tesla Powerwall 3 (~45 kWh) · grid-connected · automatic backup switching · Tesla gateway sized for up to 10 Powerwalls — infrastructure pre-wired for Phase 2 expansion · each additional Powerwall adds ~13.5 kWh plug-and-play · scalable to ~135 kWh<br><span class="bmtag">Tesla Powerwall 3</span><span class="bmtag">Tesla Gateway (10-unit ready)</span><span class="bmtag">Scalable to ~135 kWh</span></td><td>$53,000</td></tr>
+      <tr><td>Backup Generator</td><td>20 kW propane · automatic transfer switch · whole-property backup · last resort only<br><span class="bmtag">Generac 20kW</span><span class="bmtag">Kohler</span></td><td>$18,000</td></tr>
+      <tr><td>EV Charging</td><td>3× Tesla Wall Connector Gen 3 in garage (daytime solar charging prioritized) · Robotaxi depot: 2× Tesla Universal Wall Connector Level 2 (overnight off-peak, net metering offset) · conduit pre-run for DC fast charger Phase 2 · Tesla Energy smart management<br><span class="bmtag">Tesla Wall Connector Gen 3</span><span class="bmtag">Tesla Universal Wall Connector</span><span class="bmtag">Tesla Energy management</span></td><td>$26,000</td></tr>
+      <tr><td>Heated Driveway</td><td>Hydronic radiant · entry court + last 100m only · electric boiler (net metering credits from 30 kW solar offset operating costs) · install full infrastructure at build — cannot cost-effectively retrofit<br><span class="bmtag">Uponor hydronic</span><span class="bmtag">Watts radiant</span><span class="bmtag">Electric boiler</span><span class="bmtag">Ontario net metering offset</span></td><td>$62,000</td></tr>
+      <tr><td>HVAC</td><td>Multi-zone · bedroom wing vs living wing · in-floor radiant kitchen, baths, mudroom · sized for 3,200 sq ft<br><span class="bmtag">Carrier</span><span class="bmtag">Mitsubishi Electric</span><span class="bmtag">Uponor radiant</span></td><td>$78,000</td></tr>
+      <tr><td>Water Systems</td><td>Drilled well · new septic · whole-house filtration &amp; softener · UV treatment<br><span class="bmtag">Kinetico</span><span class="bmtag">Trojan UV</span></td><td>$38,000</td></tr>
+      <tr><td>Electrical Service</td><td>400 amp main service · 200 amp barn subpanel · conduit to all outbuildings · main panel sized for 10× Powerwall expansion from day one (~$10K incremental vs $35–50K retrofit)<br><span class="bmtag">Siemens 400A panel</span><span class="bmtag">Future-proofed for 10× Powerwall</span></td><td>$38,000</td></tr>
+      <tr class="bmtot"><td colspan="2">Energy Total</td><td>~$458,000</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<!-- POOL & OUTDOOR -->
+<div class="bms">
+  <div class="bmh" onclick="bmToggle('pool')"><span class="bmt">Pool &amp; Outdoor Living</span><div style="display:flex;align-items:center;gap:14px"><span class="bmc">~$493,000</span><span id="bmchev-pool" style="color:var(--charcoal-light);font-size:18px">▾</span></div></div>
+  <div class="bmb" id="bmbody-pool">
+    <table class="bmtb"><thead><tr><th>Item</th><th>Specification &amp; Materials</th><th>Est. Cost</th></tr></thead><tbody>
+      <tr><td>Inground Pool</td><td>Geometric ~20×30 ft · tanning ledge · saltwater · auto cover · in-pool LED lighting · east side of house · farmland view preserved<br><span class="bmtag">Pentair saltwater system</span><span class="bmtag">Coverstar auto cover</span><span class="bmtag">Pentair IntelliBrite LED</span></td><td>$185,000</td></tr>
+      <tr><td>Hot Tub</td><td>6-person · separate from pool · near veranda fire pit · year-round use<br><span class="bmtag">Hydropool</span><span class="bmtag">Jacuzzi J-495</span></td><td>$22,000</td></tr>
+      <tr><td>Pool Deck</td><td>Flagstone throughout pool zone · perennial planting beds at edges · drainage channels<br><span class="bmtag">Limestone flagstone</span><span class="bmtag">Natural fieldstone edging</span></td><td>$48,000</td></tr>
+      <tr><td>Pool House</td><td>~500 sq ft east of pool · changing room with cedar lockers · full bathroom (shower, toilet, vanity) · equipment room for pool systems · outdoor shower · white board &amp; batten matching house · matte black metal roof · black-framed windows · HVAC rough-in · Murphy bed behind flush panel wall (folds flat — reads as change room, sleeps one) · wall-mounted TV · bar fridge under bench<br><span class="bmtag">White board &amp; batten</span><span class="bmtag">Matte black metal roof</span><span class="bmtag">Murphy bed flush panel</span><span class="bmtag">Cedar lockers</span></td><td>$110,000</td></tr>
+      <tr><td>Covered Veranda</td><td>Full width south face of great room · tongue-and-groove cedar ceiling · Douglas fir timber posts · integrated Lutron lighting<br><span class="bmtag">Douglas fir timber posts</span><span class="bmtag">T&amp;G cedar ceiling</span><span class="bmtag">Limestone flagstone</span></td><td>$55,000</td></tr>
+      <tr><td>Fire Pit Terrace</td><td>Rectangular gas fire pit · limestone stone surround · flagstone deck · Adirondack lounge seating<br><span class="bmtag">Napoleon gas fire pit</span><span class="bmtag">Limestone surround</span><span class="bmtag">Flagstone</span></td><td>$28,000</td></tr>
+      <tr><td>Outdoor Kitchen</td><td>Built-in gas grill · bar fridge · granite prep counter · near veranda<br><span class="bmtag">Napoleon built-in grill</span><span class="bmtag">Granite counter</span><span class="bmtag">Marvel bar fridge</span></td><td>$35,000</td></tr>
+      <tr class="bmtot"><td colspan="2">Pool &amp; Outdoor Total</td><td>~$483,000</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<!-- BARN -->
+<div class="bms">
+  <div class="bmh" onclick="bmToggle('barn')"><span class="bmt">Barn Renovation &amp; Wellness</span><div style="display:flex;align-items:center;gap:14px"><span class="bmc">~$610,000</span><span id="bmchev-barn" style="color:var(--charcoal-light);font-size:18px">▾</span></div></div>
+  <div class="bmb" id="bmbody-barn">
+    <table class="bmtb"><thead><tr><th>Item</th><th>Specification &amp; Materials</th><th>Est. Cost</th></tr></thead><tbody>
+      <tr><td>Structure &amp; Shell</td><td>50×72 ft · preserve weathered exterior · new spray-in insulation · new roof membrane under existing metal · foundation repair and waterproofing<br><span class="bmtag">Existing timber frame</span><span class="bmtag">Spray foam insulation</span><span class="bmtag">Standing-seam metal roof</span></td><td>$320,000</td></tr>
+      <tr><td>Gym Floor</td><td>~1,200 sq ft · Regupol rubber flooring over concrete · wide bifold door full south wall · exposed and cleaned timber ceiling<br><span class="bmtag">Regupol rubber flooring</span><span class="bmtag">NanaWall bifold system</span></td><td>$85,000</td></tr>
+      <tr><td>Sauna</td><td>Cedar dry sauna 4-person · Harvia Cilindro or Huum heater · teak floors and benches · full cedar interior<br><span class="bmtag">Harvia Cilindro heater</span><span class="bmtag">Western red cedar</span><span class="bmtag">Teak benches</span></td><td>$45,000</td></tr>
+      <tr><td>Cold Plunge</td><td>2-person · chilled to 10–15°C · natural limestone stone surround · teak grating · ProChiller system<br><span class="bmtag">Cold Plunge Pro system</span><span class="bmtag">Limestone surround</span><span class="bmtag">Teak grating</span></td><td>$28,000</td></tr>
+      <tr><td>Change Room</td><td>Cedar lockers with brass hardware · rainfall shower with stone tile · heated limestone floor · spa-grade aesthetic<br><span class="bmtag">Custom cedar millwork</span><span class="bmtag">Waterworks brass fixtures</span><span class="bmtag">Limestone tile</span></td><td>$55,000</td></tr>
+      <tr><td>Zen Terrace</td><td>Teak boardwalk deck · low fieldstone walls on two sides · Japanese maple · still water basin · open sky<br><span class="bmtag">Teak decking</span><span class="bmtag">Fieldstone walls</span><span class="bmtag">Limestone water basin</span></td><td>$35,000</td></tr>
+      <tr><td>Workshop &amp; Storage</td><td>Epoxy sealed concrete floor · 220V panel · heavy Gladiator workbenches · pegboard tool storage · powered LiftMaster garage door · independent ventilation system<br><span class="bmtag">Gladiator workbenches</span><span class="bmtag">LiftMaster garage door</span><span class="bmtag">Fantech ventilation</span></td><td>$42,000</td></tr>
+      <tr><td style="color:var(--charcoal-light);font-style:italic">Solar Array</td><td style="color:rgba(245,242,236,0.3);font-style:italic">30 kW on south barn roof — see Energy &amp; Infrastructure section</td><td style="color:rgba(245,242,236,0.3)">—</td></tr>
+      <tr class="bmtot"><td colspan="2">Barn Total (excl. solar)</td><td>~$610,000</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<!-- LANDSCAPING -->
+<div class="bms" style="margin-bottom:0">
+  <div class="bmh" onclick="bmToggle('landscape')"><span class="bmt">Landscaping &amp; Hardscaping</span><div style="display:flex;align-items:center;gap:14px"><span class="bmc">~$505,500</span><span id="bmchev-landscape" style="color:var(--charcoal-light);font-size:18px">▾</span></div></div>
+  <div class="bmb" id="bmbody-landscape">
+    <table class="bmtb"><thead><tr><th>Item</th><th>Specification &amp; Materials</th><th>Est. Cost</th></tr></thead><tbody>
+      <tr><td>Driveway</td><td>Full paved driveway · mature maple trees both sides · lighted natural fieldstone entry pillars · low fieldstone walls full length<br><span class="bmtag">Asphalt paving</span><span class="bmtag">Natural fieldstone</span><span class="bmtag">Mature sugar maples</span></td><td>$125,000</td></tr>
+      <tr><td>Entry Court</td><td>Granite fountain · perennial garden beds · limestone flagstone paving · hydronic heated · lighted stone pillars<br><span class="bmtag">Granite fountain</span><span class="bmtag">Limestone flagstone</span><span class="bmtag">Uponor hydronic</span></td><td>$45,000</td></tr>
+      <tr><td>Bedroom Courtyards</td><td>5 private garden courtyards · each uniquely planted (lavender, herbs, meadow grass, stone) · limestone paving · timber benches<br><span class="bmtag">Lavender · ornamental grasses</span><span class="bmtag">Limestone paving</span><span class="bmtag">Cedar timber benches</span></td><td>$65,000</td></tr>
+      <tr><td>Orchard &amp; Kitchen Garden Zone</td><td>6–8 established fruit trees (apple, pear, plum, sour cherry) · 4–6 waist-height cedar raised beds · herb garden · 2–3 beehives at orchard edge · cedar tool shed 8×10 ft · stone path from house · drip irrigation to all beds<br><span class="bmtag">Established fruit trees</span><span class="bmtag">Cedar raised beds</span><span class="bmtag">Beehives</span><span class="bmtag">Cedar tool shed</span></td><td>$48,000</td></tr>
+      <tr><td>Greenhouse</td><td>16×24 ft · black aluminum frame · double-glazed polycarbonate panels · electric heat with thermostat · plumbed cold water · drip irrigation inside · potting bench · automatic roof vents · Control4 temperature monitoring<br><span class="bmtag">Black aluminum frame</span><span class="bmtag">Polycarbonate panels</span><span class="bmtag">Electric heat</span><span class="bmtag">Control4 integration</span></td><td>$38,000</td></tr>
+      <tr><td>Wildflower Meadow</td><td>Open field beyond pool · native Ontario wildflower seed mix · stone walls · hedgerows along property edges<br><span class="bmtag">Native wildflower mix</span><span class="bmtag">Fieldstone walls</span><span class="bmtag">Mixed hedgerow species</span></td><td>$18,000</td></tr>
+      <tr><td>Irrigation System</td><td>Full property · 10+ zones · smart controller integrated with Control4 · drip irrigation at gardens<br><span class="bmtag">Hunter Pro-HC controller</span><span class="bmtag">Rainbird drip system</span></td><td>$35,000</td></tr>
+      <tr><td>Landscape Lighting</td><td>Full property zone control via Control4 · path lights, uplights, driveway lights, pool perimeter · LED throughout<br><span class="bmtag">Kichler LED landscape</span><span class="bmtag">FX Luminaire</span><span class="bmtag">WAC Lighting</span></td><td>$42,000</td></tr>
+      <tr><td>Invisible Fence</td><td>Full property perimeter · professional installation · 2 dog collars<br><span class="bmtag">Invisible Fence Brand</span></td><td>$8,000</td></tr>
+      <tr><td>Al Fresco Pergola</td><td>Douglas fir timber posts and beams · black steel lattice trellis roof · flagstone floor · 4× ceiling-mount infrared heaters · 4× black ceiling fans (Control4 controlled — see Smart Home) · Lutron pendant and string lights · hops vines at each post · low fieldstone border walls · rustic harvest table · bistro tables · bench seating<br><span class="bmtag">Douglas fir timber</span><span class="bmtag">Black steel lattice</span><span class="bmtag">Infrared heaters</span><span class="bmtag">Ceiling fans</span><span class="bmtag">Flagstone</span></td><td>$81,500</td></tr>
+      <tr class="bmtot"><td colspan="2">Landscaping Total</td><td>~$505,500</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:rgba(184,150,62,0.08);border:0.5px solid rgba(184,150,62,0.3);border-radius:8px;margin:16px 32px 8px">
+  <span style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--charcoal-light)">Project Total — Features &amp; Systems (3,200 sq ft house)</span>
+  <span style="font-size:20px;font-weight:500;color:var(--gold-light)">~$5,627,000 CAD</span>
+</div>
+<p style="font-size:11px;color:rgba(245,242,236,0.2);letter-spacing:0.06em;padding:0 32px 32px">All figures preliminary CAD estimates · House based on ~$1,045/sq ft for 3,200 sq ft · 30 kW solar with Ontario net metering substantially offsets winter electricity including heated driveway · Powerwall system scalable to 10 units plug-and-play · Updated June 2026</p>
+</div>
+
+<!-- 13. ABOUT -->
+<div class="panel" id="panel-about">
+  <div class="content-block"><h2>Sovereign Fields</h2><div class="gold-rule"></div><p>A modern farmhouse bungalow compound on ~50 acres in King Township, Ontario. Single-story Z-compound facing due south onto open farmland on the Oak Ridges Moraine. Developed as a long-term family retreat for the Azzopardi family.</p></div>
+  <div class="about-grid">
+    <div class="about-cell"><h3>The House</h3><p>Single-story bungalow · 3,200 sq ft · 5 bedrooms with private garden courtyards · Z-compound wing arrangement · Glass-walled great room pavilion facing south</p></div>
+    <div class="about-cell"><h3>Design Language</h3><p>White shiplap vaulted ceilings · Wide plank white oak · Black steel grid windows · Brass hardware · No arches — rectangular openings throughout</p></div>
+    <div class="about-cell"><h3>The Barn</h3><p>50 × 72 ft · Wellness wing south · Utility wing north · Gym, sauna, cold plunge, zen terrace, workshop, equipment storage</p></div>
+    <div class="about-cell"><h3>Energy</h3><p>30 kW solar · 3× Tesla Powerwall 3 (scalable to 10) · Ontario net metering · 400 amp service · 3× EV chargers · Electric hydronic heated entry court</p></div>
+    <div class="about-cell"><h3>Property</h3><p>13825 8th Concession Road · King Township, Ontario · Oak Ridges Moraine · Maple-lined driveway · Fieldstone walls · Ridge crest site</p></div>
+    <div class="about-cell"><h3>Family</h3><p>Don &amp; Kathy Azzopardi with Lily, William, Jessi, and Clinton · King Township · June 2026</p></div>
+  </div>
+  <div class="content-block"><p style="font-size:11px;color:rgba(245,242,236,0.2);letter-spacing:0.06em">Sovereign Fields · Master Planning Document · June 2026 · Confidential</p></div>
+</div>
+
+</main>
+
+<div id="lb" onclick="closeLb(event)">
+  <button id="lb-close" onclick="closeLb()">×</button>
+  <img id="lb-img" src="" alt="">
+  <div id="lb-cap"></div>
+</div>
+
+<script>
+const subCfg={
+  site:[],approach:[],courtyard:[],barnland:[],interiors:[],wellness:[],pool:[],pergola:[],garden:[],robotaxi:[],budget:[],about:[],
+  layout:[{id:'house-plan',label:'House Floor Plan'},{id:'barn-plan',label:'Barn Floor Plan'},{id:'site-plan',label:'Site Plan'}],
+  elevations:[{id:'front',label:'Front (North)'},{id:'rear',label:'Rear (South · Farmland)'},{id:'left',label:'Driveway Approach'},{id:'right',label:'Garage Wing (East)'}],
+  walkthrough:[{id:'wt-house',label:'Property & House'},{id:'wt-barn',label:'Barn & Wellness'},{id:'wt-grounds',label:'Estate Grounds'}]
+};
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const t=btn.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+    document.getElementById('panel-'+t).classList.add('active');
+    buildSub(t);
+  });
+});
+function buildSub(t){
+  const snav=document.getElementById('snav');
+  const cfg=subCfg[t]||[];
+  snav.innerHTML='';
+  if(!cfg.length){snav.classList.add('hidden');return;}
+  snav.classList.remove('hidden');
+  cfg.forEach((s,i)=>{
+    const b=document.createElement('button');
+    b.className='sub-btn'+(i===0?' active':'');
+    b.textContent=s.label;
+    b.addEventListener('click',()=>{
+      snav.querySelectorAll('.sub-btn').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      document.querySelectorAll('#panel-'+t+' .sub-panel').forEach(p=>p.classList.remove('active'));
+      document.getElementById('sub-'+s.id).classList.add('active');
+    });
+    snav.appendChild(b);
+  });
+}
+buildSub('site');
+function setScene(el){el.closest('.scene-row').querySelectorAll('.scene').forEach(s=>s.classList.remove('on'));el.classList.add('on');}
+function launchCinema(audioId,sceneRowId){
+  const audioEl=document.getElementById(audioId);
+  const sceneRow=document.getElementById(sceneRowId);
+  const scenes=Array.from(sceneRow.querySelectorAll('.scene img')).map(i=>i.src);
+  let idx=0,timer=null;
+  const overlay=document.createElement('div');
+  overlay.style.cssText='position:fixed;inset:0;background:#000;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;';
+  const img=document.createElement('img');
+  img.style.cssText='max-width:100vw;max-height:88vh;object-fit:contain;transition:opacity 0.8s;';
+  img.src=scenes[0];
+  const counter=document.createElement('div');
+  counter.style.cssText='position:absolute;bottom:60px;left:0;right:0;text-align:center;color:rgba(255,255,255,0.4);font-size:11px;letter-spacing:0.15em;font-family:-apple-system,sans-serif;text-transform:uppercase;';
+  counter.textContent='1 / '+scenes.length;
+  const closeBtn=document.createElement('button');
+  closeBtn.textContent='✕  Exit Cinematic';
+  closeBtn.style.cssText='position:absolute;top:20px;right:24px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:8px 18px;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border-radius:2px;font-family:-apple-system,sans-serif;';
+  function showFrame(i){idx=(i+scenes.length)%scenes.length;img.style.opacity='0';setTimeout(()=>{img.src=scenes[idx];img.style.opacity='1';},500);counter.textContent=(idx+1)+' / '+scenes.length;}
+  function cleanup(){clearInterval(timer);audioEl.pause();audioEl.currentTime=0;document.body.removeChild(overlay);}
+  closeBtn.onclick=cleanup;
+  overlay.appendChild(img);overlay.appendChild(counter);overlay.appendChild(closeBtn);
+  document.body.appendChild(overlay);
+  audioEl.currentTime=0;audioEl.play().catch(()=>{});
+  timer=setInterval(()=>showFrame(idx+1),4000);
+  document.addEventListener('keydown',function esc(e){if(e.key==='Escape'){cleanup();document.removeEventListener('keydown',esc);}});
+}
+function openLb(card){const img=card.querySelector('img');const h3=card.querySelector('h3');if(!img||!img.src)return;document.getElementById('lb-img').src=img.src;document.getElementById('lb-cap').textContent=h3?h3.textContent:'';document.getElementById('lb').classList.add('open');}
+function closeLb(e){if(!e||e.target===document.getElementById('lb')||e.target.id==='lb-close'){document.getElementById('lb').classList.remove('open');}}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('lb').classList.remove('open');});
+function carUpdate(car,idx){
+  const slides=car.querySelectorAll('.car-slide');
+  const thumbs=car.querySelectorAll('.car-thumb');
+  const stageImg=car.querySelector('.car-stage img');
+  const cap=car.querySelector('.car-stage-caption');
+  const slide=slides[idx];
+  const title=slide.getAttribute('data-title');
+  const sub=slide.getAttribute('data-sub');
+  const imgEl=slide.querySelector('img');
+  const imgSrc=imgEl?imgEl.src:stageImg.src;
+  slides.forEach(s=>s.classList.remove('active'));
+  thumbs.forEach(t=>t.classList.remove('active-thumb'));
+  slides[idx].classList.add('active');
+  if(thumbs[idx])thumbs[idx].classList.add('active-thumb');
+  if(stageImg){stageImg.classList.remove('loaded');stageImg.src=imgSrc;stageImg.onload=()=>stageImg.classList.add('loaded');}
+  if(cap){cap.querySelector('h3').textContent=title||'';cap.querySelector('p').textContent=sub||'';}
+}
+function carMove(id,dir){const car=document.getElementById('carousel-'+id);const slides=car.querySelectorAll('.car-slide');let cur=0;slides.forEach((s,i)=>{if(s.classList.contains('active'))cur=i;});carUpdate(car,(cur+dir+slides.length)%slides.length);}
+function carGo(id,idx){const car=document.getElementById('carousel-'+id);carUpdate(car,idx);}
+function bmToggle(id){const b=document.getElementById('bmbody-'+id);const c=document.getElementById('bmchev-'+id);b.classList.toggle('open');c.textContent=b.classList.contains('open')?'▴':'▾';}
+</script>
+</body>
+</html>
