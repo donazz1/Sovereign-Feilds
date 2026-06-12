@@ -1020,6 +1020,10 @@ audio{width:100%}
 <div style="max-width:900px;margin:0 auto;padding:40px 32px 0">
   <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-light);margin-bottom:32px">The Guiding Principles</div>
 
+  <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+    <button id="principles-play-btn" onclick="playAllPrinciples(this)" style="background:rgba(184,150,62,0.1);border:1px solid rgba(184,150,62,0.5);color:var(--gold-light);padding:10px 24px;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:4px">&#9654; Read All Principles</button>
+    <span style="font-size:11px;color:rgba(245,242,236,0.3);letter-spacing:0.06em">Reads all ten principles aloud</span>
+  </div>
   <div style="display:grid;gap:1px;background:rgba(245,242,236,0.08);border:0.5px solid rgba(245,242,236,0.08);border-radius:8px;overflow:hidden;margin-bottom:40px">
 
     <div style="background:var(--charcoal);padding:24px 28px">
@@ -1103,9 +1107,13 @@ audio{width:100%}
 
 <!-- SECTION 1: PRIVATE HOME SERVER & DATA SOVEREIGNTY -->
 <div class="bms">
-  <div class="bmh" onclick="bmToggle('sovtech-server')">
+  <div class="bmh" onclick="bmToggle('sovtech-server')" style="position:relative">
     <span class="bmt">Private Home Server &amp; Data Sovereignty</span>
-    <div style="display:flex;align-items:center;gap:14px"><span class="bmc">~$18,000</span><span id="bmchev-sovtech-server" style="color:var(--charcoal-light);font-size:18px">▾</span></div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <button onclick="event.stopPropagation();readSection('sovtech-server',this)" style="background:none;border:1px solid rgba(184,150,62,0.3);color:var(--gold-light);padding:3px 10px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px;line-height:1.6">&#9654; Read</button>
+      <span class="bmc">~$18,000</span>
+      <span id="bmchev-sovtech-server" style="color:var(--charcoal-light);font-size:18px">▾</span>
+    </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-server">
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
@@ -1132,9 +1140,13 @@ audio{width:100%}
 
 <!-- SECTION 2: ROBOTICS INFRASTRUCTURE -->
 <div class="bms">
-  <div class="bmh" onclick="bmToggle('sovtech-robotics')">
+  <div class="bmh" onclick="bmToggle('sovtech-robotics')" style="position:relative">
     <span class="bmt">Robotics Infrastructure</span>
-    <div style="display:flex;align-items:center;gap:14px"><span class="bmc">~$22,000</span><span id="bmchev-sovtech-robotics" style="color:var(--charcoal-light);font-size:18px">▾</span></div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <button onclick="event.stopPropagation();readSection('sovtech-robotics',this)" style="background:none;border:1px solid rgba(184,150,62,0.3);color:var(--gold-light);padding:3px 10px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px;line-height:1.6">&#9654; Read</button>
+      <span class="bmc">~$22,000</span>
+      <span id="bmchev-sovtech-robotics" style="color:var(--charcoal-light);font-size:18px">▾</span>
+    </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-robotics">
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
@@ -1163,9 +1175,13 @@ audio{width:100%}
 
 <!-- SECTION 3: UNIFIED AI IDENTITY -->
 <div class="bms">
-  <div class="bmh" onclick="bmToggle('sovtech-ai')">
+  <div class="bmh" onclick="bmToggle('sovtech-ai')" style="position:relative">
     <span class="bmt">Unified AI Identity Layer</span>
-    <div style="display:flex;align-items:center;gap:14px"><span class="bmc">~$8,000</span><span id="bmchev-sovtech-ai" style="color:var(--charcoal-light);font-size:18px">▾</span></div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <button onclick="event.stopPropagation();readSection('sovtech-ai',this)" style="background:none;border:1px solid rgba(184,150,62,0.3);color:var(--gold-light);padding:3px 10px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px;line-height:1.6">&#9654; Read</button>
+      <span class="bmc">~$8,000</span>
+      <span id="bmchev-sovtech-ai" style="color:var(--charcoal-light);font-size:18px">▾</span>
+    </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-ai">
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
@@ -1190,37 +1206,123 @@ audio{width:100%}
 
 <!-- SECTION 4: HEALTH & BIOMETRIC SYSTEMS -->
 <div class="bms">
-  <div class="bmh" onclick="bmToggle('sovtech-health')">
-    <span class="bmt">Health &amp; Biometric Infrastructure</span>
-    <div style="display:flex;align-items:center;gap:14px"><span class="bmc">~$12,000</span><span id="bmchev-sovtech-health" style="color:var(--charcoal-light);font-size:18px">▾</span></div>
+  <div class="bmh" onclick="bmToggle('sovtech-health')" style="position:relative">
+    <span class="bmt">Health &amp; Biometric Infrastructure — MyBioTwin Integration</span>
+    <div style="display:flex;align-items:center;gap:12px">
+      <button onclick="event.stopPropagation();readSection('sovtech-health',this)" style="background:none;border:1px solid rgba(184,150,62,0.3);color:var(--gold-light);padding:3px 10px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px;line-height:1.6">&#9654; Read</button>
+      <span class="bmc">~$12,000</span>
+      <span id="bmchev-sovtech-health" style="color:var(--charcoal-light);font-size:18px">▾</span>
+    </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-health">
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
-      <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">Health data is among the most sensitive data you will ever generate. Sleep patterns, heart rate variability, blood glucose trends, medical imaging, genetic data — this information should never exist in a third-party cloud by default. The property is an ideal environment to build a genuinely sovereign health data infrastructure.</p>
+
+      <!-- MyBioTwin Introduction -->
+      <div style="background:rgba(184,150,62,0.06);border:0.5px solid rgba(184,150,62,0.25);border-radius:6px;padding:16px 20px;margin-bottom:20px">
+        <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px">MyBioTwin — The Health Intelligence Layer</div>
+        <p style="font-size:13px;color:rgba(245,242,236,0.7);line-height:1.8;margin-bottom:8px">MyBioTwin (codename DigitalTwin) is a private, owner-controlled health intelligence application that serves as the connective tissue between all the fragmented sources of health data a person accumulates. It creates a living biological digital twin — a continuously updated model of each person's body that gets richer with every piece of data brought to it.</p>
+        <p style="font-size:13px;color:rgba(245,242,236,0.7);line-height:1.8">It was built independently on the same sovereign principles that govern this property. It runs entirely on the owner's machine — no company cloud, no telemetry, no data leaving the property. It is, in the words of its developers, <em style="color:var(--gold-light)">a sovereign application looking for a sovereign home.</em> Sovereign Fields is that home.</p>
+      </div>
+
+      <!-- What MyBioTwin Does -->
+      <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">What MyBioTwin Does for the Family</div>
+      <ul class="rule-list" style="margin-bottom:20px">
+        <li><strong style="color:var(--gold-light)">Unifies scattered health data</strong> — labs, genetics, medications, body scans, wearables, gut/microbiome reports, conditions, photos, notes — into one coherent profile instead of a dozen apps and PDFs</li>
+        <li><strong style="color:var(--gold-light)">Tracks trends over time</strong> — every marker, every scan, every wearable metric becomes a longitudinal story, not a one-off number. Computes derived insights the raw data never gives you — the Thymic LMR Index, pharmacogenomic interactions, cross-domain correlations</li>
+        <li><strong style="color:var(--gold-light)">Answers natural-language questions</strong> — "Why am I tired lately?" "Do my medications line up with my labs?" Returns ranked, evidence-backed explanations with confidence levels and an honest note of what data is missing</li>
+        <li><strong style="color:var(--gold-light)">Surfaces connections across domains</strong> — how sleep, labs, medications, genetics, and gut health relate — without overclaiming. Time-aware: understands "lately" and aligns metrics that move together with a lag</li>
+        <li><strong style="color:var(--gold-light)">Offline voice transcription</strong> — built-in, no cloud speech service required. Talk to your digital twin without anything leaving the property</li>
+        <li><strong style="color:var(--gold-light)">Family-aware with isolated profiles</strong> — each family member's data is partitioned and separately secured. One person's health data is never shown to another without explicit, granted access</li>
+        <li><strong style="color:var(--gold-light)">Stays informational</strong> — it never diagnoses, never says "you have X." It illuminates patterns and points toward what is worth reviewing with a clinician</li>
+      </ul>
+
+      <!-- Health Domains -->
+      <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Health Domains It Understands</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-bottom:20px">
+        <div style="background:rgba(255,255,255,0.03);border:0.5px solid rgba(184,150,62,0.15);border-radius:5px;padding:12px">
+          <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px">Labs &amp; Biomarkers</div>
+          <p style="font-size:11px;color:rgba(245,242,236,0.45);line-height:1.6">Blood markers with units, reference ranges, trends · computed indices like the Thymic LMR Index</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border:0.5px solid rgba(184,150,62,0.15);border-radius:5px;padding:12px">
+          <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px">Medications &amp; Supplements</div>
+          <p style="font-size:11px;color:rgba(245,242,236,0.45);line-height:1.6">Active list, dose, timeline, review history · pharmacogenomic interactions</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border:0.5px solid rgba(184,150,62,0.15);border-radius:5px;padding:12px">
+          <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px">Genetics</div>
+          <p style="font-size:11px;color:rgba(245,242,236,0.45);line-height:1.6">Variants · pharmacogenomics · risk-relevant genes</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border:0.5px solid rgba(184,150,62,0.15);border-radius:5px;padding:12px">
+          <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px">Sleep &amp; Recovery</div>
+          <p style="font-size:11px;color:rgba(245,242,236,0.45);line-height:1.6">Oura data — readiness, HRV, resting heart rate, sleep quality trends</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border:0.5px solid rgba(184,150,62,0.15);border-radius:5px;padding:12px">
+          <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px">Gut &amp; Microbiome</div>
+          <p style="font-size:11px;color:rgba(245,242,236,0.45);line-height:1.6">Stool and microbiome report extraction and highlights</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border:0.5px solid rgba(184,150,62,0.15);border-radius:5px;padding:12px">
+          <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px">Body Composition</div>
+          <p style="font-size:11px;color:rgba(245,242,236,0.45);line-height:1.6">InBody/DEXA · side-specific limb data · 3D anatomy baseline · body photos</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border:0.5px solid rgba(184,150,62,0.15);border-radius:5px;padding:12px">
+          <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px">Health Information</div>
+          <p style="font-size:11px;color:rgba(245,242,236,0.45);line-height:1.6">Conditions · allergies · visit and symptom notes · research library</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border:0.5px solid rgba(184,150,62,0.15);border-radius:5px;padding:12px">
+          <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px">Property Context</div>
+          <p style="font-size:11px;color:rgba(245,242,236,0.45);line-height:1.6">Air quality · sleep room environment · wellness barn activity · garden nutrition</p>
+        </div>
+      </div>
+
+      <!-- Integration Architecture -->
+      <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Integration Architecture at Sovereign Fields</div>
+      <ul class="rule-list" style="margin-bottom:20px">
+        <li><strong style="color:var(--gold-light)">Location</strong> — MyBioTwin runs as its own isolated virtual machine on the home server, within the Health VLAN. No internet access. GPU-accelerated inference on the same server handles heavy analysis workloads</li>
+        <li><strong style="color:var(--gold-light)">Continuous Stream Ingestion</strong> — Rather than periodic manual uploads, a background listener accepts incoming data from approved property sources: wearable sync hub, environmental sensors, sleep tracking hardware, wellness barn activity logs. The digital twin updates itself continuously — while you sleep, while you train, while you eat from the garden</li>
+        <li><strong style="color:var(--gold-light)">Local API Surface</strong> — MyBioTwin exposes a structured query interface to the property's unified AI layer. The AI can ask: "What is Don's current recovery status?" and receive a structured summary — not raw data. The AI gets enough context to be useful without unrestricted vault access. Raw data never leaves the health VLAN</li>
+        <li><strong style="color:var(--gold-light)">The Wellness Barn as Real-Time Data Source</strong> — Post-sauna HRV recovery, cold plunge response, gym performance metrics feed MyBioTwin automatically. Over months it builds a picture of which protocols actually work for each person's physiology — not what worked for someone in a study, but what works for you</li>
+        <li><strong style="color:var(--gold-light)">The Kitchen Garden as Nutritional Context</strong> — Food grown in the greenhouse and garden is logged and correlated with biomarker trends. "Gut microbiome diversity has been improving for 8 weeks — correlates with the introduction of fermented garden produce." No cloud health platform can do this</li>
+        <li><strong style="color:var(--gold-light)">The Sleep Suite as Clinical Environment</strong> — Room environment data (temperature, CO2, humidity, blackout status) combined with Oura data gives MyBioTwin three-dimensional sleep understanding — not just how you slept, but why, and what changed</li>
+        <li><strong style="color:var(--gold-light)">Ambient Health Intelligence</strong> — Nobody opens an app. The unified AI surfaces health understanding quietly, in context. "Your HRV has been trending down this week and your sleep room CO2 was elevated three nights running — worth checking the ventilation before your next training block." Health insight as ambient experience</li>
+        <li><strong style="color:var(--gold-light)">Remote Access</strong> — Any family member can securely access their own profile from anywhere via WireGuard VPN. The digital twin travels with you — without the data ever leaving the property</li>
+      </ul>
+
+      <!-- The Longitudinal Vision -->
+      <div style="background:rgba(184,150,62,0.06);border:0.5px solid rgba(184,150,62,0.2);border-radius:6px;padding:16px 20px;margin-bottom:20px">
+        <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px">The Longitudinal Vision — A Digital Twin for Life</div>
+        <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;">MyBioTwin is not just a health app — it is the story of a body over a lifetime. Don at 50, 60, 70 — what does the arc look like? What decisions made now show up as outcomes later? This requires that the data never gets lost, never gets migrated away from, never gets deprecated by a vendor. The home server is the right place for it precisely because it is sovereign. The data outlives any company. That is worth building for explicitly — not as a feature, but as a design principle: <em style="color:var(--gold-light)">this digital twin is for life.</em></p>
+      </div>
+
+      <!-- Integration Questions for Development -->
+      <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Open Integration Questions — Under Development</div>
       <ul class="rule-list">
-        <li><strong style="color:var(--gold-light)">Air-Gapped Health Vault</strong> — Isolated VM on home server · no internet access · all health data flows to this vault first · Apple Health, Oura Ring, WHOOP, CGM data, medical records, imaging files · encrypted with personal key you control · never synced to iCloud, Google, or any third party without explicit per-export consent</li>
-        <li><strong style="color:var(--gold-light)">Wearable Integration</strong> — Apple Watch Ultra · Oura Ring Gen 4 or equivalent · continuous glucose monitor (CGM) for metabolic tracking · WHOOP for recovery · all devices sync to local vault via on-property hub · data stays on-site</li>
-        <li><strong style="color:var(--gold-light)">Environmental Health Monitoring</strong> — Air quality sensors throughout house (VOCs, CO2, PM2.5, humidity, temperature) · water quality monitoring on whole-house filtration system · EMF monitoring in bedrooms · all data to home server · AI correlates environmental readings with sleep and recovery scores</li>
-        <li><strong style="color:var(--gold-light)">Sleep Optimization Infrastructure</strong> — Primary suite pre-wired for under-mattress sleep tracking hardware (Eight Sleep or equivalent) · automated bedroom environment: temperature, blackout blinds, air quality, sound masking all controllable by sleep AI · bedroom circuit dedicated to sleep tech with clean power conditioning</li>
-        <li><strong style="color:var(--gold-light)">Future Medical Devices</strong> — Home lab capability anticipated: near-infrared spectroscopy, continuous biomarker monitoring, point-of-care diagnostics · rough-in a dedicated 20A circuit and data connection in primary bathroom and gym · these devices will require local compute for analysis — home server GPU handles this</li>
-        <li><strong style="color:var(--gold-light)">Emergency Protocol</strong> — Health vault can generate a read-only emergency export · QR code on phone unlocks limited medical record for paramedics · no standing cloud access required</li>
+        <li><strong style="color:var(--gold-light)">Local API Design</strong> — What structured query format does the unified AI use to request health context? What summary objects does MyBioTwin return? How is query authorization handled within the health VLAN?</li>
+        <li><strong style="color:var(--gold-light)">Continuous Stream Ingestion</strong> — Background listener architecture for automatic data ingestion from wearables, environmental sensors, and wellness barn equipment without manual uploads</li>
+        <li><strong style="color:var(--gold-light)">Property-Aware Context Layer</strong> — When MyBioTwin knows it is running on the Sovereign Fields server, it enriches interpretations with property context: season, garden activity, wellness barn usage, environmental readings</li>
+        <li><strong style="color:var(--gold-light)">Emergency Export Protocol</strong> — Minimal read-only medical summary (medications, allergies, critical conditions, emergency contacts) accessible via QR code for first responders · 15-minute access window · no vault access required · life-safety feature to be designed in now</li>
+        <li><strong style="color:var(--gold-light)">Family Onboarding</strong> — Kathy and the children need to be able to create and use their profiles without technical involvement from Don. The Kathy Test applied to health: if she cannot set it up herself, it is not ready</li>
+        <li><strong style="color:var(--gold-light)">Regulatory Compliance</strong> — PHIPA (Ontario) and HIPAA (if US-facing) implications for a local-first health architecture · how does sovereign storage interact with regulated health data requirements?</li>
       </ul>
     </div>
     <table class="bmtb"><thead><tr><th>Item</th><th>Specification</th><th>Est. Cost</th></tr></thead><tbody>
-      <tr><td>Wearables Suite</td><td>Apple Watch Ultra · Oura Ring · CGM starter kit · WHOOP · local sync hub<span class="bmtag">Apple Health</span><span class="bmtag">Local vault sync</span></td><td>$4,000</td></tr>
-      <tr><td>Environmental Sensors</td><td>8× air quality nodes · water quality monitor · bedroom EMF sensors · all to home server<span class="bmtag">Airthings</span><span class="bmtag">Moen Flo</span></td><td>$3,500</td></tr>
-      <tr><td>Sleep Technology Rough-In</td><td>Under-mattress circuit · dedicated 20A primary suite · clean power conditioning · data port</td><td>$1,500</td></tr>
-      <tr><td>Health Data Infrastructure</td><td>Dedicated NAS volume · encryption setup · local sync configuration · emergency export protocol</td><td>$3,000</td></tr>
-      <tr class="bmtot"><td colspan="2">Health Infrastructure Total</td><td>~$12,000</td></tr>
+      <tr><td>MyBioTwin Server Instance</td><td>Isolated VM on home server · Health VLAN · GPU-accelerated inference · dedicated NAS volume · encrypted at rest<span class="bmtag">MyBioTwin</span><span class="bmtag">Health VLAN</span></td><td>$2,000</td></tr>
+      <tr><td>Wearables Suite</td><td>Apple Watch Ultra · Oura Ring Gen 4 · CGM starter kit · WHOOP · local sync hub · all feeds MyBioTwin<span class="bmtag">Oura</span><span class="bmtag">Apple Health</span><span class="bmtag">WHOOP</span></td><td>$4,000</td></tr>
+      <tr><td>Environmental Sensors</td><td>8× air quality nodes (VOCs, CO2, PM2.5, humidity, temp) · water quality monitor · bedroom EMF sensors · all to MyBioTwin<span class="bmtag">Airthings</span><span class="bmtag">Moen Flo</span></td><td>$3,500</td></tr>
+      <tr><td>Sleep Technology Rough-In</td><td>Under-mattress circuit · dedicated 20A primary suite · clean power conditioning · Eight Sleep or equivalent feeds MyBioTwin sleep context</td><td>$1,500</td></tr>
+      <tr><td>Integration Development</td><td>Local API surface · continuous stream ingestion · property context layer · emergency export protocol</td><td>$1,000</td></tr>
+      <tr class="bmtot"><td colspan="2">Health &amp; MyBioTwin Total</td><td>~$12,000</td></tr>
     </tbody></table>
   </div>
 </div>
 
 <!-- SECTION 5: NETWORK SECURITY ARCHITECTURE -->
 <div class="bms">
-  <div class="bmh" onclick="bmToggle('sovtech-network')">
+  <div class="bmh" onclick="bmToggle('sovtech-network')" style="position:relative">
     <span class="bmt">Network Security Architecture</span>
-    <div style="display:flex;align-items:center;gap:14px"><span class="bmc">~$8,000</span><span id="bmchev-sovtech-network" style="color:var(--charcoal-light);font-size:18px">▾</span></div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <button onclick="event.stopPropagation();readSection('sovtech-network',this)" style="background:none;border:1px solid rgba(184,150,62,0.3);color:var(--gold-light);padding:3px 10px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px;line-height:1.6">&#9654; Read</button>
+      <span class="bmc">~$8,000</span>
+      <span id="bmchev-sovtech-network" style="color:var(--charcoal-light);font-size:18px">▾</span>
+    </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-network">
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
@@ -1246,9 +1348,13 @@ audio{width:100%}
 
 <!-- SECTION 6: FUTURE-PROOFING CHECKLIST -->
 <div class="bms" style="margin-bottom:0">
-  <div class="bmh" onclick="bmToggle('sovtech-future')">
+  <div class="bmh" onclick="bmToggle('sovtech-future')" style="position:relative">
     <span class="bmt">Construction Rough-In Checklist</span>
-    <div style="display:flex;align-items:center;gap:14px"><span class="bmc">~$17,000</span><span id="bmchev-sovtech-future" style="color:var(--charcoal-light);font-size:18px">▾</span></div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <button onclick="event.stopPropagation();readSection('sovtech-future',this)" style="background:none;border:1px solid rgba(184,150,62,0.3);color:var(--gold-light);padding:3px 10px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px;line-height:1.6">&#9654; Read</button>
+      <span class="bmc">~$17,000</span>
+      <span id="bmchev-sovtech-future" style="color:var(--charcoal-light);font-size:18px">▾</span>
+    </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-future">
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
@@ -1277,9 +1383,13 @@ audio{width:100%}
 </div>
 
 <div class="bms" style="margin-bottom:0">
-  <div class="bmh" onclick="bmToggle('sovtech-team')">
+  <div class="bmh" onclick="bmToggle('sovtech-team')" style="position:relative">
     <span class="bmt">Team, Implementation &amp; Security Protocol</span>
-    <div style="display:flex;align-items:center;gap:14px"><span class="bmc">Critical</span><span id="bmchev-sovtech-team" style="color:var(--charcoal-light);font-size:18px">▾</span></div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <button onclick="event.stopPropagation();readSection('sovtech-team',this)" style="background:none;border:1px solid rgba(184,150,62,0.3);color:var(--gold-light);padding:3px 10px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px;line-height:1.6">&#9654; Read</button>
+      <span class="bmc">Critical</span>
+      <span id="bmchev-sovtech-team" style="color:var(--charcoal-light);font-size:18px">▾</span>
+    </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-team">
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
@@ -1312,9 +1422,13 @@ audio{width:100%}
 
 <!-- PRIVACY & SAFETY ARCHITECTURE -->
 <div class="bms">
-  <div class="bmh" onclick="bmToggle('sovtech-privacy')">
+  <div class="bmh" onclick="bmToggle('sovtech-privacy')" style="position:relative">
     <span class="bmt">Privacy &amp; Safety Architecture — The Boundary Between</span>
-    <div style="display:flex;align-items:center;gap:14px"><span class="bmc">Core Design</span><span id="bmchev-sovtech-privacy" style="color:var(--charcoal-light);font-size:18px">▾</span></div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <button onclick="event.stopPropagation();readSection('sovtech-privacy',this)" style="background:none;border:1px solid rgba(184,150,62,0.3);color:var(--gold-light);padding:3px 10px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px;line-height:1.6">&#9654; Read</button>
+      <span class="bmc">Core Design</span>
+      <span id="bmchev-sovtech-privacy" style="color:var(--charcoal-light);font-size:18px">▾</span>
+    </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-privacy">
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
@@ -1334,9 +1448,13 @@ audio{width:100%}
 </div>
 
 
-  <div class="bmh" onclick="bmToggle('sovtech-principles')">
+  <div class="bmh" onclick="bmToggle('sovtech-principles')" style="position:relative">
     <span class="bmt">Design Principles — The Invisible Technology Standard</span>
-    <div style="display:flex;align-items:center;gap:14px"><span class="bmc">Non-Negotiable</span><span id="bmchev-sovtech-principles" style="color:var(--charcoal-light);font-size:18px">▾</span></div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <button onclick="event.stopPropagation();readSection('sovtech-principles',this)" style="background:none;border:1px solid rgba(184,150,62,0.3);color:var(--gold-light);padding:3px 10px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px;line-height:1.6">&#9654; Read</button>
+      <span class="bmc">Non-Negotiable</span>
+      <span id="bmchev-sovtech-principles" style="color:var(--charcoal-light);font-size:18px">▾</span>
+    </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-principles">
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
@@ -1356,9 +1474,13 @@ audio{width:100%}
 
 <!-- IDENTITY & PRIVACY ARCHITECTURE -->
 <div class="bms">
-  <div class="bmh" onclick="bmToggle('sovtech-identity')">
+  <div class="bmh" onclick="bmToggle('sovtech-identity')" style="position:relative">
     <span class="bmt">Identity &amp; Privacy Architecture — Who Knows What</span>
-    <div style="display:flex;align-items:center;gap:14px"><span class="bmc">Core Architecture</span><span id="bmchev-sovtech-identity" style="color:var(--charcoal-light);font-size:18px">▾</span></div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <button onclick="event.stopPropagation();readSection('sovtech-identity',this)" style="background:none;border:1px solid rgba(184,150,62,0.3);color:var(--gold-light);padding:3px 10px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px;line-height:1.6">&#9654; Read</button>
+      <span class="bmc">Core Architecture</span>
+      <span id="bmchev-sovtech-identity" style="color:var(--charcoal-light);font-size:18px">▾</span>
+    </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-identity">
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
@@ -1906,6 +2028,83 @@ function closeBudgetOverlay(){
   document.getElementById('budget-overlay').style.display='none';
   document.body.style.overflow='';
 }
+function playAllPrinciples(btn) {
+  if (!window.speechSynthesis) { btn.textContent = 'Not supported'; return; }
+  
+  if (window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
+    btn.innerHTML = '&#9654; Read All Principles';
+    return;
+  }
+  
+  const principles = [
+    "The Sovereign Fields Standard. Ten Guiding Principles.",
+    "One. The Freedom Principle. Every person on this property — family, friend, guest — should feel more free for being here, not less. The technology exists to remove friction from life, not to create new forms of it. If someone walks away feeling watched, tracked, or dependent on a system to enjoy the property, something has failed. The test is not technical. It is human.",
+    "Two. Invisible by Default. The highest compliment this property can receive is that guests never think about the technology at all. The lights are just right. The temperature is just right. The gate just opened. Nothing required their attention. The interface is the experience of being here, nothing more.",
+    "Three. Sovereignty Over Convenience. This property and everything it knows belongs to the Azzopardi family. Not to technology companies. Not to the cloud. When there is a choice between convenience that requires giving data away and sovereignty that keeps it here — sovereignty wins. Convenience is recoverable. Ownership, once surrendered, rarely is.",
+    "Four. Privacy is the Default State. Privacy is not a mode you turn on. It is where the system begins. Recording, learning, and storing are permissions that must be earned and granted — not assumed. The absence of data is the safe state. Collection is the exception.",
+    "Five. Safety Without Surveillance. The property protects everyone on it without exception. But protection and surveillance are not the same thing. You can be completely safe here without a single camera recording your movements. The perimeter is watched. The inside is trusted. That boundary is sacred.",
+    "Six. Dignity for Everyone. Every person who comes through this gate is treated with dignity by every system on the property. The AI does not judge. It does not share what it knows about one person with another without permission. The technology reflects the values of the people who built this place.",
+    "Seven. Human Primacy. When a person and a system disagree, the person wins. Always. The AI anticipates, suggests, and learns — but it never overrides. The system serves the family. The family does not serve the system.",
+    "Eight. The Right to Course Correct. Nothing on this property is permanent except the land. Every system, every rule, every AI behaviour can be changed when it no longer serves the family well. Sovereignty means the ability to change your mind.",
+    "Nine. The Honest Answer Principle. If a guest raises a question about privacy or technology on this property, the answer must be simple, honest, and complete. The design goal is a property where the honest answer to — what does this house know about me — is: only what you have chosen to share, stored only here, accessible only to you. That answer should always be true.",
+    "Ten. Technology in Service of Life. Sovereign Fields is a home, not a demonstration. When a system stops serving life and starts consuming it — it is removed. The measure of success is not how sophisticated the infrastructure is. It is how natural it feels to be here."
+  ];
+  
+  let idx = 0;
+  btn.innerHTML = '&#9632; Stop';
+  
+  function speakNext() {
+    if (idx >= principles.length) {
+      btn.innerHTML = '&#9654; Read All Principles';
+      return;
+    }
+    const utt = new SpeechSynthesisUtterance(principles[idx]);
+    utt.rate = 0.95;
+    utt.pitch = 0.92;
+    utt.volume = 1.0;
+    const voices = window.speechSynthesis.getVoices();
+    const preferred = voices.find(v => v.name === 'Alex') || voices.find(v => v.localService && v.lang === 'en-US');
+    if (preferred) utt.voice = preferred;
+    idx++;
+    utt.onend = () => { speakNext(); };
+    utt.onerror = () => { btn.innerHTML = '&#9654; Read All Principles'; };
+    window.speechSynthesis.speak(utt);
+  }
+  
+  // Ensure voices are loaded
+  if (window.speechSynthesis.getVoices().length === 0) {
+    window.speechSynthesis.addEventListener('voiceschanged', () => speakNext(), { once: true });
+  } else {
+    speakNext();
+  }
+}
+
+function readSection(sectionId, btn) {
+  if (!window.speechSynthesis) return;
+  if (window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
+    document.querySelectorAll('.reading-btn').forEach(b => b.innerHTML = '&#9654; Read');
+    return;
+  }
+  const body = document.getElementById('bmbody-' + sectionId);
+  if (!body) return;
+  // Open it if closed
+  if (!body.classList.contains('open')) bmToggle(sectionId);
+  const text = body.innerText || body.textContent;
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.rate = 0.95;
+  utt.pitch = 0.92;
+  const voices = window.speechSynthesis.getVoices();
+  const preferred = voices.find(v => v.name === 'Alex') || voices.find(v => v.localService && v.lang === 'en-US');
+  if (preferred) utt.voice = preferred;
+  btn.innerHTML = '&#9632; Stop';
+  btn.classList.add('reading-btn');
+  utt.onend = () => { btn.innerHTML = '&#9654; Read'; btn.classList.remove('reading-btn'); };
+  utt.onerror = () => { btn.innerHTML = '&#9654; Read'; };
+  window.speechSynthesis.speak(utt);
+}
+
 function bmToggle(id){const b=document.getElementById('bmbody-'+id);const c=document.getElementById('bmchev-'+id);b.classList.toggle('open');c.textContent=b.classList.contains('open')?'▴':'▾';}
 </script>
 
@@ -1916,5 +2115,6 @@ function bmToggle(id){const b=document.getElementById('bmbody-'+id);const c=docu
   </div>
   <div id="budget-overlay-content" style="padding:24px 32px"></div>
 </div>
+<audio id="principle-audio" style="display:none"></audio>
 </body>
 </html>
