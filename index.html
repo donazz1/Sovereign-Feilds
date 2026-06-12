@@ -124,6 +124,8 @@ audio{width:100%}
 .bmtb td:last-child{text-align:right;color:var(--gold-light);white-space:nowrap;width:13%}
 .bmtag{display:inline-block;background:rgba(184,150,62,0.12);color:var(--gold-light);font-size:9px;padding:1px 6px;border-radius:3px;margin:2px 2px 0 0;letter-spacing:0.04em}
 .bmtot td{background:rgba(184,150,62,0.08)!important;color:var(--gold-light)!important;font-weight:500!important;border-top:0.5px solid rgba(184,150,62,0.3)!important}
+.stbtn{transition:background 0.15s,color 0.15s}
+.active-stbtn{background:rgba(184,150,62,0.12)!important;color:var(--gold-light)!important}
 </style>
 </head>
 <body>
@@ -1105,6 +1107,17 @@ audio{width:100%}
   <div style="background:rgba(184,150,62,0.1);border:0.5px solid rgba(184,150,62,0.3);border-radius:8px;padding:14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px">Est. Budget</div><div style="font-size:13px;font-weight:500;color:var(--gold-light)">~$85,000</div></div>
 </div>
 
+<!-- MASTER TOGGLE -->
+<div style="display:flex;align-items:center;gap:0;padding:0 32px 24px;max-width:900px;margin:0 auto">
+  <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-light);margin-right:16px">View as:</div>
+  <div style="display:flex;border:0.5px solid rgba(184,150,62,0.4);border-radius:4px;overflow:hidden">
+    <button id="master-detail-btn" onclick="setMasterMode('detail')" style="padding:8px 20px;background:rgba(184,150,62,0.15);border:none;color:var(--gold-light);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-right:0.5px solid rgba(184,150,62,0.4)">&#9776; Full Detail</button>
+    <button id="master-family-btn" onclick="setMasterMode('family')" style="padding:8px 20px;background:none;border:none;color:var(--charcoal-light);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-right:0.5px solid rgba(184,150,62,0.4)">&#9733; Family Vision</button>
+    <button id="master-tech-btn" onclick="setMasterMode('technical')" style="padding:8px 20px;background:none;border:none;color:var(--charcoal-light);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans)">&#9881; Technical Specs</button>
+  </div>
+  <div style="font-size:11px;color:rgba(245,242,236,0.2);margin-left:16px;letter-spacing:0.04em">Individual sections can be toggled independently</div>
+</div>
+
 <!-- SECTION 1: PRIVATE HOME SERVER & DATA SOVEREIGNTY -->
 <div class="bms">
   <div class="bmh" onclick="bmToggle('sovtech-server')" style="position:relative">
@@ -1116,7 +1129,56 @@ audio{width:100%}
     </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-server">
+    <!-- Section toggle -->
+    <div class="sovtech-section-toggle" data-section="server" style="display:flex;gap:0;padding:10px 16px;background:rgba(255,255,255,0.02);border-bottom:0.5px solid var(--border)">
+      <button onclick="setSectionMode('server','detail',this)" class="stbtn-server-detail stbtn active-stbtn" style="padding:5px 14px;background:rgba(184,150,62,0.12);border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--gold-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px 0 0 3px">&#9776; Detail</button>
+      <button onclick="setSectionMode('server','family',this)" class="stbtn-server-family stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans)">&#9733; Family</button>
+      <button onclick="setSectionMode('server','technical',this)" class="stbtn-server-technical stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:0 3px 3px 0">&#9881; Technical</button>
+    </div>
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
+      <div class="sovtech-detail-view">
+<p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">The home server is the sovereign core of Sovereign Fields — a private, on-premise computer that stores, processes, and protects all sensitive data generated on the property. Nothing about your health, security footage, AI interactions, biometrics, financial data, or family activity should exist only in someone else's cloud. This server gives you ownership, speed, and resilience.</p>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Hardware</strong> — Small form-factor rackmount server · Intel Core i9 or AMD Ryzen 9 · 128GB RAM · 4× 4TB NVMe SSDs in RAID 10 · GPU (NVIDIA RTX 4090 or equivalent) for local AI inference · UPS battery backup · estimated $8,000–12,000 hardware cost</li>
+  <li><strong style="color:var(--gold-light)">Operating System</strong> — TrueNAS Scale or Proxmox VE · runs multiple isolated virtual machines simultaneously · one VM per function: NAS storage, AI inference, health data vault, security NVR, home automation</li>
+  <li><strong style="color:var(--gold-light)">Health Data Vault</strong> — Air-gapped VLAN · no internet access · stores Apple Health exports, wearable data, medical imaging, sleep tracking, biometric history · encrypted at rest with AES-256 · accessible only from devices physically on-property</li>
+  <li><strong style="color:var(--gold-light)">Security NVR</strong> — All 12–16 cameras store locally · 90-day rolling retention · no footage leaves the property · Hikvision NVR or Frigate with AI object detection</li>
+  <li><strong style="color:var(--gold-light)">Local AI Inference</strong> — Runs large language models locally (Llama 3, Mistral, or equivalent) · no queries leave the property · private AI assistant that knows your home, schedules, and preferences · GPU enables real-time inference at near-cloud speed</li>
+  <li><strong style="color:var(--gold-light)">Backup Strategy</strong> — 3-2-1 rule: 3 copies, 2 different media, 1 offsite · encrypted backup to private S3-compatible store (Backblaze B2) · health data never leaves property even for backup · owner-controlled encryption keys · restore-tested on schedule</li>
+  <li><strong style="color:var(--gold-light)">Key Succession</strong> — Shamir secret-sharing protocol across trusted parties · designed now while healthy · children inherit access on terms you define · without this "for life" is aspirational not engineered</li>
+  <li><strong style="color:var(--gold-light)">Physical Location</strong> — Dedicated room in utility wing adjacent to electrical panel · own 20A dedicated circuit · own cooling/ventilation · fiber direct to main UniFi switch · biometric access-controlled room</li>
+</ul>
+</div>
+      <div class="sovtech-family-view" style="display:none">
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">At the heart of Sovereign Fields is our own powerful family computer system right here on the property. Think of it as a super-secure digital safe that keeps all our important information private and fully under our control.</p>
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">Right now, photos, health data from our watches and rings, security camera videos, and even AI conversations usually live on big company computers far away (the "cloud"). With our own server, everything stays on our land. This gives us true ownership, faster performance, and protection from outages or changes by outside services.</p>
+<div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:20px 0 12px">What this means in everyday terms:</div>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Security cameras</strong> — All 12–16 cameras around the property record straight to this server. Videos stay here for 90 days. No one outside our family can access them. The system uses smart AI to notice important things like a person or vehicle without sending footage anywhere.</li>
+  <li><strong style="color:var(--gold-light)">Health and personal data</strong> — Apple Health exports, Oura Ring and wearable info, sleep tracking, medical images, and biometrics go into a locked "health vault" on the server. It's completely cut off from the internet for maximum safety — accessible only from devices inside the house.</li>
+  <li><strong style="color:var(--gold-light)">Private AI assistant</strong> — We run our own smart helper here — like a local Gemini, Grok, or Claude. It can answer questions about the house, remind us of schedules, or help with plans — all while knowing our home and preferences, with nothing leaving the property.</li>
+  <li><strong style="color:var(--gold-light)">Backups</strong> — We follow safe backup practices with encrypted copies, but the most sensitive health information stays fully on the property.</li>
+</ul>
+<p style="font-size:13px;color:rgba(245,242,236,0.5);line-height:1.8;margin-top:16px">The server lives in a secure spot in the utility room with its own power backup, cooling, and dedicated electrical circuit. Hardware cost is roughly $10,000–$14,000 — a solid investment in our family's privacy and independence for years to come. This is part of what makes Sovereign Fields truly ours.</p>
+</div>
+      <div class="sovtech-tech-view" style="display:none">
+<div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Hardware Specification</div>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Server</strong> — Small form-factor rackmount · Intel Core i9 or AMD Ryzen 9 · 128GB RAM · 4× 4TB NVMe SSDs in RAID 10 · NVIDIA RTX 4090 GPU for local AI inference · UPS battery backup · Est. $8,000–$12,000</li>
+  <li><strong style="color:var(--gold-light)">OS &amp; Virtualisation</strong> — TrueNAS Scale or Proxmox VE · isolated VMs per function: NAS storage, AI inference, health vault, security NVR, home automation</li>
+  <li><strong style="color:var(--gold-light)">Health Data Vault</strong> — Air-gapped VLAN · no internet access · AES-256 encryption at rest · Apple Health, Oura, WHOOP, CGM, medical imaging · accessible only on-property</li>
+  <li><strong style="color:var(--gold-light)">Security NVR</strong> — 12–16 cameras · 90-day rolling local retention · Hikvision NVR or Frigate with AI object detection · no footage leaves property</li>
+  <li><strong style="color:var(--gold-light)">Local AI Inference</strong> — Llama 3 or Mistral · GPU-accelerated · private assistant with home context · zero cloud egress</li>
+  <li><strong style="color:var(--gold-light)">Backup</strong> — 3-2-1 rule · encrypted offsite to Backblaze B2 · health data on-property only · owner-held encryption keys</li>
+</ul>
+<div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:16px 0 8px">Physical Installation Requirements</div>
+<ul class="rule-list">
+  <li>Dedicated room or large closet adjacent to electrical panel · minimum 2m × 1.5m</li>
+  <li>Dedicated 20A circuit · 20A UPS circuit · direct Cat6A fiber to main UniFi switch</li>
+  <li>Independent cooling duct or mini-split rough-in · biometric door lock</li>
+  <li>1" conduit from server room to every room in house · pull string installed</li>
+</ul>
+</div>
       <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">The home server is the sovereign core of Sovereign Fields — a private, on-premise computer that stores, processes, and protects all sensitive data generated on the property. Nothing about your health, security footage, AI interactions, biometrics, financial data, or family activity should exist only in someone else's cloud. This server gives you ownership, speed, and resilience.</p>
       <ul class="rule-list">
         <li><strong style="color:var(--gold-light)">Hardware</strong> — Small form-factor rackmount server · Intel Core i9 or AMD Ryzen 9 · 128GB RAM · 4× 4TB NVMe SSDs in RAID 10 · GPU (NVIDIA RTX 4090 or equivalent) for local AI inference · UPS battery backup · estimated $8,000–12,000 hardware cost</li>
@@ -1149,7 +1211,55 @@ audio{width:100%}
     </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-robotics">
+    <!-- Section toggle -->
+    <div class="sovtech-section-toggle" data-section="robotics" style="display:flex;gap:0;padding:10px 16px;background:rgba(255,255,255,0.02);border-bottom:0.5px solid var(--border)">
+      <button onclick="setSectionMode('robotics','detail',this)" class="stbtn-robotics-detail stbtn active-stbtn" style="padding:5px 14px;background:rgba(184,150,62,0.12);border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--gold-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px 0 0 3px">&#9776; Detail</button>
+      <button onclick="setSectionMode('robotics','family',this)" class="stbtn-robotics-family stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans)">&#9733; Family</button>
+      <button onclick="setSectionMode('robotics','technical',this)" class="stbtn-robotics-technical stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:0 3px 3px 0">&#9881; Technical</button>
+    </div>
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
+      <div class="sovtech-detail-view">
+<p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">Tesla Optimus Gen 2 is already capable of basic household tasks. By the time Sovereign Fields is occupied, second or third generation units will likely handle a meaningful subset of property maintenance, kitchen assistance, and errand tasks. The rough-ins required during construction are inexpensive — the cost of not doing them is high.</p>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Charging Alcoves ×3</strong> — Mudroom (primary staging), barn utility wing (outdoor/farm work), garage (vehicle work) · each: flush-recessed niche 700mm W × 600mm D × 1900mm H · 20A dedicated circuit · Cat6A data port · concealed door panel flush with wall finish</li>
+  <li><strong style="color:var(--gold-light)">Floor Continuity</strong> — Zero-threshold transitions throughout · robot navigation degrades at thresholds >6mm · wide plank white oak throughout already ideal · flush transition strip at mudroom slate-to-oak · barn gym rubber flooring flush to concrete perimeter</li>
+  <li><strong style="color:var(--gold-light)">UWB Indoor Positioning</strong> — Ultra-wideband anchor points in ceilings: 6 main house locations + 2 barn · enables centimetre-accurate indoor positioning · Cat6A rough-in to each location during electrical rough-in · J-box in ceiling · compatible with Apple U1 and emerging robot navigation standards</li>
+  <li><strong style="color:var(--gold-light)">Outdoor Path</strong> — Sanctuary Walk: flush-pointed flagstone · 1.2m minimum clear width · no loose gravel · outdoor robot charging station near barn north: 20A weatherproof circuit · covered enclosure matching barn aesthetic</li>
+  <li><strong style="color:var(--gold-light)">Network Coverage</strong> — WiFi 6E throughout all work areas including barn, garage, outdoor path · confirm no dead zones at barn north door and sanctuary walk midpoint</li>
+  <li><strong style="color:var(--gold-light)">Security Integration</strong> — Robot registers as trusted device on Robotics VLAN · can view camera feeds · can trigger alerts · all activity logged locally · no activity data to Tesla servers beyond account requirements</li>
+  <li><strong style="color:var(--gold-light)">Form Factor Hedge</strong> — Infrastructure serves humanoid (Optimus), quadruped (Boston Dynamics), and wheeled robots equally · the bet is on power, network, and flat surfaces — not on any specific form factor winning</li>
+</ul>
+</div>
+      <div class="sovtech-family-view" style="display:none">
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">In the not-too-distant future, robots will likely be part of daily life in homes like ours — helping with chores, property maintenance, deliveries, and more. Tesla's Optimus robot is already real and improving fast. We're not buying one tomorrow, but we're making sure the property is ready when the time comes.</p>
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">Think of this as rough-in work — like running electrical conduit before you know exactly what appliances you'll install. It costs very little to do during construction and would be very expensive to retrofit later.</p>
+<div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:20px 0 12px">What we're doing now:</div>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Charging spots</strong> — Three discreet alcoves built into the mudroom, garage, and barn where a robot can dock and charge overnight — like a phone charging nook, but for a robot. When not in use the door closes flush with the wall and disappears.</li>
+  <li><strong style="color:var(--gold-light)">Smooth floors throughout</strong> — Robots navigate best on consistent flat surfaces with no bumps or lips between rooms. Our wide plank white oak floors throughout the house are already ideal. We're specifying flush transition strips everywhere — including between the mudroom slate and the oak floors.</li>
+  <li><strong style="color:var(--gold-light)">Indoor positioning</strong> — Small ceiling-mounted anchors that let a robot know exactly where it is inside the house to within a few centimetres — far more precise than WiFi. Like GPS but for indoors.</li>
+  <li><strong style="color:var(--gold-light)">Outdoor path</strong> — The sanctuary walk stone path from the house to the barn will be laid with flush-pointed flagstone and a clear 1.2m width — wide enough for a robot to navigate safely to the barn and back.</li>
+  <li><strong style="color:var(--gold-light)">Security integration</strong> — Any robot on the property will be a trusted device on our network, able to see cameras and respond to alerts — but with all activity logged locally. Nothing it sees or does leaves the property.</li>
+</ul>
+<p style="font-size:13px;color:rgba(245,242,236,0.5);line-height:1.8;margin-top:16px">We're not betting on one specific robot winning — the infrastructure works for humanoid robots like Optimus, quadruped robots, and wheeled robots equally. The bet is on power, network, and flat surfaces. That's future-proofing done right.</p>
+</div>
+      <div class="sovtech-tech-view" style="display:none">
+<div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Rough-In Requirements</div>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Charging Alcoves ×3</strong> — Mudroom, garage, barn utility wing · recessed niche 700mm W × 600mm D × 1900mm H · 20A dedicated circuit each · Cat6A data port · flush concealed door panel in finish material</li>
+  <li><strong style="color:var(--gold-light)">UWB Anchor Conduit ×8</strong> — Cat6A rough-in to ceiling locations: great room, kitchen, corridor, primary suite, bedroom wing ×2, barn gym, barn wellness · J-box in ceiling · pull string installed</li>
+  <li><strong style="color:var(--gold-light)">Floor Continuity</strong> — Zero-threshold transitions throughout · flush transition strip at mudroom slate-to-oak junction · barn gym rubber flooring flush to concrete perimeter · max threshold 6mm</li>
+  <li><strong style="color:var(--gold-light)">Outdoor Robot Station</strong> — Near barn north entrance · 20A weatherproof circuit · covered enclosure matching barn board-and-batten aesthetic · concrete pad</li>
+  <li><strong style="color:var(--gold-light)">Sanctuary Walk</strong> — Flush-pointed flagstone throughout · 1.2m minimum clear width · no loose gravel sections</li>
+  <li><strong style="color:var(--gold-light)">Conduit Network</strong> — 1" EMT from server room to all robot staging areas · pull string installed throughout</li>
+</ul>
+<div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:16px 0 8px">Contractor Notes</div>
+<ul class="rule-list">
+  <li>Form factor agnostic — infrastructure serves humanoid, quadruped, and wheeled platforms equally</li>
+  <li>Alcove rough-ins during framing stage — coordinate with electrician and finish carpenter</li>
+  <li>UWB conduit during electrical rough-in — ceiling J-boxes at specified locations</li>
+</ul>
+</div>
       <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">Tesla Optimus Gen 2 is already capable of basic household tasks. By the time Sovereign Fields is occupied, second or third generation Optimus units will likely handle a meaningful subset of property maintenance, kitchen assistance, and errand tasks. The rough-ins required during construction are inexpensive — the cost of not doing them is high.</p>
       <ul class="rule-list">
         <li><strong style="color:var(--gold-light)">Charging Alcoves</strong> — 3 dedicated robot charging alcoves: mudroom (primary staging), barn utility wing (outdoor/farm work staging), garage (vehicle work staging) · each alcove: flush-recessed niche 700mm wide × 600mm deep × 1900mm tall · 20A dedicated circuit · subtle door panel that closes flush with wall · roughed-in $800–1,200 each</li>
@@ -1184,7 +1294,54 @@ audio{width:100%}
     </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-ai">
+    <!-- Section toggle -->
+    <div class="sovtech-section-toggle" data-section="ai" style="display:flex;gap:0;padding:10px 16px;background:rgba(255,255,255,0.02);border-bottom:0.5px solid var(--border)">
+      <button onclick="setSectionMode('ai','detail',this)" class="stbtn-ai-detail stbtn active-stbtn" style="padding:5px 14px;background:rgba(184,150,62,0.12);border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--gold-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px 0 0 3px">&#9776; Detail</button>
+      <button onclick="setSectionMode('ai','family',this)" class="stbtn-ai-family stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans)">&#9733; Family</button>
+      <button onclick="setSectionMode('ai','technical',this)" class="stbtn-ai-technical stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:0 3px 3px 0">&#9881; Technical</button>
+    </div>
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
+      <div class="sovtech-detail-view">
+<p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">A single AI that knows the family — preferences, schedules, health context, routines — and expresses itself through the home, Tesla vehicles, and eventually robotics (Tesla Optimus). Runs primarily on-premise. Cloud AI is opt-in for specific tasks, not the default. Control4/Savant is the muscle. The AI is the brain.</p>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Local AI Node</strong> — NVIDIA Jetson AGX Orin or equivalent edge AI computer · 64GB · dedicated AI inference · real-time processing · $3,000–5,000 hardware</li>
+  <li><strong style="color:var(--gold-light)">Tesla Ecosystem Integration</strong> — Tesla account unifies Model Y, Model 3, Optimus, Powerwall, and robotaxi · home server bridges Tesla API to Control4/Savant · car arriving home triggers house to prepare: lights on, garage open, climate adjusted, security to home mode</li>
+  <li><strong style="color:var(--gold-light)">Voice Interface</strong> — Property-wide, no wake word required · Home Assistant with Whisper speech recognition and local LLM · responds in under 300ms without cloud round-trip · can answer questions about the property, control all systems, brief you on health data, manage schedules</li>
+  <li><strong style="color:var(--gold-light)">Context Persistence</strong> — AI remembers who is home, recent conversations, health trends, property status, maintenance history, family preferences · stored encrypted on home server · never leaves property · model updateable without losing context</li>
+  <li><strong style="color:var(--gold-light)">Ambient Intelligence</strong> — No panels, no apps required for daily use · system learns, anticipates, and responds to presence and context · "it's cold in here" adjusts the heat · the interface is the experience of being here</li>
+  <li><strong style="color:var(--gold-light)">Cloud Hybrid</strong> — Optional routing to Claude, GPT-4, or Gemini for internet-scale tasks · owner decides per query · default: local only · opt-in: cloud assist</li>
+  <li><strong style="color:var(--gold-light)">Ambient Health Intelligence</strong> — Queries MyBioTwin via scoped read-only API · surfaces health context in the moment · "your HRV has been trending down this week and sleep room CO2 was elevated three nights running — worth checking ventilation before your training block" · never surfaces health data in shared or guest contexts</li>
+</ul>
+</div>
+      <div class="sovtech-family-view" style="display:none">
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">Imagine having one really smart assistant who knows everything about your home, your family's routines, your cars, and your preferences — and who's available everywhere on the property without you ever needing to pull out your phone or press a button. That's what we're building here.</p>
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">Right now most people have several separate AI assistants that don't talk to each other — Siri on the phone, Alexa in the kitchen, something in the car. They all have separate memories and separate personalities. We want one AI that knows you across all of those contexts. The same assistant that knows your car is pulling into the driveway also knows to start warming the house and have your evening playlist ready.</p>
+<div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:20px 0 12px">What this looks like day to day:</div>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Voice everywhere, naturally</strong> — You don't need to find a panel or grab a device. Just speak naturally — "it's cold in here" — and the heat adjusts. No wake words required in the future.</li>
+  <li><strong style="color:var(--gold-light)">It knows the whole family</strong> — The AI learns each person's preferences separately. Don's morning routine doesn't affect what it does for Kathy. Each person's experience is personal.</li>
+  <li><strong style="color:var(--gold-light)">Connected to the cars</strong> — When Don's Tesla turns onto the driveway, the house knows. Garage opens, lights come on, temperature adjusts — all before the car stops.</li>
+  <li><strong style="color:var(--gold-light)">Completely private</strong> — This AI runs on our own server. Questions you ask it, things it learns about you — none of it goes to Google, Apple, Amazon, or anyone else. It only ever talks to us.</li>
+</ul>
+<p style="font-size:13px;color:rgba(245,242,236,0.5);line-height:1.8;margin-top:16px">Think of Control4 and Savant as the muscles — they control the lights, locks, climate, and audio. The AI is the brain that decides what the muscles should do, and when. The goal is a property that feels like it knows you — because it does.</p>
+</div>
+      <div class="sovtech-tech-view" style="display:none">
+<div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Architecture</div>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Edge AI Node</strong> — NVIDIA Jetson AGX Orin · 64GB · dedicated inference · real-time local processing · $3,000–$5,000 hardware</li>
+  <li><strong style="color:var(--gold-light)">Voice Interface</strong> — 8× distributed far-field microphone arrays · whole-property coverage · Home Assistant with Whisper STT · local LLM · sub-300ms response without cloud round-trip</li>
+  <li><strong style="color:var(--gold-light)">Tesla API Bridge</strong> — Bridges Tesla Fleet API to Control4/Savant · vehicle arrival triggers property preparation sequence · EV charging state management</li>
+  <li><strong style="color:var(--gold-light)">Context Persistence</strong> — Per-person profiles · encrypted on home server · never leaves property · model-updateable without context loss</li>
+  <li><strong style="color:var(--gold-light)">Control4/Savant Integration</strong> — AI is the intelligence layer · Control4/Savant is the execution layer · AI sends structured commands · no direct hardware access from AI layer</li>
+  <li><strong style="color:var(--gold-light)">Cloud Hybrid</strong> — Optional routing to Claude/GPT-4/Gemini for internet-scale tasks · owner-controlled per query · default: local only</li>
+</ul>
+<div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:16px 0 8px">Installation Requirements</div>
+<ul class="rule-list">
+  <li>Jetson node in server room · Cat6A to main switch · 20A circuit</li>
+  <li>Microphone array rough-in: ceiling mount at 8 locations · Cat6A to server room · low-voltage contractor</li>
+  <li>Control4/Savant API integration — coordinate with AV integrator</li>
+</ul>
+</div>
       <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">The vision: one AI that knows you — your preferences, your health, your schedule, your family — that expresses itself through your car, your home, your robot, and your phone. Not four separate AI assistants with separate memories. One persistent identity. The infrastructure to enable this is already partially in place through Tesla's ecosystem. The home server completes it.</p>
       <ul class="rule-list">
         <li><strong style="color:var(--gold-light)">Local AI Node</strong> — NVIDIA Jetson AGX Orin or equivalent edge AI computer · runs on-premise · handles inference for home automation, security analysis, robot coordination, and private AI assistant · connected to home server GPU for heavy workloads · $3,000–5,000 hardware</li>
@@ -1215,94 +1372,53 @@ audio{width:100%}
     </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-health">
-    <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
-
-      <!-- MyBioTwin Introduction -->
-      <div style="background:rgba(184,150,62,0.06);border:0.5px solid rgba(184,150,62,0.25);border-radius:6px;padding:16px 20px;margin-bottom:20px">
-        <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px">MyBioTwin — The Health Intelligence Layer</div>
-        <p style="font-size:13px;color:rgba(245,242,236,0.7);line-height:1.8;margin-bottom:8px">MyBioTwin (codename DigitalTwin) is a private, owner-controlled health intelligence application that serves as the connective tissue between all the fragmented sources of health data a person accumulates. It creates a living biological digital twin — a continuously updated model of each person's body that gets richer with every piece of data brought to it.</p>
-        <p style="font-size:13px;color:rgba(245,242,236,0.7);line-height:1.8">It was built independently on the same sovereign principles that govern this property. It runs entirely on the owner's machine — no company cloud, no telemetry, no data leaving the property. It is, in the words of its developers, <em style="color:var(--gold-light)">a sovereign application looking for a sovereign home.</em> Sovereign Fields is that home.</p>
-      </div>
-
-      <!-- What MyBioTwin Does -->
-      <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">What MyBioTwin Does for the Family</div>
-      <ul class="rule-list" style="margin-bottom:20px">
-        <li><strong style="color:var(--gold-light)">Unifies scattered health data</strong> — labs, genetics, medications, body scans, wearables, gut/microbiome reports, conditions, photos, notes — into one coherent profile instead of a dozen apps and PDFs</li>
-        <li><strong style="color:var(--gold-light)">Tracks trends over time</strong> — every marker, every scan, every wearable metric becomes a longitudinal story, not a one-off number. Computes derived insights the raw data never gives you — the Thymic LMR Index, pharmacogenomic interactions, cross-domain correlations</li>
-        <li><strong style="color:var(--gold-light)">Answers natural-language questions</strong> — "Why am I tired lately?" "Do my medications line up with my labs?" Returns ranked, evidence-backed explanations with confidence levels and an honest note of what data is missing</li>
-        <li><strong style="color:var(--gold-light)">Surfaces connections across domains</strong> — how sleep, labs, medications, genetics, and gut health relate — without overclaiming. Time-aware: understands "lately" and aligns metrics that move together with a lag</li>
-        <li><strong style="color:var(--gold-light)">Offline voice transcription</strong> — built-in, no cloud speech service required. Talk to your digital twin without anything leaving the property</li>
-        <li><strong style="color:var(--gold-light)">Family-aware with isolated profiles</strong> — each family member's data is partitioned and separately secured. One person's health data is never shown to another without explicit, granted access</li>
-        <li><strong style="color:var(--gold-light)">Stays informational</strong> — it never diagnoses, never says "you have X." It illuminates patterns and points toward what is worth reviewing with a clinician</li>
-      </ul>
-
-      <!-- Health Domains -->
-      <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Health Domains It Understands</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-bottom:20px">
-        <div style="background:rgba(255,255,255,0.03);border:0.5px solid rgba(184,150,62,0.15);border-radius:5px;padding:12px">
-          <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px">Labs &amp; Biomarkers</div>
-          <p style="font-size:11px;color:rgba(245,242,236,0.45);line-height:1.6">Blood markers with units, reference ranges, trends · computed indices like the Thymic LMR Index</p>
-        </div>
-        <div style="background:rgba(255,255,255,0.03);border:0.5px solid rgba(184,150,62,0.15);border-radius:5px;padding:12px">
-          <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px">Medications &amp; Supplements</div>
-          <p style="font-size:11px;color:rgba(245,242,236,0.45);line-height:1.6">Active list, dose, timeline, review history · pharmacogenomic interactions</p>
-        </div>
-        <div style="background:rgba(255,255,255,0.03);border:0.5px solid rgba(184,150,62,0.15);border-radius:5px;padding:12px">
-          <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px">Genetics</div>
-          <p style="font-size:11px;color:rgba(245,242,236,0.45);line-height:1.6">Variants · pharmacogenomics · risk-relevant genes</p>
-        </div>
-        <div style="background:rgba(255,255,255,0.03);border:0.5px solid rgba(184,150,62,0.15);border-radius:5px;padding:12px">
-          <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px">Sleep &amp; Recovery</div>
-          <p style="font-size:11px;color:rgba(245,242,236,0.45);line-height:1.6">Oura data — readiness, HRV, resting heart rate, sleep quality trends</p>
-        </div>
-        <div style="background:rgba(255,255,255,0.03);border:0.5px solid rgba(184,150,62,0.15);border-radius:5px;padding:12px">
-          <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px">Gut &amp; Microbiome</div>
-          <p style="font-size:11px;color:rgba(245,242,236,0.45);line-height:1.6">Stool and microbiome report extraction and highlights</p>
-        </div>
-        <div style="background:rgba(255,255,255,0.03);border:0.5px solid rgba(184,150,62,0.15);border-radius:5px;padding:12px">
-          <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px">Body Composition</div>
-          <p style="font-size:11px;color:rgba(245,242,236,0.45);line-height:1.6">InBody/DEXA · side-specific limb data · 3D anatomy baseline · body photos</p>
-        </div>
-        <div style="background:rgba(255,255,255,0.03);border:0.5px solid rgba(184,150,62,0.15);border-radius:5px;padding:12px">
-          <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px">Health Information</div>
-          <p style="font-size:11px;color:rgba(245,242,236,0.45);line-height:1.6">Conditions · allergies · visit and symptom notes · research library</p>
-        </div>
-        <div style="background:rgba(255,255,255,0.03);border:0.5px solid rgba(184,150,62,0.15);border-radius:5px;padding:12px">
-          <div style="font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px">Property Context</div>
-          <p style="font-size:11px;color:rgba(245,242,236,0.45);line-height:1.6">Air quality · sleep room environment · wellness barn activity · garden nutrition</p>
-        </div>
-      </div>
-
-      <!-- Integration Architecture -->
-      <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Integration Architecture at Sovereign Fields</div>
-      <ul class="rule-list" style="margin-bottom:20px">
-        <li><strong style="color:var(--gold-light)">Location</strong> — MyBioTwin runs as its own isolated virtual machine on the home server, within the Health VLAN. No internet access. GPU-accelerated inference on the same server handles heavy analysis workloads</li>
-        <li><strong style="color:var(--gold-light)">Continuous Stream Ingestion</strong> — Rather than periodic manual uploads, a background listener accepts incoming data from approved property sources: wearable sync hub, environmental sensors, sleep tracking hardware, wellness barn activity logs. The digital twin updates itself continuously — while you sleep, while you train, while you eat from the garden</li>
-        <li><strong style="color:var(--gold-light)">Local API Surface</strong> — MyBioTwin exposes a structured query interface to the property's unified AI layer. The AI can ask: "What is Don's current recovery status?" and receive a structured summary — not raw data. The AI gets enough context to be useful without unrestricted vault access. Raw data never leaves the health VLAN</li>
-        <li><strong style="color:var(--gold-light)">The Wellness Barn as Real-Time Data Source</strong> — Post-sauna HRV recovery, cold plunge response, gym performance metrics feed MyBioTwin automatically. Over months it builds a picture of which protocols actually work for each person's physiology — not what worked for someone in a study, but what works for you</li>
-        <li><strong style="color:var(--gold-light)">The Kitchen Garden as Nutritional Context</strong> — Food grown in the greenhouse and garden is logged and correlated with biomarker trends. "Gut microbiome diversity has been improving for 8 weeks — correlates with the introduction of fermented garden produce." No cloud health platform can do this</li>
-        <li><strong style="color:var(--gold-light)">The Sleep Suite as Clinical Environment</strong> — Room environment data (temperature, CO2, humidity, blackout status) combined with Oura data gives MyBioTwin three-dimensional sleep understanding — not just how you slept, but why, and what changed</li>
-        <li><strong style="color:var(--gold-light)">Ambient Health Intelligence</strong> — Nobody opens an app. The unified AI surfaces health understanding quietly, in context. "Your HRV has been trending down this week and your sleep room CO2 was elevated three nights running — worth checking the ventilation before your next training block." Health insight as ambient experience</li>
-        <li><strong style="color:var(--gold-light)">Remote Access</strong> — Any family member can securely access their own profile from anywhere via WireGuard VPN. The digital twin travels with you — without the data ever leaving the property</li>
-      </ul>
-
-      <!-- The Longitudinal Vision -->
-      <div style="background:rgba(184,150,62,0.06);border:0.5px solid rgba(184,150,62,0.2);border-radius:6px;padding:16px 20px;margin-bottom:20px">
-        <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px">The Longitudinal Vision — A Digital Twin for Life</div>
-        <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;">MyBioTwin is not just a health app — it is the story of a body over a lifetime. Don at 50, 60, 70 — what does the arc look like? What decisions made now show up as outcomes later? This requires that the data never gets lost, never gets migrated away from, never gets deprecated by a vendor. The home server is the right place for it precisely because it is sovereign. The data outlives any company. That is worth building for explicitly — not as a feature, but as a design principle: <em style="color:var(--gold-light)">this digital twin is for life.</em></p>
-      </div>
-
-      <!-- Integration Questions for Development -->
-      <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Open Integration Questions — Under Development</div>
+    <!-- Section toggle -->
+    <div style="display:flex;gap:0;padding:10px 16px;background:rgba(255,255,255,0.02);border-bottom:0.5px solid var(--border)">
+      <button onclick="setSectionMode('health','detail',this)" class="stbtn-health-detail stbtn active-stbtn" style="padding:5px 14px;background:rgba(184,150,62,0.12);border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--gold-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px 0 0 3px">&#9776; Detail</button>
+      <button onclick="setSectionMode('health','family',this)" class="stbtn-health-family stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans)">&#9733; Family</button>
+      <button onclick="setSectionMode('health','technical',this)" class="stbtn-health-technical stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:0 3px 3px 0">&#9881; Technical</button>
+    </div>
+    <!-- DETAIL VIEW -->
+    <div class="sovtech-detail-view" style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
+      <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">MyBioTwin is a private, owner-controlled health intelligence application that creates a living biological digital twin — a continuously updated model of each person's body. It runs entirely on the owner's machine. No company cloud, no telemetry, no data leaving the property. It was built independently on the same sovereign principles that govern this property.</p>
       <ul class="rule-list">
-        <li><strong style="color:var(--gold-light)">Local API Design</strong> — What structured query format does the unified AI use to request health context? What summary objects does MyBioTwin return? How is query authorization handled within the health VLAN?</li>
-        <li><strong style="color:var(--gold-light)">Continuous Stream Ingestion</strong> — Background listener architecture for automatic data ingestion from wearables, environmental sensors, and wellness barn equipment without manual uploads</li>
-        <li><strong style="color:var(--gold-light)">Property-Aware Context Layer</strong> — When MyBioTwin knows it is running on the Sovereign Fields server, it enriches interpretations with property context: season, garden activity, wellness barn usage, environmental readings</li>
-        <li><strong style="color:var(--gold-light)">Emergency Export Protocol</strong> — Minimal read-only medical summary (medications, allergies, critical conditions, emergency contacts) accessible via QR code for first responders · 15-minute access window · no vault access required · life-safety feature to be designed in now</li>
-        <li><strong style="color:var(--gold-light)">Family Onboarding</strong> — Kathy and the children need to be able to create and use their profiles without technical involvement from Don. The Kathy Test applied to health: if she cannot set it up herself, it is not ready</li>
-        <li><strong style="color:var(--gold-light)">Regulatory Compliance</strong> — PHIPA (Ontario) and HIPAA (if US-facing) implications for a local-first health architecture · how does sovereign storage interact with regulated health data requirements?</li>
+        <li><strong style="color:var(--gold-light)">Location</strong> — Isolated VM on home server · Health VLAN · no internet access · GPU-accelerated inference · dedicated encrypted NAS volume · AES-256 at rest</li>
+        <li><strong style="color:var(--gold-light)">Health Domains</strong> — Labs/biomarkers · medications &amp; supplements · genetics · sleep &amp; recovery (Oura) · gut/microbiome · body composition (InBody/DEXA) · health information · environmental context from property sensors</li>
+        <li><strong style="color:var(--gold-light)">Continuous Ingestion</strong> — Background sidecar listener · accepts HealthKit, JSON, CSV, vendor payloads · queues on outage, never discards · feeds from Oura, Apple Watch, WHOOP, CGM, environmental sensors, sleep hardware, wellness barn activity</li>
+        <li><strong style="color:var(--gold-light)">Ingestion Gateway</strong> — Separate VLAN with controlled internet · authenticates to wearable vendor clouds · one-way data push into Health VLAN (data-diode) · air-gap preserved</li>
+        <li><strong style="color:var(--gold-light)">AI Query API</strong> — Read-only scoped REST API · HMAC-signed tokens · unified AI holds status/alert scope only · raw data never addressable · sub-500ms deterministic queries · async LLM enrichment separate</li>
+        <li><strong style="color:var(--gold-light)">Family Profiles</strong> — Each family member has isolated, separately encrypted profile · no cross-contamination possible · Kathy Test applies to onboarding — must be completable by non-technical user in under 15 minutes</li>
+        <li><strong style="color:var(--gold-light)">Emergency Card</strong> — Offline-first · signed locally-cached minimal record on phone · meds, allergies, conditions, blood type, emergency contacts · QR unlocks 15-min read-only window · no server dependency</li>
+        <li><strong style="color:var(--gold-light)">Longitudinal Vision</strong> — Append-only, format-stable, self-describing storage · a 2026 record readable in 2066 · this digital twin is for life</li>
       </ul>
     </div>
+    <!-- FAMILY VIEW -->
+    <div class="sovtech-family-view" style="display:none;padding:20px 24px;border-bottom:0.5px solid var(--border)">
+      <p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">Think of MyBioTwin as a deeply private, incredibly smart health journal that actually understands what it's reading. It takes all the scattered health information we generate — blood tests, sleep data from our Oura rings, genetic reports, gut health tests, body scans, medication lists — and turns it into one clear, evolving picture of each person's health over time.</p>
+      <p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">The most important thing: it runs entirely on our own server here on the property. Nothing goes to a health company's cloud. Our family's most sensitive data — DNA, medical history, biometrics — lives here, encrypted, under our roof.</p>
+      <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:20px 0 12px">What this means for the family day to day:</div>
+      <ul class="rule-list">
+        <li><strong style="color:var(--gold-light)">One complete health picture</strong> — Instead of checking the Oura app for sleep, a different app for labs, and a PDF for genetic results, everything is in one place. Ask a question in plain English and get a clear answer with an explanation.</li>
+        <li><strong style="color:var(--gold-light)">The property feeds it automatically</strong> — The gym sessions, sauna protocols, sleep room conditions, air quality, even what we grow in the garden — all of this feeds MyBioTwin automatically. The picture gets richer every day without anyone doing anything.</li>
+        <li><strong style="color:var(--gold-light)">Completely private per person</strong> — Don's health data is Don's. Kathy's is Kathy's. The kids have their own profiles. Nobody sees anyone else's information unless they choose to share it.</li>
+        <li><strong style="color:var(--gold-light)">Always available</strong> — Whether we're on the property or travelling, the digital twin is accessible through a secure private connection. It's always up to date.</li>
+        <li><strong style="color:var(--gold-light)">A health record for life</strong> — This isn't a subscription that expires. This is our family's health history, building year after year, stored here permanently, in a format that will still be readable decades from now.</li>
+      </ul>
+    </div>
+    <!-- TECHNICAL VIEW -->
+    <div class="sovtech-tech-view" style="display:none;padding:20px 24px;border-bottom:0.5px solid var(--border)">
+      <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Integration Specification</div>
+      <ul class="rule-list">
+        <li><strong style="color:var(--gold-light)">Deployment</strong> — Isolated VM · Proxmox or TrueNAS Scale · Health VLAN (no internet) · GPU passthrough for inference · dedicated encrypted NAS volume · AES-256 at rest</li>
+        <li><strong style="color:var(--gold-light)">Ingestion Gateway VM</strong> — Separate VLAN with internet · OAuth to Oura/WHOOP/Apple Health APIs · one-way push to Health VLAN · data-diode pattern · queue-and-backfill on outage</li>
+        <li><strong style="color:var(--gold-light)">API Surface</strong> — REST · HMAC JWT · scopes: status, alert, context (read-only) · raw scope does not exist · sub-500ms target for deterministic queries</li>
+        <li><strong style="color:var(--gold-light)">Data Sources</strong> — Oura Ring, Apple Watch Ultra, WHOOP, CGM, Airthings environmental, Moen Flo water, Eight Sleep, wellness barn activity logs</li>
+        <li><strong style="color:var(--gold-light)">Retention</strong> — Raw: 90 days · downsampled thereafter · append-only format-stable storage · no destructive migration ever</li>
+        <li><strong style="color:var(--gold-light)">Emergency Card</strong> — Offline signed cache on phone · QR unlocks 15-min read-only · auto-expires · no server dependency · meds, allergies, blood type, emergency contacts</li>
+        <li><strong style="color:var(--gold-light)">Compliance</strong> — Local-first minimises PHIPA/HIPAA surface · minors' data requires specific consent handling · retain Ontario health-privacy counsel before finalising access-control design</li>
+      </ul>
+    </div>
+    <!-- COST TABLE -->
     <table class="bmtb"><thead><tr><th>Item</th><th>Specification</th><th>Est. Cost</th></tr></thead><tbody>
       <tr><td>MyBioTwin Server Instance</td><td>Isolated VM on home server · Health VLAN · GPU-accelerated inference · dedicated NAS volume · encrypted at rest<span class="bmtag">MyBioTwin</span><span class="bmtag">Health VLAN</span></td><td>$2,000</td></tr>
       <tr><td>Wearables Suite</td><td>Apple Watch Ultra · Oura Ring Gen 4 · CGM starter kit · WHOOP · local sync hub · all feeds MyBioTwin<span class="bmtag">Oura</span><span class="bmtag">Apple Health</span><span class="bmtag">WHOOP</span></td><td>$4,000</td></tr>
@@ -1313,7 +1429,6 @@ audio{width:100%}
     </tbody></table>
   </div>
 </div>
-
 <!-- SECTION 5: NETWORK SECURITY ARCHITECTURE -->
 <div class="bms">
   <div class="bmh" onclick="bmToggle('sovtech-network')" style="position:relative">
@@ -1325,7 +1440,55 @@ audio{width:100%}
     </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-network">
+    <!-- Section toggle -->
+    <div class="sovtech-section-toggle" data-section="network" style="display:flex;gap:0;padding:10px 16px;background:rgba(255,255,255,0.02);border-bottom:0.5px solid var(--border)">
+      <button onclick="setSectionMode('network','detail',this)" class="stbtn-network-detail stbtn active-stbtn" style="padding:5px 14px;background:rgba(184,150,62,0.12);border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--gold-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px 0 0 3px">&#9776; Detail</button>
+      <button onclick="setSectionMode('network','family',this)" class="stbtn-network-family stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans)">&#9733; Family</button>
+      <button onclick="setSectionMode('network','technical',this)" class="stbtn-network-technical stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:0 3px 3px 0">&#9881; Technical</button>
+    </div>
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
+      <div class="sovtech-detail-view">
+<p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">A property with this level of automation, this many connected devices, and this much sensitive data requires a zero-trust network architecture. Every device is isolated by default. Access is granted deliberately. The assumption is that any device can be compromised — the architecture limits the blast radius.</p>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">VLAN Segmentation</strong> — 6 isolated segments: Trusted (family devices) · IoT (smart home) · Security (cameras, alarms) · Health (biometric devices, vault — no internet) · Robotics (Optimus, vehicles) · Guest · Each VLAN cannot talk to others without explicit firewall rules · UniFi handles this natively</li>
+  <li><strong style="color:var(--gold-light)">Firewall</strong> — UniFi Dream Machine Pro · deep packet inspection · geo-blocking · IDS/IPS (intrusion detection/prevention) · all IoT devices blocked from internet by default — only whitelisted cloud endpoints permitted</li>
+  <li><strong style="color:var(--gold-light)">VPN for Remote Access</strong> — WireGuard VPN on home server · access your property remotely without exposing any service to public internet · phone connects to VPN to view cameras, check health data, control systems · no port forwarding, no exposed services</li>
+  <li><strong style="color:var(--gold-light)">DNS Filtering</strong> — Pi-hole or AdGuard Home · blocks all ad tracking, malware domains, and telemetry at DNS level for entire property · privacy protection built into network infrastructure</li>
+  <li><strong style="color:var(--gold-light)">Ingestion Gateway</strong> — Separate VLAN with controlled internet access · authenticates to wearable vendor clouds (Oura, WHOOP, CGM) · pushes data one-way into Health VLAN via data-diode pattern · air-gap preserved · this is where most wearable integration complexity lives</li>
+  <li><strong style="color:var(--gold-light)">Physical Security</strong> — Server room: keypad + biometric entry · tamper sensors on server rack · dedicated alarm zone · UPS protects against power-based attacks · optional copper mesh in server room walls</li>
+  <li><strong style="color:var(--gold-light)">Audit &amp; Logging</strong> — All network events logged to home server · 90-day retention · AI monitors for anomalous patterns · alerts to phone if unusual outbound traffic detected</li>
+</ul>
+</div>
+      <div class="sovtech-family-view" style="display:none">
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">A home this connected — with cameras, smart locks, health devices, AI assistants, electric vehicles, and a private server — needs a network that's designed from the ground up to keep everything safe and separated. Think of it like having different secure rooms inside the same building, each one locked independently.</p>
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">The key idea is that not everything in our home should be able to talk to everything else. The thermostat doesn't need to see the health data. The guest WiFi doesn't need to reach the security cameras. By keeping things separated, even if one device got compromised, it can't reach the important stuff.</p>
+<div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:20px 0 12px">What this means in practice:</div>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Separate lanes for everything</strong> — Family devices, smart home devices, cameras, health equipment, electric vehicles, and guests each get their own completely separate network. They can't cross into each other.</li>
+  <li><strong style="color:var(--gold-light)">No unwanted visitors</strong> — The system automatically blocks connections from high-risk parts of the world, detects unusual activity, and alerts us if something strange is happening.</li>
+  <li><strong style="color:var(--gold-light)">Safe remote access</strong> — When we're away from the property and want to check the cameras or control something, we use a secure private tunnel (VPN) — like a secret door that only we know about. No ports left open, no exposed services.</li>
+  <li><strong style="color:var(--gold-light)">Ad and tracking blocking built in</strong> — Every device on the property automatically has ad tracking and known malware sites blocked at the network level — not just in the browser, but for every device including TVs and smart home gadgets.</li>
+  <li><strong style="color:var(--gold-light)">Guest WiFi is completely separate</strong> — When friends or contractors connect to our WiFi, they get internet access but absolutely nothing else. They can't accidentally or intentionally reach any of our devices, cameras, or data.</li>
+</ul>
+<p style="font-size:13px;color:rgba(245,242,236,0.5);line-height:1.8;margin-top:16px">The server room itself has a keypad and biometric lock — only the people who need to be in there can get in. Everything that happens on the network is logged, and the AI watches for anything unusual and alerts us immediately.</p>
+</div>
+      <div class="sovtech-tech-view" style="display:none">
+<div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Network Architecture</div>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Gateway</strong> — UniFi Dream Machine Pro · deep packet inspection · IDS/IPS · geo-blocking · 6-VLAN architecture</li>
+  <li><strong style="color:var(--gold-light)">VLANs</strong> — Trusted (family devices) · IoT (smart home) · Security (cameras/alarms) · Health (biometric/vault — no internet) · Robotics (Optimus/vehicles) · Guest (internet only)</li>
+  <li><strong style="color:var(--gold-light)">VPN</strong> — WireGuard on home server · no port forwarding · no exposed services · phone connects via VPN for remote access</li>
+  <li><strong style="color:var(--gold-light)">DNS Filtering</strong> — Pi-hole or AdGuard Home · property-wide ad/tracking/malware blocking at DNS level</li>
+  <li><strong style="color:var(--gold-light)">Physical Security</strong> — Server room: keypad + biometric entry · tamper sensors · dedicated alarm zone · optional copper mesh lining</li>
+  <li><strong style="color:var(--gold-light)">Logging</strong> — All events to home server · 90-day retention · AI anomaly detection · unusual outbound traffic alerts to phone</li>
+</ul>
+<div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:16px 0 8px">Installation Requirements</div>
+<ul class="rule-list">
+  <li>UniFi Dream Machine Pro at main network cabinet · coordinate with low-voltage contractor</li>
+  <li>6-VLAN configuration by qualified network security professional — not standard AV installer</li>
+  <li>Server room biometric lock · tamper sensors on rack · dedicated alarm zone on security panel</li>
+</ul>
+</div>
       <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">A property with this level of automation, this many connected devices, and this much sensitive data requires a zero-trust network architecture. Every device is isolated by default. Access is granted deliberately. The assumption is that any device can be compromised — the architecture limits the blast radius.</p>
       <ul class="rule-list">
         <li><strong style="color:var(--gold-light)">VLAN Segmentation</strong> — Minimum 6 isolated network segments: Trusted (family devices) · IoT (smart home devices) · Security (cameras, alarms) · Health (biometric devices, health vault) · Robotics (Optimus, vehicles) · Guest · Each VLAN cannot talk to others without explicit firewall rules · UniFi handles this natively</li>
@@ -1357,7 +1520,52 @@ audio{width:100%}
     </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-future">
+    <!-- Section toggle -->
+    <div class="sovtech-section-toggle" data-section="future" style="display:flex;gap:0;padding:10px 16px;background:rgba(255,255,255,0.02);border-bottom:0.5px solid var(--border)">
+      <button onclick="setSectionMode('future','detail',this)" class="stbtn-future-detail stbtn active-stbtn" style="padding:5px 14px;background:rgba(184,150,62,0.12);border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--gold-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px 0 0 3px">&#9776; Detail</button>
+      <button onclick="setSectionMode('future','family',this)" class="stbtn-future-family stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans)">&#9733; Family</button>
+      <button onclick="setSectionMode('future','technical',this)" class="stbtn-future-technical stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:0 3px 3px 0">&#9881; Technical</button>
+    </div>
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
+      <div class="sovtech-detail-view">
+<p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">These are the specific items to communicate to your builder and electrician during construction. Each costs little to add during rough-in and would be expensive or impossible to retrofit. This is the list that makes Sovereign Fields genuinely future-proof.</p>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Server Room</strong> — Dedicated room adjacent to electrical panel · minimum 2m × 1.5m · 30A circuit · 20A UPS circuit · Cat6A direct to main switch · 1" conduit to every room · dedicated cooling duct or mini-split rough-in · biometric door lock</li>
+  <li><strong style="color:var(--gold-light)">Robot Charging Alcoves ×3</strong> — Mudroom, garage, barn utility wing · 700mm W × 600mm D × 1900mm H recessed niche · 20A dedicated circuit each · Cat6A data port · flush door panel in design finish</li>
+  <li><strong style="color:var(--gold-light)">UWB Anchor Conduit ×8</strong> — Cat6A to 8 ceiling locations: great room, kitchen, corridor, primary suite, bedroom wing ×2, barn gym, barn wellness · pull string installed · J-box in ceiling</li>
+  <li><strong style="color:var(--gold-light)">Health Infrastructure Circuits</strong> — Primary suite: dedicated 20A clean power circuit (sleep tech) · primary bathroom: 20A + data port (future medical devices) · gym: 20A + data port (health monitoring equipment)</li>
+  <li><strong style="color:var(--gold-light)">Conduit Network</strong> — 1" EMT conduit from server room to: every bedroom, great room, kitchen, garage, barn · pull string in all runs · future-proof for any cable type not yet invented · highest ROI future-proofing investment on the project</li>
+  <li><strong style="color:var(--gold-light)">Outdoor Technology</strong> — Sanctuary Walk: 20A weatherproof circuit at midpoint and barn end · robot outdoor charging station enclosure rough-in at barn north entrance · all outdoor circuits on dedicated breaker with remote shutoff</li>
+  <li><strong style="color:var(--gold-light)">Power Capacity Reserve</strong> — 400A main panel minimum · 100A capacity reserved for future technology loads · sub-panel in server room for all tech circuits · separate metering for technology loads</li>
+  <li><strong style="color:var(--gold-light)">Acoustic Preparation</strong> — Server room: sound insulation on all walls · robot staging areas: rubber underlayment at alcove locations · primary corridor: acoustic insulation in wall cavities (robot movement at night)</li>
+</ul>
+</div>
+      <div class="sovtech-family-view" style="display:none">
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">Here's one of the most important things to understand about building a forward-looking home: the decisions that matter most are the ones you make before the walls close. Running a pipe or a wire through a finished wall costs three to five times more than doing it during construction — and some things simply can't be done at all after the fact.</p>
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">This checklist is everything we're asking the builder to rough-in during construction. Most of it is invisible once the house is built — empty conduit, extra circuits, carefully positioned junction boxes. It costs relatively little now and makes everything possible later.</p>
+<div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:20px 0 12px">The key things we're putting in now:</div>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">A proper technology room</strong> — A dedicated space in the utility wing for all the brains of the house: the server, the network equipment, the AI hardware. Its own power, its own cooling, its own secure door. Once the walls are up, adding this properly would cost a fortune.</li>
+  <li><strong style="color:var(--gold-light)">Empty pipes everywhere</strong> — 1-inch conduit running from the technology room to every room in the house. Right now we put a pull string in and leave it empty. In five years when there's a new type of cable that didn't exist today, we just pull it through. No walls opened, no mess.</li>
+  <li><strong style="color:var(--gold-light)">Robot-ready alcoves</strong> — Three discreet charging spots built into the mudroom, garage, and barn. They look like nothing when the doors are closed. They're ready for whatever robot technology looks like in five years.</li>
+  <li><strong style="color:var(--gold-light)">Health circuits</strong> — Dedicated clean power in the primary suite and bathroom for sleep and health monitoring equipment. Medical-grade power conditioning, which you can't add as an afterthought.</li>
+  <li><strong style="color:var(--gold-light)">Extra electrical capacity</strong> — The main panel is sized for 400 amps with 100 amps held in reserve for future technology. When electric cars, robots, and health equipment all need power, we have it waiting.</li>
+</ul>
+<p style="font-size:13px;color:rgba(245,242,236,0.5);line-height:1.8;margin-top:16px">Think of this checklist as the infrastructure that makes everything else possible. The house is not just a beautiful building — it's a platform that grows with the family for decades.</p>
+</div>
+      <div class="sovtech-tech-view" style="display:none">
+<div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Builder/Electrician Checklist — Must Complete During Construction</div>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Server Room</strong> — Dedicated room adj. to electrical panel · min 2m × 1.5m · 30A circuit · 20A UPS circuit · Cat6A direct to main switch · 1" conduit hub to every room · cooling duct or mini-split rough-in · biometric door lock rough-in</li>
+  <li><strong style="color:var(--gold-light)">Robot Alcoves ×3</strong> — Mudroom, garage, barn utility wing · 700W × 600D × 1900H mm recessed niche · 20A dedicated circuit · Cat6A · flush door panel in finish material</li>
+  <li><strong style="color:var(--gold-light)">UWB Conduit ×8</strong> — Cat6A to ceiling J-boxes: great room, kitchen, corridor, primary suite, bedroom wing ×2, barn gym, barn wellness · pull strings installed</li>
+  <li><strong style="color:var(--gold-light)">Health Circuits</strong> — Primary suite: 20A clean power (sleep tech) · primary bathroom: 20A + data port · gym: 20A + data port</li>
+  <li><strong style="color:var(--gold-light)">Conduit Network</strong> — 1" EMT from server room to all rooms · pull strings throughout · coordinate with low-voltage contractor</li>
+  <li><strong style="color:var(--gold-light)">Outdoor Tech</strong> — Sanctuary Walk: 20A weatherproof at midpoint and barn end · barn north: robot station rough-in · all on dedicated breaker with remote shutoff</li>
+  <li><strong style="color:var(--gold-light)">Power Capacity</strong> — 400A main panel minimum · 100A capacity reserve for tech loads · sub-panel in server room · separate metering for technology circuits</li>
+  <li><strong style="color:var(--gold-light)">Acoustic</strong> — Server room: sound insulation all walls · robot alcoves: rubber underlayment · primary corridor: acoustic insulation in wall cavities</li>
+</ul>
+</div>
       <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">These are the specific items to communicate to your builder and electrician during construction. Each costs little to add during rough-in and would be expensive to retrofit. This is the list that makes Sovereign Fields genuinely future-proof.</p>
       <ul class="rule-list">
         <li><strong style="color:var(--gold-light)">Server Room</strong> — Dedicated room or large closet adjacent to electrical panel · minimum 2m × 1.5m · own 30A electrical circuit · 20A UPS circuit · Cat6A direct to main switch · 1" conduit to every room · dedicated cooling duct or mini-split rough-in · biometric door lock</li>
@@ -1392,7 +1600,55 @@ audio{width:100%}
     </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-team">
+    <!-- Section toggle -->
+    <div class="sovtech-section-toggle" data-section="team" style="display:flex;gap:0;padding:10px 16px;background:rgba(255,255,255,0.02);border-bottom:0.5px solid var(--border)">
+      <button onclick="setSectionMode('team','detail',this)" class="stbtn-team-detail stbtn active-stbtn" style="padding:5px 14px;background:rgba(184,150,62,0.12);border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--gold-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px 0 0 3px">&#9776; Detail</button>
+      <button onclick="setSectionMode('team','family',this)" class="stbtn-team-family stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans)">&#9733; Family</button>
+      <button onclick="setSectionMode('team','technical',this)" class="stbtn-team-technical stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:0 3px 3px 0">&#9881; Technical</button>
+    </div>
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
+      <div class="sovtech-detail-view">
+<p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">The most important principle: the people who build the infrastructure should never hold the keys to what runs on it. A wider contractor team means a wider attack surface. The goal is to minimise the number of entities who touch the system, execute a clean credential handover at completion, and reach owner-independent operation as quickly as possible.</p>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Ideal: Single Integrator</strong> — One boutique technology firm covering smart home, network security, and server infrastructure · signs comprehensive NDA with financial penalties · all credentials and documentation delivered to owner at completion · no ongoing remote access by default — session-by-session only if explicitly granted</li>
+  <li><strong style="color:var(--gold-light)">If Two Firms</strong> — Network/server firm has final authority over security architecture · neither firm has credentials to the other's domain · full NDA from both · compartmentalisation is the security model</li>
+  <li><strong style="color:var(--gold-light)">Build Phase Security</strong> — Contractors know the physical layout — unavoidable · what they must never have: master network credentials, server access, alarm codes, or camera system access · use temporary construction credentials for testing · rotate everything on possession day</li>
+  <li><strong style="color:var(--gold-light)">Possession Day Protocol</strong> — Day one of occupancy: rotate every password, revoke every contractor credential, change all alarm codes, regenerate all API keys · 2–3 hours · non-negotiable · most homeowners never do this — that's a mistake</li>
+  <li><strong style="color:var(--gold-light)">Ongoing Operations</strong> — Learn the system at owner level · UniFi, Home Assistant, TrueNAS, and Control4 are designed to be owner-operated · aim for 90% of issues handled independently within 12 months of occupancy</li>
+  <li><strong style="color:var(--gold-light)">Documentation Ownership</strong> — Full network diagram, all credentials, all device serials, all licences — delivered encrypted to owner at completion · stored in health vault, not any cloud service · contractor retains no copy</li>
+</ul>
+</div>
+      <div class="sovtech-family-view" style="display:none">
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">Building a home with this level of technology is very different from a standard construction project. The people who install the smart home, the network, and the server all need to work together — and they need to understand that this property is built on privacy and sovereignty, not just convenience.</p>
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">The most important thing to understand: the people who build the system should never hold the keys to what runs on it. Think of it like a locksmith — they install the lock, but when they leave, only you have the key. That's the standard we hold everyone to.</p>
+<div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:20px 0 12px">What good looks like:</div>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Ideally one firm for everything</strong> — A single technology integrator who handles smart home, network security, and server setup together. One firm, one point of accountability, one NDA. These firms exist and typically serve high-end financial or executive residential clients.</li>
+  <li><strong style="color:var(--gold-light)">Moving-in day protocol</strong> — On the day we take possession, every password gets changed, every contractor credential gets revoked, every alarm code gets reset. This is non-negotiable and takes about 2–3 hours. Most homeowners never do this — that's a mistake we won't make.</li>
+  <li><strong style="color:var(--gold-light)">No ongoing access by default</strong> — After the build is complete, no contractor has remote access to our systems unless we explicitly invite them in for a specific session. They don't hold a master key that stays active forever.</li>
+  <li><strong style="color:var(--gold-light)">Everything documented and handed over</strong> — Every password, every device serial number, every software licence delivered to us in an encrypted document at completion. The contractor keeps no copy.</li>
+  <li><strong style="color:var(--gold-light)">We learn the system</strong> — The goal is that within a year of living here, we can handle 90% of issues ourselves. The less we depend on outside contractors for day-to-day operation, the more sovereign we actually are.</li>
+</ul>
+<p style="font-size:13px;color:rgba(245,242,236,0.5);line-height:1.8;margin-top:16px">The wider the team, the wider the potential for a security breach. We keep the team as small and as accountable as possible — and we make sure everyone who touches the system understands what this property stands for before they start.</p>
+</div>
+      <div class="sovtech-tech-view" style="display:none">
+<div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Integrator Requirements</div>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Preferred</strong> — Single firm covering smart home/AV, network security, and server infrastructure · references from financial sector or UHNW residential clients in GTA</li>
+  <li><strong style="color:var(--gold-light)">If two firms</strong> — Network/server firm has final authority over security architecture · neither has credentials to the other's domain · full NDA from both</li>
+  <li><strong style="color:var(--gold-light)">NDA Requirements</strong> — Financial penalties for breach · no retention of client credentials after project completion · no standing remote access post-handover</li>
+  <li><strong style="color:var(--gold-light)">Insurance</strong> — Errors &amp; omissions insurance · cyber liability insurance required</li>
+  <li><strong style="color:var(--gold-light)">Deliverables</strong> — Complete credential document (encrypted) · full network diagram · all device serials and licences · restore-tested backup · training session for owner</li>
+  <li><strong style="color:var(--gold-light)">Possession Day Protocol</strong> — All passwords rotated · all contractor credentials revoked · alarm codes changed · API keys regenerated · takes 2–3 hours · mandatory</li>
+</ul>
+<div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:16px 0 8px">Vetting Criteria</div>
+<ul class="rule-list">
+  <li>Familiar with TrueNAS, Proxmox, or equivalent self-hosted platforms</li>
+  <li>Can demonstrate no retained client credentials post-project</li>
+  <li>Has in-house network security capability — not just AV/smart home</li>
+  <li>Willing to sign NDA with financial penalties — not standard contractor NDA</li>
+</ul>
+</div>
       <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">The most important principle: the people who build the infrastructure should never hold the keys to what runs on it. A wider contractor team means a wider attack surface. The goal is to minimize the number of entities who touch the system, execute a clean credential handover at completion, and reach a state where the property operates owner-independently as quickly as possible.</p>
       <ul class="rule-list">
         <li><strong style="color:var(--gold-light)">Ideal: Single Integrator</strong> — One boutique technology firm covering smart home, network security, and server infrastructure under one roof · signs comprehensive NDA with financial penalties for breach · all work documented in a master credential document handed to owner at completion · no ongoing remote access by default — session-by-session only if explicitly granted · look for firms serving Bay Street financial clients or ultra-high-net-worth residential builds in the GTA — they already operate under these standards</li>
@@ -1431,7 +1687,56 @@ audio{width:100%}
     </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-privacy">
+    <!-- Section toggle -->
+    <div class="sovtech-section-toggle" data-section="privacy" style="display:flex;gap:0;padding:10px 16px;background:rgba(255,255,255,0.02);border-bottom:0.5px solid var(--border)">
+      <button onclick="setSectionMode('privacy','detail',this)" class="stbtn-privacy-detail stbtn active-stbtn" style="padding:5px 14px;background:rgba(184,150,62,0.12);border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--gold-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px 0 0 3px">&#9776; Detail</button>
+      <button onclick="setSectionMode('privacy','family',this)" class="stbtn-privacy-family stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans)">&#9733; Family</button>
+      <button onclick="setSectionMode('privacy','technical',this)" class="stbtn-privacy-technical stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:0 3px 3px 0">&#9881; Technical</button>
+    </div>
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
+      <div class="sovtech-detail-view">
+<p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">The property protects everyone on it — always, without exception. But protection and surveillance are not the same thing. The perimeter is watched. The inside is trusted. That boundary is sacred and must be maintained in every system design decision.</p>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Perimeter — Always On</strong> — Driveway, gate, property boundary, barn exterior · always recording · motion-triggered alerts · 90-day rolling retention on home server · expected and known by anyone approaching the property</li>
+  <li><strong style="color:var(--gold-light)">Transition Zones — Motion Only</strong> — Entry hall, mudroom, garage · motion detection triggers a timestamp event · no continuous video recording · no audio · 30-day retention</li>
+  <li><strong style="color:var(--gold-light)">Indoor Living Spaces — Default Off</strong> — Great room, kitchen, dining · no recording by default · motion presence detection only · can be armed manually during extended absence</li>
+  <li><strong style="color:var(--gold-light)">Bedrooms — No Cameras, Ever</strong> — No camera in any bedroom under any circumstances · microphone arrays present for voice commands only · hardware kill switch at each bedroom door physically cuts power to mic array · when switched off, nothing listens — physically severed, not software-gated</li>
+  <li><strong style="color:var(--gold-light)">Privacy Mode — One Action</strong> — Single trigger (voice or phone) · all indoor mics to discard-only mode · all indoor video storage disabled · AI learning suspended · perimeter security stays fully armed · all safety sensors stay active</li>
+  <li><strong style="color:var(--gold-light)">Safety Systems — Always Active</strong> — Smoke, CO, propane, water leak, environmental sensors — none respect Privacy Mode · trigger regardless · AI announces through nearest speaker, flashes lights, unlocks exit doors · passive sensors measuring conditions, not behaviour</li>
+  <li><strong style="color:var(--gold-light)">Hardware Privacy Controls</strong> — All indoor cameras: physical privacy shutters — not software toggles · shutter physically blocks the lens · no remote access or software update can override a closed shutter</li>
+  <li><strong style="color:var(--gold-light)">The Honest Answer</strong> — If a guest asks "is this room being recorded?" the answer is always accurate and immediate · system design ensures the answer is always: no, unless you have explicitly activated recording for this space</li>
+</ul>
+</div>
+      <div class="sovtech-family-view" style="display:none">
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">One of the most important things about Sovereign Fields is that when you're here — family, friends, guests — you should feel completely free. Not watched, not monitored, not conscious of cameras or microphones. Just present, relaxed, and at home.</p>
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">At the same time, the property keeps everyone safe — from fire, from intruders, from gas leaks, from emergencies. These two things — safety and freedom — are not in conflict. We've designed them carefully so you can have both.</p>
+<div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:20px 0 12px">How it works:</div>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Outside is watched, inside is trusted</strong> — The driveway, gates, and property boundary have cameras that are always on. That's expected — it's the perimeter of the property. Inside the house, cameras are off by default. The inside of the home is trusted space.</li>
+  <li><strong style="color:var(--gold-light)">No cameras in bedrooms — ever</strong> — This is a hard rule with no exceptions. Every bedroom has a physical switch at the door that cuts power to the microphone. When it's switched off, nothing listens. Not software-controlled — physically cut.</li>
+  <li><strong style="color:var(--gold-light)">Privacy mode</strong> — One button on any phone turns on Privacy Mode for the whole house. Indoor microphones stop recording (they can still hear a fire alarm). Indoor cameras stop storing footage. The AI pauses learning. The perimeter cameras keep running because safety never stops.</li>
+  <li><strong style="color:var(--gold-light)">Safety always wins</strong> — Fire detectors, carbon monoxide sensors, gas leak detectors, water leak sensors — none of these ever go off. In an emergency the system responds immediately regardless of any privacy setting. Safety and privacy are not the same category.</li>
+  <li><strong style="color:var(--gold-light)">Honest answer, always</strong> — If any guest asks "is this room being recorded right now?" the answer is always accurate and immediate. The system is designed so that answer is always: no, unless you have specifically activated recording for this space.</li>
+</ul>
+<p style="font-size:13px;color:rgba(245,242,236,0.5);line-height:1.8;margin-top:16px">The goal is that nobody ever has to think about this. You walk in, you feel comfortable, you feel free. The technology is invisible. And if you ever do ask, the answer is simple and true.</p>
+</div>
+      <div class="sovtech-tech-view" style="display:none">
+<div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Camera and Microphone Zone Architecture</div>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Perimeter — Always On</strong> — Driveway, gate, property boundary, barn exterior · continuous recording · motion alerts · 90-day rolling retention on-server · no cloud egress</li>
+  <li><strong style="color:var(--gold-light)">Transition Zones — Motion Only</strong> — Entry hall, mudroom, garage · motion triggers timestamp event · no continuous video · no audio · 30-day retention</li>
+  <li><strong style="color:var(--gold-light)">Indoor Living — Default Off</strong> — Great room, kitchen, dining · motion presence detection only (occupancy, not identity) · no recording by default · manual arm during extended absence</li>
+  <li><strong style="color:var(--gold-light)">Bedrooms — No Cameras Ever</strong> — Zero cameras in any bedroom · microphone arrays present for voice commands only · hardware kill switch at each bedroom door physically severs power to mic array — not software gated</li>
+  <li><strong style="color:var(--gold-light)">Privacy Mode</strong> — Single trigger (voice or phone app) · all indoor mics → discard-only mode · all indoor video storage disabled · AI learning suspended · perimeter and all safety sensors remain fully armed</li>
+  <li><strong style="color:var(--gold-light)">Safety Systems</strong> — Smoke, CO, propane, water leak, environmental — always active, cannot be overridden by any privacy mode · passive sensors, no camera/microphone dependency</li>
+</ul>
+<div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:16px 0 8px">Hardware Specification</div>
+<ul class="rule-list">
+  <li>All indoor cameras: physical privacy shutter (not software toggle) — lens physically blocked when closed</li>
+  <li>Bedroom door mic kill switches: physical power-cut relay — specify to electrician during rough-in</li>
+  <li>All footage: local Hikvision NVR or Frigate on home server — no cloud NVR service</li>
+</ul>
+</div>
       <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">The property protects everyone on it — always, without exception. But protection and surveillance are not the same thing. The perimeter is watched. The inside is trusted. That boundary is sacred and must be maintained in every system design decision.</p>
       <ul class="rule-list">
         <li><strong style="color:var(--gold-light)">Perimeter — Always On</strong> — Driveway, gate, property boundary, barn exterior · always recording · motion-triggered alerts · 90-day rolling retention on home server · this is expected and known by anyone approaching the property</li>
@@ -1457,7 +1762,48 @@ audio{width:100%}
     </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-principles">
+    <!-- Section toggle -->
+    <div class="sovtech-section-toggle" data-section="principles" style="display:flex;gap:0;padding:10px 16px;background:rgba(255,255,255,0.02);border-bottom:0.5px solid var(--border)">
+      <button onclick="setSectionMode('principles','detail',this)" class="stbtn-principles-detail stbtn active-stbtn" style="padding:5px 14px;background:rgba(184,150,62,0.12);border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--gold-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px 0 0 3px">&#9776; Detail</button>
+      <button onclick="setSectionMode('principles','family',this)" class="stbtn-principles-family stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans)">&#9733; Family</button>
+      <button onclick="setSectionMode('principles','technical',this)" class="stbtn-principles-technical stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:0 3px 3px 0">&#9881; Technical</button>
+    </div>
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
+      <div class="sovtech-detail-view">
+<p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">These principles are not a constitution. They are a living standard — to be read when something new is proposed, consulted when there is doubt, and used to course correct whenever the property drifts from what it is meant to be. They are read by every integrator, contractor, and technology advisor before engaging with this property.</p>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">The Kathy Test</strong> — Can Kathy use it without asking anyone how? If not, it does not go on the wall. This is the single most important filter for every technology decision on the property.</li>
+  <li><strong style="color:var(--gold-light)">Invisible by Default</strong> — The highest compliment is that guests never think about the technology at all. Systems that demand to be noticed are in conflict with this principle.</li>
+  <li><strong style="color:var(--gold-light)">Activated on Demand</strong> — Build all infrastructure during construction. Activate only what genuinely improves daily life with zero learning curve on day one. Everything else waits. Infrastructure patience is wisdom.</li>
+  <li><strong style="color:var(--gold-light)">One Interface Maximum</strong> — Every person needs exactly one interface: their phone, their voice, or a single keypad. Not multiple apps, not different systems for different things.</li>
+  <li><strong style="color:var(--gold-light)">Graceful Degradation</strong> — If the server goes down, the lights still work. If the internet goes down, the gate still opens. Every automated system has a manual override findable in under 10 seconds.</li>
+  <li><strong style="color:var(--gold-light)">The Walk Test</strong> — Don should be able to walk the full property — house, barn, grounds, garden — and have every system respond correctly with zero interaction. No app, no command, no thought required.</li>
+  <li><strong style="color:var(--gold-light)">No Technology for Technology's Sake</strong> — Every activated system must answer: what problem does this solve in daily life for this family? "It's impressive" is not an answer. Complexity compounds — every unnecessary system is a future maintenance burden.</li>
+</ul>
+</div>
+      <div class="sovtech-family-view" style="display:none">
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">These are the rules we hold every piece of technology on this property to. Not just today, but whenever something new is proposed, whenever we're debating whether to add a feature, whenever something feels off. These are the questions we ask.</p>
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">They're not complicated. In fact they're simple on purpose — simple enough that anyone in the family can apply them.</p>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Does it make people feel more free?</strong> — Not more managed, not more monitored, not more dependent on a device. More free. If someone walks away from an experience on this property feeling watched or confused, something failed.</li>
+  <li><strong style="color:var(--gold-light)">Can Kathy use it without asking anyone how?</strong> — This is the most important test. If the answer is no, it doesn't get installed. Not simplified — removed or redesigned until it passes.</li>
+  <li><strong style="color:var(--gold-light)">Would it work if the internet went down?</strong> — The house should never be held hostage by an outage, a company going out of business, or a software update. Every automated system has a manual backup that anyone can find in under 10 seconds.</li>
+  <li><strong style="color:var(--gold-light)">Is our data ours?</strong> — If a system requires sending family data to a company's cloud, it either gets replaced with a sovereign alternative or it doesn't come in the house.</li>
+  <li><strong style="color:var(--gold-light)">Can we turn it off or change it?</strong> — No lock-in. No system that fights back when you try to change it. We own everything, including the right to do things differently tomorrow.</li>
+</ul>
+<p style="font-size:13px;color:rgba(245,242,236,0.5);line-height:1.8;margin-top:16px">These principles are a living document. Don can add to them or update them at any time. The only requirement is that any change makes the property more aligned with its purpose — not less.</p>
+</div>
+      <div class="sovtech-tech-view" style="display:none">
+<div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Design Criteria — For Integrators and Technology Advisors</div>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">The Kathy Test</strong> — Every activated system must be usable by a non-technical adult without instruction. If it fails this test, it is not approved for installation regardless of technical capability.</li>
+  <li><strong style="color:var(--gold-light)">Graceful Degradation</strong> — All automated systems must have manual override accessible in under 10 seconds. The home must function fully without internet, without the home server, and without any cloud service.</li>
+  <li><strong style="color:var(--gold-light)">Data Sovereignty Requirement</strong> — No sensitive data (health, security footage, AI context, family schedules) to third-party cloud by default. Local processing required for all sensitive workloads.</li>
+  <li><strong style="color:var(--gold-light)">No Vendor Lock-In</strong> — All systems must be replaceable. No proprietary closed ecosystems for critical infrastructure. Open standards preferred throughout.</li>
+  <li><strong style="color:var(--gold-light)">Activation on Demand</strong> — Infrastructure built to maximum capability. Systems activated only when they pass the Kathy Test and provide demonstrated daily value. Do not activate features to justify their installation cost.</li>
+  <li><strong style="color:var(--gold-light)">One Interface Maximum</strong> — Every family member needs exactly one interface per context (voice, phone, or keypad). Multiple competing control systems are not acceptable.</li>
+</ul>
+</div>
       <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">Every technology decision at Sovereign Fields must pass these tests before it is activated. The infrastructure can be built — should be built — but nothing gets turned on until it passes. The goal is a property that feels like magic to everyone who walks through it, and requires nothing of them.</p>
       <ul class="rule-list">
         <li><strong style="color:var(--gold-light)">The Kathy Test</strong> — Can Kathy use it without asking anyone how? If the answer is no, it does not go on the wall. This is the single most important filter for every technology decision on the property. Beautiful complexity that only one person understands is a liability, not an asset.</li>
@@ -1483,7 +1829,54 @@ audio{width:100%}
     </div>
   </div>
   <div class="bmb" id="bmbody-sovtech-identity">
+    <!-- Section toggle -->
+    <div class="sovtech-section-toggle" data-section="identity" style="display:flex;gap:0;padding:10px 16px;background:rgba(255,255,255,0.02);border-bottom:0.5px solid var(--border)">
+      <button onclick="setSectionMode('identity','detail',this)" class="stbtn-identity-detail stbtn active-stbtn" style="padding:5px 14px;background:rgba(184,150,62,0.12);border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--gold-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px 0 0 3px">&#9776; Detail</button>
+      <button onclick="setSectionMode('identity','family',this)" class="stbtn-identity-family stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans)">&#9733; Family</button>
+      <button onclick="setSectionMode('identity','technical',this)" class="stbtn-identity-technical stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:0 3px 3px 0">&#9881; Technical</button>
+    </div>
     <div style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
+      <div class="sovtech-detail-view">
+<p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">The AI knows everything. But what it shares, and with whom, is governed by identity-aware access control — the same architecture hospitals and governments use for sensitive data applied to a home. Every piece of data has an owner, a visibility level, and conditions under which it can be shared. The AI checks before it answers.</p>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Layer 1 — Public</strong> — Anyone on property · weather, music, time, lighting scenes, temperature, general property info · no authentication required</li>
+  <li><strong style="color:var(--gold-light)">Layer 2 — Household</strong> — Authenticated family members · shared calendar, schedules, vehicle locations, camera access, system control · each person's own health summary only</li>
+  <li><strong style="color:var(--gold-light)">Layer 3 — Personal</strong> — Authenticated individual only · own health data, biometrics, personal AI context, private communications · voice recognition or PIN · not accessible by other household members</li>
+  <li><strong style="color:var(--gold-light)">Layer 4 — Vault</strong> — Biometric confirmation required · medical records, genetics, financial data, legal documents · short-lived access token · all access logged to append-only audit record</li>
+  <li><strong style="color:var(--gold-light)">Guest Access</strong> — Layer 1 only · AI warm and helpful about the property in general · knows nothing about the family that isn't public · time-limited · auto-revokes</li>
+  <li><strong style="color:var(--gold-light)">AI Boundary Behaviour</strong> — "Where is Kathy?" → Don: answers · family member: location summary only · guest: "I'm not able to share that" · "How is Don's health?" → no one except Don · AI acknowledges question and redirects · does not confirm data exists</li>
+  <li><strong style="color:var(--gold-light)">Learning Per Person</strong> — AI learns preferences independently per person · Don's morning routine does not influence what it does for Kathy · shared patterns (dinner time, weekend routines) learned at household level with explicit consent</li>
+</ul>
+</div>
+      <div class="sovtech-family-view" style="display:none">
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">One of the most thoughtful things about how the AI system at Sovereign Fields works is that it knows the difference between what's public, what's shared, and what's personal. The same way a good housekeeper knows not to share private conversations — the system has boundaries built in.</p>
+<p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">The basic idea is simple: the AI knows a lot about everyone who lives here, but it only shares what each person is entitled to know. Your health data is yours. Kathy's schedule is hers. The kids can ask about the weather and the calendar, but not about Dad's blood work.</p>
+<div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:20px 0 12px">The four levels:</div>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Anyone on the property</strong> — Weather, music, time, lighting, temperature, general property information. Any guest can ask these things freely.</li>
+  <li><strong style="color:var(--gold-light)">Family members</strong> — Shared family calendar, vehicle locations, security camera access, control of all property systems. Each person's own health summary — but not anyone else's.</li>
+  <li><strong style="color:var(--gold-light)">Personal — you only</strong> — Your health data, your biometrics, your personal AI context, your private communications. Requires the AI to recognise your voice or a PIN. Nobody else can ask for this and get it.</li>
+  <li><strong style="color:var(--gold-light)">Vault — biometric only</strong> — Medical records, genetic data, financial details, legal documents. Requires a fingerprint or face confirmation. Even the AI can't surface this without you proving it's you right now.</li>
+</ul>
+<p style="font-size:13px;color:rgba(245,242,236,0.5);line-height:1.8;margin-top:16px">Guests get the first level only. The AI is warm, helpful, and knowledgeable about the property — but it knows nothing about the family that isn't public. Contractors get time-limited public access only, and it revokes automatically when they leave.</p>
+</div>
+      <div class="sovtech-tech-view" style="display:none">
+<div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Access Control Architecture — ABAC Model</div>
+<ul class="rule-list">
+  <li><strong style="color:var(--gold-light)">Layer 1 — Public</strong> — Unauthenticated · weather, music, time, lighting scenes, temperature, general property info · available to any device on guest VLAN</li>
+  <li><strong style="color:var(--gold-light)">Layer 2 — Household</strong> — Authenticated family member · shared calendar, schedules, vehicle location, camera access, system control, own health summary · voice recognition or PIN</li>
+  <li><strong style="color:var(--gold-light)">Layer 3 — Personal</strong> — Authenticated individual · own health data, biometrics, personal AI context, private communications · per-person token · not accessible by other household members</li>
+  <li><strong style="color:var(--gold-light)">Layer 4 — Vault</strong> — Biometric confirmation required · medical records, genetics, financial data, legal documents · short-lived access token · all access logged to append-only audit record</li>
+  <li><strong style="color:var(--gold-light)">Guest Access</strong> — Layer 1 only · time-limited · no AI context maintained after departure · activity logged · auto-revokes at end of visit window</li>
+  <li><strong style="color:var(--gold-light)">Contractor Access</strong> — Time-limited Layer 1 only · no access to any sensitive domain · all activity logged · auto-revokes at end of service window</li>
+</ul>
+<div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:16px 0 8px">AI Boundary Behaviour</div>
+<ul class="rule-list">
+  <li>"Where is Kathy?" → Don: answers · Family member: location summary only unless Kathy has set sharing · Guest: "I'm not able to share that"</li>
+  <li>"How is Don's health?" → No one except Don receives this · AI acknowledges question and redirects · does not confirm data exists</li>
+  <li>AI relays messages between household members but never relays private data between profiles</li>
+</ul>
+</div>
       <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">The AI knows everything. But what it shares, and with whom, is governed by identity-aware access control. This is the same architecture hospitals and governments use for sensitive data — applied to a home. Every piece of data has an owner, a visibility level, and conditions under which it can be shared. The AI checks before it answers.</p>
     </div>
     <div style="padding:16px 24px;border-bottom:0.5px solid var(--border)">
@@ -2104,6 +2497,51 @@ function readSection(sectionId, btn) {
   utt.onerror = () => { btn.innerHTML = '&#9654; Read'; };
   window.speechSynthesis.speak(utt);
 }
+
+function setMasterMode(mode){
+  window._sovtechMode = mode;
+  window._sovtechOverrides = {};
+  const db = document.getElementById('master-detail-btn');
+  const fb = document.getElementById('master-family-btn');
+  const tb = document.getElementById('master-tech-btn');
+  [db,fb,tb].forEach(b=>{if(b){b.style.background='none';b.style.color='var(--charcoal-light)';}});
+  if(mode==='detail' && db){ db.style.background='rgba(184,150,62,0.15)'; db.style.color='var(--gold-light)'; }
+  if(mode==='family' && fb){ fb.style.background='rgba(184,150,62,0.15)'; fb.style.color='var(--gold-light)'; }
+  if(mode==='technical' && tb){ tb.style.background='rgba(184,150,62,0.15)'; tb.style.color='var(--gold-light)'; }
+  ['server','robotics','ai','health','network','future','team','privacy','principles','identity'].forEach(sid=>{
+    applyMode(sid, mode);
+  });
+}
+function setSectionMode(sid, mode, btn){
+  if(!window._sovtechOverrides) window._sovtechOverrides = {};
+  window._sovtechOverrides[sid] = mode;
+  applyMode(sid, mode);
+  // Update section buttons
+  document.querySelectorAll('.stbtn-'+sid+'-family').forEach(b=>{
+    b.style.background = mode==='family' ? 'rgba(184,150,62,0.12)' : 'none';
+    b.style.color = mode==='family' ? 'var(--gold-light)' : 'var(--charcoal-light)';
+  });
+  document.querySelectorAll('.stbtn-'+sid+'-technical').forEach(b=>{
+    b.style.background = mode==='technical' ? 'rgba(184,150,62,0.12)' : 'none';
+    b.style.color = mode==='technical' ? 'var(--gold-light)' : 'var(--charcoal-light)';
+  });
+}
+function applyMode(sid, mode){
+  const body = document.getElementById('bmbody-sovtech-'+sid);
+  if(!body) return;
+  body.querySelectorAll('.sovtech-detail-view').forEach(el => el.style.display = mode==='detail' ? 'block' : 'none');
+  body.querySelectorAll('.sovtech-family-view').forEach(el => el.style.display = mode==='family' ? 'block' : 'none');
+  body.querySelectorAll('.sovtech-tech-view').forEach(el => el.style.display = mode==='technical' ? 'block' : 'none');
+  // Update section toggle buttons
+  ['detail','family','technical'].forEach(m => {
+    document.querySelectorAll('.stbtn-'+sid+'-'+m).forEach(b => {
+      b.style.background = m===mode ? 'rgba(184,150,62,0.12)' : 'none';
+      b.style.color = m===mode ? 'var(--gold-light)' : 'var(--charcoal-light)';
+    });
+  });
+}
+// Init — default to family mode
+window.addEventListener('load', ()=>{ setMasterMode('detail'); });
 
 function bmToggle(id){const b=document.getElementById('bmbody-'+id);const c=document.getElementById('bmchev-'+id);b.classList.toggle('open');c.textContent=b.classList.contains('open')?'▴':'▾';}
 </script>
