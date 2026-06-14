@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sovereign Fields — King Township, Ontario</title>
+<!-- sfv3_34 · Jun 2026 · Physical Security deduplicated -->
 <!-- sfv3_30 · Jun 2026 · Bugs fixed · MyBioTwin updated · Physical Security added -->
 <style>
 :root{--cream:#F5F2EC;--charcoal:#1C1C1A;--charcoal-light:#6B6A64;--gold:#B8963E;--gold-light:#D4AF6A;--border:rgba(245,242,236,0.1);--font-serif:Georgia,'Times New Roman',serif;--font-sans:-apple-system,'Helvetica Neue',Arial,sans-serif}
@@ -1098,6 +1099,29 @@ audio{width:100%}
   </div>
 </div>
 
+
+<!-- DEV PHASE BANNER -->
+<div style="background:linear-gradient(135deg,rgba(184,150,62,0.12) 0%,rgba(184,150,62,0.04) 100%);border:1px solid rgba(184,150,62,0.4);border-radius:8px;margin:24px 32px 0;padding:20px 24px">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+    <div style="width:9px;height:9px;border-radius:50%;background:#4CAF50;box-shadow:0 0 7px #4CAF50;flex-shrink:0"></div>
+    <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-light)">Development Phase — Active Now · June 2026</div>
+  </div>
+  <div style="font-family:Georgia,serif;font-size:18px;font-weight:normal;color:var(--cream);margin-bottom:10px">MacBook Pro M2 as Development Server</div>
+  <p style="font-size:13px;color:rgba(245,242,236,0.65);line-height:1.8;margin-bottom:12px">Don's MacBook Pro M2 (24GB) is the active development and simulation environment. Cursor AI has configured the local LLM environment (Gemma 2 via Ollama) and MyBioTwin is in active development here. This allows full development, testing, and simulation of the entire stack before the dedicated air-gapped server is built during Sovereign Fields construction. The MacBook transitions to a personal workstation at that point.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;margin-bottom:14px">
+    <div style="background:rgba(255,255,255,0.05);border-radius:6px;padding:10px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:4px">Current Hardware</div><div style="font-size:12px;color:var(--cream)">MacBook Pro M2 · 24GB · macOS Tahoe</div></div>
+    <div style="background:rgba(255,255,255,0.05);border-radius:6px;padding:10px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:4px">Local LLM</div><div style="font-size:12px;color:var(--cream)">Gemma 2 · Ollama · Cursor AI configured</div></div>
+    <div style="background:rgba(255,255,255,0.05);border-radius:6px;padding:10px 14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:4px">Transitions To</div><div style="font-size:12px;color:var(--cream)">Dedicated air-gapped server · SF build</div></div>
+  </div>
+  <div style="display:flex;gap:0;flex-wrap:wrap;border-top:0.5px solid rgba(184,150,62,0.2);padding-top:12px">
+    <div style="background:rgba(76,175,80,0.2);border:1px solid rgba(76,175,80,0.5);border-radius:4px 0 0 4px;padding:5px 14px;font-size:10px;color:#81C784;letter-spacing:0.06em">● Phase 0 — MacBook Dev (Now)</div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(245,242,236,0.1);border-left:none;padding:5px 14px;font-size:10px;color:rgba(245,242,236,0.35);letter-spacing:0.06em">Phase 1 — Pre-Construction</div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(245,242,236,0.1);border-left:none;padding:5px 14px;font-size:10px;color:rgba(245,242,236,0.35);letter-spacing:0.06em">Phase 2 — SF Build</div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(245,242,236,0.1);border-left:none;border-radius:0 4px 4px 0;padding:5px 14px;font-size:10px;color:rgba(245,242,236,0.35);letter-spacing:0.06em">Phase 3 — Full Air-Gap Live</div>
+  </div>
+</div>
+
+
 <!-- SUMMARY TILES -->
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;padding:8px 32px 24px">
   <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border);border-radius:8px;padding:14px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:4px">Home Server</div><div style="font-size:13px;font-weight:500;color:var(--gold-light)">On-Premise AI</div></div>
@@ -1180,16 +1204,6 @@ audio{width:100%}
   <li>1" conduit from server room to every room in house · pull string installed</li>
 </ul>
 </div>
-      <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">The home server is the sovereign core of Sovereign Fields — a private, on-premise computer that stores, processes, and protects all sensitive data generated on the property. Nothing about your health, security footage, AI interactions, biometrics, financial data, or family activity should exist only in someone else's cloud. This server gives you ownership, speed, and resilience.</p>
-      <ul class="rule-list">
-        <li><strong style="color:var(--gold-light)">Hardware</strong> — Small form-factor rackmount server · Intel Core i9 or AMD Ryzen 9 · 128GB RAM · 4× 4TB NVMe SSDs in RAID 10 · GPU (NVIDIA RTX 4090 or equivalent) for local AI inference · UPS battery backup · estimated $8,000–12,000 hardware cost</li>
-        <li><strong style="color:var(--gold-light)">Operating System</strong> — TrueNAS Scale or Proxmox VE · runs multiple isolated virtual machines simultaneously · one VM per function: NAS storage, AI inference, health data vault, security NVR, home automation</li>
-        <li><strong style="color:var(--gold-light)">Health Data Vault</strong> — Air-gapped VLAN · no internet access · stores Apple Health exports, wearable data, medical imaging, sleep tracking, biometric history · encrypted at rest with AES-256 · accessible only from devices physically on-property</li>
-        <li><strong style="color:var(--gold-light)">Security NVR</strong> — All 12–16 cameras store locally to server · 90-day rolling retention · no footage leaves the property · Hikvision NVR software or Frigate (open source with AI object detection)</li>
-        <li><strong style="color:var(--gold-light)">Local AI Inference</strong> — Runs large language models locally (Llama 3, Mistral, or equivalent) · no queries leave the property · private AI assistant that knows your home, your schedules, your preferences · GPU enables real-time inference at near-cloud speed</li>
-        <li><strong style="color:var(--gold-light)">Backup Strategy</strong> — 3-2-1 rule: 3 copies of data, 2 different media, 1 offsite · offsite encrypted backup to a private S3-compatible object store (Backblaze B2) · health data never leaves property even for backup — exception only</li>
-        <li><strong style="color:var(--gold-light)">Physical Location</strong> — Dedicated rack space in utility room adjacent to electrical panel · own 20A dedicated circuit · own cooling/ventilation · fiber direct to main UniFi switch · access-controlled room</li>
-      </ul>
     </div>
     <table class="bmtb"><thead><tr><th>Item</th><th>Specification</th><th>Est. Cost</th></tr></thead><tbody>
       <tr><td>Server Hardware</td><td>Rackmount · i9/Ryzen 9 · 128GB RAM · 4× 4TB NVMe RAID · RTX 4090<span class="bmtag">TrueNAS Scale</span><span class="bmtag">Proxmox VE</span></td><td>$10,000</td></tr>
@@ -1261,16 +1275,6 @@ audio{width:100%}
   <li>UWB conduit during electrical rough-in — ceiling J-boxes at specified locations</li>
 </ul>
 </div>
-      <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">Tesla Optimus Gen 2 is already capable of basic household tasks. By the time Sovereign Fields is occupied, second or third generation Optimus units will likely handle a meaningful subset of property maintenance, kitchen assistance, and errand tasks. The rough-ins required during construction are inexpensive — the cost of not doing them is high.</p>
-      <ul class="rule-list">
-        <li><strong style="color:var(--gold-light)">Charging Alcoves</strong> — 3 dedicated robot charging alcoves: mudroom (primary staging), barn utility wing (outdoor/farm work staging), garage (vehicle work staging) · each alcove: flush-recessed niche 700mm wide × 600mm deep × 1900mm tall · 20A dedicated circuit · subtle door panel that closes flush with wall · roughed-in $800–1,200 each</li>
-        <li><strong style="color:var(--gold-light)">Floor Continuity</strong> — Zero-threshold transitions throughout house · robot navigation degrades significantly at thresholds &gt;6mm · wide plank white oak throughout already ideal · heated slate at mudroom entry — specify flush transition strip · barn gym rubber flooring — flush to concrete perimeter</li>
-        <li><strong style="color:var(--gold-light)">UWB Indoor Positioning</strong> — Ultra-wideband anchor points in ceilings: 6 locations across main house · 2 in barn wellness wing · enables centimetre-accurate indoor positioning for robot navigation · hardware cost $150–200 per anchor · run Cat6A to each location during rough-in · compatible with Apple U1 chip ecosystem and emerging robot navigation standards</li>
-        <li><strong style="color:var(--gold-light)">Outdoor Path Infrastructure</strong> — Sanctuary Walk stone path from house to barn: specify consistent flagstone with flush-pointed joints · no loose gravel sections · 1.2m minimum clear width · outdoor robot charging station near barn north entrance: 20A weatherproof circuit · covered enclosure matching barn aesthetic</li>
-        <li><strong style="color:var(--gold-light)">Network Coverage</strong> — Robot requires consistent WiFi 6E throughout all work areas including barn, garage, and outdoor path · existing UniFi mesh plan already covers this · confirm no dead zones at barn north door and sanctuary walk midpoint</li>
-        <li><strong style="color:var(--gold-light)">Security Integration</strong> — Robot registers as trusted device on home security VLAN · can view camera feeds · can trigger alerts · can respond to alarm events · identity verified via local home server · all robot activity logged locally · no activity data sent to Tesla servers beyond what Tesla account requires</li>
-        <li><strong style="color:var(--gold-light)">Form Factor Hedge</strong> — Infrastructure serves humanoid (Optimus), quadruped (Boston Dynamics), and wheeled robots equally · the bet is on power, network, and flat surfaces — not on any specific form factor winning</li>
-      </ul>
     </div>
     <table class="bmtb"><thead><tr><th>Item</th><th>Specification</th><th>Est. Cost</th></tr></thead><tbody>
       <tr><td>Charging Alcoves (×3)</td><td>Mudroom · Garage · Barn · Flush recessed niche · 20A circuit each · concealed door panel<span class="bmtag">Rough-in only</span></td><td>$4,500</td></tr>
@@ -1343,15 +1347,6 @@ audio{width:100%}
   <li>Control4/Savant API integration — coordinate with AV integrator</li>
 </ul>
 </div>
-      <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">The vision: one AI that knows you — your preferences, your health, your schedule, your family — that expresses itself through your car, your home, your robot, and your phone. Not four separate AI assistants with separate memories. One persistent identity. The infrastructure to enable this is already partially in place through Tesla's ecosystem. The home server completes it.</p>
-      <ul class="rule-list">
-        <li><strong style="color:var(--gold-light)">Local AI Node</strong> — NVIDIA Jetson AGX Orin or equivalent edge AI computer · runs on-premise · handles inference for home automation, security analysis, robot coordination, and private AI assistant · connected to home server GPU for heavy workloads · $3,000–5,000 hardware</li>
-        <li><strong style="color:var(--gold-light)">Tesla Ecosystem Integration</strong> — Tesla account already unifies Model Y, Model 3, Optimus, Powerwall, and robotaxi · home server bridges Tesla API to Control4/Savant · car arriving home triggers house to prepare: lights on, garage open, climate adjusted, security to home mode</li>
-        <li><strong style="color:var(--gold-light)">Voice Interface</strong> — Property-wide voice AI running locally · not Alexa, not Google · open-source Home Assistant with Whisper speech recognition and local LLM · wake word: "Sovereign" · responds in under 300ms without any cloud round-trip · can answer questions about the property, control all systems, brief you on health data, manage schedules</li>
-        <li><strong style="color:var(--gold-light)">Context Persistence</strong> — AI remembers: who is home, recent conversations, health trends, property status, maintenance history, family preferences · stored encrypted on home server · never leaves property · model can be updated without losing context</li>
-        <li><strong style="color:var(--gold-light)">Multi-Modal Input</strong> — Voice throughout house · touchpad screens (Control4) · phone app · car display · robot interaction · all feed the same context layer · ask the AI something in the car and the home knows</li>
-        <li><strong style="color:var(--gold-light)">Cloud Hybrid</strong> — For tasks requiring internet-scale knowledge (research, complex reasoning) the local AI can optionally route to Claude, GPT-4, or Gemini · but the decision of what to share is yours · default: local only · opt-in: cloud assist for specific queries</li>
-      </ul>
     </div>
     <table class="bmtb"><thead><tr><th>Item</th><th>Specification</th><th>Est. Cost</th></tr></thead><tbody>
       <tr><td>Edge AI Computer</td><td>NVIDIA Jetson AGX Orin · 64GB · dedicated AI inference · real-time processing<span class="bmtag">NVIDIA Jetson</span></td><td>$4,000</td></tr>
@@ -1381,30 +1376,28 @@ audio{width:100%}
     </div>
     <!-- DETAIL VIEW -->
     <div class="sovtech-detail-view" style="padding:20px 24px;border-bottom:0.5px solid var(--border)">
-      <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">MyBioTwin is a private, owner-controlled health intelligence application running entirely on the Sovereign Fields home server. No company cloud, no telemetry. It creates a living biological digital twin — a continuously updated model of each person's body — built on the same sovereign principles as the property itself.</p>
+      <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">MyBioTwin is a private, owner-controlled health intelligence application running entirely on the Sovereign Fields home server. No company cloud, no telemetry. A living biological digital twin built on the same sovereign principles as the property itself.</p>
       <ul class="rule-list">
-        <li><strong style="color:var(--gold-light)">Native Direct Ingestion</strong> — Data flows directly from device vendor clouds to the ingestion gateway via official OAuth APIs. Oura Ring · Dexcom CGM · Polar · WHOOP · Withings. No Apple Health in the ingestion path. Apple Health is not a dependency.</li>
-        <li><strong style="color:var(--gold-light)">Sensitive Records — Always Direct</strong> — Labs, biomarkers, genetics, medications, body composition, medical history, gut microbiome go directly into MyBioTwin. These do not exist in Apple Health and never will.</li>
-        <li><strong style="color:var(--gold-light)">Ingestion Gateway</strong> — Separate VM with controlled internet access. Authenticates to vendor clouds via official APIs. One-way data-diode push into Health VLAN. Queue and backfill on outage — never discards data.</li>
-        <li><strong style="color:var(--gold-light)">Health VLAN</strong> — Air-gapped. No internet. AES-256 encrypted storage. Accessible only from authenticated on-property devices.</li>
-        <li><strong style="color:var(--gold-light)">n-of-1 Protocol Engine</strong> — A closed-loop personal performance laboratory. HRV response to sauna · full barn circuit correlation · CGM food response · sleep architecture with variable timing. Protocols are configurable schemas — Don adds new protocols without development involvement. First protocol: HRV response to sauna.</li>
-        <li><strong style="color:var(--gold-light)">Barn Session Detection</strong> — Door contact sensors give exact entry/exit timestamps per space. UWB presence detection attributes each session to the correct family member automatically. Control4 logs equipment state. Zero manual input. Concurrent sessions supported.</li>
-        <li><strong style="color:var(--gold-light)">Two Performance Tiers</strong> — Fast deterministic SQLite store (WAL mode) for real-time AI queries at sub-500ms. Async LLM enrichment runs in background. Unified AI always reads from fast tier only.</li>
-        <li><strong style="color:var(--gold-light)">Simplification Review AI</strong> — Continuous, background, unprompted. Subtractive bias: default question is what can be removed. Surfaces one removal recommendation at a time. Protocol with no meaningful signal in 90 days gets flagged. Don decides. System gets simpler over time.</li>
-        <li><strong style="color:var(--gold-light)">Emergency Card</strong> — Offline-first. Lives in phone secure enclave. Face ID reveals full signed health record via 15-minute time-limited derived key. Lock screen shows blood type and emergency contacts only. No internet required.</li>
-        <li><strong style="color:var(--gold-light)">Backup</strong> — Automated encrypted backup to Wasabi Toronto (ca-central-1) · owner-held key · Canadian data residency · PHIPA-aligned · runs without management.</li>
+        <li><strong style="color:var(--gold-light)">Native Direct Ingestion</strong> — Data flows directly from device vendor clouds via official OAuth APIs. Oura Ring · Dexcom CGM · Polar · WHOOP · Withings. No Apple Health in the ingestion path.</li>
+        <li><strong style="color:var(--gold-light)">Sensitive Records — Always Direct</strong> — Labs, biomarkers, genetics, medications, body composition, medical history go directly into MyBioTwin. These never touch Apple Health.</li>
+        <li><strong style="color:var(--gold-light)">Ingestion Gateway</strong> — Separate VM with controlled internet. Authenticates to vendor clouds via official APIs. One-way data-diode push into Health VLAN. Queue and backfill on outage.</li>
+        <li><strong style="color:var(--gold-light)">n-of-1 Protocol Engine</strong> — Closed-loop personal performance laboratory. HRV response to sauna · full barn circuit correlation · CGM food response. Protocols are configurable schemas — Don adds new protocols without development involvement.</li>
+        <li><strong style="color:var(--gold-light)">Barn Session Detection</strong> — Door contact sensors give exact entry/exit timestamps. UWB presence detection attributes each session to the correct family member automatically. Zero manual input.</li>
+        <li><strong style="color:var(--gold-light)">Simplification Review AI</strong> — Continuous, background. Subtractive bias: what can be removed? One recommendation at a time. System gets simpler over time.</li>
+        <li><strong style="color:var(--gold-light)">Emergency Card</strong> — Offline-first. Face ID reveals full signed record via 15-minute time-limited derived key. Lock screen shows blood type and emergency contacts only.</li>
+        <li><strong style="color:var(--gold-light)">Backup</strong> — Automated encrypted to Wasabi Toronto (ca-central-1) · owner-held key · PHIPA-aligned · runs without management.</li>
       </ul>
     </div>
     <!-- FAMILY VIEW -->
     <div class="sovtech-family-view" style="display:none;padding:20px 24px;border-bottom:0.5px solid var(--border)">
-      <p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">MyBioTwin is our private health intelligence system — a deeply personal health journal that actually understands what it's reading. It brings together all our scattered health data into one clear, evolving picture. Everything stays on our own server on the property. Nothing goes to a health company's cloud.</p>
+      <p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">MyBioTwin is our private health intelligence system — a deeply personal health journal that actually understands what it's reading. Everything stays on our own server on the property. Nothing goes to a health company's cloud.</p>
       <ul class="rule-list">
-        <li><strong style="color:var(--gold-light)">Complete health picture</strong> — Blood tests, sleep data from Oura, genetic reports, gut health, body scans, medication lists — all in one place. Ask in plain English and get a clear answer.</li>
-        <li><strong style="color:var(--gold-light)">The barn feeds it automatically</strong> — Every gym session, sauna, cold plunge and wellness circuit logs itself. Who was there, how long, what equipment was running — captured without anyone doing anything. By next morning the picture has updated.</li>
-        <li><strong style="color:var(--gold-light)">The wellness laboratory</strong> — Over time the system learns what produces the best sleep, recovery and energy. What sauna duration works best for your HRV. Personal science with your own body as the subject.</li>
-        <li><strong style="color:var(--gold-light)">Completely private per person</strong> — Don's health data is Don's. Kathy's is Kathy's. Nobody sees anyone else's information unless they choose to share it.</li>
-        <li><strong style="color:var(--gold-light)">Gets simpler over time</strong> — The system continuously asks what can be removed. If something isn't producing useful insights it gets flagged. Fewer things working better, not more things adding complexity.</li>
-        <li><strong style="color:var(--gold-light)">Emergency card always with you</strong> — Your phone holds a complete signed health record. Face ID unlocks it for a healthcare provider. Blood type and emergency contacts show on the lock screen without unlocking. No internet needed.</li>
+        <li><strong style="color:var(--gold-light)">Complete health picture</strong> — Blood tests, sleep, genetics, gut health, body composition — all in one place. Ask in plain English and get a clear answer.</li>
+        <li><strong style="color:var(--gold-light)">The barn feeds it automatically</strong> — Every gym session, sauna, cold plunge logs itself. Who was there, how long, what equipment — captured without anyone doing anything.</li>
+        <li><strong style="color:var(--gold-light)">The wellness laboratory</strong> — Over time the system learns what produces the best sleep, recovery, and energy. Personal science with your own body as the subject.</li>
+        <li><strong style="color:var(--gold-light)">Completely private per person</strong> — Don's data is Don's. Kathy's is Kathy's. Nobody sees anyone else's unless they choose to share.</li>
+        <li><strong style="color:var(--gold-light)">Gets simpler over time</strong> — The system continuously asks what can be removed. Fewer things working better.</li>
+        <li><strong style="color:var(--gold-light)">Emergency card always with you</strong> — Face ID unlocks full health record for a provider. Blood type and emergency contacts on lock screen without unlocking.</li>
       </ul>
     </div>
     <!-- TECHNICAL VIEW -->
@@ -1412,25 +1405,17 @@ audio{width:100%}
       <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Architecture</div>
       <ul class="rule-list">
         <li><strong style="color:var(--gold-light)">Deployment</strong> — Isolated VM · Health VLAN (no internet) · GPU passthrough · AES-256 encrypted storage</li>
-        <li><strong style="color:var(--gold-light)">Ingestion Gateway</strong> — Separate VM · controlled internet VLAN · OAuth to Oura, Dexcom, Polar, WHOOP, Withings APIs directly · data-diode one-way push to Health VLAN · SQLite queue + backfill on outage · no Apple Health dependency</li>
+        <li><strong style="color:var(--gold-light)">Ingestion Gateway</strong> — Separate VM · OAuth to Oura, Dexcom, Polar, WHOOP, Withings APIs directly · data-diode one-way push to Health VLAN · no Apple Health dependency</li>
         <li><strong style="color:var(--gold-light)">Fast Store</strong> — SQLite WAL mode · sub-500ms · single-file backup · trivially restorable</li>
-        <li><strong style="color:var(--gold-light)">API Surface</strong> — REST · HMAC JWT · scoped tokens: status, alert, context read-only · raw data not addressable</li>
-        <li><strong style="color:var(--gold-light)">Protocol Engine</strong> — Configurable schema per protocol · confidence rating per session · concurrent attributed sessions · door sensors + UWB + Control4 as barn inputs</li>
-        <li><strong style="color:var(--gold-light)">Backup</strong> — Automated encrypted · Wasabi Toronto ca-central-1 · owner-held key · PHIPA-aligned Canadian data residency</li>
-        <li><strong style="color:var(--gold-light)">Format</strong> — FHIR R4 MyBioTwin Profile · inline frozen schema_v1.json in every archive directory · self-describing without internet</li>
+        <li><strong style="color:var(--gold-light)">Protocol Engine</strong> — Configurable schema · confidence rating per session · concurrent attributed sessions · door sensors + UWB + Control4</li>
+        <li><strong style="color:var(--gold-light)">Backup</strong> — Wasabi Toronto ca-central-1 · owner-held key · PHIPA-aligned</li>
+        <li><strong style="color:var(--gold-light)">Succession</strong> — 1Password Family · Don and Kathy full access · fireproof safe · no Shamir · no lawyers</li>
       </ul>
-      <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:16px 0 8px">Device Ingestion Scope</div>
+      <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:16px 0 8px">Devices</div>
       <ul class="rule-list">
-        <li><strong style="color:var(--gold-light)">Active now</strong> — Oura Ring (Oura API) · Dexcom CGM (Dexcom API) · Polar HR strap (Polar Flow API)</li>
-        <li><strong style="color:var(--gold-light)">Adding alongside</strong> — WHOOP 4.0 · Withings Body Scan · Withings BPM Connect · Eight Sleep Pod</li>
-        <li><strong style="color:var(--gold-light)">When acquired</strong> — Eversense E3 implantable CGM · adapter built and ready before Don acquires</li>
+        <li><strong style="color:var(--gold-light)">Active now</strong> — Oura Ring · Dexcom CGM · Polar HR strap</li>
+        <li><strong style="color:var(--gold-light)">Adding</strong> — WHOOP 4.0 · Withings Body Scan · Withings BPM Connect · Eight Sleep Pod</li>
         <li><strong style="color:var(--gold-light)">Standing rule</strong> — Adapter built before Don acquires device. System ready and waiting.</li>
-      </ul>
-      <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:16px 0 8px">Succession &amp; Key Management</div>
-      <ul class="rule-list">
-        <li><strong style="color:var(--gold-light)">1Password Family</strong> — Don and Kathy both hold full access · no Shamir · no lawyers · no hardware keys</li>
-        <li><strong style="color:var(--gold-light)">Fireproof safe</strong> — Sealed envelope · master password · annual encrypted USB vault export</li>
-        <li><strong style="color:var(--gold-light)">Signing key</strong> — Software key in 1Password · dedicated to knowledge bundle signing only</li>
       </ul>
     </div>
     <!-- COST TABLE -->
@@ -1504,15 +1489,6 @@ audio{width:100%}
   <li>Server room biometric lock · tamper sensors on rack · dedicated alarm zone on security panel</li>
 </ul>
 </div>
-      <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">A property with this level of automation, this many connected devices, and this much sensitive data requires a zero-trust network architecture. Every device is isolated by default. Access is granted deliberately. The assumption is that any device can be compromised — the architecture limits the blast radius.</p>
-      <ul class="rule-list">
-        <li><strong style="color:var(--gold-light)">VLAN Segmentation</strong> — Minimum 6 isolated network segments: Trusted (family devices) · IoT (smart home devices) · Security (cameras, alarms) · Health (biometric devices, health vault) · Robotics (Optimus, vehicles) · Guest · Each VLAN cannot talk to others without explicit firewall rules · UniFi handles this natively</li>
-        <li><strong style="color:var(--gold-light)">Firewall Rules</strong> — UniFi Dream Machine Pro or equivalent as gateway · deep packet inspection · geo-blocking (no inbound from high-risk regions) · IDS/IPS (intrusion detection/prevention) · all IoT devices blocked from internet by default — only whitelisted cloud endpoints permitted</li>
-        <li><strong style="color:var(--gold-light)">VPN for Remote Access</strong> — WireGuard VPN on home server · access your property remotely without exposing any service to public internet · phone connects to VPN to view cameras, check health data, control systems · no port forwarding, no exposed services</li>
-        <li><strong style="color:var(--gold-light)">DNS Filtering</strong> — Pi-hole or AdGuard Home on home server · blocks all ad tracking, malware domains, and telemetry at DNS level for entire property · privacy protection built into network infrastructure</li>
-        <li><strong style="color:var(--gold-light)">Physical Security</strong> — Server room door: keypad + biometric entry · separate from main house alarm zone · tamper sensors on server rack · UPS protects against power-based attacks · faraday considerations for the truly sensitive: copper mesh in server room walls is a $2,000 option</li>
-        <li><strong style="color:var(--gold-light)">Audit &amp; Logging</strong> — All network events logged to home server · 90-day retention · AI monitors for anomalous patterns · alerts to phone if unusual outbound traffic detected · who accessed what, when, from where</li>
-      </ul>
     </div>
     <table class="bmtb"><thead><tr><th>Item</th><th>Specification</th><th>Est. Cost</th></tr></thead><tbody>
       <tr><td>UniFi Dream Machine Pro</td><td>Gateway · IDS/IPS · VLAN management · deep packet inspection · VPN server<span class="bmtag">Ubiquiti UniFi</span></td><td>$500</td></tr>
@@ -1581,17 +1557,6 @@ audio{width:100%}
   <li><strong style="color:var(--gold-light)">Acoustic</strong> — Server room: sound insulation all walls · robot alcoves: rubber underlayment · primary corridor: acoustic insulation in wall cavities</li>
 </ul>
 </div>
-      <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">These are the specific items to communicate to your builder and electrician during construction. Each costs little to add during rough-in and would be expensive to retrofit. This is the list that makes Sovereign Fields genuinely future-proof.</p>
-      <ul class="rule-list">
-        <li><strong style="color:var(--gold-light)">Server Room</strong> — Dedicated room or large closet adjacent to electrical panel · minimum 2m × 1.5m · own 30A electrical circuit · 20A UPS circuit · Cat6A direct to main switch · 1" conduit to every room · dedicated cooling duct or mini-split rough-in · biometric door lock</li>
-        <li><strong style="color:var(--gold-light)">Robot Charging Alcoves (×3)</strong> — Mudroom, garage, barn utility wing · 700mm W × 600mm D × 1900mm H recessed niche · 20A dedicated circuit in each · Cat6A data port · flush door panel in design finish</li>
-        <li><strong style="color:var(--gold-light)">UWB Anchor Conduit (×8)</strong> — Cat6A to 8 ceiling locations: great room, kitchen, corridor, primary suite, bedroom wing ×2, barn gym, barn wellness · pull string installed · J-box in ceiling</li>
-        <li><strong style="color:var(--gold-light)">Health Infrastructure Circuits</strong> — Primary suite: dedicated 20A clean power circuit (sleep tech) · primary bathroom: 20A + data port (future medical devices) · gym: 20A + data port (health monitoring equipment)</li>
-        <li><strong style="color:var(--gold-light)">Outdoor Technology</strong> — Sanctuary Walk: 20A weatherproof circuit at midpoint and barn end · robot outdoor charging station enclosure rough-in at barn north entrance · all outdoor circuits on dedicated breaker with remote shutoff</li>
-        <li><strong style="color:var(--gold-light)">Conduit Network</strong> — 1" EMT conduit from server room to: every bedroom, great room, kitchen, garage, barn · pull string in all runs · future-proof for any cable type not yet invented · this is the single highest ROI future-proofing investment</li>
-        <li><strong style="color:var(--gold-light)">Power Capacity Reserve</strong> — Main panel sized for 400A minimum (already planned) · 100A capacity reserved for future technology loads · sub-panel in server room for all tech circuits · separate metering for technology loads to track consumption</li>
-        <li><strong style="color:var(--gold-light)">Acoustic Preparation</strong> — Server room: sound insulation on all walls (server fans are audible) · robot staging areas: rubber underlayment under floor finish at alcove locations · primary corridor: acoustic insulation in wall cavities (robot movement at night)</li>
-      </ul>
     </div>
     <table class="bmtb"><thead><tr><th>Rough-In Item</th><th>Specification</th><th>Est. Cost</th></tr></thead><tbody>
       <tr><td>Server Room Build-Out</td><td>Dedicated room · 30A circuit · cooling · biometric lock · conduit hub</td><td>$6,000</td></tr>
@@ -1752,22 +1717,12 @@ audio{width:100%}
   <li>All footage: local Hikvision NVR or Frigate on home server — no cloud NVR service</li>
 </ul>
 </div>
-      <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">The property protects everyone on it — always, without exception. But protection and surveillance are not the same thing. The perimeter is watched. The inside is trusted. That boundary is sacred and must be maintained in every system design decision.</p>
-      <ul class="rule-list">
-        <li><strong style="color:var(--gold-light)">Perimeter — Always On</strong> — Driveway, gate, property boundary, barn exterior · always recording · motion-triggered alerts · 90-day rolling retention on home server · this is expected and known by anyone approaching the property</li>
-        <li><strong style="color:var(--gold-light)">Transition Zones — Motion Only</strong> — Entry hall, mudroom, garage · motion detection triggers a timestamp event · no continuous video recording · no audio · captures arrivals and departures only · 30-day retention</li>
-        <li><strong style="color:var(--gold-light)">Indoor Living Spaces — Default Off</strong> — Great room, kitchen, dining · no recording by default · motion presence detection only (system knows someone is in the room, not who or what they're doing) · can be armed manually during extended absence</li>
-        <li><strong style="color:var(--gold-light)">Bedrooms — No Cameras, Ever</strong> — No camera in any bedroom under any circumstances · microphone arrays present for voice commands only · hardware kill switch at each bedroom door physically cuts power to mic array · when switched off, nothing listens — not software-gated, physically severed</li>
-        <li><strong style="color:var(--gold-light)">Privacy Mode — One Action</strong> — Single trigger (voice command to local AI, or one button on phone) that simultaneously: sets all indoor mics to discard-only mode (no storage, keyword detection only), disables all indoor video storage, suspends AI learning and logging · perimeter security stays fully armed · all safety sensors stay active · duration: until manually cancelled or preset timer</li>
-        <li><strong style="color:var(--gold-light)">Safety Systems — Always Active, No Exceptions</strong> — Smoke, CO, propane leak, water leak, environmental sensors, medical alert — none of these respect Privacy Mode · they trigger regardless · AI announces through nearest speaker, flashes lights, unlocks exit doors · these systems require no camera, no microphone, no recording · they are passive sensors measuring conditions, not behaviour</li>
-        <li><strong style="color:var(--gold-light)">Hardware Privacy Controls</strong> — All indoor cameras have physical privacy shutters — not software toggles · shutter physically blocks the lens · no remote access, no software update, no external command can override a closed shutter · this is the only trustworthy privacy guarantee</li>
-        <li><strong style="color:var(--gold-light)">The Honest Answer</strong> — If a guest asks "is this room being recorded?" the answer must always be accurate and immediate · the system design ensures that answer is always: no, unless you have explicitly activated recording for this space · no ambiguity, no reassurance required</li>
-      </ul>
     </div>
   </div>
 </div>
 
 
+<div class="bms">
 <div class="bms">
   <div class="bmh" onclick="bmToggle('sovtech-principles')" style="position:relative">
     <span class="bmt">Design Principles — The Invisible Technology Standard</span>
@@ -1820,16 +1775,6 @@ audio{width:100%}
   <li><strong style="color:var(--gold-light)">One Interface Maximum</strong> — Every family member needs exactly one interface per context (voice, phone, or keypad). Multiple competing control systems are not acceptable.</li>
 </ul>
 </div>
-      <p style="font-size:13px;color:rgba(245,242,236,0.6);line-height:1.8;margin-bottom:16px">Every technology decision at Sovereign Fields must pass these tests before it is activated. The infrastructure can be built — should be built — but nothing gets turned on until it passes. The goal is a property that feels like magic to everyone who walks through it, and requires nothing of them.</p>
-      <ul class="rule-list">
-        <li><strong style="color:var(--gold-light)">The Kathy Test</strong> — Can Kathy use it without asking anyone how? If the answer is no, it does not go on the wall. This is the single most important filter for every technology decision on the property. Beautiful complexity that only one person understands is a liability, not an asset.</li>
-        <li><strong style="color:var(--gold-light)">Invisible by Default</strong> — Technology should be in the background until called upon. The lights just work. The gate just opens. The climate is just right. Nobody should ever be aware of the system unless they choose to engage with it. If a guest notices the technology, something has gone wrong.</li>
-        <li><strong style="color:var(--gold-light)">Activated on Demand, Not on Installation</strong> — Build all the infrastructure during construction. Activate only what genuinely improves daily life with zero learning curve on day one. Everything else waits. The server room can sit ready for a year. The robot alcoves can be empty. The UWB anchors can be dormant. Infrastructure patience is wisdom.</li>
-        <li><strong style="color:var(--gold-light)">One Interface Maximum</strong> — Every person on the property should need to learn exactly one interface: their phone, their voice, or a single keypad. Not three apps, not a touchpad in every room that works differently, not a different system for lights versus climate versus security. One coherent interface. Everything else is background.</li>
-        <li><strong style="color:var(--gold-light)">Graceful Degradation</strong> — If the server goes down, the lights still work. If the internet goes down, the gate still opens. If the AI is unavailable, the house is still a house. Every automated system must have a manual override that anyone can find in under 10 seconds. Technology enhances — it never holds the property hostage.</li>
-        <li><strong style="color:var(--gold-light)">No Technology for Technology's Sake</strong> — Every activated system must answer: what problem does this solve in daily life for this family? If the answer is "it's impressive" or "it was included in the package" — it gets turned off. Complexity compounds. Every unnecessary active system is a future maintenance burden and a future point of failure.</li>
-        <li><strong style="color:var(--gold-light)">The Walk Test</strong> — Don should be able to walk the full property — house, barn, grounds, garden — and have every system respond correctly with zero interaction. Arrive home: gate opens, garage opens, lights on, climate right. Walk to barn: barn lights on, wellness wing ready. Walk back: house knows. No app, no command, no thought required.</li>
-      </ul>
     </div>
   </div>
 </div>
@@ -1890,6 +1835,9 @@ audio{width:100%}
     </div>
   </div>
 </div>
+
+
+
 
 <!-- IDENTITY & PRIVACY ARCHITECTURE -->
 <div class="bms">
