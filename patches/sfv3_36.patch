@@ -13,4 +13,4 @@ Logging ---REPLACE---
 Apple Intelligence DNS Block — OpenAI domains blocked at UniFi firewall across all VLANs · catches Apple Intelligence → ChatGPT escalation automatically · no per-device configuration · silent and property-wide
 Physical Security — Server room: keypad + biometric entry · tamper sensors · dedicated alarm zone · optional copper mesh lining
 Logging`; navigator.clipboard.writeText(t); this.textContent = '✓ Copied — now click in GitHub and Cmd+V'; setTimeout(()=>{this.textContent='Copy patch content'},3000); " style="width:100%;padding:16px;font-size:16px;font-weight:500;cursor:pointer;border-radius:8px;"> Copy patch content
-Copy failed — try from claude.ai in browser
+Copy failed — try from claude.ai in browser 
