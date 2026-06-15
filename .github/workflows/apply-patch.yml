@@ -1,37 +1,35 @@
-name: Apply Patch to Sovereign Fields
+import sys
+import os
 
-on:
-  push:
-    paths:
-      - 'patches/*.patch'
+def apply_patch(patch_file, target_file):
+    with open(patch_file, 'r', encoding='utf-8') as f:
+        patch_content = f.read()
+    with open(target_file, 'r', encoding='utf-8') as f:
+        html = f.read()
+    operations = patch_content.split('---PATCH---')
+    operations = [op.strip() for op in operations if op.strip()]
+    applied = 0
+    missed = 0
+    for i, op in enumerate(operations, 1):
+        if '---REPLACE---' not in op:
+            print('  [SKIP] Operation ' + str(i))
+            continue
+        parts = op.split('---REPLACE---', 1)
+        find_text = parts[0].strip('\n')
+        replace_text = parts[1].strip('\n')
+        if find_text in html:
+            html = html.replace(find_text, replace_text, 1)
+            applied += 1
+            print('  [OK] Operation ' + str(i))
+        else:
+            missed += 1
+            print('  [MISS] Operation ' + str(i))
+    with open(target_file, 'w', encoding='utf-8') as f:
+        f.write(html)
+    if missed > 0:
+        sys.exit(1)
 
-jobs:
-  apply-patch:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Find latest patch
-        id: find-patch
-        run: |
-          PATCH=$(ls patches/*.patch | sort -V | tail -1)
-          echo "patch=$PATCH" >> $GITHUB_OUTPUT
-          echo "Found patch: $PATCH"
-
-      - name: Apply patch to index.html
-        run: |
-          python3 patches/apply_patch.py "${{ steps.find-patch.outputs.patch }}" index.html
-
-      - name: Commit and push updated index.html
-        run: |
-          git config user.name "Sovereign Fields Bot"
-          git config user.email "actions@github.com"
-          PATCH="${{ steps.find-patch.outputs.patch }}"
-          VERSION=$(basename "$PATCH" .patch)
-          git add index.html
-          git commit -m "Apply $VERSION" || echo "Nothing to commit"
-          git push
+if __name__ == '__main__':
+    patch_file = sys.argv[1]
+    target_file = sys.argv[2]
+    apply_patch(patch_file, target_file)
