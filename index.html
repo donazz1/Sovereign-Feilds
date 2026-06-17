@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sovereign Fields — King Township, Ontario</title>
-<!-- sfv3_37 · Jun 2026 · Site Plan v2 Z-Compound added -->
+<!-- sfv3_38 · Jun 2026 · Wasabi + 1Password succession fixes -->
 <style>
 :root{--cream:#F5F2EC;--charcoal:#1C1C1A;--charcoal-light:#6B6A64;--gold:#B8963E;--gold-light:#D4AF6A;--border:rgba(245,242,236,0.1);--font-serif:Georgia,'Times New Roman',serif;--font-sans:-apple-system,'Helvetica Neue',Arial,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -1257,8 +1257,8 @@ audio{width:100%}
   <li><strong style="color:var(--gold-light)">Health Data Vault</strong> — Air-gapped VLAN · no internet access · stores Apple Health exports, wearable data, medical imaging, sleep tracking, biometric history · encrypted at rest with AES-256 · accessible only from devices physically on-property</li>
   <li><strong style="color:var(--gold-light)">Security NVR</strong> — All 12–16 cameras store locally · 90-day rolling retention · no footage leaves the property · Hikvision NVR or Frigate with AI object detection</li>
   <li><strong style="color:var(--gold-light)">Local AI Inference</strong> — Runs large language models locally (Llama 3, Mistral, or equivalent) · no queries leave the property · private AI assistant that knows your home, schedules, and preferences · GPU enables real-time inference at near-cloud speed</li>
-  <li><strong style="color:var(--gold-light)">Backup Strategy</strong> — 3-2-1 rule: 3 copies, 2 different media, 1 offsite · encrypted backup to private S3-compatible store (Backblaze B2) · health data never leaves property even for backup · owner-controlled encryption keys · restore-tested on schedule</li>
-  <li><strong style="color:var(--gold-light)">Key Succession</strong> — Shamir secret-sharing protocol across trusted parties · designed now while healthy · children inherit access on terms you define · without this "for life" is aspirational not engineered</li>
+  <li><strong style="color:var(--gold-light)">Backup Strategy</strong> — 3-2-1 rule: 3 copies, 2 different media, 1 offsite · encrypted backup to Wasabi Toronto (ca-central-1) · Canadian data residency · PHIPA-aligned · owner-controlled encryption keys · runs without management</li>
+  <li><strong style="color:var(--gold-light)">Key Succession</strong> — 1Password Family · Don and Kathy both hold full access · sealed envelope in fireproof safe · annual USB vault export · no Shamir · no lawyers · no hardware security keys</li>
   <li><strong style="color:var(--gold-light)">Physical Location</strong> — Dedicated room in utility wing adjacent to electrical panel · own 20A dedicated circuit · own cooling/ventilation · fiber direct to main UniFi switch · biometric access-controlled room</li>
 </ul>
 </div>
@@ -1282,7 +1282,7 @@ audio{width:100%}
   <li><strong style="color:var(--gold-light)">Health Data Vault</strong> — Air-gapped VLAN · no internet access · AES-256 encryption at rest · Apple Health, Oura, WHOOP, CGM, medical imaging · accessible only on-property</li>
   <li><strong style="color:var(--gold-light)">Security NVR</strong> — 12–16 cameras · 90-day rolling local retention · Hikvision NVR or Frigate with AI object detection · no footage leaves property</li>
   <li><strong style="color:var(--gold-light)">Local AI Inference</strong> — Llama 3 or Mistral · GPU-accelerated · private assistant with home context · zero cloud egress</li>
-  <li><strong style="color:var(--gold-light)">Backup</strong> — 3-2-1 rule · encrypted offsite to Backblaze B2 · health data on-property only · owner-held encryption keys</li>
+  <li><strong style="color:var(--gold-light)">Backup</strong> — 3-2-1 rule · encrypted offsite to Wasabi Toronto (ca-central-1) · PHIPA-aligned · owner-held encryption keys</li>
 </ul>
 <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin:16px 0 8px">Physical Installation Requirements</div>
 <ul class="rule-list">
