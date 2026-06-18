@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sovereign Fields — King Township, Ontario</title>
-<!-- sfv3_42 · Jun 2026 · AI-generated walkthrough video preview added to Property & House tab -->
+<!-- sfv3_43 · Jun 2026 · Tools & Stack inventory added to Sovereign Tech, mirroring MyBioTwin's development_stack.py -->
 <style>
 :root{--cream:#F5F2EC;--charcoal:#1C1C1A;--charcoal-light:#6B6A64;--gold:#B8963E;--gold-light:#D4AF6A;--border:rgba(245,242,236,0.1);--font-serif:Georgia,'Times New Roman',serif;--font-sans:-apple-system,'Helvetica Neue',Arial,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -1322,6 +1322,62 @@ audio{width:100%}
     <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(245,242,236,0.1);border-left:none;padding:5px 14px;font-size:10px;color:rgba(245,242,236,0.35);letter-spacing:0.06em">Phase 1 &#8212; Pre-Construction</div>
     <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(245,242,236,0.1);border-left:none;padding:5px 14px;font-size:10px;color:rgba(245,242,236,0.35);letter-spacing:0.06em">Phase 2 &#8212; SF Build</div>
     <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(245,242,236,0.1);border-left:none;border-radius:0 4px 4px 0;padding:5px 14px;font-size:10px;color:rgba(245,242,236,0.35);letter-spacing:0.06em">Phase 3 &#8212; Full Air-Gap Live</div>
+  </div>
+</div>
+
+
+<!-- TOOLS & STACK -->
+<div class="bms">
+  <div class="bmh" onclick="bmToggle('sovtech-toolstack')" style="position:relative">
+    <span class="bmt">Tools &amp; Stack</span>
+    <div style="display:flex;align-items:center;gap:12px">
+      <button onclick="event.stopPropagation();readSection('sovtech-toolstack',this)" style="background:none;border:1px solid rgba(184,150,62,0.3);color:var(--gold-light);padding:3px 10px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px;line-height:1.6">&#9654; Read</button>
+      <span class="bmc">Governance</span>
+      <span id="bmchev-sovtech-toolstack" style="color:var(--charcoal-light);font-size:18px">▾</span>
+    </div>
+  </div>
+  <div class="bmb" id="bmbody-sovtech-toolstack">
+    <div class="sovtech-section-toggle" data-section="toolstack" style="display:flex;gap:0;padding:10px 16px;background:rgba(255,255,255,0.02);border-bottom:0.5px solid var(--border)">
+      <button onclick="setSectionMode('toolstack','detail',this)" class="stbtn-toolstack-detail stbtn active-stbtn" style="padding:5px 14px;background:rgba(184,150,62,0.12);border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--gold-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px 0 0 3px">&#9776; Detail</button>
+      <button onclick="setSectionMode('toolstack','family',this)" class="stbtn-toolstack-family stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans)">&#9733; Family</button>
+      <button onclick="setSectionMode('toolstack','technical',this)" class="stbtn-toolstack-technical stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:0 3px 3px 0">&#9881; Technical</button>
+    </div>
+    <div style="padding:20px 24px">
+      <div class="sovtech-detail-view">
+        <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8;margin-bottom:12px">This is the canonical inventory of hardware, software, and development tools across Sovereign Fields — the property-side counterpart to MyBioTwin's own "Tools &amp; Stack" inventory. Each entry tracks what's active, what's being evaluated, what's optional, and what's a reference pattern only. The goal isn't to document everything that could exist — it's to make tool choices visible enough to question, so nothing gets locked in by default.</p>
+        <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8">MyBioTwin's canonical inventory lives in its own repository (<code style="color:var(--gold-light);background:rgba(184,150,62,0.08);padding:1px 5px;border-radius:3px">backend/app/development_stack.py</code>). This SF inventory is an adapted copy for the property stack — not a duplicate of BioTwin's health-specific vendor list, but a parallel structure covering property hardware, runtime, and integrations. Where the two systems genuinely overlap (e.g. local-inference model choice), they should stay aligned; where they don't (property cameras vs. wearables), they're tracked separately on purpose.</p>
+      </div>
+      <div class="sovtech-family-view" style="display:none">
+        <p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">This is Don's running list of the actual hardware and software behind the property and the health system — what's actually being used right now, what's still being tested, and what's just an idea on the shelf for later. It exists so nothing gets quietly locked in without someone noticing.</p>
+        <p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9">MyBioTwin keeps its own version of this same list for health-specific tools. The two lists talk to each other where it matters (like which local AI model is being used) but stay separate where they should (property cameras aren't health data, and vice versa).</p>
+      </div>
+      <div class="sovtech-tech-view" style="display:none">
+        <ul class="rule-list">
+          <li><strong style="color:var(--gold-light)">Canonical source (BioTwin)</strong> — <code style="color:var(--gold-light);background:rgba(184,150,62,0.08);padding:1px 4px;border-radius:3px">backend/app/development_stack.py</code> in the DigitalTwin repo, served via <code style="color:var(--gold-light);background:rgba(184,150,62,0.08);padding:1px 4px;border-radius:3px">GET /local-analysis/development-stack</code></li>
+          <li><strong style="color:var(--gold-light)">This inventory (SF)</strong> — adapted copy, structured to mirror BioTwin's shape (id, label, version, status, role, notes) but scoped to property hardware/software, not health vendors</li>
+          <li><strong style="color:var(--gold-light)">Status values</strong> — active · evaluating · optional · reference</li>
+          <li><strong style="color:var(--gold-light)">Drift rule</strong> — same governance as Principles Drift above: SF and BioTwin inventories must not silently diverge where they genuinely overlap (e.g. local-inference model choice)</li>
+        </ul>
+      </div>
+
+      <div id="toolstack-render" style="margin-top:20px"></div>
+
+      <div style="margin-top:20px;padding:14px 16px;background:rgba(184,150,62,0.06);border:0.5px solid rgba(184,150,62,0.2);border-radius:6px">
+        <div style="font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px">Questions Before Changing Any Tool</div>
+        <ul class="rule-list">
+          <li>Is it still local-first — no cloud creep on anything sensitive (health data, security footage, access logs)?</li>
+          <li>Keep, upgrade, or replace — has something better emerged, or are we changing for its own sake?</li>
+          <li>Is it SF-portable — would this survive a move from the MacBook prototype to the real home server?</li>
+          <li>Is it still automated — or did a manual workaround quietly become permanent?</li>
+          <li>Is source of truth intact — does the canonical inventory (this list, or BioTwin's) still match what's actually running?</li>
+        </ul>
+      </div>
+
+      <div style="margin-top:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+        <div style="font-size:11px;color:rgba(245,242,236,0.4);letter-spacing:0.04em">Last reviewed: <span id="toolstack-last-reviewed" style="color:var(--gold-light)">June 18, 2026</span></div>
+        <div style="font-size:11px;color:rgba(245,242,236,0.35);letter-spacing:0.04em">Maintainer note: edit the <code style="color:var(--gold-light);background:rgba(184,150,62,0.08);padding:1px 4px;border-radius:3px">SF_TOOL_STACK</code> array in this file's JavaScript to add, remove, or update entries — see comment marker <code style="color:var(--gold-light);background:rgba(184,150,62,0.08);padding:1px 4px;border-radius:3px">SF_TOOL_STACK_DATA</code></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -2809,7 +2865,7 @@ function setMasterMode(mode){
   if(mode==='detail' && db){ db.style.background='rgba(184,150,62,0.15)'; db.style.color='var(--gold-light)'; }
   if(mode==='family' && fb){ fb.style.background='rgba(184,150,62,0.15)'; fb.style.color='var(--gold-light)'; }
   if(mode==='technical' && tb){ tb.style.background='rgba(184,150,62,0.15)'; tb.style.color='var(--gold-light)'; }
-  ['howtouse','frontierdev','driftgov','server','robotics','ai','health','network','future','team','privacy','principles','physical','identity'].forEach(sid=>{
+  ['howtouse','frontierdev','driftgov','toolstack','server','robotics','ai','health','network','future','team','privacy','principles','physical','identity'].forEach(sid=>{
     applyMode(sid, mode);
   });
 }
@@ -2843,6 +2899,66 @@ function togglePrinciplesGrid(){
   grid.style.display=isHidden?'grid':'none';
   chev.textContent=isHidden?'▴':'▾';
 }
+
+/* SF_TOOL_STACK_DATA — edit this array to add, remove, or update tool/stack entries.
+   Each item: id, label, version, status (active|evaluating|optional|reference), role, notes.
+   Mirrors the shape of MyBioTwin's backend/app/development_stack.py for cross-project consistency. */
+const SF_TOOL_STACK = {
+  "Hardware": [
+    {id:"macbook-m2", label:"MacBook Pro M2", version:"24GB RAM · macOS Tahoe", status:"active", role:"Dev / simulation node for MyBioTwin prototype; stands in for the future home server", notes:"Runs Ollama + BioTwin locally. Containerized/portable by design for eventual migration."},
+    {id:"home-server", label:"Future Home Server", version:"Not yet specified", status:"reference", role:"Eventual on-premise replacement for the MacBook prototype", notes:"Target: 9-12 month migration window. Must inherit the data-diode / VLAN isolation pattern, code-enforced not policy-enforced."},
+    {id:"network-vlan", label:"Network / VLAN sketch", version:"UniFi mesh, planned", status:"evaluating", role:"Health VLAN isolation, zero-trust segmentation for property network", notes:"Fiber primary, Starlink failover. Air-gap for Health VLAN is load-bearing — see Frontier & Cloud AI rule above."}
+  ],
+  "Property Runtime": [
+    {id:"smart-home-hub", label:"Control4 / Savant", version:"Not yet selected", status:"evaluating", role:"Whole-property smart home hub — lighting, scenes, Privacy Mode push events", notes:"Privacy Mode uses TTL + fail-safe default regardless of which hub is chosen."},
+    {id:"lighting", label:"Lutron", version:"Planned", status:"reference", role:"Lighting control layer", notes:"Pairs with whichever smart-home hub is selected."},
+    {id:"nas", label:"NAS / local storage", version:"Not yet specified", status:"reference", role:"On-premise storage for property systems, separate from Health VLAN storage", notes:"Health data backup is already decided (Wasabi Toronto, ca-central-1) — this entry covers general property storage only."},
+    {id:"cameras-access", label:"Cameras / access control", version:"Not yet specified", status:"reference", role:"Physical security, robotaxi depot monitoring", notes:"Safety without surveillance is a named guiding principle — implementation must respect that, not just data residency."}
+  ],
+  "Local Inference": [
+    {id:"ollama", label:"Ollama", version:"0.30.9 (on MacBook dev node)", status:"active", role:"Local-only LLM runtime — never the cloud path for sensitive data", notes:"Config convention (OLLAMA_ENABLED, OLLAMA_MODEL) is SF-wide; model choice itself is not — see Principles Drift / convergence notes."},
+    {id:"gemma4-12b", label:"Gemma 4 12B Unified", version:"gemma4:12b-mlx", status:"active", role:"Current local model on the MyBioTwin/MacBook dev node", notes:"Migrated from Gemma 3 12B (June 2026) — genuine Apache 2.0, no Prohibited Use Policy. Different prompt template than Gemma 3 (thinking mode via <|think|> token) — thinking-mode output not yet smoke-tested, standard chat only so far."}
+  ],
+  "Integrations": [
+    {id:"mybiotwin-api", label:"MyBioTwin (read-only link)", version:"Subsystem, not duplicated here", status:"reference", role:"Health intelligence subsystem — kept architecturally separate behind the data-diode gateway", notes:"SF does not duplicate BioTwin's wearables vendor list. See MyBioTwin Health & Biometric Infrastructure section elsewhere in this tab for that detail."},
+    {id:"env-sensors", label:"Environmental sensors", version:"Not yet specified", status:"reference", role:"Property-level sensing (not health-related)", notes:"Placeholder category — populate as actual sensors are selected."}
+  ],
+  "Development Tools": [
+    {id:"claude-desktop", label:"Claude (Sonnet 4.6)", version:"claude.ai", status:"active", role:"SF master document — architecture, strategy, document generation, HTML patching", notes:"Frontier/cloud AI, development-only per the rule above — never in the runtime path for sensitive data."},
+    {id:"cursor", label:"Cursor", version:"Active", status:"active", role:"Active code builder for MyBioTwin", notes:"Not used for SF viewer code directly; SF's index.html is hand-edited by Claude per Don's direction."},
+    {id:"git-github", label:"Git / GitHub Desktop", version:"Active", status:"active", role:"Version control for both repos (Sovereign-Feilds and the MyBioTwin/DigitalTwin repo)", notes:"SF workflow: Finder-drag into iCloud-hosted repo folder, not Terminal cp; verify raw GitHub URL after each push."},
+    {id:"perplexity", label:"Perplexity", version:"Active", status:"active", role:"Research (human-only — not part of any automated pipeline)", notes:"Listed for completeness per BioTwin's own inventory pattern; no SF-specific automation depends on it."}
+  ]
+};
+
+function renderToolStack(){
+  const target=document.getElementById('toolstack-render');
+  if(!target) return;
+  const statusColor={active:'#81C784',evaluating:'#D4AF6A',optional:'rgba(245,242,236,0.4)',reference:'rgba(245,242,236,0.3)'};
+  let html='';
+  for(const category in SF_TOOL_STACK){
+    html+=`<div style="margin-bottom:18px"><div style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:8px;border-bottom:0.5px solid rgba(245,242,236,0.1);padding-bottom:4px">${category}</div>`;
+    SF_TOOL_STACK[category].forEach(item=>{
+      const c=statusColor[item.status]||'rgba(245,242,236,0.3)';
+      html+=`<div style="display:flex;gap:10px;padding:8px 0;border-bottom:0.5px solid rgba(245,242,236,0.05)">
+        <div style="width:8px;height:8px;border-radius:50%;background:${c};margin-top:5px;flex-shrink:0"></div>
+        <div style="flex:1">
+          <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap">
+            <span style="font-size:13px;font-weight:500;color:rgba(245,242,236,0.85)">${item.label}</span>
+            <span style="font-size:10px;color:rgba(245,242,236,0.35)">${item.version}</span>
+            <span style="font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:${c};border:0.5px solid ${c};border-radius:3px;padding:1px 6px">${item.status}</span>
+          </div>
+          <div style="font-size:12px;color:rgba(245,242,236,0.5);margin-top:3px;line-height:1.6">${item.role}</div>
+          <div style="font-size:11px;color:rgba(245,242,236,0.35);margin-top:2px;line-height:1.6;font-style:italic">${item.notes}</div>
+        </div>
+      </div>`;
+    });
+    html+='</div>';
+  }
+  target.innerHTML=html;
+}
+document.addEventListener('DOMContentLoaded',renderToolStack);
+
 </script>
 
 <div id="budget-overlay" style="display:none;position:fixed;inset:0;background:#1C1C1A;z-index:9998;overflow-y:auto">
