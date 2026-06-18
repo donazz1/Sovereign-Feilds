@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sovereign Fields — King Township, Ontario</title>
-<!-- sfv3_39 · Jun 2026 · Frontier-dev-only rule, principles-drift governance, MyBioTwin sync convergence notes -->
+<!-- sfv3_40 · Jun 2026 · Collapsible + Detail/Family/Technical views for principles governance blocks -->
 <style>
 :root{--cream:#F5F2EC;--charcoal:#1C1C1A;--charcoal-light:#6B6A64;--gold:#B8963E;--gold-light:#D4AF6A;--border:rgba(245,242,236,0.1);--font-serif:Georgia,'Times New Roman',serif;--font-sans:-apple-system,'Helvetica Neue',Arial,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -1180,22 +1180,112 @@ audio{width:100%}
 
   </div>
 
-  <div style="border:0.5px solid rgba(184,150,62,0.25);border-radius:8px;padding:20px 24px;margin-bottom:40px">
-    <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">How to Use These Principles</div>
-    <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8;margin-bottom:12px">These principles are the first document any integrator, contractor, or technology advisor reads before engaging with this property. They are referenced when a new system is proposed, when a feature is being debated, when something feels off, and when a decision needs to be made quickly under pressure.</p>
-    <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8">They are not exhaustive and they are not final. Don Azzopardi may add to them, revise them, or clarify them at any time. They belong to the family. The only requirement is that any revision makes the property more aligned with its purpose — not less.</p>
+  <div class="bms">
+    <div class="bmh" onclick="bmToggle('sovtech-howtouse')" style="position:relative">
+      <span class="bmt">How to Use These Principles</span>
+      <div style="display:flex;align-items:center;gap:12px">
+        <button onclick="event.stopPropagation();readSection('sovtech-howtouse',this)" style="background:none;border:1px solid rgba(184,150,62,0.3);color:var(--gold-light);padding:3px 10px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px;line-height:1.6">&#9654; Read</button>
+        <span id="bmchev-sovtech-howtouse" style="color:var(--charcoal-light);font-size:18px">▾</span>
+      </div>
+    </div>
+    <div class="bmb" id="bmbody-sovtech-howtouse">
+      <div class="sovtech-section-toggle" data-section="howtouse" style="display:flex;gap:0;padding:10px 16px;background:rgba(255,255,255,0.02);border-bottom:0.5px solid var(--border)">
+        <button onclick="setSectionMode('howtouse','detail',this)" class="stbtn-howtouse-detail stbtn active-stbtn" style="padding:5px 14px;background:rgba(184,150,62,0.12);border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--gold-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px 0 0 3px">&#9776; Detail</button>
+        <button onclick="setSectionMode('howtouse','family',this)" class="stbtn-howtouse-family stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans)">&#9733; Family</button>
+        <button onclick="setSectionMode('howtouse','technical',this)" class="stbtn-howtouse-technical stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:0 3px 3px 0">&#9881; Technical</button>
+      </div>
+      <div style="padding:20px 24px">
+        <div class="sovtech-detail-view">
+          <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8;margin-bottom:12px">These principles are the first document any integrator, contractor, or technology advisor reads before engaging with this property. They are referenced when a new system is proposed, when a feature is being debated, when something feels off, and when a decision needs to be made quickly under pressure.</p>
+          <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8">They are not exhaustive and they are not final. Don Azzopardi may add to them, revise them, or clarify them at any time. They belong to the family. The only requirement is that any revision makes the property more aligned with its purpose — not less.</p>
+        </div>
+        <div class="sovtech-family-view" style="display:none">
+          <p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">These ten ideas are the first thing anyone working on the property reads before they start. Whenever something new is proposed — a feature, a gadget, a change — these are the questions we ask: does this still feel like us?</p>
+          <p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9">They're not set in stone. Don can change them whenever the family needs to. The only rule is that a change has to make the property feel more like itself, not less.</p>
+        </div>
+        <div class="sovtech-tech-view" style="display:none">
+          <ul class="rule-list">
+            <li><strong style="color:var(--gold-light)">Audience</strong> — first document reviewed by any integrator, contractor, or technology advisor prior to engagement</li>
+            <li><strong style="color:var(--gold-light)">Reference trigger</strong> — consulted when a new system is proposed, a feature is debated, something feels misaligned, or a fast decision is needed under pressure</li>
+            <li><strong style="color:var(--gold-light)">Revision authority</strong> — Don Azzopardi · no formal versioning required · sole test for any revision is alignment with stated purpose</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div style="border:0.5px solid rgba(184,150,62,0.25);border-radius:8px;padding:20px 24px;margin-bottom:40px">
-    <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Frontier &amp; Cloud AI — Development Only</div>
-    <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8;margin-bottom:12px">Frontier and cloud AI models (Claude, GPT, Gemini, Perplexity, or equivalent) may be used for development, design, and documentation work on any Sovereign Fields subsystem — architecture decisions, code generation, system design discussion, document drafting, and research. This scope is deliberately broad: it covers design and planning conversation, not only code, because a future contractor reading "runtime path" too narrowly could otherwise assume a design discussion referencing real or representative data is exempt from this rule. It is not.</p>
-    <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8">Frontier and cloud AI are never in the runtime path for sensitive data — health records, security footage, biometrics, financial data, or family activity — regardless of subsystem. This applies whether the data is real or merely representative of real categories. Local, on-premise inference (Ollama or equivalent) is the only sanctioned runtime path for anything touching this category of data. This rule is load-bearing for the Health VLAN's air-gap and must not be loosened for convenience.</p>
+  <div class="bms">
+    <div class="bmh" onclick="bmToggle('sovtech-frontierdev')" style="position:relative">
+      <span class="bmt">Frontier &amp; Cloud AI — Development Only</span>
+      <div style="display:flex;align-items:center;gap:12px">
+        <button onclick="event.stopPropagation();readSection('sovtech-frontierdev',this)" style="background:none;border:1px solid rgba(184,150,62,0.3);color:var(--gold-light);padding:3px 10px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px;line-height:1.6">&#9654; Read</button>
+        <span class="bmc">Policy</span>
+        <span id="bmchev-sovtech-frontierdev" style="color:var(--charcoal-light);font-size:18px">▾</span>
+      </div>
+    </div>
+    <div class="bmb" id="bmbody-sovtech-frontierdev">
+      <div class="sovtech-section-toggle" data-section="frontierdev" style="display:flex;gap:0;padding:10px 16px;background:rgba(255,255,255,0.02);border-bottom:0.5px solid var(--border)">
+        <button onclick="setSectionMode('frontierdev','detail',this)" class="stbtn-frontierdev-detail stbtn active-stbtn" style="padding:5px 14px;background:rgba(184,150,62,0.12);border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--gold-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px 0 0 3px">&#9776; Detail</button>
+        <button onclick="setSectionMode('frontierdev','family',this)" class="stbtn-frontierdev-family stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans)">&#9733; Family</button>
+        <button onclick="setSectionMode('frontierdev','technical',this)" class="stbtn-frontierdev-technical stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:0 3px 3px 0">&#9881; Technical</button>
+      </div>
+      <div style="padding:20px 24px">
+        <div class="sovtech-detail-view">
+          <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8;margin-bottom:12px">Frontier and cloud AI models (Claude, GPT, Gemini, Perplexity, or equivalent) may be used for development, design, and documentation work on any Sovereign Fields subsystem — architecture decisions, code generation, system design discussion, document drafting, and research. This scope is deliberately broad: it covers design and planning conversation, not only code, because a future contractor reading "runtime path" too narrowly could otherwise assume a design discussion referencing real or representative data is exempt from this rule. It is not.</p>
+          <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8">Frontier and cloud AI are never in the runtime path for sensitive data — health records, security footage, biometrics, financial data, or family activity — regardless of subsystem. This applies whether the data is real or merely representative of real categories. Local, on-premise inference (Ollama or equivalent) is the only sanctioned runtime path for anything touching this category of data. This rule is load-bearing for the Health VLAN's air-gap and must not be loosened for convenience.</p>
+        </div>
+        <div class="sovtech-family-view" style="display:none">
+          <p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">When we're building or designing something — talking through an idea with Claude or ChatGPT, writing code, drafting a document — that's fine to do with outside AI tools, even cloud-based ones. That's "development," and it covers planning conversations too, not just typing code.</p>
+          <p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9">What's never allowed: real health data, security footage, biometrics, or financial data going to an outside AI while the system is actually running day to day. That only ever happens on our own server, with our own local AI. This is one of the most important lines on the whole property — it doesn't bend for convenience.</p>
+        </div>
+        <div class="sovtech-tech-view" style="display:none">
+          <ul class="rule-list">
+            <li><strong style="color:var(--gold-light)">Permitted</strong> — cloud/frontier models for architecture decisions, code generation, system design discussion, document drafting, research — across any SF subsystem</li>
+            <li><strong style="color:var(--gold-light)">Scope</strong> — explicitly includes design and planning conversation, not only code, including discussion referencing real or representative data shapes</li>
+            <li><strong style="color:var(--gold-light)">Prohibited</strong> — cloud/frontier models in the runtime path for health records, security footage, biometrics, financial data, or family activity, regardless of subsystem or whether data is real vs. representative</li>
+            <li><strong style="color:var(--gold-light)">Sanctioned runtime path</strong> — local, on-premise inference only (Ollama or equivalent) for any sensitive-data workload</li>
+            <li><strong style="color:var(--gold-light)">Why it's load-bearing</strong> — this rule is the practical enforcement of the Health VLAN's air-gap; loosening it for convenience defeats the air-gap's purpose</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div style="border:0.5px solid rgba(184,150,62,0.25);border-radius:8px;padding:20px 24px;margin-bottom:40px">
-    <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Principles Drift — Governance</div>
-    <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8;margin-bottom:12px">These ten principles are canonical here, in the Sovereign Fields master document. Any subsystem (MyBioTwin, future property AI, or otherwise) that displays an adapted copy of these principles in its own interface must keep that copy synchronized with this canonical version — it is an adapted copy, never an independent fork of values.</p>
-    <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8">Owner: Don Azzopardi. Trigger: any edit to this document, or to an adapted copy elsewhere (e.g. MyBioTwin's <code style="color:var(--gold-light);background:rgba(184,150,62,0.08);padding:1px 5px;border-radius:3px">platform_principles.py</code>), should prompt a check that the other has not silently drifted. A code comment pointing back to this canonical source is a useful breadcrumb but is not itself governance — the check is a habit Don performs, not a system that enforces itself.</p>
+  <div class="bms">
+    <div class="bmh" onclick="bmToggle('sovtech-driftgov')" style="position:relative">
+      <span class="bmt">Principles Drift — Governance</span>
+      <div style="display:flex;align-items:center;gap:12px">
+        <button onclick="event.stopPropagation();readSection('sovtech-driftgov',this)" style="background:none;border:1px solid rgba(184,150,62,0.3);color:var(--gold-light);padding:3px 10px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px;line-height:1.6">&#9654; Read</button>
+        <span class="bmc">Policy</span>
+        <span id="bmchev-sovtech-driftgov" style="color:var(--charcoal-light);font-size:18px">▾</span>
+      </div>
+    </div>
+    <div class="bmb" id="bmbody-sovtech-driftgov">
+      <div class="sovtech-section-toggle" data-section="driftgov" style="display:flex;gap:0;padding:10px 16px;background:rgba(255,255,255,0.02);border-bottom:0.5px solid var(--border)">
+        <button onclick="setSectionMode('driftgov','detail',this)" class="stbtn-driftgov-detail stbtn active-stbtn" style="padding:5px 14px;background:rgba(184,150,62,0.12);border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--gold-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:3px 0 0 3px">&#9776; Detail</button>
+        <button onclick="setSectionMode('driftgov','family',this)" class="stbtn-driftgov-family stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);border-right:none;color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans)">&#9733; Family</button>
+        <button onclick="setSectionMode('driftgov','technical',this)" class="stbtn-driftgov-technical stbtn" style="padding:5px 14px;background:none;border:0.5px solid rgba(184,150,62,0.4);color:var(--charcoal-light);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:0 3px 3px 0">&#9881; Technical</button>
+      </div>
+      <div style="padding:20px 24px">
+        <div class="sovtech-detail-view">
+          <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8;margin-bottom:12px">These ten principles are canonical here, in the Sovereign Fields master document. Any subsystem (MyBioTwin, future property AI, or otherwise) that displays an adapted copy of these principles in its own interface must keep that copy synchronized with this canonical version — it is an adapted copy, never an independent fork of values.</p>
+          <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8">Owner: Don Azzopardi. Trigger: any edit to this document, or to an adapted copy elsewhere (e.g. MyBioTwin's <code style="color:var(--gold-light);background:rgba(184,150,62,0.08);padding:1px 5px;border-radius:3px">platform_principles.py</code>), should prompt a check that the other has not silently drifted. A code comment pointing back to this canonical source is a useful breadcrumb but is not itself governance — the check is a habit Don performs, not a system that enforces itself.</p>
+        </div>
+        <div class="sovtech-family-view" style="display:none">
+          <p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9;margin-bottom:16px">This document is the master copy of our ten principles. If MyBioTwin or anything else shows a copy of these ideas in its own app, that copy needs to stay matched to this one — it's a reflection, not a separate version that can drift off on its own.</p>
+          <p style="font-size:14px;color:rgba(245,242,236,0.75);line-height:1.9">Don keeps an eye on this. Whenever this document changes, or a copy elsewhere changes, that's the moment to check the other one still matches.</p>
+        </div>
+        <div class="sovtech-tech-view" style="display:none">
+          <ul class="rule-list">
+            <li><strong style="color:var(--gold-light)">Canonical source</strong> — this document (Sovereign Fields master plan), Sovereign Tech tab, Guiding Principles section</li>
+            <li><strong style="color:var(--gold-light)">Adapted copies</strong> — e.g. MyBioTwin's <code style="color:var(--gold-light);background:rgba(184,150,62,0.08);padding:1px 4px;border-radius:3px">platform_principles.py</code> — must reflect, never fork from, the canonical version</li>
+            <li><strong style="color:var(--gold-light)">Owner</strong> — Don Azzopardi</li>
+            <li><strong style="color:var(--gold-light)">Trigger</strong> — any edit to this document, or to an adapted copy elsewhere, should prompt a check that the other has not silently drifted</li>
+            <li><strong style="color:var(--gold-light)">Enforcement note</strong> — a code comment pointing back to canonical source is a useful breadcrumb, not governance itself; the check is a manual habit, not a system-enforced gate</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -2693,7 +2783,7 @@ function setMasterMode(mode){
   if(mode==='detail' && db){ db.style.background='rgba(184,150,62,0.15)'; db.style.color='var(--gold-light)'; }
   if(mode==='family' && fb){ fb.style.background='rgba(184,150,62,0.15)'; fb.style.color='var(--gold-light)'; }
   if(mode==='technical' && tb){ tb.style.background='rgba(184,150,62,0.15)'; tb.style.color='var(--gold-light)'; }
-  ['server','robotics','ai','health','network','future','team','privacy','principles','physical','identity'].forEach(sid=>{
+  ['howtouse','frontierdev','driftgov','server','robotics','ai','health','network','future','team','privacy','principles','physical','identity'].forEach(sid=>{
     applyMode(sid, mode);
   });
 }
