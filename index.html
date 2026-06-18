@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sovereign Fields — King Township, Ontario</title>
-<!-- sfv3_38 · Jun 2026 · Wasabi + 1Password succession fixes -->
+<!-- sfv3_39 · Jun 2026 · Frontier-dev-only rule, principles-drift governance, MyBioTwin sync convergence notes -->
 <style>
 :root{--cream:#F5F2EC;--charcoal:#1C1C1A;--charcoal-light:#6B6A64;--gold:#B8963E;--gold-light:#D4AF6A;--border:rgba(245,242,236,0.1);--font-serif:Georgia,'Times New Roman',serif;--font-sans:-apple-system,'Helvetica Neue',Arial,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -1185,6 +1185,18 @@ audio{width:100%}
     <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8;margin-bottom:12px">These principles are the first document any integrator, contractor, or technology advisor reads before engaging with this property. They are referenced when a new system is proposed, when a feature is being debated, when something feels off, and when a decision needs to be made quickly under pressure.</p>
     <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8">They are not exhaustive and they are not final. Don Azzopardi may add to them, revise them, or clarify them at any time. They belong to the family. The only requirement is that any revision makes the property more aligned with its purpose — not less.</p>
   </div>
+
+  <div style="border:0.5px solid rgba(184,150,62,0.25);border-radius:8px;padding:20px 24px;margin-bottom:40px">
+    <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Frontier &amp; Cloud AI — Development Only</div>
+    <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8;margin-bottom:12px">Frontier and cloud AI models (Claude, GPT, Gemini, Perplexity, or equivalent) may be used for development, design, and documentation work on any Sovereign Fields subsystem — architecture decisions, code generation, system design discussion, document drafting, and research. This scope is deliberately broad: it covers design and planning conversation, not only code, because a future contractor reading "runtime path" too narrowly could otherwise assume a design discussion referencing real or representative data is exempt from this rule. It is not.</p>
+    <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8">Frontier and cloud AI are never in the runtime path for sensitive data — health records, security footage, biometrics, financial data, or family activity — regardless of subsystem. This applies whether the data is real or merely representative of real categories. Local, on-premise inference (Ollama or equivalent) is the only sanctioned runtime path for anything touching this category of data. This rule is load-bearing for the Health VLAN's air-gap and must not be loosened for convenience.</p>
+  </div>
+
+  <div style="border:0.5px solid rgba(184,150,62,0.25);border-radius:8px;padding:20px 24px;margin-bottom:40px">
+    <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px">Principles Drift — Governance</div>
+    <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8;margin-bottom:12px">These ten principles are canonical here, in the Sovereign Fields master document. Any subsystem (MyBioTwin, future property AI, or otherwise) that displays an adapted copy of these principles in its own interface must keep that copy synchronized with this canonical version — it is an adapted copy, never an independent fork of values.</p>
+    <p style="font-size:13px;color:rgba(245,242,236,0.55);line-height:1.8">Owner: Don Azzopardi. Trigger: any edit to this document, or to an adapted copy elsewhere (e.g. MyBioTwin's <code style="color:var(--gold-light);background:rgba(184,150,62,0.08);padding:1px 5px;border-radius:3px">platform_principles.py</code>), should prompt a check that the other has not silently drifted. A code comment pointing back to this canonical source is a useful breadcrumb but is not itself governance — the check is a habit Don performs, not a system that enforces itself.</p>
+  </div>
 </div>
 
 
@@ -1475,6 +1487,13 @@ audio{width:100%}
         <li><strong style="color:var(--gold-light)">Emergency Card</strong> — Offline-first. Face ID reveals full signed record via 15-minute time-limited derived key. Lock screen shows blood type and emergency contacts only. No internet required.</li>
         <li><strong style="color:var(--gold-light)">Backup</strong> — Automated encrypted to Wasabi Toronto (ca-central-1) · owner-held key · PHIPA-aligned · runs without management.</li>
       </ul>
+      <div style="margin-top:16px;padding:14px 16px;background:rgba(184,150,62,0.06);border:0.5px solid rgba(184,150,62,0.2);border-radius:6px">
+        <div style="font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px">MacBook Prototype Status — Provisional, Not Yet Canonical</div>
+        <p style="font-size:12px;color:rgba(245,242,236,0.55);line-height:1.7;margin-bottom:8px">MyBioTwin on the MacBook M2 has produced two patterns worth flagging as <em>reference implementations under evaluation</em>, not yet SF-wide standards. Each has an explicit promotion trigger — they should not be treated as settled until that trigger is met, and should not be copied into other subsystems by default in the meantime.</p>
+        <p style="font-size:12px;color:rgba(245,242,236,0.55);line-height:1.7;margin-bottom:8px"><strong style="color:rgba(245,242,236,0.75)">Sync-status taxonomy</strong> (<code style="color:var(--gold-light);background:rgba(184,150,62,0.1);padding:1px 4px;border-radius:3px">gateway_down</code> / <code style="color:var(--gold-light);background:rgba(184,150,62,0.1);padding:1px 4px;border-radius:3px">push_failed</code> / <code style="color:var(--gold-light);background:rgba(184,150,62,0.1);padding:1px 4px;border-radius:3px">stale</code> / <code style="color:var(--gold-light);background:rgba(184,150,62,0.1);padding:1px 4px;border-radius:3px">empty</code>) was built under one subsystem (wearables ingestion) during one real incident. It is a strong candidate to become the SF-wide status vocabulary for graceful degradation reporting — but the security NVR, Control4 bridge, and AI identity layer have different failure modes, and terms like "stale" or "empty" may not translate cleanly. <strong style="color:rgba(245,242,236,0.75)">Promotion trigger:</strong> a second subsystem actually adopts this taxonomy, or a thin abstraction layer (transport failure vs. vendor failure vs. data-age failure) is published that generalizes it.</p>
+        <p style="font-size:12px;color:rgba(245,242,236,0.55);line-height:1.7"><strong style="color:rgba(245,242,236,0.75)">"Template, not fork"</strong> — the goal is for BioTwin-on-Mac to become the reference implementation that the SF home server deploys directly, not a parallel codebase kept in sync by hand. Today, the gateway and BioTwin run as two local processes on one machine, not two isolated VMs with VLAN boundaries, TLS, and separate secrets — process isolation is not proof of network-boundary portability. <strong style="color:rgba(245,242,236,0.75)">Promotion trigger:</strong> a minimal but real docker-compose or two-VM sketch exists and runs, demonstrating the gateway/BioTwin boundary survives actual network isolation rather than just process separation. Until that artifact exists, the "template not fork" claim is treated as the goal, not a settled fact.</p>
+        <p style="font-size:12px;color:rgba(245,242,236,0.55);line-height:1.7;margin-top:8px"><strong style="color:rgba(245,242,236,0.75)">When that artifact lands:</strong> it gets a dedicated review pass, not a rubber stamp. The sketch existing and running is the evidence that resolves this item — it deserves real scrutiny of what it actually proves (network isolation survived, secrets management held, latency acceptable) before "template not fork" is upgraded from goal to settled fact.</p>
+      </div>
     </div>
     <!-- FAMILY VIEW -->
     <div class="sovtech-family-view" style="display:none;padding:20px 24px;border-bottom:0.5px solid var(--border)">
