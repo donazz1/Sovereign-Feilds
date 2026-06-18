@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sovereign Fields — King Township, Ontario</title>
-<!-- sfv3_40 · Jun 2026 · Collapsible + Detail/Family/Technical views for principles governance blocks -->
+<!-- sfv3_41 · Jun 2026 · Collapsible guiding principles grid + Family/Technical views for MyBioTwin prototype status -->
 <style>
 :root{--cream:#F5F2EC;--charcoal:#1C1C1A;--charcoal-light:#6B6A64;--gold:#B8963E;--gold-light:#D4AF6A;--border:rgba(245,242,236,0.1);--font-serif:Georgia,'Times New Roman',serif;--font-sans:-apple-system,'Helvetica Neue',Arial,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -1110,13 +1110,16 @@ audio{width:100%}
 
 <!-- GUIDING PRINCIPLES -->
 <div style="max-width:900px;margin:0 auto;padding:40px 32px 0">
-  <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-light);margin-bottom:32px">The Guiding Principles</div>
+  <div onclick="togglePrinciplesGrid()" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;margin-bottom:16px;padding:4px 0">
+    <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-light)">The Guiding Principles</div>
+    <span id="principles-grid-chev" style="color:var(--charcoal-light);font-size:18px">▾</span>
+  </div>
 
   <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
     <button id="principles-play-btn" onclick="playAllPrinciples(this)" style="background:rgba(184,150,62,0.1);border:1px solid rgba(184,150,62,0.5);color:var(--gold-light);padding:10px 24px;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;font-family:var(--font-sans);border-radius:4px">&#9654; Read All Principles</button>
     <span style="font-size:11px;color:rgba(245,242,236,0.3);letter-spacing:0.06em">Reads all ten principles aloud</span>
   </div>
-  <div style="display:grid;gap:1px;background:rgba(245,242,236,0.08);border:0.5px solid rgba(245,242,236,0.08);border-radius:8px;overflow:hidden;margin-bottom:40px">
+  <div id="principles-grid" style="display:grid;gap:1px;background:rgba(245,242,236,0.08);border:0.5px solid rgba(245,242,236,0.08);border-radius:8px;overflow:hidden;margin-bottom:40px">
 
     <div style="background:var(--charcoal);padding:24px 28px">
       <div style="font-family:Georgia,serif;font-size:16px;color:var(--cream);margin-bottom:8px">I. The Freedom Principle</div>
@@ -1596,6 +1599,10 @@ audio{width:100%}
         <li><strong style="color:var(--gold-light)">Gets simpler over time</strong> — The system continuously asks what can be removed. Fewer things working better.</li>
         <li><strong style="color:var(--gold-light)">Emergency card always with you</strong> — Face ID unlocks full health record for a provider. Blood type and emergency contacts on lock screen without unlocking.</li>
       </ul>
+      <div style="margin-top:16px;padding:14px 16px;background:rgba(184,150,62,0.06);border:0.5px solid rgba(184,150,62,0.2);border-radius:6px">
+        <div style="font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px">Where things stand on the MacBook prototype</div>
+        <p style="font-size:13px;color:rgba(245,242,236,0.65);line-height:1.8">A couple of things MyBioTwin figured out while running on the MacBook are good enough that they might become the standard way every system on the property reports "something's wrong" — not just MyBioTwin. We're not calling that decided yet. We want to see it work for a second system first, or build a simple version of the idea that clearly applies everywhere, before we lock it in. Same caution applies to whether the MacBook version can move to the real home server without a rewrite — we believe it can, but we want to actually prove it with a small working test before we call that settled.</p>
+      </div>
     </div>
     <!-- TECHNICAL VIEW -->
     <div class="sovtech-tech-view" style="display:none;padding:20px 24px;border-bottom:0.5px solid var(--border)">
@@ -1614,6 +1621,14 @@ audio{width:100%}
         <li><strong style="color:var(--gold-light)">Adding</strong> — WHOOP 4.0 · Withings Body Scan · Withings BPM Connect · Eight Sleep Pod</li>
         <li><strong style="color:var(--gold-light)">Standing rule</strong> — Adapter built before Don acquires device. System ready and waiting.</li>
       </ul>
+      <div style="margin-top:16px;padding:14px 16px;background:rgba(184,150,62,0.06);border:0.5px solid rgba(184,150,62,0.2);border-radius:6px">
+        <div style="font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px">Prototype Status — Promotion Triggers</div>
+        <ul class="rule-list">
+          <li><strong style="color:var(--gold-light)">Sync-status taxonomy</strong> (<code style="color:var(--gold-light);background:rgba(184,150,62,0.1);padding:1px 4px;border-radius:3px">gateway_down</code> / <code style="color:var(--gold-light);background:rgba(184,150,62,0.1);padding:1px 4px;border-radius:3px">push_failed</code> / <code style="color:var(--gold-light);background:rgba(184,150,62,0.1);padding:1px 4px;border-radius:3px">stale</code> / <code style="color:var(--gold-light);background:rgba(184,150,62,0.1);padding:1px 4px;border-radius:3px">empty</code>) — reference implementation from wearables ingestion only · not yet SF-wide standard · promote when a second subsystem (NVR, Control4 bridge, AI identity layer) adopts it, or a transport/vendor/data-age abstraction layer is published</li>
+          <li><strong style="color:var(--gold-light)">"Template, not fork"</strong> — gateway and BioTwin currently run as two local processes on one machine, not two VMs with VLAN boundaries, TLS, and separate secrets · process isolation is not yet proof of network-boundary portability · promote when a minimal docker-compose or two-VM sketch exists and runs</li>
+          <li><strong style="color:var(--gold-light)">Owner</strong> — Don Azzopardi · review pass required when promotion artifact lands, not a rubber stamp</li>
+        </ul>
+      </div>
     </div>
     <!-- COST TABLE -->
     <table class="bmtb"><thead><tr><th>Item</th><th>Specification</th><th>Est. Cost</th></tr></thead><tbody>
@@ -2810,6 +2825,13 @@ function applyMode(sid, mode){
 window.addEventListener('load', ()=>{ setMasterMode('detail'); });
 
 function bmToggle(id){const b=document.getElementById('bmbody-'+id);const c=document.getElementById('bmchev-'+id);b.classList.toggle('open');c.textContent=b.classList.contains('open')?'▴':'▾';}
+function togglePrinciplesGrid(){
+  const grid=document.getElementById('principles-grid');
+  const chev=document.getElementById('principles-grid-chev');
+  const isHidden=grid.style.display==='none';
+  grid.style.display=isHidden?'grid':'none';
+  chev.textContent=isHidden?'▴':'▾';
+}
 </script>
 
 <div id="budget-overlay" style="display:none;position:fixed;inset:0;background:#1C1C1A;z-index:9998;overflow-y:auto">
