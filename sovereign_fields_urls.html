@@ -1,0 +1,27 @@
+<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:560px;margin:0 auto">
+  <div style="background:#1a1a1a;border-radius:12px;padding:20px;margin-bottom:14px">
+    <div style="color:#888;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px">Live Site</div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <code id="url1" style="color:#f5f2ec;font-size:14px;flex:1;overflow-wrap:break-word">https://donazz1.github.io/Sovereign-Feilds/</code>
+      <button onclick="copyUrl('url1', this)" style="background:#2d2d2d;color:#f5f2ec;border:1px solid #444;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;white-space:nowrap">Copy</button>
+    </div>
+  </div>
+  <div style="background:#1a1a1a;border-radius:12px;padding:20px">
+    <div style="color:#888;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px">Raw index.html (post-push verification)</div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <code id="url2" style="color:#f5f2ec;font-size:14px;flex:1;overflow-wrap:break-word">https://raw.githubusercontent.com/donazz1/Sovereign-Feilds/main/index.html</code>
+      <button onclick="copyUrl('url2', this)" style="background:#2d2d2d;color:#f5f2ec;border:1px solid #444;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;white-space:nowrap">Copy</button>
+    </div>
+    <div style="color:#666;font-size:11px;margin-top:10px">If your default branch isn't "main," swap in the right branch name — check the repo page if this 404s.</div>
+  </div>
+</div>
+<script>
+function copyUrl(id, btn) {
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = "Copied!";
+    setTimeout(() => { btn.textContent = orig; }, 1500);
+  });
+}
+</script>

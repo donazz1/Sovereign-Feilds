@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sovereign Fields — King Township, Ontario</title>
-<!-- sfv3_43 · Jun 2026 · Tools & Stack inventory added to Sovereign Tech, mirroring MyBioTwin's development_stack.py -->
+<!-- sfv3_44 · Jun 2026 · Corrected Perplexity entry per BioTwin engineering — not part of development_stack.py -->
 <style>
 :root{--cream:#F5F2EC;--charcoal:#1C1C1A;--charcoal-light:#6B6A64;--gold:#B8963E;--gold-light:#D4AF6A;--border:rgba(245,242,236,0.1);--font-serif:Georgia,'Times New Roman',serif;--font-sans:-apple-system,'Helvetica Neue',Arial,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -2927,7 +2927,7 @@ const SF_TOOL_STACK = {
     {id:"claude-desktop", label:"Claude (Sonnet 4.6)", version:"claude.ai", status:"active", role:"SF master document — architecture, strategy, document generation, HTML patching", notes:"Frontier/cloud AI, development-only per the rule above — never in the runtime path for sensitive data."},
     {id:"cursor", label:"Cursor", version:"Active", status:"active", role:"Active code builder for MyBioTwin", notes:"Not used for SF viewer code directly; SF's index.html is hand-edited by Claude per Don's direction."},
     {id:"git-github", label:"Git / GitHub Desktop", version:"Active", status:"active", role:"Version control for both repos (Sovereign-Feilds and the MyBioTwin/DigitalTwin repo)", notes:"SF workflow: Finder-drag into iCloud-hosted repo folder, not Terminal cp; verify raw GitHub URL after each push."},
-    {id:"perplexity", label:"Perplexity", version:"Active", status:"active", role:"Research (human-only — not part of any automated pipeline)", notes:"Listed for completeness per BioTwin's own inventory pattern; no SF-specific automation depends on it."}
+    {id:"perplexity", label:"Perplexity", version:"Active", status:"active", role:"Research (human-only — not part of any automated pipeline)", notes:"SF-side toolchain entry only. Not part of BioTwin's canonical stack registry (backend/app/development_stack.py) — that registry's Development Tools category is Cursor IDE, Claude Desktop, Git+GitHub, and pytest+ruff only. Listed here for SF's own narrative completeness, not as a mirrored BioTwin entry."}
   ]
 };
 
